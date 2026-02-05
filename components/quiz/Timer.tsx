@@ -1,21 +1,35 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { formatTime } from "@/lib/utils"
-import { cn } from "@/lib/utils"
+import { cn, formatTime } from "@/lib/utils"
 
 interface TimerProps {
   totalSeconds: number
   onTimeUp: () => void
   isRunning: boolean
   variant?: "bar" | "ring"
+  onCritical?: () => void
 }
 
-export function Timer({ totalSeconds, onTimeUp, isRunning, variant = "bar" }: TimerProps) {
+function getTimerColor(percent: number): string {
+  if (percent < 20) return "text-accent-danger"
+  if (percent < 50) return "text-accent-warning"
+  return "text-accent-primary"
+}
+
+function getTimerBarStyle(percent: number): string {
+  if (percent < 20) return "bg-accent-danger shadow-glow-danger"
+  if (percent < 50) return "bg-accent-warning"
+  return "bg-gradient-to-r from-accent-primary to-accent-secondary"
+}
+
+export function Timer({ totalSeconds, onTimeUp, isRunning, variant = "bar", onCritical }: TimerProps) {
   const [remaining, setRemaining] = useState(totalSeconds)
+  const [hasFiredCritical, setHasFiredCritical] = useState(false)
 
   useEffect(() => {
     setRemaining(totalSeconds)
+    setHasFiredCritical(false)
   }, [totalSeconds])
 
   useEffect(() => {
@@ -34,7 +48,14 @@ export function Timer({ totalSeconds, onTimeUp, isRunning, variant = "bar" }: Ti
 
   const percent = (remaining / totalSeconds) * 100
   const isLow = percent < 20
-  const isMedium = percent < 50
+
+  // Fire critical callback when entering low state
+  useEffect(() => {
+    if (isLow && !hasFiredCritical && onCritical) {
+      setHasFiredCritical(true)
+      onCritical()
+    }
+  }, [isLow, hasFiredCritical, onCritical])
 
   if (variant === "ring") {
     const radius = 28
@@ -55,16 +76,21 @@ export function Timer({ totalSeconds, onTimeUp, isRunning, variant = "bar" }: Ti
             strokeDasharray={circumference}
             strokeDashoffset={offset}
             strokeLinecap="round"
-            className={cn(
-              "transition-all duration-1000",
-              isLow ? "text-accent-danger" : isMedium ? "text-accent-warning" : "text-accent-primary"
-            )}
+            className={cn("transition-all duration-1000", getTimerColor(percent))}
+            style={{
+              filter: isLow ? "drop-shadow(0 0 4px currentColor)" : undefined
+            }}
           />
         </svg>
-        <span className={cn(
-          "absolute text-sm font-mono font-bold",
-          isLow ? "text-accent-danger" : "text-text-primary"
-        )}>
+        <span
+          className={cn(
+            "absolute text-sm font-mono font-bold transition-all",
+            isLow ? "text-accent-danger animate-pulse" : "text-text-primary"
+          )}
+          style={{
+            filter: isLow ? "drop-shadow(0 0 4px currentColor)" : undefined
+          }}
+        >
           {remaining}
         </span>
       </div>
@@ -75,16 +101,21 @@ export function Timer({ totalSeconds, onTimeUp, isRunning, variant = "bar" }: Ti
     <div className="w-full">
       <div className="flex justify-between text-sm mb-1">
         <span className="text-text-muted">Zeit</span>
-        <span className={cn("font-mono", isLow ? "text-accent-danger" : "text-text-secondary")}>
+        <span
+          className={cn(
+            "font-mono transition-all",
+            isLow ? "text-accent-danger animate-pulse" : "text-text-secondary"
+          )}
+          style={{
+            filter: isLow ? "drop-shadow(0 0 4px currentColor)" : undefined
+          }}
+        >
           {formatTime(remaining)}
         </span>
       </div>
-      <div className="w-full h-2 bg-bg-tertiary rounded-full overflow-hidden">
+      <div className="w-full h-2.5 bg-bg-tertiary rounded-full overflow-hidden border border-border-subtle">
         <div
-          className={cn(
-            "h-full rounded-full transition-all duration-1000",
-            isLow ? "bg-accent-danger" : isMedium ? "bg-accent-warning" : "bg-accent-primary"
-          )}
+          className={cn("h-full rounded-full transition-all duration-1000", getTimerBarStyle(percent))}
           style={{ width: `${percent}%` }}
         />
       </div>

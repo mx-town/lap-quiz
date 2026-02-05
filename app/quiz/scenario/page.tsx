@@ -1,14 +1,16 @@
 "use client"
 
 import { useState } from "react"
+import { motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { QuestionCard } from "@/components/quiz/QuestionCard"
 import { ProgressBar } from "@/components/quiz/ProgressBar"
 import { ResultScreen } from "@/components/quiz/ResultScreen"
-import { Question, QuizResult } from "@/types"
+import { Question, QuizResult, CHAPTERS } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
 import { shuffleArray } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
+import { Wrench, AlertTriangle, BookOpen } from "lucide-react"
 
 export default function ScenarioPage() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -63,26 +65,73 @@ export default function ScenarioPage() {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12 text-center">
-          <h1 className="text-2xl font-bold mb-4">Praxisszenarien</h1>
-          <p className="text-text-muted">Noch keine Szenario-Fragen vorhanden. Fragen werden über Supabase geladen.</p>
+        <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="max-w-md mx-auto bg-gradient-to-br from-amber-950/50 to-bg-surface border-2 border-amber-500/30 rounded-2xl p-8 text-center shadow-glow-warning"
+          >
+            <div className="w-16 h-16 rounded-2xl bg-gradient-amber flex items-center justify-center mx-auto mb-4">
+              <Wrench className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-2xl font-bold mb-4 text-amber-400">Praxisszenarien</h1>
+            <p className="text-text-secondary">Noch keine Szenario-Fragen vorhanden. Fragen werden über Supabase geladen.</p>
+          </motion.div>
         </main>
       </>
     )
   }
+
+  const currentQuestion = questions[currentIndex]
+  const chapter = CHAPTERS.find((c) => c.number === currentQuestion.chapter_number)
 
   return (
     <>
       <Navbar />
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8">
         <div className="max-w-2xl mx-auto space-y-6">
-          <div>
-            <h1 className="text-lg font-semibold mb-1">Praxisszenario</h1>
+          {/* Scenario context header */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-gradient-to-br from-amber-950/30 to-bg-surface rounded-xl p-5 border border-amber-500/20"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                  <Wrench className="w-5 h-5 text-amber-400" />
+                </div>
+                <div>
+                  <h1 className="text-lg font-bold text-amber-400">Praxisszenario</h1>
+                  <p className="text-xs text-text-muted">Praktische Anwendung & Fehleranalyse</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-amber-400/80 bg-amber-500/10 px-3 py-1.5 rounded-full">
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>Kap. {currentQuestion.chapter_number}</span>
+              </div>
+            </div>
+
+            {/* Scenario context card */}
+            <div className="flex items-start gap-2 p-3 rounded-lg bg-amber-500/5 border border-amber-500/10">
+              <AlertTriangle className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+              <div className="text-sm text-text-secondary">
+                <span className="font-medium text-amber-400">Kontext: </span>
+                Du bist Mechatroniker im Aussendienst und stößt auf folgende Situation im Bereich{" "}
+                <span className="text-amber-400">{chapter?.name || `Kapitel ${currentQuestion.chapter_number}`}</span>.
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Progress bar with amber theme */}
+          <div className="bg-amber-950/20 rounded-xl p-4 border border-amber-500/10">
             <ProgressBar current={currentIndex + 1} total={questions.length} correctCount={correctCount} />
           </div>
+
+          {/* Question card */}
           <QuestionCard
-            key={questions[currentIndex].id}
-            question={questions[currentIndex]}
+            key={currentQuestion.id}
+            question={currentQuestion}
             index={currentIndex}
             total={questions.length}
             onAnswer={handleAnswer}

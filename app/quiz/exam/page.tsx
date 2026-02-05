@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
+import { motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { QuestionCard } from "@/components/quiz/QuestionCard"
 import { ProgressBar } from "@/components/quiz/ProgressBar"
@@ -8,8 +9,9 @@ import { Timer } from "@/components/quiz/Timer"
 import { ResultScreen } from "@/components/quiz/ResultScreen"
 import { Question, QuizResult } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
-import { shuffleArray } from "@/lib/utils"
+import { shuffleArray, cn } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
+import { Target, Shield, Clock } from "lucide-react"
 
 export default function ExamPage() {
   const [started, setStarted] = useState(false)
@@ -92,25 +94,42 @@ export default function ExamPage() {
       <>
         <Navbar />
         <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
-          <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle rounded-2xl p-8">
-            <h1 className="text-2xl font-bold mb-6">Prüfungssimulation</h1>
-            <p className="text-text-muted mb-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="max-w-md mx-auto bg-gradient-to-br from-blue-950/50 to-bg-surface border-2 border-blue-700/30 rounded-2xl p-8 shadow-glow-blue"
+          >
+            {/* Official badge */}
+            <div className="flex justify-center mb-4">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20">
+                <Shield className="w-4 h-4 text-blue-400" />
+                <span className="text-xs font-medium text-blue-400">Offizielle LAP-Simulation</span>
+              </div>
+            </div>
+
+            <div className="w-16 h-16 rounded-2xl bg-gradient-blue flex items-center justify-center mx-auto mb-4">
+              <Target className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-2xl font-bold mb-2 text-center text-blue-400">Prüfungssimulation</h1>
+            <p className="text-text-secondary mb-8 text-center">
               Simuliert das mündliche LAP-Fachgespräch. Zufällige Fragen aus allen Kapiteln — keine Rückkehr zu beantworteten Fragen.
             </p>
 
             <div className="space-y-4 mb-8">
               <div>
-                <label className="text-sm text-text-muted block mb-2">Fragenanzahl</label>
+                <label className="text-sm text-text-secondary block mb-2">Fragenanzahl</label>
                 <div className="flex gap-2">
                   {[10, 20, 30].map((n) => (
                     <button
                       key={n}
                       onClick={() => setConfig((c) => ({ ...c, count: n }))}
-                      className={`flex-1 py-2 rounded-lg border text-sm font-medium transition-colors ${
+                      className={cn(
+                        "flex-1 py-2.5 rounded-lg border-2 text-sm font-medium transition-all",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
                         config.count === n
-                          ? "border-accent-primary bg-accent-primary/10 text-accent-primary"
+                          ? "border-blue-500 bg-blue-500/10 text-blue-400"
                           : "border-border-subtle text-text-muted hover:border-border-panel"
-                      }`}
+                      )}
                     >
                       {n}
                     </button>
@@ -119,18 +138,21 @@ export default function ExamPage() {
               </div>
 
               <div>
-                <label className="text-sm text-text-muted block mb-2">Zeitlimit</label>
+                <label className="text-sm text-text-secondary block mb-2">Zeitlimit</label>
                 <div className="flex gap-2">
                   {[15, 30, 45].map((m) => (
                     <button
                       key={m}
                       onClick={() => setConfig((c) => ({ ...c, timeMinutes: m }))}
-                      className={`flex-1 py-2 rounded-lg border text-sm font-medium transition-colors ${
+                      className={cn(
+                        "flex-1 py-2.5 rounded-lg border-2 text-sm font-medium transition-all flex items-center justify-center gap-1.5",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
                         config.timeMinutes === m
-                          ? "border-accent-primary bg-accent-primary/10 text-accent-primary"
+                          ? "border-blue-500 bg-blue-500/10 text-blue-400"
                           : "border-border-subtle text-text-muted hover:border-border-panel"
-                      }`}
+                      )}
                     >
+                      <Clock className="w-3.5 h-3.5" />
                       {m} Min
                     </button>
                   ))}
@@ -140,11 +162,11 @@ export default function ExamPage() {
 
             <button
               onClick={startExam}
-              className="w-full py-3 rounded-xl bg-accent-primary text-white font-medium hover:bg-accent-secondary transition-colors"
+              className="w-full py-3.5 rounded-xl bg-gradient-blue text-white font-medium hover:opacity-90 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
             >
               Prüfung starten
             </button>
-          </div>
+          </motion.div>
         </main>
       </>
     )
@@ -155,7 +177,8 @@ export default function ExamPage() {
       <Navbar />
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8">
         <div className="max-w-2xl mx-auto space-y-6">
-          <div className="flex items-center gap-6">
+          {/* Blue-themed header bar */}
+          <div className="flex items-center gap-6 bg-blue-950/30 rounded-xl p-4 border border-blue-500/20">
             <div className="flex-1">
               <ProgressBar current={currentIndex + 1} total={questions.length} correctCount={correctCount} />
             </div>

@@ -18,7 +18,7 @@ function CustomPlayContent() {
   const count = parseInt(searchParams.get("count") || "20")
 
   const profile = PRESET_PROFILES.find((p) => p.id === profileId)
-  const focusChapters = profile?.focusChapters || [1, 2, 3]
+  const focusChapters: number[] = profile ? [...profile.focusChapters] : [1, 2, 3]
 
   // Build question pool with focus/cross split
   const focusCount = Math.round(count * (weight / 100))

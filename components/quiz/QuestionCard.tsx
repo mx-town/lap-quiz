@@ -15,6 +15,53 @@ interface QuestionCardProps {
   isFocus?: boolean
 }
 
+function getOptionStyle(
+  isSubmitted: boolean,
+  isCorrect: boolean,
+  isSelected: boolean,
+  optionIndex: string,
+  correctAnswer: string
+): string {
+  if (isSubmitted && optionIndex === correctAnswer) {
+    return "border-accent-success bg-accent-success/10 text-accent-success border-l-4"
+  }
+  if (isSubmitted && isSelected && optionIndex !== correctAnswer) {
+    return "border-accent-danger bg-accent-danger/10 text-accent-danger border-l-4"
+  }
+  if (isSelected) {
+    return "border-accent-primary bg-accent-primary/10 text-text-primary border-l-4"
+  }
+  return "border-border-subtle hover:border-border-panel text-text-secondary hover:bg-bg-tertiary/50"
+}
+
+function getInputStyle(isSubmitted: boolean, isCorrect: boolean): string {
+  if (isSubmitted && isCorrect) {
+    return "border-accent-success"
+  }
+  if (isSubmitted && !isCorrect) {
+    return "border-accent-danger"
+  }
+  return "border-border-subtle focus:border-accent-primary"
+}
+
+function getScenarioOptionStyle(
+  isSubmitted: boolean,
+  isSelected: boolean,
+  optionIndex: string,
+  correctIndices: string[]
+): string {
+  if (isSubmitted && correctIndices.includes(optionIndex)) {
+    return "border-accent-success bg-accent-success/10 text-accent-success border-l-4"
+  }
+  if (isSubmitted && isSelected && !correctIndices.includes(optionIndex)) {
+    return "border-accent-danger bg-accent-danger/10 text-accent-danger border-l-4"
+  }
+  if (isSelected) {
+    return "border-accent-primary bg-accent-primary/10 text-text-primary border-l-4"
+  }
+  return "border-border-subtle hover:border-border-panel text-text-secondary hover:bg-bg-tertiary/50"
+}
+
 export function QuestionCard({
   question,
   index,
@@ -53,12 +100,16 @@ export function QuestionCard({
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
-      className="w-full max-w-2xl mx-auto"
+      className={cn(
+        "w-full max-w-2xl mx-auto",
+        submitted && isCorrect && "animate-celebrate",
+        submitted && !isCorrect && "animate-shake"
+      )}
     >
       <div className="bg-bg-surface border border-border-subtle rounded-2xl p-6 md:p-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <span className="text-sm text-text-muted">
+          <span className="text-sm text-text-secondary">
             Frage {index + 1} von {total}
           </span>
           <div className="flex items-center gap-2">
@@ -87,21 +138,16 @@ export function QuestionCard({
 
         {/* Answer area */}
         {question.question_type === "multiple_choice" && question.options && (
-          <div className="space-y-3">
+          <div className="space-y-4">
             {question.options.map((option, i) => (
               <button
                 key={i}
                 onClick={() => !submitted && setSelected(String(i))}
                 disabled={submitted}
                 className={cn(
-                  "w-full text-left p-4 rounded-xl border transition-all",
-                  submitted && String(i) === question.correct_answer
-                    ? "border-accent-success bg-accent-success/10 text-accent-success"
-                    : submitted && String(i) === selected && String(i) !== question.correct_answer
-                    ? "border-accent-danger bg-accent-danger/10 text-accent-danger"
-                    : selected === String(i)
-                    ? "border-accent-primary bg-accent-primary/10 text-text-primary"
-                    : "border-border-subtle hover:border-border-panel text-text-secondary"
+                  "w-full text-left p-5 rounded-xl border-2 transition-all",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
+                  getOptionStyle(submitted, isCorrect, selected === String(i), String(i), question.correct_answer)
                 )}
               >
                 <span className="font-mono text-sm mr-3 opacity-50">
@@ -121,14 +167,9 @@ export function QuestionCard({
                 onClick={() => !submitted && setSelected(val)}
                 disabled={submitted}
                 className={cn(
-                  "flex-1 p-4 rounded-xl border text-center font-medium transition-all",
-                  submitted && val === question.correct_answer
-                    ? "border-accent-success bg-accent-success/10 text-accent-success"
-                    : submitted && val === selected && val !== question.correct_answer
-                    ? "border-accent-danger bg-accent-danger/10 text-accent-danger"
-                    : selected === val
-                    ? "border-accent-primary bg-accent-primary/10 text-text-primary"
-                    : "border-border-subtle hover:border-border-panel text-text-secondary"
+                  "flex-1 p-5 rounded-xl border-2 text-center font-medium transition-all",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
+                  getOptionStyle(submitted, isCorrect, selected === val, val, question.correct_answer)
                 )}
               >
                 {val === "true" ? "Richtig" : "Falsch"}
@@ -147,12 +188,9 @@ export function QuestionCard({
               disabled={submitted}
               placeholder="Antwort eingeben..."
               className={cn(
-                "w-full p-4 rounded-xl border bg-bg-tertiary text-text-primary placeholder-text-muted transition-all outline-none",
-                submitted && isCorrect
-                  ? "border-accent-success"
-                  : submitted && !isCorrect
-                  ? "border-accent-danger"
-                  : "border-border-subtle focus:border-accent-primary"
+                "w-full p-5 rounded-xl border-2 bg-bg-tertiary text-text-primary placeholder-text-muted transition-all outline-none",
+                "focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
+                getInputStyle(submitted, isCorrect)
               )}
             />
             {submitted && !isCorrect && (
@@ -164,8 +202,8 @@ export function QuestionCard({
         )}
 
         {question.question_type === "scenario" && question.options && (
-          <div className="space-y-3">
-            <p className="text-sm text-text-muted mb-4">
+          <div className="space-y-4">
+            <p className="text-sm text-text-secondary mb-4">
               Wähle die richtige(n) Maßnahme(n):
             </p>
             {question.options.map((option, i) => {
@@ -176,14 +214,9 @@ export function QuestionCard({
                   onClick={() => !submitted && setSelected(String(i))}
                   disabled={submitted}
                   className={cn(
-                    "w-full text-left p-4 rounded-xl border transition-all",
-                    submitted && correctIndices.includes(String(i))
-                      ? "border-accent-success bg-accent-success/10 text-accent-success"
-                      : submitted && String(i) === selected && !correctIndices.includes(String(i))
-                      ? "border-accent-danger bg-accent-danger/10 text-accent-danger"
-                      : selected === String(i)
-                      ? "border-accent-primary bg-accent-primary/10 text-text-primary"
-                      : "border-border-subtle hover:border-border-panel text-text-secondary"
+                    "w-full text-left p-5 rounded-xl border-2 transition-all",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
+                    getScenarioOptionStyle(submitted, selected === String(i), String(i), correctIndices)
                   )}
                 >
                   {option}
@@ -200,7 +233,7 @@ export function QuestionCard({
             disabled={
               (question.question_type === "fill_blank" ? !fillAnswer : selected === null)
             }
-            className="mt-6 w-full py-3 rounded-xl bg-accent-primary text-white font-medium transition-all hover:bg-accent-secondary disabled:opacity-30 disabled:cursor-not-allowed"
+            className="mt-6 w-full py-4 rounded-xl bg-accent-primary text-white font-medium transition-all hover:bg-accent-secondary disabled:opacity-30 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
           >
             Antwort bestätigen
           </button>
