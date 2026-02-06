@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useCallback, use } from "react"
+import { useState, useRef, useCallback } from "react"
 import Link from "next/link"
 import { Navbar } from "@/components/layout/Navbar"
 import { QuestionCard } from "@/components/quiz/QuestionCard"
@@ -10,8 +10,8 @@ import { Question, QuizResult, CHAPTERS } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
 import { checkAnswer } from "@/lib/quiz-engine"
 
-export default function ChapterQuizPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params)
+export default function ChapterQuizPage({ params }: { params: { id: string } }) {
+  const { id } = params
   const chapterNum = parseInt(id)
   const isValidChapter = !isNaN(chapterNum)
   const chapter = isValidChapter ? CHAPTERS.find((c) => c.number === chapterNum) : undefined
