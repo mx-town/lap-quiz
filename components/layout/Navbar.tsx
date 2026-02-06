@@ -50,7 +50,7 @@ export function Navbar() {
           target="_blank"
           className="text-[13px] font-medium uppercase tracking-wider text-text-secondary hover:text-accent-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary"
         >
-          Dashboard
+          Lexikon
         </Link>
       </div>
     </header>

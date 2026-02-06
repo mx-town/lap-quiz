@@ -189,6 +189,16 @@ export function QuestionCard({
           </button>
         )}
 
+        {/* Next button */}
+        {submitted && onNext && (
+          <button
+            onClick={onNext}
+            className="mt-4 w-full py-3 bg-bg-tertiary text-white font-medium transition-all hover:bg-border-subtle hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface uppercase tracking-wider text-[13px]"
+          >
+            Weiter
+          </button>
+        )}
+
         {/* Feedback */}
         {submitted && showFeedback && (
           <div
@@ -207,15 +217,7 @@ export function QuestionCard({
         )}
 
 
-        {/* Next button */}
-        {submitted && onNext && (
-          <button
-            onClick={onNext}
-            className="mt-4 w-full py-3 bg-bg-tertiary text-text-secondary font-medium transition-all hover:bg-border-subtle hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface uppercase tracking-wider text-[13px]"
-          >
-            Weiter
-          </button>
-        )}
+        
       </div>
     </div>
   )
