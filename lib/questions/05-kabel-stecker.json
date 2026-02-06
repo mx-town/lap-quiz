@@ -1,0 +1,620 @@
+{
+  "chapter": "05",
+  "title": "Kabel & Stecker",
+  "description": "Leitungen, Kabel, Steckverbindungen, CEE-Stecker, Aderfarben, Querschnittsberechnung, Verlegeart",
+  "questionCount": 36,
+  "questions": [
+    {
+      "id": "ks-001",
+      "q": "Welche Farbe hat der Schutzleiter (PE)?",
+      "options": [
+        "Blau-Weiß",
+        "Grün-Gelb",
+        "Braun-Rot",
+        "Schwarz-Grau"
+      ],
+      "correct": 1,
+      "explanation": "Der Schutzleiter (PE) ist nach der Norm EN 60446 immer grün-gelb gekennzeichnet. Diese Farbkombination ist ausschließlich dem PE vorbehalten und darf niemals für andere Leiter verwendet werden. So ist die Sicherheitsfunktion des Schutzleiters jederzeit eindeutig erkennbar.",
+      "difficulty": "leicht",
+      "tags": [
+        "aderfarben",
+        "schutzleiter"
+      ]
+    },
+    {
+      "id": "ks-002",
+      "q": "Welche Farbe hat der Neutralleiter (N)?",
+      "options": [
+        "Grün-Gelb",
+        "Blau",
+        "Grau-Weiß",
+        "Braun-Rot"
+      ],
+      "correct": 1,
+      "explanation": "Der Neutralleiter (N) wird nach der Norm HD 308 S2 immer in der Farbe Blau gekennzeichnet. Diese Farbzuordnung ist verbindlich und darf nicht für andere Leiter verwendet werden. Die eindeutige Kennzeichnung verhindert Verwechslungen bei Installations- und Wartungsarbeiten.",
+      "difficulty": "leicht",
+      "tags": [
+        "aderfarben",
+        "neutralleiter"
+      ]
+    },
+    {
+      "id": "ks-003",
+      "q": "Welche Farben haben die Außenleiter (L1, L2, L3) nach aktueller Norm?",
+      "options": [
+        "Rot, Gelb, Violett",
+        "Braun, Schwarz, Grau",
+        "Blau, Orange, Grün",
+        "Weiß, Türkis, Rosa"
+      ],
+      "correct": 1,
+      "explanation": "Nach dem Harmonisierungsdokument HD 308 S2 sind die Außenleiterfarben festgelegt: L1 = Braun, L2 = Schwarz, L3 = Grau. Die alten Farben (Schwarz, Rot, Blau) sind in neuen Installationen nicht mehr zulässig. Diese einheitliche Farbgebung erleichtert die europaweite Arbeit an elektrischen Anlagen.",
+      "difficulty": "mittel",
+      "tags": [
+        "aderfarben",
+        "aussenleiter"
+      ]
+    },
+    {
+      "id": "ks-004",
+      "q": "Was ist der Unterschied zwischen einer Leitung und einem Kabel?",
+      "options": [
+        "Leitungen haben eine Metallarmierung für die Direktverlegung, Kabel sind für Innenräume vorgesehen",
+        "Kabel haben einen verstärkten Außenmantel für Erdverlegung, Leitungen sind für Innenräume",
+        "Leitungen besitzen einen doppelten Isoliermantel für Feuchträume, Kabel sind für Trockenräume gedacht",
+        "Kabel verwenden ausschließlich Aluminiumleiter für Außenbereiche, Leitungen bestehen aus Kupferdrähten"
+      ],
+      "correct": 1,
+      "explanation": "Kabel besitzen einen verstärkten Außenmantel und sind für die Verlegung im Erdreich, im Außenbereich und bei starker mechanischer Beanspruchung geeignet. Leitungen hingegen sind für die Inneninstallation in Kabelkanälen, Rohren und trockenen Räumen konzipiert. Der robustere Aufbau von Kabeln schützt die Adern vor Feuchtigkeit und mechanischen Einflüssen.",
+      "difficulty": "mittel",
+      "tags": [
+        "kabel",
+        "leitung",
+        "unterschied"
+      ]
+    },
+    {
+      "id": "ks-005",
+      "q": "Was bedeutet die Bezeichnung NYM-J 3x1,5?",
+      "options": [
+        "Gummischlauchleitung mit PVC-Mantel, 3 Adern à 1,5mm², ohne Schutzleiter",
+        "Mantelleitung mit PVC-Isolierung, 3 Adern à 1,5mm², mit Schutzleiter",
+        "Steuerleitung mit XLPE-Isolierung, 3 Adern à 1,5mm², mit Abschirmung",
+        "Starkstromkabel mit PE-Isolierung, 3 Adern à 1,5mm², mit Erdungsdraht"
+      ],
+      "correct": 1,
+      "explanation": "Die Bezeichnung NYM-J schlüsselt sich wie folgt auf: N = Normleitung, Y = PVC-Isolierung, M = Mantelleitung, J = mit Schutzleiter (grün-gelb enthalten). Die Angabe 3x1,5 bedeutet 3 Adern mit jeweils 1,5 mm² Querschnitt. Diese Leitung ist die Standardleitung für die feste Verlegung in Gebäuden.",
+      "difficulty": "mittel",
+      "tags": [
+        "leitungsbezeichnung",
+        "nym"
+      ]
+    },
+    {
+      "id": "ks-006",
+      "q": "Was bedeutet das 'J' in der Leitungsbezeichnung (z.B. NYM-J)?",
+      "options": [
+        "Mit Jute-Ummantelung als Schutzschicht",
+        "Mit Schutzleiter (grün-gelb)",
+        "Mit zusätzlicher Bewehrung aus Stahl",
+        "Mit doppelter PVC-Isolierung innen"
+      ],
+      "correct": 1,
+      "explanation": "Das J in der Leitungsbezeichnung steht für 'mit Schutzleiter', also einer grün-gelben Ader im Kabel. Im Gegensatz dazu bedeutet O (z.B. NYM-O) 'ohne Schutzleiter'. Für Steckdosen- und Geräteanschlüsse wird grundsätzlich eine Leitung mit Schutzleiter (J) benötigt.",
+      "difficulty": "leicht",
+      "tags": [
+        "leitungsbezeichnung"
+      ]
+    },
+    {
+      "id": "ks-007",
+      "q": "Wofür steht 'H07V-U'?",
+      "options": [
+        "Nationale Gummileitung, 300/500V, XLPE-isoliert, feindrähtig (hochflexibel)",
+        "Harmonisierte Aderleitung, 450/750V, PVC-isoliert, eindrähtig (massiv)",
+        "Europäische Mantelleitung, 600/1000V, PE-isoliert, mehrdrähtig (flexibel)",
+        "Harmonisierte Steuerleitung, 300/500V, EPR-isoliert, seildrähtig (beweglich)"
+      ],
+      "correct": 1,
+      "explanation": "Die Bezeichnung H07V-U steht für: H = harmonisiert (europaweit genormt), 07 = Bemessungsspannung 450/750V, V = PVC-Isolierung, U = eindrähtig (massiver Kupferleiter). Diese Aderleitung wird für die feste Verlegung in Installationsrohren und Kabelkanälen verwendet.",
+      "difficulty": "mittel",
+      "tags": [
+        "leitungsbezeichnung",
+        "aderleitung"
+      ]
+    },
+    {
+      "id": "ks-008",
+      "q": "Was bedeutet 'U' und 'R' bei Leitungsbezeichnungen?",
+      "options": [
+        "U=ungeschirmt (ohne Abschirmung), R=geschirmt (mit Kupfergeflecht)",
+        "U=eindrähtig (massiv), R=mehrdrähtig (flexibel)",
+        "U=ummantelt (mit Außenmantel), R=ringförmig (auf Trommel geliefert)",
+        "U=unterirdisch (für Erdverlegung), R=rohrtauglich (für Leerrohr)"
+      ],
+      "correct": 1,
+      "explanation": "U steht für eindrähtig bzw. massiv (ein einzelner Kupferdraht) und eignet sich für die feste Verlegung. R steht für mehrdrähtig und bietet mehr Flexibilität beim Verlegen. Darüber hinaus gibt es noch K für feindrähtig, das bei besonders flexiblen Anschlussleitungen zum Einsatz kommt.",
+      "difficulty": "mittel",
+      "tags": [
+        "leitungsbezeichnung",
+        "aufbau"
+      ]
+    },
+    {
+      "id": "ks-009",
+      "q": "Welcher Mindestquerschnitt gilt für feste Installation in Wohnungen?",
+      "options": [
+        "0,75 mm²",
+        "1,5 mm²",
+        "2,5 mm²",
+        "4,0 mm²"
+      ],
+      "correct": 1,
+      "explanation": "Für die feste Installation in Wohngebäuden ist ein Mindestquerschnitt von 1,5 mm² vorgeschrieben, der für Beleuchtungsstromkreise und Steckdosen bis 16 A ausreichend ist. Für Verbraucher mit höherem Leistungsbedarf wie Elektroherde oder Durchlauferhitzer werden größere Querschnitte benötigt. Die Wahl des Querschnitts richtet sich nach der maximalen Strombelastung und der Leitungslänge.",
+      "difficulty": "leicht",
+      "tags": [
+        "querschnitt",
+        "installation"
+      ]
+    },
+    {
+      "id": "ks-010",
+      "q": "Welcher Querschnitt wird für einen Elektroherd (400V, 3-phasig) typischerweise verwendet?",
+      "options": [
+        "1,5 mm²",
+        "2,5 mm²",
+        "4,0 mm²",
+        "6,0 mm²"
+      ],
+      "correct": 1,
+      "explanation": "Für einen Elektroherd mit Drehstromanschluss (400 V) wird üblicherweise ein Querschnitt von 2,5 mm² bei einer Absicherung von 16 A verwendet. Bei längeren Leitungswegen oder einer Absicherung mit 20 A kann auch ein Querschnitt von 4 mm² erforderlich sein. Die genaue Dimensionierung hängt von der Leitungslänge, der Verlegeart und dem Spannungsfall ab.",
+      "difficulty": "mittel",
+      "tags": [
+        "querschnitt",
+        "herd"
+      ]
+    },
+    {
+      "id": "ks-011",
+      "q": "Was ist ein CEE-Stecker?",
+      "options": [
+        "Ein genormter Haushaltsstecker für Wechselstrom (1-phasig) bei niedrigen Strömen",
+        "Ein genormter Industriestecker für Drehstrom (3-phasig) oder hohe Ströme",
+        "Ein genormter Datenstecker für Netzwerktechnik (RJ45) mit Schirmung",
+        "Ein genormter Antennenstecker für Koaxialkabel (75 Ohm) mit Überwurfmutter"
+      ],
+      "correct": 1,
+      "explanation": "CEE-Stecker sind genormte Industriesteckvorrichtungen nach der internationalen Norm IEC 60309 und werden für Drehstrom- und Starkstromanwendungen eingesetzt. Sie sind in verschiedenen Stromstärken (16 A, 32 A, 63 A, 125 A) und als Ein- oder Dreiphasenversion erhältlich. Die Gehäusefarbe gibt Auskunft über die jeweilige Nennspannung.",
+      "difficulty": "leicht",
+      "tags": [
+        "cee",
+        "stecker"
+      ]
+    },
+    {
+      "id": "ks-012",
+      "q": "Welche Farbe hat ein CEE-Stecker für 400V Drehstrom?",
+      "options": [
+        "Blau",
+        "Rot",
+        "Gelb",
+        "Violett"
+      ],
+      "correct": 1,
+      "explanation": "CEE-Stecker für 400 V Drehstrom (380-415 V) sind immer rot gekennzeichnet. Die Farbcodierung ist in der Norm IEC 60309 festgelegt: Blau steht für 230 V Wechselstrom, Gelb für 100-130 V und Grün für Sonderfrequenzen über 50 Hz. So ist auf den ersten Blick erkennbar, welche Spannung anliegt.",
+      "difficulty": "leicht",
+      "tags": [
+        "cee",
+        "farbcode"
+      ]
+    },
+    {
+      "id": "ks-013",
+      "q": "Welche Farbe hat ein CEE-Stecker für 230V (Einphasig)?",
+      "options": [
+        "Rot",
+        "Blau",
+        "Gelb",
+        "Grau"
+      ],
+      "correct": 1,
+      "explanation": "CEE-Stecker für 230 V Wechselstrom (200-250 V) sind blau gekennzeichnet, wie zum Beispiel der CEE 16 A 3-polig, der häufig auf Campingplätzen und Baustellen eingesetzt wird. Rot hingegen kennzeichnet Drehstromstecker mit 400 V. Durch die Farbcodierung und unterschiedliche Steckkontakte wird ein Vertauschen der Systeme sicher verhindert.",
+      "difficulty": "leicht",
+      "tags": [
+        "cee",
+        "farbcode"
+      ]
+    },
+    {
+      "id": "ks-014",
+      "q": "Was bedeutet die Kennzeichnung 'CEE 16A 5-polig'?",
+      "options": [
+        "16 Ampere Nennstrom, 5 Außenleiter (L1, L2, L3, L4, L5)",
+        "16 Ampere Nennstrom, 5 Kontakte (L1, L2, L3, N, PE)",
+        "16 Ampere Absicherung, 5 Phasen (Phase 1 bis Phase 5)",
+        "16 Ampere Grenzstrom, 5 Adern (Außenleiter und Steuerleiter)"
+      ],
+      "correct": 1,
+      "explanation": "Die Bezeichnung CEE 16 A 5-polig bedeutet: 16 Ampere Nennstrom und 5 Kontaktstifte für die drei Außenleiter L1, L2, L3, den Neutralleiter N und den Schutzleiter PE. Diese Konfiguration wird für den Anschluss von Drehstromverbrauchern an das 400-V-Netz verwendet. Der 5-polige Stecker ist der gebräuchlichste CEE-Stecker in der Gebäudeinstallation.",
+      "difficulty": "mittel",
+      "tags": [
+        "cee",
+        "bezeichnung"
+      ]
+    },
+    {
+      "id": "ks-015",
+      "q": "Was ist eine Schuko-Steckdose?",
+      "options": [
+        "Eine genormte Feuchtraumdose mit integrierten Dichtungsringen für 400V Drehstromanschluss",
+        "Eine Schutzkontakt-Steckdose mit seitlichen Erdungskontakten für 230V",
+        "Eine genormte Verteilerdose mit rückseitigen Schraubklemmen für 230V Festanschluss",
+        "Eine genormte Aufputzdose mit frontseitigen Berührungsschutzkappen für 400V Kraftstrom"
+      ],
+      "correct": 1,
+      "explanation": "Schuko steht für 'Schutzkontakt' und bezeichnet eine Steckdose mit seitlichen Erdungskontakten, die beim Einstecken des Steckers vor den stromführenden Kontakten den Schutzleiter (PE) verbinden. Diese Steckdosen sind für maximal 16 A und 230 V ausgelegt. Durch den voreilenden Schutzkontakt ist die Erdung bereits hergestellt, bevor Spannung am Gerät anliegt.",
+      "difficulty": "leicht",
+      "tags": [
+        "schuko",
+        "steckdose"
+      ]
+    },
+    {
+      "id": "ks-016",
+      "q": "Warum muss der Schutzleiter im Stecker länger sein als die anderen Leiter?",
+      "options": [
+        "Damit er bei Kurzschluss den Fehlerstrom schneller ableiten kann",
+        "Damit er bei Zugbelastung als letzter abreißt",
+        "Damit er bei Erwärmung die Wärme besser aufnehmen kann",
+        "Damit er bei Überspannung die Isolation besser schützt"
+      ],
+      "correct": 1,
+      "explanation": "Der Schutzleiter (PE) muss im Stecker länger ausgeführt werden als die stromführenden Leiter, damit bei einer Zugbelastung oder einem Abreißen der Leitung die Schutzleiterverbindung als allerletzte getrennt wird. So bleibt die lebensrettende Schutzfunktion am längsten erhalten. Diese Anforderung ist in den Installationsvorschriften verbindlich festgelegt.",
+      "difficulty": "mittel",
+      "tags": [
+        "schutzleiter",
+        "installation"
+      ]
+    },
+    {
+      "id": "ks-017",
+      "q": "Was muss beim Anschluss von feindrähtigen Leitern beachtet werden?",
+      "options": [
+        "Litzen müssen vorverzinnt und dann verlötet werden",
+        "Aderendhülsen verwenden, nicht verlöten",
+        "Einzeldrähte müssen verdrillt und verschweißt werden",
+        "Litzenenden müssen umgebogen und verpresst werden"
+      ],
+      "correct": 1,
+      "explanation": "Feindrahtige Leiter müssen mit Aderendhülsen versehen werden, bevor sie in Klemmen angeschlossen werden. Ein Verlöten der Aderenden ist nicht zulässig, da Lötzinn durch den sogenannten Kaltfluss-Effekt nachgibt und lockere Klemmstellen entstehen können. Die Aderendhülse verhindert zudem, dass einzelne Litzen abgequetscht oder herausgedrückt werden.",
+      "difficulty": "mittel",
+      "tags": [
+        "aderendhuelse",
+        "anschluss"
+      ]
+    },
+    {
+      "id": "ks-018",
+      "q": "Warum dürfen Aderenden nicht verlötet werden?",
+      "options": [
+        "Weil Lötzinn den Leitungswiderstand unzulässig verringert und Kurzschlüsse verursacht",
+        "Weil Lötzinn Kaltfluss hat und lockere Klemmstellen entstehen",
+        "Weil Lötzinn bei Erwärmung giftige Dämpfe entwickelt und gesundheitsschädlich wirkt",
+        "Weil Lötzinn die Isolierung der benachbarten Adern thermisch beschädigen kann"
+      ],
+      "correct": 1,
+      "explanation": "Lötzinn unterliegt dem sogenannten Kaltfluss, das heißt es verformt sich langsam unter Druck, auch ohne Wärmeeinwirkung. Dadurch lockert sich mit der Zeit die Klemmverbindung, was zu einem erhöhten Übergangswiderstand führt. Die Folge ist eine gefährliche Erwärmung an der Klemmstelle, die im schlimmsten Fall einen Brand auslösen kann.",
+      "difficulty": "mittel",
+      "tags": [
+        "loeten",
+        "klemmen"
+      ]
+    },
+    {
+      "id": "ks-019",
+      "q": "Welche Verlegearten für Leitungen gibt es?",
+      "options": [
+        "Ausschließlich Aufputz an der Wand, in Installationskanälen und auf offenen Kabeltrassen montiert",
+        "Aufputz, Unterputz, in Rohren, in Kabelkanälen, auf Kabelpritschen, in der Erde",
+        "Ausschließlich Unterputz im Mauerwerk, in Hohlwänden und unter Estrich verlegt eingegossen",
+        "Ausschließlich in Leerrohren gezogen, in Kabelschächten geführt und in Bodenkanälen montiert"
+      ],
+      "correct": 1,
+      "explanation": "Für die Verlegung von Leitungen stehen zahlreiche Verlegearten zur Verfügung: Aufputz (AP), Unterputz (UP), in Installationsrohren, in Kabelkanälen, auf Kabelpritschen, direkt im Erdreich (nur bei Kabeln) und im Beton. Die Wahl der Verlegeart hängt von den baulichen Gegebenheiten und dem erforderlichen Schutzgrad ab. Jede Verlegeart beeinflusst auch die zulässige Strombelastbarkeit der Leitung.",
+      "difficulty": "leicht",
+      "tags": [
+        "verlegeart",
+        "installation"
+      ]
+    },
+    {
+      "id": "ks-020",
+      "q": "Welche Leitung ist für die Verlegung im Freien/Erdreich geeignet?",
+      "options": [
+        "NYM-J (Mantelleitung) oder H07V-U Aderleitung",
+        "NYY-J (Erdkabel) oder NYCWY",
+        "H05VV-F (Schlauchleitung) oder H03VV-F Geräteleitung",
+        "NYIF-J (Stegleitung) oder NYM-O Mantelleitung"
+      ],
+      "correct": 1,
+      "explanation": "Für die Verlegung im Erdreich sind ausschließlich Kabel mit verstärktem Mantel wie NYY (PVC-Außenmantel) oder NYCWY (mit konzentrischer Abschirmung) zulässig. Die Standard-Mantelleitung NYM ist nicht für die Erdverlegung geeignet, da ihr Mantel nicht ausreichend widerstandsfähig gegen Feuchtigkeit und mechanische Belastung ist. Im Außenbereich muss immer auf UV-Beständigkeit und Feuchtigkeitsschutz geachtet werden.",
+      "difficulty": "mittel",
+      "tags": [
+        "erdverlegung",
+        "kabel"
+      ]
+    },
+    {
+      "id": "ks-021",
+      "q": "Was ist bei der Verlegung von Kabeln im Erdreich zu beachten?",
+      "options": [
+        "Mindesttiefe 30 cm, Betonummantelung, Schutzrohr, Markierungsband",
+        "Mindesttiefe 60cm, Sandbett, Abdeckung, Warnband",
+        "Mindesttiefe 100 cm, Kiesbett, Stahlabdeckung, Erdungsdraht",
+        "Mindesttiefe 40 cm, Schotterbett, Kunststoffhaube, Kupferband"
+      ],
+      "correct": 1,
+      "explanation": "Bei der Erdverlegung von Kabeln ist eine Mindesttiefe von 60 cm (unter Fahrbahnen 80 cm) einzuhalten, das Kabel muss auf einem 10 cm dicken Sandbett liegen und mit Kabelabdecksteinen oder -hauben geschützt werden. Zusätzlich wird oberhalb des Kabels ein Warnband verlegt, um bei späteren Grabungsarbeiten vor dem darunterliegenden Kabel zu warnen. Diese Maßnahmen schützen das Kabel vor mechanischer Beschädigung und erleichtern das Wiederauffinden.",
+      "difficulty": "mittel",
+      "tags": [
+        "erdverlegung",
+        "vorschriften"
+      ]
+    },
+    {
+      "id": "ks-022",
+      "q": "Wovon hängt die Strombelastbarkeit einer Leitung ab?",
+      "options": [
+        "Vom Querschnitt, der Leitungslänge, dem Isoliermaterial und dem Nennstrom der Sicherung",
+        "Vom Querschnitt, der Verlegeart, der Umgebungstemperatur und der Häufung",
+        "Vom Querschnitt, der Netzspannung, dem Leistungsfaktor und der Netzfrequenz im Stromkreis",
+        "Vom Querschnitt, dem Leitermaterial, dem Kabelgewicht und der Anzahl der Steckdosen"
+      ],
+      "correct": 1,
+      "explanation": "Die Strombelastbarkeit einer Leitung hängt von mehreren Faktoren ab: dem Leiterquerschnitt, der Verlegeart (die bestimmt, wie gut die Wärme abgeführt werden kann), der Umgebungstemperatur und der Häufung (mehrere Leitungen nebeneinander). Bei ungünstigen Bedingungen wie hoher Umgebungstemperatur oder enger Bündelung muss der zulässige Strom durch Korrekturfaktoren reduziert werden.",
+      "difficulty": "mittel",
+      "tags": [
+        "strombelastbarkeit",
+        "faktoren"
+      ]
+    },
+    {
+      "id": "ks-023",
+      "q": "Wie wird der erforderliche Leitungsquerschnitt bestimmt?",
+      "options": [
+        "Nach der Nennspannung, der Leitungslänge und dem Leistungsfaktor des Verbrauchers",
+        "Nach Strombelastbarkeit, Spannungsfall und Kurzschlussfestigkeit",
+        "Nach dem Leitermaterial, der Isolationsklasse und dem Außendurchmesser der Leitung",
+        "Nach der Umgebungstemperatur, der Verlegeart und dem Nennstrom der Vorsicherung"
+      ],
+      "correct": 1,
+      "explanation": "Der erforderliche Leitungsquerschnitt wird anhand von drei Kriterien bestimmt: der thermischen Strombelastbarkeit, dem zulässigen Spannungsfall (max. 3-4 %) und der Kurzschlussfestigkeit. Aus allen drei Berechnungen ergibt sich jeweils ein Mindestquerschnitt, und der größte dieser Werte ist maßgebend. So wird sichergestellt, dass die Leitung in jeder Betriebssituation sicher funktioniert.",
+      "difficulty": "schwer",
+      "tags": [
+        "querschnitt",
+        "berechnung"
+      ]
+    },
+    {
+      "id": "ks-024",
+      "q": "Wie groß darf der Spannungsfall maximal sein?",
+      "options": [
+        "1% für Beleuchtung, 3% für andere Verbraucher (ab Hauptverteilung)",
+        "3% für Beleuchtung, 5% für andere Verbraucher (ab Zähler)",
+        "5% für Beleuchtung, 8% für andere Verbraucher (ab Hausanschluss)",
+        "2% für Beleuchtung, 4% für andere Verbraucher (ab Transformator)"
+      ],
+      "correct": 1,
+      "explanation": "Nach DIN 18015 darf der Spannungsfall vom Zähler bis zum Verbraucher maximal 3 % für Beleuchtungsstromkreise und 5 % für andere Verbraucher betragen. Ein zu hoher Spannungsfall führt bei Beleuchtung zu sichtbarem Flackern und bei Motoren zu Anlaufproblemen. Deshalb muss bei langen Leitungswegen eventuell ein größerer Querschnitt gewählt werden.",
+      "difficulty": "mittel",
+      "tags": [
+        "spannungsfall",
+        "grenzwerte"
+      ]
+    },
+    {
+      "id": "ks-025",
+      "q": "Wie berechnet man den Spannungsfall?",
+      "options": [
+        "ΔU = U × I × cos φ / P (für Gleichstrom)",
+        "ΔU = 2 × I × L × ρ / A (für Wechselstrom)",
+        "ΔU = P × L / (U × A × κ) (für Drehstrom)",
+        "ΔU = I² × R × L / (2 × A) (für Mischstrom)"
+      ],
+      "correct": 1,
+      "explanation": "Der Spannungsfall bei Wechselstrom berechnet sich nach der Formel: ΔU = (2 x I x L x p) / A, wobei I der Strom, L die Leitungslänge, p der spezifische Widerstand und A der Querschnitt ist. Der Faktor 2 berücksichtigt den Hin- und Rückleiter der Stromschleife. Für Kupfer beträgt der spezifische Widerstand p(Cu) = 0,0178 Ohm mal mm2/m.",
+      "difficulty": "schwer",
+      "tags": [
+        "spannungsfall",
+        "berechnung"
+      ]
+    },
+    {
+      "id": "ks-026",
+      "q": "Was ist der PEN-Leiter?",
+      "options": [
+        "Ein getrennter Schutzleiter und Außenleiter (PE + L) im TN-S-System",
+        "Kombinierter Schutz- und Neutralleiter (PE + N) im TN-C-System",
+        "Ein zusätzlicher Potentialausgleichsleiter (PA + N) im TT-System",
+        "Ein isolierter Funktionserdungsleiter (FE + N) im IT-System"
+      ],
+      "correct": 1,
+      "explanation": "Der PEN-Leiter ist ein kombinierter Leiter, der gleichzeitig die Funktion des Schutzleiters (PE) und des Neutralleiters (N) übernimmt und wird ausschließlich im TN-C-Netz verwendet. Er führt den Betriebsstrom zurück zum Transformator und dient zugleich als Schutzleiter für den Fehlerschutz. Der Mindestquerschnitt beträgt 10 mm² Kupfer, und der PEN-Leiter darf niemals geschaltet oder durch eine Sicherung unterbrochen werden.",
+      "difficulty": "mittel",
+      "tags": [
+        "pen",
+        "netzsysteme"
+      ]
+    },
+    {
+      "id": "ks-027",
+      "q": "Welche Mindestquerschnitte gelten für den PEN-Leiter?",
+      "options": [
+        "6 mm² Kupfer oder 10 mm² Aluminium",
+        "10 mm² Kupfer oder 16 mm² Aluminium",
+        "16 mm² Kupfer oder 25 mm² Aluminium",
+        "4 mm² Kupfer oder 6 mm² Aluminium"
+      ],
+      "correct": 1,
+      "explanation": "Für den PEN-Leiter gilt ein Mindestquerschnitt von 10 mm² bei Kupfer oder 16 mm² bei Aluminium, um eine sichere Strom- und Schutzfunktion zu gewährleisten. Der PEN-Leiter darf nicht geschaltet, nicht durch Sicherungen geschützt und nicht unterbrochen werden. Bei kleineren Querschnitten muss eine Aufteilung in getrennte PE- und N-Leiter (TN-S-System) erfolgen.",
+      "difficulty": "mittel",
+      "tags": [
+        "pen",
+        "querschnitt"
+      ]
+    },
+    {
+      "id": "ks-030",
+      "q": "Welches Material wird für Installationsleitungen verwendet?",
+      "options": [
+        "Aluminium (Al) für alle Querschnitte, darüber hinaus auch verzinntes Kupfer (Cu-Sn)",
+        "Kupfer (Cu) für Querschnitte bis 10mm², darüber auch Aluminium (Al)",
+        "Edelstahl (V2A) für Querschnitte bis 16mm², darüber auch beschichtetes Kupfer (Cu-Ni)",
+        "Messing (CuZn) für Querschnitte bis 6mm², darüber auch versilbertes Aluminium (Al-Ag)"
+      ],
+      "correct": 1,
+      "explanation": "Kupfer ist das Standardmaterial für Installationsleitungen in der Gebäudeinstallation, da es eine hervorragende elektrische Leitfähigkeit besitzt und sich gut verarbeiten lässt. Aluminium wird aufgrund seiner geringeren Leitfähigkeit und Korrosionsanfälligkeit nur bei größeren Querschnitten ab etwa 16 mm² eingesetzt, vor allem in der Energieverteilung. Bei Aluminiumleitern sind spezielle Klemmen und Verbindungstechniken erforderlich, um Kontaktkorrosion zu vermeiden.",
+      "difficulty": "mittel",
+      "tags": [
+        "material",
+        "leiter"
+      ]
+    },
+    {
+      "id": "ks-031",
+      "q": "Was ist eine Mantelleitung?",
+      "options": [
+        "Eine Leitung mit blanken Adern und einer schützenden Metallabschirmung außen",
+        "Eine Leitung mit isolierten Adern und zusätzlichem Außenmantel",
+        "Eine Leitung mit verseilten Drähten und einer tragenden Stahlarmierung innen",
+        "Eine Leitung mit imprägnierten Adern und einem ölgetränkten Papierwickel außen"
+      ],
+      "correct": 1,
+      "explanation": "Eine Mantelleitung, wie zum Beispiel die weit verbreitete NYM-Leitung, besteht aus mehreren einzeln isolierten Adern, die von einem gemeinsamen Außenmantel umgeben sind. Dieser Mantel bietet zusätzlichen mechanischen Schutz und erleichtert die Handhabung bei der Installation. Mantelleitungen werden für die feste Verlegung in trockenen und feuchten Innenräumen eingesetzt.",
+      "difficulty": "leicht",
+      "tags": [
+        "mantelleitung",
+        "aufbau"
+      ]
+    },
+    {
+      "id": "ks-032",
+      "q": "Wofür steht 'H05VV-F'?",
+      "options": [
+        "Nationale starre Installationsleitung, 450/750V, XLPE-isoliert und -ummantelt",
+        "Harmonisierte flexible Schlauchleitung, 300/500V, PVC-isoliert und -ummantelt",
+        "Europäische halogenfreie Steuerleitung, 600/1000V, PE-isoliert und -ummantelt",
+        "Harmonisierte ölbeständige Gummileitung, 300/500V, EPR-isoliert und -ummantelt"
+      ],
+      "correct": 1,
+      "explanation": "Die Bezeichnung H05VV-F steht für: H = harmonisiert (europaweit genormt), 05 = Bemessungsspannung 300/500 V, V = PVC-Isolierung, V = PVC-Mantel, F = feindrähtig (flexibel). Diese flexible Schlauchleitung wird typischerweise als Anschlussleitung für Haushaltsgeräte wie Waschmaschinen, Staubsauger oder Küchengeräte verwendet.",
+      "difficulty": "mittel",
+      "tags": [
+        "leitungsbezeichnung",
+        "flexibel"
+      ]
+    },
+    {
+      "id": "ks-033",
+      "q": "Was bedeutet IP44 bei einer Steckdose?",
+      "options": [
+        "Schutz gegen groben Staub ab 5mm und kurzzeitiges Untertauchen in Wasser",
+        "Schutz gegen feste Fremdkörper >1mm und Spritzwasser",
+        "Schutz gegen feinen Staub ab 0,1mm und starken Wasserstrahl aus Düsen",
+        "Schutz gegen Drahtberührung ab 2,5mm und leichten Sprühnebel bei Regen"
+      ],
+      "correct": 1,
+      "explanation": "Die Schutzart IP44 besteht aus zwei Ziffern: Die erste 4 bedeutet Schutz gegen das Eindringen fester Fremdkörper mit einem Durchmesser größer als 1 mm, die zweite 4 bedeutet Schutz gegen Spritzwasser aus allen Richtungen. Steckdosen mit IP44 sind für geschützte Außenbereiche wie überdachte Terrassen oder Balkone geeignet. Für ungeschützte Außenbereiche wird mindestens IP55 empfohlen.",
+      "difficulty": "mittel",
+      "tags": [
+        "schutzart",
+        "ip"
+      ]
+    },
+    {
+      "id": "ks-035",
+      "q": "Was ist ein Kabelkanal?",
+      "options": [
+        "Ein begehbarer Betonschacht zur Unterflurverlegung von Erdkabeln in Gebäuden",
+        "Ein Kunststoff- oder Metallprofil zur Aufputzverlegung von Leitungen",
+        "Ein eingegossenes Stahlrohr zur Unterputzverlegung von Starkstromleitungen im Mauerwerk",
+        "Ein flexibler Wellschlauch zur Hohlraumverlegung von Datenleitungen in Zwischendecken"
+      ],
+      "correct": 1,
+      "explanation": "Ein Kabelkanal ist ein Profil aus Kunststoff oder Metall, das für die saubere und geordnete Aufputzverlegung von Leitungen an Wänden und Decken verwendet wird. Er besitzt einen abnehmbaren Deckel, der eine einfache Nachinstallation und Änderung der Leitungsführung ermöglicht. Kabelkanäle sind in verschiedenen Größen erhältlich und eignen sich besonders für die nachträgliche Elektroinstallation.",
+      "difficulty": "leicht",
+      "tags": [
+        "kabelkanal",
+        "verlegung"
+      ]
+    },
+    {
+      "id": "ks-036",
+      "q": "Was ist eine Kabelverschraubung?",
+      "options": [
+        "Eine Kabelklemme zur Potentialausgleichsverbindung und Schirmanbindung an Gehäusen",
+        "Eine Einführung mit Zugentlastung und IP-Schutz für Kabel in Gehäuse",
+        "Eine Kabelmuffe zur wasserdichten Verbindung und Aderverspleißung im Erdreich",
+        "Eine Kabelschelle zur Befestigung und Lagesicherung von Kabeln an Kabelpritschen"
+      ],
+      "correct": 1,
+      "explanation": "Eine Kabelverschraubung dient der dichten Einführung von Kabeln und Leitungen in Gehäuse, Verteilerkästen oder Schaltschränke. Sie bietet gleichzeitig Zugentlastung und stellt den erforderlichen IP-Schutz an der Einführungsstelle sicher. Die Größe der Verschraubung wird nach dem Außendurchmesser des Kabels gewählt und ist in metrischen Größen (M12, M16, M20 usw.) genormt.",
+      "difficulty": "mittel",
+      "tags": [
+        "kabelverschraubung",
+        "montage"
+      ]
+    },
+    {
+      "id": "ks-038",
+      "q": "Welcher Biegeradius ist bei Leitungen einzuhalten?",
+      "options": [
+        "Mindestens 1x bis 3x Außendurchmesser, je nach Isoliermaterial",
+        "Mindestens 3× bis 15× Außendurchmesser, je nach Leitungstyp",
+        "Mindestens 8x bis 25x Außendurchmesser, je nach Verlegemethode",
+        "Mindestens 2x bis 6x Außendurchmesser, je nach Leiterquerschnitt"
+      ],
+      "correct": 1,
+      "explanation": "Der einzuhaltende Mindestbiegeradius hängt vom Leitungstyp ab: Bei NYM-Mantelleitungen beträgt er mindestens das 4-fache des Außendurchmessers, bei flexiblen Leitungen mindestens das 3-fache und bei Datenkabeln kann er bis zum 15-fachen betragen. Ein zu enger Biegeradius kann die Isolierung beschädigen, den Leiter quetschen und zu Kurzschlüssen oder Kabelbrüchen führen. Die Herstellerangaben auf dem Datenblatt sind stets zu beachten.",
+      "difficulty": "mittel",
+      "tags": [
+        "biegeradius",
+        "verlegung"
+      ]
+    },
+    {
+      "id": "ks-039",
+      "q": "Was ist bei der Durchführung von Kabeln durch Wände zu beachten?",
+      "options": [
+        "Blitzschutz: Durchführungen müssen mit Überspannungsableitern abgesichert werden",
+        "Brandschutz: Durchführungen müssen feuerhemmend verschlossen werden",
+        "Feuchtigkeitsschutz: Durchführungen müssen mit Dampfsperrenfolie abgedichtet werden",
+        "Schallschutz: Durchführungen müssen mit schalldämmenden Materialien ausgefüllt werden"
+      ],
+      "correct": 1,
+      "explanation": "Bei Kabeldurchführungen durch Brandwände und Decken müssen die Öffnungen mit zugelassenen Brandschottsystemen feuerhemmend verschlossen werden, um die Feuerwiderstandsklasse der Wand aufrechtzuerhalten. Ohne diese Maßnahme könnten sich Feuer und Rauch über die Kabelöffnungen in andere Brandabschnitte ausbreiten. Die verwendeten Brandschotts müssen bauaufsichtlich zugelassen und fachgerecht eingebaut sein.",
+      "difficulty": "mittel",
+      "tags": [
+        "brandschutz",
+        "durchfuehrung"
+      ]
+    },
+    {
+      "id": "ks-040",
+      "q": "Was ist eine Zugentlastung und wozu dient sie?",
+      "options": [
+        "Eine elektrische Absicherung, die Überspannungskräfte vom Netz auf den Ableiter überträgt",
+        "Mechanische Sicherung, die Zugkräfte vom Kabel auf das Gehäuse überträgt",
+        "Eine thermische Schutzeinrichtung, die Wärmebelastungen vom Leiter auf das Kühlblech überträgt",
+        "Eine elektromagnetische Abschirmung, die Störimpulse vom Kabel auf die Erdung ableitet"
+      ],
+      "correct": 1,
+      "explanation": "Eine Zugentlastung ist eine mechanische Vorrichtung, die dafür sorgt, dass Zugkräfte am Kabel auf das Gehäuse oder den Stecker übertragen werden und nicht auf die empfindlichen Klemmstellen wirken. Ohne Zugentlastung könnten die Adern an den Klemmen abreißen, was zu Kurzschlüssen oder gefährlichen offenen Leitungen führen kann. Die Zugentlastung ist bei allen elektrischen Anschlüssen und Steckern vorgeschrieben.",
+      "difficulty": "leicht",
+      "tags": [
+        "zugentlastung",
+        "montage"
+      ]
+    }
+  ]
+}

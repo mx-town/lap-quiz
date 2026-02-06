@@ -1,0 +1,637 @@
+{
+  "chapter": "09",
+  "title": "SPS & Steuerung",
+  "description": "SPS-Aufbau, Programmierung, Ein-/Ausgänge, Sensoren, Aktoren, Bussysteme, Sicherheitssteuerungen",
+  "questionCount": 37,
+  "questions": [
+    {
+      "id": "sps-001",
+      "q": "Was bedeutet SPS?",
+      "options": [
+        "Synchrone Prozessor-Schaltung",
+        "Speicherprogrammierbare Steuerung",
+        "Serielle Programmier-Schnittstelle",
+        "Signalverarbeitende Prozess-Steuerung"
+      ],
+      "correct": 1,
+      "explanation": "SPS steht für Speicherprogrammierbare Steuerung und ist die deutsche Bezeichnung für einen Industriecomputer zur Automatisierung. Im Englischen wird die Abkürzung PLC (Programmable Logic Controller) verwendet. Die SPS wird in nahezu allen industriellen Fertigungsprozessen eingesetzt.",
+      "difficulty": "leicht",
+      "tags": [
+        "sps",
+        "grundlagen"
+      ]
+    },
+    {
+      "id": "sps-002",
+      "q": "Aus welchen Hauptkomponenten besteht eine SPS?",
+      "options": [
+        "Relais, Schaltschrank, Sicherungen, Klemmenleiste, Gehäuse",
+        "CPU, Eingabebaugruppen, Ausgabebaugruppen, Stromversorgung, Speicher",
+        "Motor, Frequenzumrichter, Encoder, Bremswiderstand, Lüfter",
+        "Transformator, Gleichrichter, Wechselrichter, Kondensator, Drossel"
+      ],
+      "correct": 1,
+      "explanation": "Eine SPS besteht aus fünf Hauptkomponenten: der CPU zur Programmverarbeitung, den Eingabebaugruppen für digitale und analoge Signale, den Ausgabebaugruppen zur Ansteuerung von Aktoren, der Stromversorgung sowie dem Speicher für Programm und Daten. Zusätzlich verfügt sie über Kommunikationsschnittstellen für den Datenaustausch.",
+      "difficulty": "leicht",
+      "tags": [
+        "sps",
+        "aufbau"
+      ]
+    },
+    {
+      "id": "sps-003",
+      "q": "Was ist die Aufgabe der CPU in einer SPS?",
+      "options": [
+        "Bereitstellung der Spannung, Versorgung aller Baugruppen",
+        "Verarbeitung des Programms, Steuerung aller Komponenten",
+        "Erfassung der Signale, Umwandlung aller Messwerte",
+        "Übertragung der Daten, Verwaltung aller Netzwerke"
+      ],
+      "correct": 1,
+      "explanation": "Die CPU ist das Herzstück der SPS und verarbeitet zyklisch das gespeicherte Anwenderprogramm. Sie liest die Eingänge, führt die programmierten Verknüpfungen aus und schreibt die Ergebnisse auf die Ausgänge. Zusätzlich überwacht sie das System, verwaltet den Speicher und steuert die Kommunikation mit anderen Geräten.",
+      "difficulty": "leicht",
+      "tags": [
+        "sps",
+        "cpu"
+      ]
+    },
+    {
+      "id": "sps-004",
+      "q": "Was sind digitale Eingänge (DI)?",
+      "options": [
+        "Eingänge für analoge Signale (stufenlos)",
+        "Eingänge für binäre Signale (0 oder 1)",
+        "Ausgänge für digitale Signale (getaktet)",
+        "Eingänge für serielle Signale (Buskommunikation)"
+      ],
+      "correct": 1,
+      "explanation": "Digitale Eingänge erfassen binäre Zustände, also nur die Werte 0 (aus) oder 1 (ein). Sie werden zum Anschluss von Tastern, Schaltern und Sensoren mit Schaltsignal verwendet. Typischerweise arbeiten sie mit einer Signalspannung von 24V DC.",
+      "difficulty": "leicht",
+      "tags": [
+        "sps",
+        "eingaenge"
+      ]
+    },
+    {
+      "id": "sps-005",
+      "q": "Was sind analoge Eingänge (AI)?",
+      "options": [
+        "Eingänge für binäre Schaltsignale (0 oder 1)",
+        "Eingänge für stufenlose Messwerte (0-10V, 4-20mA)",
+        "Ausgänge für analoge Sollwertvorgaben (Stellsignale)",
+        "Eingänge für digitale Impulszählung (Frequenzmessung)"
+      ],
+      "correct": 1,
+      "explanation": "Analoge Eingänge erfassen stufenlose Messwerte wie Temperatur, Druck oder Füllstand. Die Standardsignale in der Industrie sind 0-10V Spannung oder 4-20mA Strom. Der analoge Wert wird durch einen Analog-Digital-Wandler in einen digitalen Zahlenwert umgewandelt, den die SPS verarbeiten kann.",
+      "difficulty": "mittel",
+      "tags": [
+        "sps",
+        "analog"
+      ]
+    },
+    {
+      "id": "sps-006",
+      "q": "Was ist der Vorteil von 4-20mA gegenüber 0-20mA?",
+      "options": [
+        "Höhere Übertragungsgeschwindigkeit möglich (Echtzeit = Standard)",
+        "Drahtbrucherkennung möglich (0mA = Fehler)",
+        "Geringere Eigenerwärmung möglich (Verlust = reduziert)",
+        "Bessere Auflösung erreichbar (12Bit = Genauigkeit)"
+      ],
+      "correct": 1,
+      "explanation": "Beim 4-20mA-Signal (Live Zero) entspricht 4mA dem Messwert 0% und 20mA dem Messwert 100%. Der entscheidende Vorteil ist die Drahtbrucherkennung: Fließt 0mA, erkennt die SPS sofort einen Leitungsfehler. Bei 0-20mA wäre ein Drahtbruch nicht von einem gültigen 0%-Signal unterscheidbar.",
+      "difficulty": "mittel",
+      "tags": [
+        "analog",
+        "4-20ma"
+      ]
+    },
+    {
+      "id": "sps-007",
+      "q": "Was sind digitale Ausgänge (DO)?",
+      "options": [
+        "Eingänge für binäre Sensorsignale (Erkennung)",
+        "Ausgänge für binäre Schaltsignale (EIN/AUS)",
+        "Eingänge für analoge Messwerterfassung (stufenlos)",
+        "Ausgänge für serielle Datenübertragung (Kommunikation)"
+      ],
+      "correct": 1,
+      "explanation": "Digitale Ausgänge schalten Verbraucher ein oder aus und liefern ein binäres Signal (0 oder 1). Sie werden zur Ansteuerung von Schützen, Magnetventilen und Signallampen verwendet. Die Ausgänge können als Transistor- oder Relaisausgänge ausgeführt sein.",
+      "difficulty": "leicht",
+      "tags": [
+        "sps",
+        "ausgaenge"
+      ]
+    },
+    {
+      "id": "sps-009",
+      "q": "Was ist der SPS-Zyklus?",
+      "options": [
+        "Initialisierung laden → Variablen deklarieren → Kommunikation starten",
+        "Eingänge lesen → Programm abarbeiten → Ausgänge schreiben",
+        "Fehlerdiagnose prüfen → Speicher bereinigen → System neu starten",
+        "Programm kompilieren → Bausteine übertragen → Steuerung aktivieren"
+      ],
+      "correct": 1,
+      "explanation": "Der SPS-Zyklus besteht aus drei wiederkehrenden Schritten: Zuerst werden alle Eingänge in das Prozessabbild eingelesen, dann wird das Anwenderprogramm von oben nach unten abgearbeitet, und schließlich werden die berechneten Ergebnisse auf die Ausgänge geschrieben. Dieser Zyklus wiederholt sich typischerweise alle 1 bis 100 Millisekunden.",
+      "difficulty": "mittel",
+      "tags": [
+        "sps",
+        "zyklus"
+      ]
+    },
+    {
+      "id": "sps-010",
+      "q": "Was ist die Zykluszeit einer SPS?",
+      "options": [
+        "Die Dauer für einen vollständigen Systemhochlauf",
+        "Die Zeit für einen kompletten Programmdurchlauf",
+        "Die Pause zwischen zwei aufeinanderfolgenden Datenpaketen",
+        "Die Frist für eine regelmäßige Sicherheitsüberprüfung"
+      ],
+      "correct": 1,
+      "explanation": "Die Zykluszeit gibt an, wie lange die SPS für einen kompletten Durchlauf benötigt, also vom Einlesen der Eingänge über die Programmabarbeitung bis zum Schreiben der Ausgänge. Je umfangreicher und komplexer das Anwenderprogramm ist, desto länger wird die Zykluszeit. Typische Werte liegen zwischen 1 und 100 Millisekunden.",
+      "difficulty": "mittel",
+      "tags": [
+        "sps",
+        "zykluszeit"
+      ]
+    },
+    {
+      "id": "sps-011",
+      "q": "Was ist ein Prozessabbild?",
+      "options": [
+        "Protokolldatei der Fehlermeldungen für gezielte Störungsanalyse",
+        "Speicherkopie der E/A-Zustände für konsistente Verarbeitung",
+        "Visualisierung der Programmbausteine für übersichtliche Diagnose",
+        "Sicherungskopie der Projektdateien für zuverlässige Archivierung"
+      ],
+      "correct": 1,
+      "explanation": "Das Prozessabbild ist eine Momentaufnahme aller Ein- und Ausgangszustände im Speicher der SPS. Zu Beginn jedes Zyklus werden die Eingänge ins Prozessabbild der Eingänge (PAE) kopiert, und am Ende werden die Ergebnisse aus dem Prozessabbild der Ausgänge (PAA) auf die physischen Ausgänge geschrieben. Dadurch wird sichergestellt, dass sich die Daten während eines Zyklus nicht ändern und die Verarbeitung konsistent bleibt.",
+      "difficulty": "schwer",
+      "tags": [
+        "sps",
+        "prozessabbild"
+      ]
+    },
+    {
+      "id": "sps-012",
+      "q": "Welche Programmiersprachen definiert IEC 61131-3?",
+      "options": [
+        "C++, Java, Python, JavaScript, HTML",
+        "KOP, FUP, AWL, ST, AS (Grafcet)",
+        "SQL, PHP, Ruby, Perl, Bash",
+        "VHDL, Verilog, SystemC, AHDL, Abel"
+      ],
+      "correct": 1,
+      "explanation": "Die internationale Norm IEC 61131-3 definiert fünf standardisierte Programmiersprachen für SPS: Kontaktplan (KOP), Funktionsplan (FUP), Anweisungsliste (AWL), Strukturierter Text (ST) und Ablaufsprache (AS/Grafcet). Davon sind KOP, FUP und AS grafische Sprachen, während AWL und ST textbasierte Sprachen sind.",
+      "difficulty": "mittel",
+      "tags": [
+        "sps",
+        "programmierung"
+      ]
+    },
+    {
+      "id": "sps-013",
+      "q": "Was ist ein Kontaktplan (KOP)?",
+      "options": [
+        "Textbasierte Programmiersprache ähnlich Hochsprachensyntax",
+        "Grafische Programmiersprache ähnlich Stromlaufplänen",
+        "Tabellarische Programmierdarstellung ähnlich Zustandsdiagrammen",
+        "Sequenzielle Programmierstruktur ähnlich Ablaufsteuerungen"
+      ],
+      "correct": 1,
+      "explanation": "Der Kontaktplan (KOP, englisch Ladder Diagram) ist eine grafische Programmiersprache, die an Stromlaufpläne angelehnt ist. Sie verwendet Symbole wie Schließer, Öffner und Spulen, die zwischen zwei Stromschienen angeordnet werden. KOP ist besonders für Elektriker leicht verständlich, da die Darstellung der gewohnten Schaltplansymbolik entspricht.",
+      "difficulty": "mittel",
+      "tags": [
+        "kop",
+        "programmierung"
+      ]
+    },
+    {
+      "id": "sps-014",
+      "q": "Was ist ein Funktionsplan (FUP)?",
+      "options": [
+        "Textbasierte Darstellung mit Anweisungszeilen (MOV, ADD)",
+        "Grafische Darstellung mit Logikgattern (UND, ODER)",
+        "Tabellarische Darstellung mit Zustandsmatrizen (Schritt, Bedingung)",
+        "Sequenzielle Darstellung mit Ablaufketten (Transition, Aktion)"
+      ],
+      "correct": 1,
+      "explanation": "Der Funktionsplan (FUP, englisch Function Block Diagram) ist eine grafische Programmiersprache, die mit Logikgattern wie UND, ODER und NOT arbeitet. Die Bausteine werden als Rechtecke mit Ein- und Ausgängen dargestellt und durch Verbindungslinien miteinander verknüpft. FUP eignet sich besonders gut für die Darstellung komplexer logischer Verknüpfungen und Rechenoperationen.",
+      "difficulty": "mittel",
+      "tags": [
+        "fup",
+        "programmierung"
+      ]
+    },
+    {
+      "id": "sps-015",
+      "q": "Was bedeutet '--| |--' im Kontaktplan?",
+      "options": [
+        "Ein Öffner (Ruhekontakt)",
+        "Ein Schließer (Arbeitskontakt)",
+        "Eine Spule (Ausgangszuweisung)",
+        "Ein Vergleicher (Wertabfrage)"
+      ],
+      "correct": 1,
+      "explanation": "Das Symbol --| |-- stellt im Kontaktplan einen Schließer dar, auch Arbeitskontakt oder NO-Kontakt (Normally Open) genannt. Er leitet den Stromfluss weiter, wenn die zugehörige Variable den Wert TRUE hat. Im Gegensatz dazu steht das Symbol --|/|-- für einen Öffner (NC-Kontakt), der bei FALSE leitet.",
+      "difficulty": "mittel",
+      "tags": [
+        "kop",
+        "symbole"
+      ]
+    },
+    {
+      "id": "sps-016",
+      "q": "Was bedeutet '--( )--' im Kontaktplan?",
+      "options": [
+        "Ein Schließer (Arbeitskontakt)",
+        "Eine Spule (Ausgang)",
+        "Ein Öffner (Ruhekontakt)",
+        "Ein Vergleicher (Bedingungsprüfung)"
+      ],
+      "correct": 1,
+      "explanation": "Das Symbol --( )-- stellt im Kontaktplan eine Spule dar und repräsentiert einen Ausgang oder Merker. Wenn der Stromfluss die Spule erreicht, wird die zugehörige Variable auf TRUE gesetzt. Es gibt auch spezielle Varianten wie --(S) für das Setzen und --(R) für das Rücksetzen eines Speicherbits.",
+      "difficulty": "mittel",
+      "tags": [
+        "kop",
+        "symbole"
+      ]
+    },
+    {
+      "id": "sps-017",
+      "q": "Was ist ein Merker in der SPS?",
+      "options": [
+        "Physischer Eingang für externe Sensorsignale",
+        "Interner Speicher für Zwischenergebnisse",
+        "Digitaler Ausgang für Aktoransteuerung",
+        "Externer Baustein für Feldbuskommunikation"
+      ],
+      "correct": 1,
+      "explanation": "Ein Merker ist ein interner Speicherbereich in der SPS, der für Zwischenergebnisse, Hilfsvariablen und Zustandsinformationen verwendet wird. Anders als Ein- und Ausgänge ist ein Merker nicht direkt mit der Hardware verbunden. Er behält seinen Wert über mehrere Programmzyklen hinweg und dient zur programminternen Verknüpfung von Informationen.",
+      "difficulty": "mittel",
+      "tags": [
+        "sps",
+        "merker"
+      ]
+    },
+    {
+      "id": "sps-018",
+      "q": "Was ist ein Timer (Zeitglied) in der SPS?",
+      "options": [
+        "Baustein für Zähloperationen (CTU, CTD, CTUD)",
+        "Baustein für Zeitverzögerungen (TON, TOF, TP)",
+        "Baustein für Rechenoperationen (ADD, SUB, MUL)",
+        "Baustein für Vergleichsfunktionen (EQ, GT, LT)"
+      ],
+      "correct": 1,
+      "explanation": "Ein Timer ist ein Funktionsbaustein in der SPS, der zeitgesteuerte Abläufe ermöglicht. Die drei wichtigsten Timertypen sind TON (Einschaltverzögerung), TOF (Ausschaltverzögerung) und TP (Impulsgeber). Die gewünschte Zeitdauer wird als Parameter eingestellt und kann im Programm flexibel angepasst werden.",
+      "difficulty": "mittel",
+      "tags": [
+        "sps",
+        "timer"
+      ]
+    },
+    {
+      "id": "sps-019",
+      "q": "Was ist eine Einschaltverzögerung (TON)?",
+      "options": [
+        "Ausgang wird sofort bei Eingangssignal gesetzt",
+        "Ausgang wird erst nach Ablauf der Zeit gesetzt",
+        "Ausgang wird sofort nach Eingangswegfall rückgesetzt",
+        "Ausgang wird pulsweise mit eingestelltem Takt gesetzt"
+      ],
+      "correct": 1,
+      "explanation": "Bei einer Einschaltverzögerung (TON) wird der Ausgang erst nach Ablauf der eingestellten Zeitdauer auf TRUE gesetzt, vorausgesetzt der Eingang bleibt die gesamte Zeit über auf TRUE. Fällt der Eingang vor Ablauf der Zeit auf FALSE zurück, wird der Timer zurückgesetzt und der Ausgang bleibt FALSE. Beim Abschalten geht der Ausgang sofort auf FALSE.",
+      "difficulty": "mittel",
+      "tags": [
+        "timer",
+        "ton"
+      ]
+    },
+    {
+      "id": "sps-020",
+      "q": "Was ist eine Ausschaltverzögerung (TOF)?",
+      "options": [
+        "Ausgang schaltet erst nach einer Zeitverzögerung ein",
+        "Ausgang bleibt nach Wegnahme des Eingangs noch aktiv",
+        "Ausgang erzeugt nach Startimpuls einen definierten Puls",
+        "Ausgang wechselt nach Ablauf der Zeit automatisch seinen Zustand"
+      ],
+      "correct": 1,
+      "explanation": "Bei einer Ausschaltverzögerung (TOF) wird der Ausgang sofort auf TRUE gesetzt, wenn der Eingang aktiviert wird. Fällt der Eingang auf FALSE zurück, bleibt der Ausgang noch für die eingestellte Zeitdauer auf TRUE, bevor er abschaltet. Diese Funktion wird häufig für Nachlaufzeiten eingesetzt, beispielsweise bei Lüftern oder Beleuchtungen.",
+      "difficulty": "mittel",
+      "tags": [
+        "timer",
+        "tof"
+      ]
+    },
+    {
+      "id": "sps-021",
+      "q": "Was ist ein Zähler (Counter)?",
+      "options": [
+        "Baustein zur Erzeugung von Zeitverzögerungen",
+        "Baustein zum Zählen von Impulsen/Flanken",
+        "Baustein zur Umwandlung von Analogwerten",
+        "Baustein zur Überwachung von Grenzwerten"
+      ],
+      "correct": 1,
+      "explanation": "Ein Zähler ist ein Funktionsbaustein, der Flanken (Signalwechsel) an seinem Eingang mitzählt. Die drei wichtigsten Zählertypen sind CTU (Vorwärtszähler), CTD (Rückwärtszähler) und CTUD (Vor-/Rückwärtszähler). Zähler werden beispielsweise zur Stückzählung in Fertigungsanlagen oder zur Positionserfassung mit Drehgebern eingesetzt.",
+      "difficulty": "mittel",
+      "tags": [
+        "sps",
+        "zaehler"
+      ]
+    },
+    {
+      "id": "sps-022",
+      "q": "Was ist eine Flanke?",
+      "options": [
+        "Dauerhaftes Logiksignal mit konstantem HIGH-Pegel (statisch)",
+        "Signalwechsel 0→1 (positiv) oder 1→0 (negativ)",
+        "Periodisches Taktsignal mit gleichmäßiger Frequenz (oszillierend)",
+        "Analoger Messwert mit kontinuierlicher Pegeländerung (stufenlos)"
+      ],
+      "correct": 1,
+      "explanation": "Eine Flanke ist der Moment des Signalwechsels zwischen zwei Zuständen. Die positive Flanke (steigende Flanke) beschreibt den Wechsel von 0 nach 1, die negative Flanke (fallende Flanke) den Wechsel von 1 nach 0. Flankenauswertungen werden in der SPS verwendet, um einmalige Aktionen bei einem Signalwechsel auszulösen, anstatt sie dauerhaft auszuführen.",
+      "difficulty": "mittel",
+      "tags": [
+        "sps",
+        "flanke"
+      ]
+    },
+    {
+      "id": "sps-023",
+      "q": "Was ist ein Funktionsbaustein (FB)?",
+      "options": [
+        "Einmaliger Programmbaustein ohne eigenen Speicher (temporär)",
+        "Wiederverwendbarer Block mit eigenem Speicher (Instanz-DB)",
+        "Globaler Datenbaustein mit statischen Variablen (permanent)",
+        "Organisatorischer Systembaustein mit Zyklussteuerung (zyklisch)"
+      ],
+      "correct": 1,
+      "explanation": "Ein Funktionsbaustein (FB) ist ein wiederverwendbarer Programmbaustein, der über einen eigenen Instanzdatenbaustein (Instanz-DB) verfügt. Dadurch kann er Werte zwischen verschiedenen Aufrufen speichern und behalten. Funktionsbausteine werden typischerweise für Timer, Zähler, Regler und andere Bausteine eingesetzt, die sich Zustände merken müssen.",
+      "difficulty": "schwer",
+      "tags": [
+        "sps",
+        "fb"
+      ]
+    },
+    {
+      "id": "sps-024",
+      "q": "Was ist ein Datenbaustein (DB)?",
+      "options": [
+        "Programmbaustein für logische Verknüpfungen (Steuerlogik)",
+        "Speicherbereich für Daten (Variablen, Parameter)",
+        "Systembaustein für Fehlerdiagnose (Störungsmeldungen)",
+        "Organisationsbaustein für Zyklusablauf (Programmstruktur)"
+      ],
+      "correct": 1,
+      "explanation": "Ein Datenbaustein (DB) ist ein Speicherbereich in der SPS, der strukturiert Daten wie Variablen, Parameter und Prozesswerte ablegen kann. Es wird zwischen Global-Datenbausteinen, die von allen Programmbausteinen gelesen und beschrieben werden können, und Instanz-Datenbausteinen, die einem bestimmten Funktionsbaustein zugeordnet sind, unterschieden.",
+      "difficulty": "schwer",
+      "tags": [
+        "sps",
+        "db"
+      ]
+    },
+    {
+      "id": "sps-025",
+      "q": "Was ist ein induktiver Näherungsschalter?",
+      "options": [
+        "Sensor zur berührungslosen Erkennung von Kunststoffen",
+        "Sensor zur berührungslosen Erkennung von Metall",
+        "Sensor zur berührungslosen Messung von Temperaturen",
+        "Sensor zur berührungslosen Erfassung von Lichtintensität"
+      ],
+      "correct": 1,
+      "explanation": "Ein induktiver Näherungsschalter erkennt metallische Objekte berührungslos durch das Prinzip der Wirbelstromdämpfung. Wenn ein Metallteil in den Erfassungsbereich des Sensors gelangt, werden Wirbelströme induziert, die das elektromagnetische Feld des Sensors verändern. Der Schaltabstand hängt dabei vom Material und der Größe des Metallobjekts ab.",
+      "difficulty": "mittel",
+      "tags": [
+        "sensoren",
+        "induktiv"
+      ]
+    },
+    {
+      "id": "sps-026",
+      "q": "Was ist ein kapazitiver Näherungsschalter?",
+      "options": [
+        "Erkennt ausschließlich ferromagnetische Metallobjekte",
+        "Erkennt auch nichtmetallische Materialien",
+        "Erkennt ausschließlich lichtdurchlässige Oberflächen",
+        "Erkennt ausschließlich leitfähige Flüssigkeiten"
+      ],
+      "correct": 1,
+      "explanation": "Ein kapazitiver Näherungsschalter kann sowohl metallische als auch nichtmetallische Materialien wie Kunststoff, Holz, Glas und Flüssigkeiten erkennen. Er funktioniert durch die Messung der Kapazitätsänderung, die entsteht, wenn ein Objekt in das elektrische Feld des Sensors gelangt. Dadurch ist er vielseitiger einsetzbar als ein induktiver Sensor.",
+      "difficulty": "mittel",
+      "tags": [
+        "sensoren",
+        "kapazitiv"
+      ]
+    },
+    {
+      "id": "sps-027",
+      "q": "Was ist ein optischer Sensor?",
+      "options": [
+        "Sensor mit Ultraschall (kHz, MHz) zur Abstandsmessung",
+        "Sensor mit Licht (IR, Rot, Laser) zur Objekterkennung",
+        "Sensor mit Wirbelstrom (AC, Feld) zur Metalldetektion",
+        "Sensor mit Kapazität (pF, nF) zur Füllstandsmessung"
+      ],
+      "correct": 1,
+      "explanation": "Optische Sensoren arbeiten mit Lichtstrahlen im infraroten, roten oder Laserbereich, um Objekte zu erkennen oder Abstände zu messen. Die drei wichtigsten Bauformen sind die Einweg-Lichtschranke (Sender und Empfänger getrennt), die Reflex-Lichtschranke (mit Reflektor) und der Lichttaster (Sender und Empfänger in einem Gehäuse). Sie bieten unterschiedliche Reichweiten und Einsatzmöglichkeiten.",
+      "difficulty": "mittel",
+      "tags": [
+        "sensoren",
+        "optisch"
+      ]
+    },
+    {
+      "id": "sps-028",
+      "q": "Was bedeutet PNP und NPN bei Sensoren?",
+      "options": [
+        "PNP = Wechselstrom-schaltend bei 230V, NPN = Gleichstrom-schaltend bei 24V",
+        "PNP = schaltend gegen Plus, NPN = schaltend gegen Minus",
+        "PNP = normalerweise geschlossen (NC-Kontakt), NPN = normalerweise offen (NO-Kontakt)",
+        "PNP = analoges Ausgangssignal gebend, NPN = digitales Ausgangssignal gebend"
+      ],
+      "correct": 1,
+      "explanation": "PNP-Sensoren sind Plus-schaltend, das heißt sie legen bei Erkennung eines Objekts +24V an den Ausgang. NPN-Sensoren sind Minus-schaltend und verbinden den Ausgang bei Erkennung mit GND (0V). Die Wahl zwischen PNP und NPN hängt von der verwendeten SPS-Eingangsbaugruppe ab, wobei in Europa hauptsächlich PNP-Sensoren eingesetzt werden.",
+      "difficulty": "mittel",
+      "tags": [
+        "sensoren",
+        "pnp-npn"
+      ]
+    },
+    {
+      "id": "sps-029",
+      "q": "Was ist ein Schütz als Aktor?",
+      "options": [
+        "Elektronischer Messumformer für präzise Signale",
+        "Elektromagnetischer Schalter für hohe Ströme",
+        "Pneumatischer Stellantrieb für lineare Bewegungen",
+        "Kapazitiver Näherungssensor für berührungslose Erkennung"
+      ],
+      "correct": 1,
+      "explanation": "Ein Schütz ist ein elektromagnetisch betätigter Schalter, der zum Schalten hoher Ströme in Lastkreisen eingesetzt wird. Es wird von der SPS über einen digitalen Ausgang angesteuert und kann Motoren, Heizungen oder andere Leistungsverbraucher ein- und ausschalten. Im Vergleich zu einem Relais ist ein Schütz für höhere Schaltleistungen und häufigere Schaltvorgänge ausgelegt.",
+      "difficulty": "leicht",
+      "tags": [
+        "aktoren",
+        "schuetz"
+      ]
+    },
+    {
+      "id": "sps-031",
+      "q": "Was ist ein HMI?",
+      "options": [
+        "Serieller Feldbusanschluss (Kommunikation)",
+        "Bedien- und Anzeigeeinheit (Touch-Panel)",
+        "Dezentrale Peripheriebaugruppe (Fernwartung)",
+        "Integrierter Sicherheitsbaustein (Überwachung)"
+      ],
+      "correct": 1,
+      "explanation": "HMI steht für Human Machine Interface und bezeichnet die Schnittstelle zwischen Mensch und Maschine. Es handelt sich meist um Touch-Panels, die Prozessdaten visualisieren, Bedienmöglichkeiten bereitstellen und Alarme anzeigen. Das HMI kommuniziert über Industrieprotokolle wie PROFINET oder Ethernet direkt mit der SPS.",
+      "difficulty": "leicht",
+      "tags": [
+        "hmi",
+        "visualisierung"
+      ]
+    },
+    {
+      "id": "sps-032",
+      "q": "Was ist PROFINET?",
+      "options": [
+        "Serieller Feldbus-basiertes Übertragungsprotokoll",
+        "Industrial-Ethernet-basiertes Kommunikationssystem",
+        "Analoge Signalpegel-basiertes Messverfahren",
+        "Drahtlos-Funkstandard-basiertes Netzwerkprotokoll"
+      ],
+      "correct": 1,
+      "explanation": "PROFINET ist ein auf Industrial Ethernet basierendes Kommunikationssystem für die industrielle Automatisierung. Es ermöglicht den echtzeitfähigen Datenaustausch zwischen SPS, dezentraler Peripherie, Antrieben und HMI-Geräten. Im Vergleich zum älteren PROFIBUS bietet PROFINET höhere Übertragungsraten und nutzt die Standard-Ethernet-Infrastruktur.",
+      "difficulty": "mittel",
+      "tags": [
+        "bus",
+        "profinet"
+      ]
+    },
+    {
+      "id": "sps-033",
+      "q": "Was ist PROFIBUS?",
+      "options": [
+        "Optischer Lichtwellenleiter für industrielle Datenübertragung",
+        "Serieller Feldbus für industrielle Automatisierung",
+        "Paralleles Bussystem für schnelle Maschinensteuerung",
+        "Drahtloses Funknetzwerk für dezentrale Sensoranbindung"
+      ],
+      "correct": 1,
+      "explanation": "PROFIBUS ist ein serieller Feldbus auf Basis der RS-485-Schnittstelle und war jahrzehntelang der am weitesten verbreitete Feldbus in der Automatisierungstechnik. Es gibt zwei Hauptvarianten: PROFIBUS-DP für die schnelle Kommunikation mit dezentraler Peripherie und PROFIBUS-PA für die Prozessautomation in explosionsgefährdeten Bereichen.",
+      "difficulty": "mittel",
+      "tags": [
+        "bus",
+        "profibus"
+      ]
+    },
+    {
+      "id": "sps-034",
+      "q": "Was ist der Unterschied zwischen zentraler und dezentraler Peripherie?",
+      "options": [
+        "Zentral: E/A über Funk. Dezentral: E/A direkt an der CPU montiert",
+        "Zentral: E/A an SPS. Dezentral: E/A über Bus verteilt",
+        "Zentral: E/A nur digital. Dezentral: E/A nur analog nutzbar",
+        "Zentral: E/A mit Profinet. Dezentral: E/A mit analoger Leitung"
+      ],
+      "correct": 1,
+      "explanation": "Bei der zentralen Peripherie befinden sich die Ein- und Ausgabebaugruppen direkt am SPS-Rack in der Nähe der CPU. Bei der dezentralen Peripherie werden die E/A-Baugruppen über einen Feldbus (z.B. PROFINET oder PROFIBUS) verteilt in der Anlage platziert. Dezentrale Peripherie spart erheblich Verdrahtungsaufwand und vereinfacht die Anlagenplanung bei weitläufigen Installationen.",
+      "difficulty": "mittel",
+      "tags": [
+        "peripherie",
+        "dezentral"
+      ]
+    },
+    {
+      "id": "sps-036",
+      "q": "Was ist SIL (Safety Integrity Level)?",
+      "options": [
+        "Schutzklasse für elektrische Betriebsmittel (IP 1-4)",
+        "Sicherheitsstufe für sicherheitsrelevante Systeme (SIL 1-4)",
+        "Isolationsklasse für thermische Belastbarkeit (Klasse 1-4)",
+        "Spannungsebene für industrielle Versorgungsnetze (Stufe 1-4)"
+      ],
+      "correct": 1,
+      "explanation": "SIL steht für Safety Integrity Level und beschreibt nach der Norm IEC 61508 die Anforderungen an die Zuverlässigkeit sicherheitsrelevanter Systeme. Es gibt vier Stufen von SIL 1 (niedrigste Anforderung) bis SIL 4 (höchste Anforderung). Je höher der SIL-Wert, desto geringer muss die Wahrscheinlichkeit eines gefährlichen Ausfalls der Sicherheitsfunktion sein.",
+      "difficulty": "schwer",
+      "tags": [
+        "sicherheit",
+        "sil"
+      ]
+    },
+    {
+      "id": "sps-038",
+      "q": "Was ist ein Sicherheitsrelais?",
+      "options": [
+        "Standardrelais zur allgemeinen Steuerung von Lastkreisen",
+        "Spezielles Relais zur Überwachung von Sicherheitsfunktionen",
+        "Leistungsrelais zur direkten Schaltung von Drehstrommotoren",
+        "Zeitrelais zur automatischen Verzögerung von Schaltvorgängen"
+      ],
+      "correct": 1,
+      "explanation": "Ein Sicherheitsrelais ist ein spezielles Relais, das zur Überwachung von Sicherheitsfunktionen wie Not-Halt-Kreisen, Schutztüren oder Lichtvorhängen eingesetzt wird. Es verfügt über redundante, zwangsgeführte Kontakte und eine integrierte Querschlussüberwachung, die eine sichere Abschaltung auch im Fehlerfall gewährleisten. Sicherheitsrelais erfüllen die Anforderungen der Maschinenrichtlinie und relevanter Sicherheitsnormen.",
+      "difficulty": "mittel",
+      "tags": [
+        "sicherheit",
+        "relais"
+      ]
+    },
+    {
+      "id": "sps-041",
+      "q": "Was ist eine Watchdog-Funktion?",
+      "options": [
+        "Fernwartung bei Netzwerkverbindungsverlust → automatischer Neustart",
+        "Überwachung bei Programmstillstand → sicherer Zustand",
+        "Protokollierung bei Parameterwertänderung → Verlaufsaufzeichnung",
+        "Diagnose bei Sensorkommunikationsfehler → Fehlermeldung ausgeben"
+      ],
+      "correct": 1,
+      "explanation": "Die Watchdog-Funktion überwacht die Zykluszeit der SPS und erkennt, wenn das Programm zu lange für einen Durchlauf benötigt. Wird die eingestellte maximale Zykluszeit überschritten, etwa durch eine Endlosschleife oder einen Programmfehler, versetzt der Watchdog die CPU automatisch in den sicheren STOP-Zustand. Diese Schutzfunktion verhindert unkontrolliertes Verhalten der Anlage bei Softwarefehlern.",
+      "difficulty": "schwer",
+      "tags": [
+        "sps",
+        "watchdog"
+      ]
+    },
+    {
+      "id": "sps-042",
+      "q": "Was ist der Unterschied zwischen Steuerung und Regelung?",
+      "options": [
+        "Steuerung: digital mit Binärwerten. Regelung: analog mit Messwerten",
+        "Steuerung: offen ohne Rückführung. Regelung: geschlossen mit Rückführung",
+        "Steuerung: automatisch mit Programm. Regelung: manuell mit Bediener",
+        "Steuerung: schnell mit Direktzugriff. Regelung: langsam mit Zeitverzögerung"
+      ],
+      "correct": 1,
+      "explanation": "Bei einer Steuerung handelt es sich um eine offene Wirkungskette: Die Ausgangsgröße wird nicht gemessen und hat keinen Einfluss auf die Eingangsgröße. Bei einer Regelung hingegen wird die Ausgangsgröße (Istwert) kontinuierlich gemessen, mit dem Sollwert verglichen und die Stellgröße entsprechend korrigiert. Dieser geschlossene Regelkreis ermöglicht eine automatische Korrektur bei Störungen.",
+      "difficulty": "mittel",
+      "tags": [
+        "steuerung",
+        "regelung"
+      ]
+    },
+    {
+      "id": "sps-043",
+      "q": "Was ist ein PID-Regler?",
+      "options": [
+        "Regler mit Zweipunkt-, Dreipunkt- und Mehrpunkt-Schaltverhalten",
+        "Regler mit Proportional-, Integral- und Differential-Anteil",
+        "Regler mit Vorwärts-, Rückwärts- und Kaskadenregelungs-Struktur",
+        "Regler mit Digital-, Analog- und Frequenzumrichter-Ausgang"
+      ],
+      "correct": 1,
+      "explanation": "Ein PID-Regler kombiniert drei Regelanteile: Der P-Anteil (Proportional) reagiert schnell und direkt proportional zur Regelabweichung. Der I-Anteil (Integral) beseitigt die bleibende Regeldifferenz, indem er die Abweichung über die Zeit aufsummiert. Der D-Anteil (Differential) reagiert auf die Änderungsgeschwindigkeit der Regelabweichung und sorgt für ein schnelles Einschwingen.",
+      "difficulty": "schwer",
+      "tags": [
+        "regelung",
+        "pid"
+      ]
+    }
+  ]
+}

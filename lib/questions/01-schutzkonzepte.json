@@ -1,0 +1,708 @@
+{
+  "chapter": "01",
+  "title": "Schutzkonzepte",
+  "description": "Schutzmaßnahmen, FI-Schutzschalter, LS-Schalter, Sicherungen, 5 Sicherheitsregeln, Schutzklassen, IP-Schutzarten",
+  "questionCount": 50,
+  "questions": [
+    {
+      "id": "sk-001",
+      "q": "Was versteht man unter einem Kurzschluss?",
+      "options": [
+        "Eine niederohmige Verbindung zwischen Leitern unterschiedlichen Potentials",
+        "Eine hochohmige Verbindung zwischen Leitern mit gleichem Erdpotential",
+        "Eine kapazitive Kopplung zwischen benachbarten Leitern verschiedener Stromkreise",
+        "Eine induktive Belastung zwischen Leitern mit unterschiedlicher Frequenz"
+      ],
+      "correct": 0,
+      "explanation": "Ein Kurzschluss ist eine niederohmige Verbindung zwischen Leitern unterschiedlichen Potentials, zum Beispiel zwischen L und N oder L1 und L2. Dabei fließt ein sehr hoher Strom, der Leitungen und Geräte beschädigen kann. Schutzeinrichtungen wie LS-Schalter oder Sicherungen müssen diesen Strom schnell abschalten.",
+      "difficulty": "leicht",
+      "tags": ["kurzschluss", "fehlerarten"]
+    },
+    {
+      "id": "sk-002",
+      "q": "Was versteht man unter Außenleiter und Neutralleiter?",
+      "options": [
+        "Außenleiter = Erdungsleiter (PE), Neutralleiter = spannungsführender Leiter (L)",
+        "Außenleiter = spannungsführend (L), Neutralleiter = Rückleiter (N)",
+        "Außenleiter = kombinierter Schutzleiter (PEN), Neutralleiter = Phasenleiter (L)",
+        "Außenleiter = geerdeter Rückleiter (N), Neutralleiter = aktiver Leiter (L)"
+      ],
+      "correct": 1,
+      "explanation": "Der Außenleiter (L) führt die Spannung gegen Erde und ist der aktive, spannungsführende Leiter. Der Neutralleiter (N) dient als Rückleiter und liegt im Normalbetrieb annähernd auf Erdpotential. Die Spannung zwischen L und N beträgt 230V.",
+      "difficulty": "leicht",
+      "tags": ["grundbegriffe", "leiter"]
+    },
+    {
+      "id": "sk-003",
+      "q": "Was ist die Berührungsspannung UT?",
+      "options": [
+        "Die Spannung zwischen dem Schutzleiter und der Haupterdungsschiene im Normalbetrieb",
+        "Die Spannung zwischen gleichzeitig berührbaren leitfähigen Teilen im Fehlerfall",
+        "Die Spannung zwischen dem Neutralleiter und dem Potentialausgleich bei Überlast",
+        "Die Spannung zwischen zwei aktiven Leitern am Transformatorausgang im Normalbetrieb"
+      ],
+      "correct": 1,
+      "explanation": "Die Berührungsspannung UT ist die Spannung, die zwischen gleichzeitig berührbaren leitfähigen Teilen bei einem Körperschluss auftreten kann. Sie ist gefährlich, weil sie über den menschlichen Körper fließen kann. Deshalb muss sie unter dem Grenzwert von 50V AC gehalten werden.",
+      "difficulty": "mittel",
+      "tags": ["berührungsspannung", "fehlerarten"]
+    },
+    {
+      "id": "sk-004",
+      "q": "Was sind aktive Teile einer elektrischen Anlage?",
+      "options": [
+        "Gehäuse und metallische Teile, die im Fehlerfall unter Spannung stehen können",
+        "Leiter und leitfähige Teile, die im Normalbetrieb unter Spannung stehen",
+        "Schutzleiter und Erdungsklemmen, die im Normalbetrieb Fehlerstrom ableiten",
+        "Isolierstoffe und Abdeckungen, die im Normalbetrieb den Berührungsschutz gewährleisten"
+      ],
+      "correct": 1,
+      "explanation": "Aktive Teile sind alle Leiter und leitfähigen Teile, die im Normalbetrieb unter Spannung stehen, also die Außenleiter (L) und der Neutralleiter (N). Der Schutzleiter (PE) zählt nicht zu den aktiven Teilen. Der Basisschutz verhindert das direkte Berühren aktiver Teile.",
+      "difficulty": "mittel",
+      "tags": ["grundbegriffe"]
+    },
+    {
+      "id": "sk-005",
+      "q": "Was versteht man unter Selektivität bei Schutzeinrichtungen?",
+      "options": [
+        "Nur die dem Fehler nächstgelegene Schutzeinrichtung löst aus",
+        "Alle vorgeschalteten Schutzeinrichtungen lösen nacheinander zeitversetzt aus",
+        "Die Schutzeinrichtung mit dem größten Nennstrom löst zuerst aus",
+        "Der Fehlerstromschutzschalter und der Leitungsschutzschalter lösen gleichzeitig aus"
+      ],
+      "correct": 1,
+      "explanation": "Selektivität bedeutet, dass nur die dem Fehlerort nächstgelegene Schutzeinrichtung abschaltet. Der Rest der Anlage bleibt in Betrieb. Das wird durch abgestufte Nennströme und Auslösezeiten der Schutzeinrichtungen erreicht.",
+      "difficulty": "mittel",
+      "tags": ["selektivitaet", "schutzeinrichtungen"]
+    },
+    {
+      "id": "sk-006",
+      "q": "Was ist die Fehlerspannung UF?",
+      "options": [
+        "Die Spannung zwischen Körper eines Betriebsmittels und Bezugserde bei Körperschluss",
+        "Die Spannung zwischen Schutzleiter eines Betriebsmittels und Neutralleiter bei Überlast",
+        "Die Spannung zwischen Außenleiter eines Betriebsmittels und Potentialausgleich bei Normalbetrieb",
+        "Die Spannung zwischen Erdungsanlage eines Betriebsmittels und Hauptverteiler bei Kurzschluss"
+      ],
+      "correct": 1,
+      "explanation": "Die Fehlerspannung UF ist die Spannung, die bei einem Körperschluss zwischen dem Körper (Gehäuse) eines Betriebsmittels und der Bezugserde entsteht. Sie ist immer größer oder gleich der Berührungsspannung. Je niedriger der Erdungswiderstand, desto geringer die Fehlerspannung.",
+      "difficulty": "schwer",
+      "tags": ["fehlerspannung", "fehlerarten"]
+    },
+    {
+      "id": "sk-007",
+      "q": "Was ist die Schrittspannung?",
+      "options": [
+        "Spannung zwischen zwei Füßen bei Schrittweite 1m in der Nähe einer Erdungsstelle",
+        "Spannung zwischen zwei Händen bei Armweite 1m in der Nähe einer Fehlerstelle",
+        "Spannung zwischen Hand und Fuß bei Berührung 1m von einer Verteilerstelle entfernt",
+        "Spannung zwischen zwei Erdern bei Abstand 1m in der Nähe einer Blitzschutzanlage"
+      ],
+      "correct": 0,
+      "explanation": "Die Schrittspannung ist die Spannung zwischen zwei Punkten auf der Erdoberfläche im Abstand von 1m (Schrittweite), wenn ein Erdschluss vorliegt. Sie nimmt mit zunehmender Entfernung von der Erdungsstelle ab. Deshalb soll man sich bei Erdschluss nur mit kleinen Schritten oder hüpfend entfernen.",
+      "difficulty": "schwer",
+      "tags": ["schrittspannung", "fehlerarten"]
+    },
+    {
+      "id": "sk-008",
+      "q": "Was ist ein Körperschluss?",
+      "options": [
+        "Elektrische Verbindung zwischen Neutralleiter und Schutzleiter eines Betriebsmittels durch Klemmenfehler",
+        "Elektrische Verbindung zwischen aktivem Teil und Körper eines Betriebsmittels durch Isolationsfehler",
+        "Elektrische Verbindung zwischen zwei Außenleitern und Erdungsanlage eines Betriebsmittels durch Überspannung",
+        "Elektrische Verbindung zwischen Potentialausgleich und Gehäuse eines Betriebsmittels durch Feuchtigkeit"
+      ],
+      "correct": 1,
+      "explanation": "Ein Körperschluss ist eine unbeabsichtigte elektrische Verbindung zwischen einem aktiven Teil (z.B. Außenleiter) und dem Körper (Gehäuse) eines Betriebsmittels. Er entsteht durch Isolationsversagen. Der Schutzleiter leitet dann den Fehlerstrom ab und die Schutzeinrichtung schaltet ab.",
+      "difficulty": "mittel",
+      "tags": ["koerperschluss", "fehlerarten"]
+    },
+    {
+      "id": "sk-009",
+      "q": "Was versteht man unter Basisschutz (Schutz gegen direktes Berühren)?",
+      "options": [
+        "Schutz gegen das Auftreten gefährlicher Fehlerströme bei Isolationsversagen",
+        "Schutz gegen Berühren aktiver Teile im Normalbetrieb",
+        "Schutz gegen thermische Überlastung der Leitungen bei Dauerbetrieb",
+        "Schutz gegen elektromagnetische Störungen durch benachbarte Stromkreise"
+      ],
+      "correct": 1,
+      "explanation": "Der Basisschutz verhindert das direkte Berühren aktiver (spannungsführender) Teile im Normalbetrieb. Maßnahmen dafür sind Isolierung, Abdeckungen, Hindernisse und Abstand. So wird sichergestellt, dass man im normalen Betrieb nicht an spannungsführende Teile gelangen kann.",
+      "difficulty": "mittel",
+      "tags": ["basisschutz", "schutzmaßnahmen"]
+    },
+    {
+      "id": "sk-010",
+      "q": "Was versteht man unter Fehlerschutz (Schutz bei indirektem Berühren)?",
+      "options": [
+        "Schutz gegen das versehentliche Einschalten von Betriebsmitteln bei Wartungsarbeiten",
+        "Schutz gegen gefährliche Körperströme bei Berühren von Körpern unter Fehlerspannung",
+        "Schutz gegen das Berühren von isolierten Leitungen bei normalem Anlagenbetrieb",
+        "Schutz gegen unzulässige Erwärmung von Verteilerklemmen bei hoher Auslastung"
+      ],
+      "correct": 1,
+      "explanation": "Der Fehlerschutz schützt Personen bei indirektem Berühren. Das bedeutet: Wenn durch einen Körperschluss ein Gehäuse unter Spannung steht, muss die Schutzeinrichtung automatisch abschalten. Wichtigste Maßnahme ist die Schutzerdung mit automatischer Abschaltung.",
+      "difficulty": "mittel",
+      "tags": ["fehlerschutz", "schutzmaßnahmen"]
+    },
+    {
+      "id": "sk-011",
+      "q": "Wie lauten die 5 Sicherheitsregeln?",
+      "options": [
+        "Freischalten, gegen Wiedereinschalten sichern, Spannungsfreiheit feststellen, Erden und Kurzschließen, Benachbarte Teile abdecken",
+        "Anlage besichtigen, Schaltberechtigung einholen, Betriebsmittel abklemmen, Spannungsprüfer kalibrieren, Arbeitsbereich kennzeichnen",
+        "Fehlerstrom messen, Schutzleiter prüfen, Isolationswiderstand feststellen, Erdungswiderstand bestimmen, Schleifenimpedanz ermitteln",
+        "Sicherungsautomat betätigen, Warnschild aufhängen, Drehstrommotor abklemmen, Potentialausgleich herstellen, Schutzleiterverbindung prüfen"
+      ],
+      "correct": 0,
+      "explanation": "Die 5 Sicherheitsregeln lauten: 1. Freischalten, 2. Gegen Wiedereinschalten sichern, 3. Spannungsfreiheit feststellen, 4. Erden und Kurzschließen, 5. Benachbarte unter Spannung stehende Teile abdecken. Sie müssen in dieser Reihenfolge eingehalten werden, um sicheres Arbeiten an elektrischen Anlagen zu gewährleisten.",
+      "difficulty": "mittel",
+      "tags": ["sicherheitsregeln", "arbeitsschutz"]
+    },
+    {
+      "id": "sk-012",
+      "q": "Wie kann das Wiedereinschalten nach dem Freischalten gesichert werden?",
+      "options": [
+        "Durch Messung des Isolationswiderstands, Dokumentation und schriftliche Freigabe",
+        "Durch Schloss, Warnschilder, Beaufsichtigung oder räumliche Trennung",
+        "Durch Kontrolle der Phasenfolge, Prüfprotokoll und mündliche Absprache",
+        "Durch Auslösung des Fehlerstromschutzschalters, Sichtkontrolle und Warnleuchte"
+      ],
+      "correct": 1,
+      "explanation": "Das Wiedereinschalten wird durch verschiedene Maßnahmen verhindert: Schloss am Schalter, Warnschild anbringen, ständige Beaufsichtigung oder Entfernen der Sicherungen. So wird sichergestellt, dass niemand die Anlage versehentlich wieder einschaltet, während daran gearbeitet wird.",
+      "difficulty": "mittel",
+      "tags": ["sicherheitsregeln", "arbeitsschutz"]
+    },
+    {
+      "id": "sk-013",
+      "q": "Was sind Überstromschutzeinrichtungen?",
+      "options": [
+        "Fehlerstromschutzschalter und Summenstromwandler zur Differenzstromerkennung",
+        "Schmelzsicherungen und Leitungsschutzschalter",
+        "Überspannungsableiter und Varistoren zur Spannungsbegrenzung im Netz",
+        "Motorschutzrelais und Temperaturwächter zur thermischen Überwachung"
+      ],
+      "correct": 1,
+      "explanation": "Überstromschutzeinrichtungen sind Schmelzsicherungen (NH, Diazed, Neozed) und Leitungsschutzschalter (LS-Schalter). Sie schützen Leitungen und Geräte vor zu hohem Strom bei Überlast und Kurzschluss. Ohne sie könnten Leitungen überhitzen und Brände entstehen.",
+      "difficulty": "leicht",
+      "tags": ["ueberstromschutz", "schutzeinrichtungen"]
+    },
+    {
+      "id": "sk-014",
+      "q": "Welche Ursachen führen zur Erwärmung einer Leitung?",
+      "options": [
+        "Überspannung, Frequenzabweichung, ungeeignete Kabelverlegung, fehlerhafte Isolierstoffe",
+        "Überlastung, Kurzschluss, schlechte Klemmstellen, zu geringer Querschnitt",
+        "Unterspannung, Phasenverschiebung, falsche Schutzklasse, unzureichende Belüftung",
+        "Erdschluss, Oberschwingungen, mangelnde Abschirmung, zu hohe Umgebungstemperatur"
+      ],
+      "correct": 1,
+      "explanation": "Leitungen erwärmen sich durch: Überlastung (zu hoher Strom), Kurzschluss (extrem hoher Strom), schlechte Klemmstellen (erhöhter Übergangswiderstand) und zu geringen Leitungsquerschnitt. All diese Ursachen führen zu unzulässiger Erwärmung und damit zu Brandgefahr.",
+      "difficulty": "mittel",
+      "tags": ["leitungsschutz", "fehlerarten"]
+    },
+    {
+      "id": "sk-015",
+      "q": "Wo muss der Überstromschutz angebracht werden?",
+      "options": [
+        "Am Ende der Leitung beim Verbraucher",
+        "Am Anfang der Leitung (Speisepunkt)",
+        "In der Mitte der Leitung im Kabelkanal",
+        "Am Übergabepunkt zum Energieversorger"
+      ],
+      "correct": 1,
+      "explanation": "Der Überstromschutz muss am Anfang der Leitung, also am Speisepunkt, angebracht werden. Nur so ist die gesamte Leitung geschützt. Wäre er am Ende, bliebe der größte Teil der Leitung bei Überstrom ungeschützt und könnte überhitzen.",
+      "difficulty": "mittel",
+      "tags": ["ueberstromschutz", "installation"]
+    },
+    {
+      "id": "sk-016",
+      "q": "Welche Aufgabe hat der Überstromschutz bei Kurzschluss?",
+      "options": [
+        "Abschaltung in kürzester Zeit, bevor die Leitung thermisch beschädigt wird",
+        "Begrenzung der Netzspannung, damit die angeschlossenen Verbraucher geschützt werden",
+        "Erhöhung des Leitungswiderstands, bevor der Kurzschlussstrom gefährlich ansteigt",
+        "Reduzierung des Fehlerstroms, damit die Isolierung nicht dauerhaft beschädigt wird"
+      ],
+      "correct": 1,
+      "explanation": "Bei einem Kurzschluss muss der Überstromschutz die Leitung in kürzester Zeit abschalten, bevor sie durch den extrem hohen Strom thermisch beschädigt wird. Die Abschaltzeit muss so kurz sein, dass die Leitung die Energie des Kurzschlussstroms ohne Schaden aushält.",
+      "difficulty": "mittel",
+      "tags": ["ueberstromschutz", "kurzschluss"]
+    },
+    {
+      "id": "sk-017",
+      "q": "Wie werden Sicherungssockel angeschlossen?",
+      "options": [
+        "Gewindekontakt an Netzseite und Fußkontakt an Verbraucherseite",
+        "Fußkontakt an Netzseite (Einspeisung)",
+        "Beide Kontakte werden parallel an die Netzseite angeschlossen",
+        "Gewindekontakt an Erdungsleiter und Fußkontakt an Neutralleiter"
+      ],
+      "correct": 1,
+      "explanation": "Der Fußkontakt des Sicherungssockels wird an die Netzseite (Einspeisung) angeschlossen, der Gewindekontakt an die Verbraucherseite. So liegt bei herausgenommener Sicherung keine Spannung am berührbaren Gewinde. Das ist eine wichtige Sicherheitsmaßnahme beim Sicherungswechsel.",
+      "difficulty": "mittel",
+      "tags": ["sicherungen", "installation"]
+    },
+    {
+      "id": "sk-018",
+      "q": "Warum dürfen Schmelzeinsätze nicht überbrückt werden?",
+      "options": [
+        "Weil der Leitungsschutz dann nicht mehr gegeben ist und Brandgefahr besteht",
+        "Weil der Isolationswiderstand dadurch unter den Mindestwert sinkt und Fehlerströme auftreten",
+        "Weil die Netzspannung dadurch auf unzulässige Werte ansteigt und Geräte beschädigt werden",
+        "Weil die Selektivität der vorgeschalteten Schutzeinrichtungen dadurch aufgehoben wird"
+      ],
+      "correct": 1,
+      "explanation": "Wenn Schmelzeinsätze überbrückt werden, ist der Leitungsschutz nicht mehr gegeben. Bei Überlast oder Kurzschluss findet dann keine Abschaltung statt. Das führt zur Überhitzung der Leitung und es besteht akute Brand- und Lebensgefahr.",
+      "difficulty": "leicht",
+      "tags": ["sicherungen", "sicherheit"]
+    },
+    {
+      "id": "sk-019",
+      "q": "Warum werden NH-Sicherungen nur unbelastet (stromlos) gewechselt?",
+      "options": [
+        "Weil beim Ziehen unter Last ein Lichtbogen entsteht (Verbrennungsgefahr)",
+        "Weil beim Einsetzen unter Spannung die Kontaktflächen verschweißen (Austauschproblem)",
+        "Weil beim Wechseln unter Betrieb die Selektivität verloren geht (Abschaltfehler)",
+        "Weil beim Herausnehmen unter Strom der Summenstromwandler beschädigt wird (Gerätedefekt)"
+      ],
+      "correct": 1,
+      "explanation": "Beim Ziehen von NH-Sicherungen unter Last entsteht ein gefährlicher Lichtbogen mit extrem hohen Temperaturen. Das kann zu schweren Verbrennungen führen. Deshalb müssen NH-Sicherungen immer im stromlosen Zustand gewechselt werden und es muss Schutzausrüstung getragen werden.",
+      "difficulty": "mittel",
+      "tags": ["sicherungen", "nh-sicherung"]
+    },
+    {
+      "id": "sk-020",
+      "q": "Was bedeutet Freiauslösung bei LS-Schaltern?",
+      "options": [
+        "Der Schalter löst auch bei festgehaltenem Bedienelement aus",
+        "Der Schalter schaltet automatisch nach einer definierten Abkühlzeit wieder ein",
+        "Der Schalter kann nur mit einem speziellen Entriegelungswerkzeug zurückgesetzt werden",
+        "Der Schalter trennt bei Auslösung allpolig alle angeschlossenen Leiter"
+      ],
+      "correct": 1,
+      "explanation": "Freiauslösung bedeutet, dass der LS-Schalter bei Überstrom auch dann zuverlässig auslöst, wenn das Bedienelement (Kipphebel) festgehalten oder blockiert wird. Das ist eine wichtige Sicherheitsfunktion, die verhindert, dass die Schutzwirkung durch Manipulation umgangen werden kann.",
+      "difficulty": "mittel",
+      "tags": ["ls-schalter", "schutzeinrichtungen"]
+    },
+    {
+      "id": "sk-021",
+      "q": "Wie schützt man Motoren vor Überlastung?",
+      "options": [
+        "Durch thermischen Überlastschutz (Motorschutzschalter, Thermorelais)",
+        "Durch magnetische Schnellauslösung (Leitungsschutzschalter, Schmelzsicherungen)",
+        "Durch kapazitive Kompensation (Kondensatorbatterien, Blindleistungsregler)",
+        "Durch galvanische Trennung (Transformatoren, Optokoppler im Steuerkreis)"
+      ],
+      "correct": 1,
+      "explanation": "Motoren werden durch thermischen Überlastschutz geschützt, also durch Motorschutzschalter oder Thermorelais. Diese arbeiten mit Bimetallen, die sich bei zu hohem Strom erwärmen und verbiegen. So wird der Motor abgeschaltet, bevor die Wicklung durch Überhitzung beschädigt wird.",
+      "difficulty": "mittel",
+      "tags": ["motorschutz", "ueberlastschutz"]
+    },
+    {
+      "id": "sk-022",
+      "q": "Wie wirkt ein Thermorelais?",
+      "options": [
+        "Es nutzt die Stromwärme über Bimetalle zur Auslösung bei Überlast",
+        "Es erfasst die Spannungsänderung über Hallsensoren zur Abschaltung bei Unterspannung",
+        "Es misst den Isolationswiderstand über Prüfspannung zur Erkennung bei Erdschluss",
+        "Es überwacht die Drehzahländerung über Impulsgeber zur Reaktion bei Blockierung"
+      ],
+      "correct": 1,
+      "explanation": "Ein Thermorelais nutzt die Wärme des durchfließenden Stroms: Bimetallstreifen erwärmen sich und verbiegen sich bei Überlast. Dadurch wird ein Hilfskontakt geöffnet, der das vorgeschaltete Schütz abfallen lässt und den Motor abschaltet.",
+      "difficulty": "mittel",
+      "tags": ["motorschutz", "thermorelais"]
+    },
+    {
+      "id": "sk-023",
+      "q": "Welche Aufgabe hat der Schutzleiter (PE)?",
+      "options": [
+        "Er verbindet Körper von Betriebsmitteln mit der Erdungsanlage für den Fehlerschutz",
+        "Er leitet den Betriebsstrom von den Verbrauchern zur Einspeisung für den Normalbetrieb",
+        "Er begrenzt die Netzspannung an den Anschlussklemmen für den Überspannungsschutz",
+        "Er verbindet die Außenleiter mit dem Sternpunkt des Transformators für die Versorgung"
+      ],
+      "correct": 1,
+      "explanation": "Der Schutzleiter (PE) verbindet alle Körper (Gehäuse) von Betriebsmitteln mit der Erdungsanlage. Bei einem Körperschluss fließt der Fehlerstrom über den PE ab, sodass die Schutzeinrichtung (LS oder FI) den Stromkreis schnell abschalten kann.",
+      "difficulty": "leicht",
+      "tags": ["schutzleiter", "fehlerschutz"]
+    },
+    {
+      "id": "sk-024",
+      "q": "Worauf ist bei der Verwendung von Kabeltrommeln bei größerer Dauerleistung (>500W) zu achten?",
+      "options": [
+        "Das Kabel darf nicht vollständig abgerollt werden, um die Zugentlastung zu gewährleisten",
+        "Das Kabel muss vollständig abgerollt werden",
+        "Das Kabel muss in Schleifen auf der Trommel fixiert werden, um Verdrehungen zu vermeiden",
+        "Das Kabel sollte zur Hälfte abgerollt und der Rest auf der Trommel gesichert werden"
+      ],
+      "correct": 1,
+      "explanation": "Bei aufgewickeltem Kabel kann die Wärme nicht ausreichend abgeführt werden und es entsteht ein Wärmestau. Ab ca. 500W Dauerleistung muss das Kabel daher vollständig abgerollt werden. Andernfalls kann die Isolierung schmelzen und es besteht Brandgefahr.",
+      "difficulty": "mittel",
+      "tags": ["installation", "sicherheit"]
+    },
+    {
+      "id": "sk-025",
+      "q": "Welchen Vorteil bietet der FI-Schutzschalter gegenüber anderen Schutzmaßnahmen?",
+      "options": [
+        "Er erfasst auch Fehlerströme über den menschlichen Körper direkt gegen Erde",
+        "Er verhindert auch Überlastungen der angeschlossenen Leitungen bei hohem Dauerstrom",
+        "Er begrenzt auch Kurzschlussströme in nachgeschalteten Stromkreisen auf sichere Werte",
+        "Er schützt auch vor Überspannungen durch atmosphärische Entladungen im Versorgungsnetz"
+      ],
+      "correct": 1,
+      "explanation": "Der große Vorteil des FI-Schutzschalters ist, dass er auch Fehlerströme erfasst, die direkt über den menschlichen Körper zur Erde fließen. Selbst wenn kein Schutzleiter vorhanden ist, erkennt der FI den Differenzstrom und schaltet ab. Das bietet Schutz bei direktem Berühren aktiver Teile.",
+      "difficulty": "mittel",
+      "tags": ["fi-schutzschalter", "fehlerschutz"]
+    },
+    {
+      "id": "sk-026",
+      "q": "Was bedeutet die IP-Schutzart-Kennzeichnung?",
+      "options": [
+        "Den Schutzgrad gegen Fremdkörper (1. Ziffer) und Wasser (2. Ziffer)",
+        "Den Isolationsgrad gegen Überspannung (1. Ziffer) und Wärme (2. Ziffer)",
+        "Den Prüfgrad gegen Kurzschluss (1. Ziffer) und Überlast (2. Ziffer)",
+        "Den Schutzgrad gegen Erschütterung (1. Ziffer) und Korrosion (2. Ziffer)"
+      ],
+      "correct": 1,
+      "explanation": "IP steht für International Protection. Die erste Kennziffer (0-6) gibt den Schutzgrad gegen Fremdkörper und Berührung an, die zweite Kennziffer (0-9) den Schutzgrad gegen Wasser. Beispiel: IP44 bedeutet Schutz gegen Fremdkörper über 1mm und Spritzwasser.",
+      "difficulty": "mittel",
+      "tags": ["schutzart", "ip-schutz"]
+    },
+    {
+      "id": "sk-027",
+      "q": "Welche Maßnahmen schützen gegen indirektes Berühren (Fehlerschutz)?",
+      "options": [
+        "Schutzerdung mit automatischer Abschaltung, Schutzisolierung, Schutzkleinspannung",
+        "Basisisolierung mit Abdeckungen und Hindernissen, Fingerschutz, Kriechstromfestigkeit",
+        "Potentialsteuerung mit Erdungsbändern und Ringerdern, Ableitwiderstand, Blitzschutzzonen",
+        "Überstromauslösung mit Bimetallschaltern und Schmelzeinsätzen, Kurzschlussfestigkeit, Lastabwurf"
+      ],
+      "correct": 1,
+      "explanation": "Der Fehlerschutz (Schutz bei indirektem Berühren) wird erreicht durch: Schutzerdung mit automatischer Abschaltung (im TN- und TT-System), Schutzisolierung (Schutzklasse II) und Schutzkleinspannung (SELV/PELV unter 50V AC). Diese Maßnahmen verhindern gefährliche Körperströme bei Isolationsfehlern.",
+      "difficulty": "mittel",
+      "tags": ["fehlerschutz", "schutzmaßnahmen"]
+    },
+    {
+      "id": "sk-028",
+      "q": "Was überwacht die Fehlerstromschutzschaltung (FI)?",
+      "options": [
+        "Die Differenz zwischen hinfließendem und rückfließendem Strom (Summenstrom)",
+        "Die Abweichung zwischen Nennspannung und tatsächlicher Betriebsspannung (Spannungsfall)",
+        "Die Änderung zwischen Nennfrequenz und gemessener Netzfrequenz (Frequenzabweichung)",
+        "Die Differenz zwischen Innentemperatur und zulässiger Grenztemperatur (Wärmeentwicklung)"
+      ],
+      "correct": 1,
+      "explanation": "Der FI-Schutzschalter überwacht die Summe der hin- und rückfließenden Ströme. Im Normalbetrieb ist diese Summe gleich Null. Fließt ein Fehlerstrom zur Erde ab (z.B. über den menschlichen Körper), entsteht eine Differenz und der FI schaltet bei Erreichen des Bemessungsdifferenzstroms ab.",
+      "difficulty": "mittel",
+      "tags": ["fi-schutzschalter", "funktion"]
+    },
+    {
+      "id": "sk-029",
+      "q": "Erkläre Aufbau und Wirkungsweise eines FI-Schutzschalters!",
+      "options": [
+        "Bimetallauslöser erkennt thermische Überlast, Heizwicklung schaltet bei Übertemperatur ab",
+        "Summenstromwandler erkennt Differenzstrom, Auslösespule schaltet bei IΔn ab",
+        "Spannungswandler erkennt Überspannung im Netz, Magnetanker schaltet bei Grenzwert ab",
+        "Hallsensor erkennt magnetische Feldänderung, Elektronikmodul schaltet bei Schwellwert ab"
+      ],
+      "correct": 1,
+      "explanation": "Der FI-Schutzschalter besteht aus einem Summenstromwandler, durch den alle Leiter (L und N) geführt werden. Im Normalbetrieb heben sich die Magnetfelder auf. Bei einem Fehlerstrom entsteht ein Differenzfeld, das in der Sekundärwicklung eine Spannung induziert und über die Auslösespule das Schaltwerk betätigt.",
+      "difficulty": "schwer",
+      "tags": ["fi-schutzschalter", "aufbau"]
+    },
+    {
+      "id": "sk-030",
+      "q": "Welche Arten von Geräteschutzsicherungen gibt es nach Auslösecharakteristik?",
+      "options": [
+        "Superflink (FF), flink (F), mittelträge (M), träge (T), superträge (TT)",
+        "Schnellauslösend (SA), normalauslösend (NA), verzögert (V), stark verzögert (SV), selektiv (SEL)",
+        "Sofortig (S), kurzzeitverzögert (K), mittelverzögert (MV), langzeitverzögert (LV), unabhängig (U)",
+        "Hochempfindlich (HE), empfindlich (E), normalempfindlich (NE), träge (TR), unempfindlich (UE)"
+      ],
+      "correct": 1,
+      "explanation": "Geräteschutzsicherungen werden nach ihrer Auslösecharakteristik unterschieden: FF (superflink), F (flink), M (mittelträge), T (träge) und TT (superträge). Die Auswahl richtet sich nach dem Einschaltstromstoß des zu schützenden Gerätes. Geräte mit hohem Einschaltstrom brauchen trägere Sicherungen.",
+      "difficulty": "mittel",
+      "tags": ["sicherungen", "geraeteschutz"]
+    },
+    {
+      "id": "sk-031",
+      "q": "Was passiert, wenn ein FI-Schutzschalter in einem TN-C-Netz eingesetzt wird?",
+      "options": [
+        "Er löst sofort oder gar nicht aus, da der PEN den Summenstromwandler umgeht",
+        "Er funktioniert einwandfrei und zuverlässig, da der PEN den Fehlerstrom sicher ableitet",
+        "Er reduziert die Abschaltzeit erheblich, da der PEN den Fehlerstromkreis unterstützt",
+        "Er erhöht die Empfindlichkeit deutlich, da der PEN den Differenzstrom verstärkt"
+      ],
+      "correct": 1,
+      "explanation": "Im TN-C-Netz ist der PEN-Leiter gleichzeitig Schutz- und Neutralleiter. Der Fehlerstrom fließt über den PEN zurück, ohne den Summenstromwandler zu durchfließen. Der FI kann den Fehler daher nicht erkennen oder löst ständig falsch aus. Ein FI darf im TN-C-Netz nicht eingesetzt werden.",
+      "difficulty": "schwer",
+      "tags": ["fi-schutzschalter", "netzsysteme"]
+    },
+    {
+      "id": "sk-032",
+      "q": "Bei welchem Strom löst ein LS-Schalter B13A sicher aus (magnetische Schnellauslösung)?",
+      "options": [
+        "Bei 3- bis 5-fachem Nennstrom (39-65A)",
+        "Bei 5- bis 10-fachem Nennstrom (65-130A) für Verbraucher mit mittlerem Einschaltstrom",
+        "Bei 10- bis 14-fachem Nennstrom (130-182A) für Verbraucher mit hohem Einschaltstrom",
+        "Bei 1- bis 2-fachem Nennstrom (13-26A) für empfindliche Verbraucher ohne Einschaltstrom"
+      ],
+      "correct": 1,
+      "explanation": "Die Charakteristik B bedeutet, dass die magnetische Schnellauslösung bei dem 3- bis 5-fachen des Nennstroms erfolgt. Bei einem B13A-Schalter liegt die sofortige Auslösung also im Bereich von 39-65A. Diese Charakteristik ist für normale Verbraucher wie Steckdosen und Beleuchtung geeignet.",
+      "difficulty": "mittel",
+      "tags": ["ls-schalter", "charakteristik"]
+    },
+    {
+      "id": "sk-033",
+      "q": "Warum sind 230V lebensgefährlich?",
+      "options": [
+        "Weil bei 1000Ω Körperwiderstand 230mA fließen, weit über der Gefährdungsgrenze von 50mA",
+        "Weil bei 5000Ω Hautwiderstand die Einwirkdauer unter der Wahrnehmungsschwelle von 10ms liegt",
+        "Weil bei 2000Ω Übergangswiderstand die Spannung über dem Isolationsniveau von 500V liegt",
+        "Weil bei 10000Ω Gesamtwiderstand die Leistung über dem Grenzwert von 100W am Körper liegt"
+      ],
+      "correct": 1,
+      "explanation": "Bei einem angenommenen Körperwiderstand von 1000 Ohm ergibt sich nach dem Ohmschen Gesetz: I = U/R = 230V/1000 Ohm = 230mA. Da bereits ab 50mA Lebensgefahr durch Herzkammerflimmern besteht, ist 230V Netzspannung tödlich gefährlich.",
+      "difficulty": "mittel",
+      "tags": ["sicherheit", "gefaehrdung"]
+    },
+    {
+      "id": "sk-034",
+      "q": "Welche gefährlichen Wirkungen hat der elektrische Strom auf den Menschen?",
+      "options": [
+        "Verbrennungen, Herzrhythmusstörungen, Muskelverkrampfung, Atemlähmung, Tod",
+        "Hautreizungen, Blutdruckschwankungen, Gleichgewichtsstörungen, Sehstörungen, Bewusstlosigkeit",
+        "Kopfschmerzen, Nervenschädigungen, Gehörschädigungen, Knochenbrüche, Gewebeschäden",
+        "Taubheitsgefühl, Kreislaufstörungen, Gelenksteifigkeit, Atemnot, Schockzustände"
+      ],
+      "correct": 1,
+      "explanation": "Elektrischer Strom kann beim Menschen schwere Wirkungen verursachen: Verbrennungen (innen und außen), Herzkammerflimmern und Herzrhythmusstörungen, Muskelverkrampfung (man kann den Leiter nicht mehr loslassen), Atemlähmung und im schlimmsten Fall den Tod. Die Gefahr hängt von Stromstärke, Einwirkdauer und Stromweg ab.",
+      "difficulty": "mittel",
+      "tags": ["sicherheit", "stromwirkung"]
+    },
+    {
+      "id": "sk-035",
+      "q": "Was versteht man unter Stromtod?",
+      "options": [
+        "Tod durch Herzkammerflimmern, Herzstillstand oder Atemlähmung infolge Stromeinwirkung",
+        "Tod durch thermische Zersetzung, Gewebeverkohlung oder Organversagen infolge Lichtbogeneinwirkung",
+        "Tod durch Muskelverkrampfung, Kreislaufversagen oder Nervenschädigung infolge Spannungseinwirkung",
+        "Tod durch Druckwelle, Gehörschädigung oder innere Verletzungen infolge Kurzschlusseinwirkung"
+      ],
+      "correct": 1,
+      "explanation": "Stromtod bezeichnet den Tod durch elektrische Einwirkung auf den Körper. Er entsteht meist durch Herzkammerflimmern, bei dem das Herz unkoordiniert zuckt und kein Blut mehr pumpt. Auch Herzstillstand und Atemlähmung können die Todesursache sein. Schnelle Erste Hilfe mit Defibrillator und Wiederbelebung ist entscheidend.",
+      "difficulty": "mittel",
+      "tags": ["sicherheit", "stromwirkung"]
+    },
+    {
+      "id": "sk-036",
+      "q": "Welche Werte müssen bei einer Isolationsmessung eingehalten werden?",
+      "options": [
+        "Mindestens 1 MΩ zwischen aktiven Leitern und PE",
+        "Mindestens 100 kΩ zwischen Neutralleiter und Erdungsanlage",
+        "Mindestens 500 kΩ zwischen Außenleitern und Potentialausgleich",
+        "Mindestens 10 MΩ zwischen Schutzleiter und Betriebsmittelgehäuse"
+      ],
+      "correct": 1,
+      "explanation": "Bei der Isolationsmessung muss der Isolationswiderstand mindestens 1 MΩ (1 Megaohm) zwischen den aktiven Leitern und dem Schutzleiter (PE) betragen. Die Messung erfolgt mit einer Gleichspannung von 500V DC. Niedrigere Werte deuten auf einen Isolationsfehler hin und müssen behoben werden.",
+      "difficulty": "schwer",
+      "tags": ["messtechnik", "isolationsmessung"]
+    },
+    {
+      "id": "sk-037",
+      "q": "Wie werden die Schutzklassen gekennzeichnet?",
+      "options": [
+        "SK I mit Erdungszeichen, SK II mit Doppelquadrat, SK III mit SELV-Symbol",
+        "SK I mit Blitzsymbol, SK II mit Dreifachkreis, SK III mit PELV-Dreieck",
+        "SK I mit Schutzdach, SK II mit Einfachquadrat, SK III mit Raute ohne Ziffer",
+        "SK I mit Wechselstromsymbol, SK II mit Gleichstromsymbol, SK III mit Erdungsdreieck"
+      ],
+      "correct": 1,
+      "explanation": "Die Schutzklassen werden mit folgenden Symbolen auf dem Typenschild gekennzeichnet: SK I mit dem Erdungszeichen, SK II mit dem Doppelquadrat (Schutzisolierung) und SK III mit dem SELV-Symbol. Diese Symbole zeigen dem Benutzer, welcher Schutz gegen elektrischen Schlag vorhanden ist.",
+      "difficulty": "mittel",
+      "tags": ["schutzklassen", "kennzeichnung"]
+    },
+    {
+      "id": "sk-038",
+      "q": "Bei welchem Strom löst ein LS-Schalter C16A sicher aus (magnetische Schnellauslösung)?",
+      "options": [
+        "Bei 5- bis 10-fachem Nennstrom (80-160A)",
+        "Bei 3- bis 5-fachem Nennstrom (48-80A) für ohmsche Verbraucher ohne Einschaltstrom",
+        "Bei 10- bis 14-fachem Nennstrom (160-224A) für Verbraucher mit sehr hohem Anlaufstrom",
+        "Bei 1- bis 3-fachem Nennstrom (16-48A) für empfindliche elektronische Verbraucher"
+      ],
+      "correct": 1,
+      "explanation": "Die Charakteristik C hat eine magnetische Schnellauslösung bei dem 5- bis 10-fachen des Nennstroms. Bei einem C16A-Schalter liegt die Sofortauslösung im Bereich von 80-160A. Diese Charakteristik eignet sich für Verbraucher mit höherem Einschaltstrom wie Motoren oder Leuchtstofflampen.",
+      "difficulty": "mittel",
+      "tags": ["ls-schalter", "charakteristik"]
+    },
+    {
+      "id": "sk-039",
+      "q": "Was regelt die ÖVE E 8101?",
+      "options": [
+        "Errichtung und Betrieb von Niederspannungsanlagen",
+        "Planung und Wartung von Hochspannungsfreileitungen über 1kV",
+        "Prüfung und Instandhaltung von Blitzschutzanlagen an Gebäuden",
+        "Herstellung und Zertifizierung von Schaltgeräten für Industrieanlagen"
+      ],
+      "correct": 1,
+      "explanation": "Die ÖVE E 8101 (auch ÖVE/ÖNORM E 8101) ist die wichtigste Norm für die Errichtung von elektrischen Niederspannungsanlagen in Österreich. Sie legt die Anforderungen an Planung, Errichtung und Prüfung fest und ist verbindlich für alle Elektroinstallationen.",
+      "difficulty": "mittel",
+      "tags": ["normen", "ove"]
+    },
+    {
+      "id": "sk-040",
+      "q": "Was ist die TAEV?",
+      "options": [
+        "Technische Anschlussbedingungen für den Anschluss an öffentliche Versorgungsnetze",
+        "Technische Ausführungsvorschriften für die Errichtung von elektrischen Verteilungsanlagen",
+        "Technische Abnahmebestimmungen für die Inbetriebnahme von industriellen Schaltanlagen",
+        "Technische Anforderungsrichtlinien für die Herstellung von elektronischen Verbrauchsgeräten"
+      ],
+      "correct": 1,
+      "explanation": "TAEV steht für Technische Anschlussbedingungen für den Anschluss an öffentliche Elektrizitätsversorgungsnetze. Sie regelt die Schnittstelle zwischen der Kundenanlage und dem Netz des Energieversorgungsunternehmens (EVU). Jeder Elektriker muss die TAEV bei Neuanschlüssen beachten.",
+      "difficulty": "mittel",
+      "tags": ["normen", "taev"]
+    },
+    {
+      "id": "sk-041",
+      "q": "Wie müssen Not-Aus- und Not-Halt-Einrichtungen angeordnet sein?",
+      "options": [
+        "Gut sichtbar, leicht erreichbar, rot auf gelbem Hintergrund",
+        "Verdeckt montiert, mit Schlüssel bedienbar, blau auf weißem Hintergrund",
+        "In Schaltschränken integriert, mit Passwort gesichert, schwarz auf grauem Hintergrund",
+        "Hinter Schutzabdeckungen platziert, nach Freigabe bedienbar, grün auf schwarzem Hintergrund"
+      ],
+      "correct": 1,
+      "explanation": "Not-Aus- und Not-Halt-Einrichtungen müssen gut sichtbar und leicht erreichbar angeordnet sein. Sie sind rot auf gelbem Hintergrund gekennzeichnet, damit sie im Notfall sofort gefunden werden können. Die Entriegelung darf nicht automatisch erfolgen, sondern muss bewusst vorgenommen werden.",
+      "difficulty": "leicht",
+      "tags": ["not-aus", "sicherheit"]
+    },
+    {
+      "id": "sk-042",
+      "q": "Welcher Grenzwert gilt für die konventionelle Berührungsspannung UL?",
+      "options": [
+        "50V AC / 120V DC (allgemein), 65V AC in trockenen Räumen",
+        "25V AC / 60V DC (allgemein), 35V AC in feuchten Räumen und Baustellen",
+        "120V AC / 200V DC (allgemein), 150V AC in industriellen Betriebsstätten",
+        "12V AC / 30V DC (allgemein), 24V AC in explosionsgefährdeten Bereichen"
+      ],
+      "correct": 1,
+      "explanation": "Die konventionelle Berührungsspannungsgrenze UL beträgt allgemein 50V AC bzw. 120V DC. In trockenen Räumen gilt ein erhöhter Wert von 65V AC. Unterhalb dieser Grenzwerte geht man davon aus, dass keine Gefahr für den Menschen besteht.",
+      "difficulty": "schwer",
+      "tags": ["fehlerspannung", "grenzwerte"]
+    },
+    {
+      "id": "sk-043",
+      "q": "Welche Aufgaben hat der PEN-Leiter?",
+      "options": [
+        "Kombination aus Schutzleiter (PE) und Neutralleiter (N) im TN-C-System",
+        "Verbindung zwischen Blitzschutzanlage (BA) und Fundamenterder (FE) im Erdungssystem",
+        "Trennung von Steuerstromkreis (ST) und Hauptstromkreis (HS) im Motorschutz",
+        "Zusammenführung von Außenleiter (L) und Kompensationsleiter (K) im TT-System"
+      ],
+      "correct": 1,
+      "explanation": "Der PEN-Leiter ist ein kombinierter Schutz- und Neutralleiter, der im TN-C-System verwendet wird. Er übernimmt zwei Aufgaben gleichzeitig: Er führt den Betriebsstrom zurück (Funktion des N) und dient als Schutzleiter (Funktion des PE). Ein PEN-Leiter darf nicht geschaltet oder gesichert werden.",
+      "difficulty": "mittel",
+      "tags": ["pen-leiter", "netzsysteme"]
+    },
+    {
+      "id": "sk-044",
+      "q": "Was ist der Unterschied zwischen Schutzleiter (PE) und PEN-Leiter?",
+      "options": [
+        "PE nur Schutzfunktion, PEN kombiniert Schutz- und Neutralleiterfunktion",
+        "PE nur Betriebsfunktion, PEN kombiniert Betriebs- und Erdungsleiterfunktion",
+        "PE nur Ausgleichsfunktion, PEN kombiniert Ausgleichs- und Außenleiterfunktion",
+        "PE nur Ableitfunktion, PEN kombiniert Ableit- und Kompensationsleiterfunktion"
+      ],
+      "correct": 1,
+      "explanation": "Der Schutzleiter (PE) hat ausschließlich eine Schutzfunktion und führt keinen Betriebsstrom. Der PEN-Leiter kombiniert beide Funktionen: Er ist Schutzleiter und Neutralleiter zugleich und kommt nur im TN-C-System vor. Ab dem Punkt der Auftrennung in PE und N (TN-C-S) dürfen sie nicht mehr zusammengeführt werden.",
+      "difficulty": "mittel",
+      "tags": ["schutzleiter", "pen-leiter"]
+    },
+    {
+      "id": "sk-045",
+      "q": "Welche drei Fehler können bei der Schutzleiterprüfung festgestellt werden?",
+      "options": [
+        "Unterbrechung, Vertauschung, schlechte Kontaktstellen",
+        "Überlastung, Kurzschluss, thermische Beschädigung der Isolierung",
+        "Erdschluss, Körperschluss, Isolationsdurchschlag im Betriebsmittel",
+        "Farbfehler, Querschnittsunterschreitung, fehlerhafte Zugentlastung der Klemmen"
+      ],
+      "correct": 1,
+      "explanation": "Bei der Schutzleiterprüfung können drei typische Fehler festgestellt werden: Eine Unterbrechung des PE (kein Durchgang), eine Vertauschung mit anderen Leitern (z.B. PE und N vertauscht) und schlechte oder lose Klemmverbindungen (erhöhter Übergangswiderstand). Alle drei Fehler gefährden die Schutzfunktion.",
+      "difficulty": "mittel",
+      "tags": ["schutzleiter", "pruefung"]
+    },
+    {
+      "id": "sk-046",
+      "q": "Welche Schmelzsicherungsarten werden unterschieden?",
+      "options": [
+        "NH-Sicherungen, Diazed-Sicherungen, Neozed-Sicherungen",
+        "Glasrohrsicherungen, Keramiksicherungen, Kunststoffsicherungen",
+        "Hochspannungssicherungen, Mittelspannungssicherungen, Niederspannungssicherungen",
+        "Schraubsicherungen, Stecksicherungen, Klemmsicherungen im Automatenformat"
+      ],
+      "correct": 1,
+      "explanation": "Die drei wichtigsten Schmelzsicherungsarten sind: NH-Sicherungen (Niederspannungs-Hochleistungssicherungen, für große Ströme), Diazed-Sicherungen (ältere Schraubsicherungen, größere Bauform) und Neozed-Sicherungen (kompakte Schraubsicherungen, genormt). Alle arbeiten mit einem Schmelzleiter, der bei Überstrom durchschmilzt.",
+      "difficulty": "leicht",
+      "tags": ["sicherungen", "arten"]
+    },
+    {
+      "id": "sk-047",
+      "q": "Was ist der Zweck eines LS-Schalters (Leitungsschutzschalters)?",
+      "options": [
+        "Schutz der Leitung vor Überlast und Kurzschluss",
+        "Schutz der Motoren vor Überhitzung und Phasenausfall",
+        "Schutz der Personen vor Fehlerstrom und Berührungsspannung",
+        "Schutz der Geräte vor Überspannung und Frequenzabweichung"
+      ],
+      "correct": 1,
+      "explanation": "Der LS-Schalter schützt die Leitung vor Überlast und Kurzschluss. Er hat dafür zwei Auslösemechanismen: Die thermische Auslösung (Bimetall) reagiert verzögert auf Überlast, und die magnetische Schnellauslösung reagiert sofort auf Kurzschlussströme.",
+      "difficulty": "leicht",
+      "tags": ["ls-schalter", "funktion"]
+    },
+    {
+      "id": "sk-048",
+      "q": "Ab welcher Spannung sind Schutzmaßnahmen gegen gefährliche Körperströme vorgeschrieben?",
+      "options": [
+        "Ab 50V AC / 120V DC",
+        "Ab 25V AC / 60V DC in allen Bereichen",
+        "Ab 120V AC / 200V DC im Normalbetrieb",
+        "Ab 12V AC / 30V DC bei Wechselspannung"
+      ],
+      "correct": 1,
+      "explanation": "Schutzmaßnahmen gegen gefährliche Körperströme sind ab 50V AC bzw. 120V DC vorgeschrieben. Unterhalb dieser Grenzwerte spricht man von Schutzkleinspannung (SELV/PELV). In besonderen Bereichen wie Bädern oder Baustellen gelten strengere Grenzwerte von 25V AC.",
+      "difficulty": "mittel",
+      "tags": ["sicherheit", "grenzwerte"]
+    },
+    {
+      "id": "sk-049",
+      "q": "Wie wird ein Verunglückter bei einem Stromunfall vom Netz getrennt?",
+      "options": [
+        "FI/LS ausschalten, Stecker ziehen, Freischlagen mit isoliertem Gegenstand",
+        "Verunglückten direkt anfassen, von der Leitung wegziehen, mit Wasser abkühlen",
+        "Metallwerkzeug verwenden, Leitung durchschneiden, Verunglückten am Arm wegziehen",
+        "Hauptsicherung im Keller entfernen, Generator abschalten, Verunglückten mit nassen Handschuhen befreien"
+      ],
+      "correct": 1,
+      "explanation": "Bei einem Stromunfall gilt zuerst Eigenschutz. Den Stromkreis sofort unterbrechen: FI oder LS ausschalten, Stecker ziehen oder Hauptschalter betätigen. Wenn das nicht möglich ist, den Verunglückten mit einem trockenen, isolierenden Gegenstand vom spannungsführenden Teil trennen. Danach sofort Erste Hilfe leisten und Rettung rufen.",
+      "difficulty": "mittel",
+      "tags": ["stromunfall", "erste-hilfe"]
+    },
+    {
+      "id": "sk-050",
+      "q": "Bei welchen Gründen löst der thermische Motorschutz aus?",
+      "options": [
+        "Bei Überlast, Phasenausfall, blockiertem Rotor, zu häufigem Schalten",
+        "Bei Unterspannung, Frequenzabweichung, falschem Drehfeld, zu niedriger Drehzahl",
+        "Bei Kurzschluss, Erdschluss, Isolationsdurchschlag, zu hoher Netzspannung",
+        "Bei Oberschwingungen, Spannungsspitzen, kapazitiver Belastung, zu langem Kabelweg"
+      ],
+      "correct": 1,
+      "explanation": "Der thermische Motorschutz löst aus bei: Überlast (Strom dauerhaft über Nennstrom), Phasenausfall (eine Phase fehlt, höherer Strom in den anderen), blockiertem Rotor (Motor steht, sehr hoher Strom) und zu häufigem Ein-/Ausschalten. In all diesen Fällen erwärmen sich die Bimetalle und öffnen den Hilfskontakt.",
+      "difficulty": "mittel",
+      "tags": ["motorschutz", "ausloesung"]
+    }
+  ]
+}

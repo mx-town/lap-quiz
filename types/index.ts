@@ -93,6 +93,7 @@ export const CHAPTERS = [
   { number: 9, name: "Regelungs-/Steuerungstechnik/SPS", icon: "Settings" },
   { number: 10, name: "Netzsysteme", icon: "Network" },
   { number: 11, name: "SMT-Fertigung", icon: "CircuitBoard" },
+  { number: 12, name: "Elektrische Motoren", icon: "Motor" },
 ] as const
 
 export const PRESET_PROFILES = [

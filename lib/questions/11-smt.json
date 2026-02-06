@@ -1,0 +1,535 @@
+{
+  "chapter": "11",
+  "title": "SMT & Löttechnik",
+  "description": "Surface Mount Technology, Löten, Bauteile, Leiterplatten, Bestückung, Qualitätskontrolle",
+  "questionCount": 31,
+  "questions": [
+    {
+      "id": "smt-001",
+      "q": "Was bedeutet SMT?",
+      "options": [
+        "Standard Mounting Technology (Standardmontagetechnik)",
+        "Surface Mount Technology (Oberflächenmontage)",
+        "Selective Masking Technology (Selektivmaskierungstechnik)",
+        "Structural Module Technology (Strukturmodultechnik)"
+      ],
+      "correct": 1,
+      "explanation": "SMT steht für Surface Mount Technology, also Oberflächenmontagetechnik. Dabei werden elektronische Bauteile (SMD) direkt auf die Oberfläche der Leiterplatte gelötet, ohne dass Drähte durch Bohrungen gesteckt werden müssen. Dieses Verfahren ermöglicht eine kompaktere Bauweise und eine automatisierte Fertigung.",
+      "difficulty": "leicht",
+      "tags": [
+        "smt",
+        "grundlagen"
+      ]
+    },
+    {
+      "id": "smt-002",
+      "q": "Was bedeutet SMD?",
+      "options": [
+        "Surface Mount Device (oberflächenmontiertes Bauteil)",
+        "Selective Module Device (selektives Modulbauteil)",
+        "Substrate Mounted Device (substratmontiertes Bauteil)",
+        "Soldered Miniature Device (gelötetes Miniaturbauteil)"
+      ],
+      "correct": 0,
+      "explanation": "SMD steht für Surface Mount Device und bezeichnet elektronische Bauteile, die für die Oberflächenmontage konstruiert sind. Im Gegensatz zu THT-Bauteilen haben SMD-Bauteile keine langen Drahtanschlüsse zum Durchstecken, sondern kurze Kontaktflächen oder Lotkugeln. Dadurch sind sie wesentlich kleiner und ermöglichen eine höhere Packungsdichte auf der Leiterplatte.",
+      "difficulty": "leicht",
+      "tags": [
+        "smd",
+        "grundlagen"
+      ]
+    },
+    {
+      "id": "smt-003",
+      "q": "Was ist der Unterschied zwischen SMD und THT?",
+      "options": [
+        "SMD: Wellenlötverfahren. THT: Dampfphasenlötverfahren",
+        "SMD: Oberflächenmontage. THT: Durchsteckmontage",
+        "SMD: Schmelzverbindung. THT: Klebstoffverbindung",
+        "SMD: Einschichtplatine. THT: Mehrschichtplatine"
+      ],
+      "correct": 1,
+      "explanation": "Bei SMD (Surface Mount Device) werden die Bauteile direkt auf die Oberfläche der Leiterplatte gelötet. Bei THT (Through Hole Technology) werden die Anschlussdrähte der Bauteile durch Bohrungen in der Leiterplatte gesteckt und auf der Unterseite verlötet. SMD erlaubt kleinere Bauformen und beidseitige Bestückung, während THT-Bauteile mechanisch stabiler befestigt sind.",
+      "difficulty": "leicht",
+      "tags": [
+        "smd",
+        "tht"
+      ]
+    },
+    {
+      "id": "smt-004",
+      "q": "Welche Vorteile bietet SMT gegenüber THT?",
+      "options": [
+        "Größere Bauteile, geringere Packungsdichte, einseitige Bestückung, manuell verarbeitet",
+        "Kleinere Bauteile, höhere Packungsdichte, beidseitige Bestückung, automatisierbar",
+        "Stärkere Verbindungen, höhere Spannungsfestigkeit, dickere Leiterbahnen, robuster aufgebaut",
+        "Einfachere Inspektion, geringerer Materialeinsatz, schnellere Handbestückung, weniger Werkzeuge"
+      ],
+      "correct": 1,
+      "explanation": "SMT bietet gegenüber THT zahlreiche Vorteile: Die Bauteile sind wesentlich kleiner, was eine höhere Packungsdichte ermöglicht, und die Leiterplatte kann beidseitig bestückt werden. Zudem eignet sich SMT hervorragend für die automatisierte Fertigung mit Pick-and-Place-Automaten und bietet bessere Hochfrequenz-Eigenschaften durch kürzere Anschlusswege.",
+      "difficulty": "mittel",
+      "tags": [
+        "smt",
+        "vorteile"
+      ]
+    },
+    {
+      "id": "smt-005",
+      "q": "Was ist Lotpaste?",
+      "options": [
+        "Flussmittel aus Kolophonium, Isopropanol und Aktivatoren",
+        "Gemisch aus Lotpulver, Flussmittel und Bindemittel",
+        "Leitkleber aus Silberpartikeln, Epoxidharz und Härtern",
+        "Reiniger aus Lösungsmittel, Tensiden und Korrosionsschutzmitteln"
+      ],
+      "correct": 1,
+      "explanation": "Lotpaste ist eine pastöse Mischung aus feinem Lotpulver (meist eine Zinn-Silber-Kupfer-Legierung), Flussmittel und Bindemittel. Sie wird mittels Schablonendruck gezielt auf die Lötpads der Leiterplatte aufgetragen. Beim anschließenden Reflow-Löten schmilzt das Lotpulver und stellt die elektrische Verbindung zwischen Bauteil und Pad her.",
+      "difficulty": "mittel",
+      "tags": [
+        "lotpaste",
+        "material"
+      ]
+    },
+    {
+      "id": "smt-006",
+      "q": "Was ist ein Schablonendruck (Stencil Printing)?",
+      "options": [
+        "Aufbringen von Lötstopplack durch Siebdruckverfahren auf die Platine",
+        "Auftragen von Lotpaste durch Metallschablone auf die Pads",
+        "Übertragen von Leiterbahnmustern durch Fotobelichtung auf das Kupfer",
+        "Aufdrucken von Bauteilkennzeichnungen durch Tintenstrahlverfahren auf den Bestückungsdruck"
+      ],
+      "correct": 1,
+      "explanation": "Beim Schablonendruck wird Lotpaste mithilfe eines Rakels durch die Öffnungen einer Metallschablone (Stencil) auf die Pads der Leiterplatte gedruckt. Die Schablone stellt sicher, dass eine exakt definierte Lotmenge auf jedem Pad landet. Dieser Prozessschritt ist entscheidend für die Qualität der späteren Lötverbindung.",
+      "difficulty": "mittel",
+      "tags": [
+        "schablonendruck",
+        "prozess"
+      ]
+    },
+    {
+      "id": "smt-007",
+      "q": "Was ist ein Pick-and-Place-Automat?",
+      "options": [
+        "Messgerät zur automatischen Qualitätsprüfung der fertigen Leiterplatte",
+        "Maschine zur automatischen Bauteilplatzierung auf der Leiterplatte",
+        "Druckanlage zur automatischen Lotpastenverteilung auf der Schablone",
+        "Ofenanlage zur automatischen Temperatursteuerung beim Reflowprozess"
+      ],
+      "correct": 1,
+      "explanation": "Ein Pick-and-Place-Automat ist eine Bestückungsmaschine, die SMD-Bauteile aus Gurten, Trays oder Stangen entnimmt und präzise auf der Leiterplatte platziert. Eine optische Erkennung kontrolliert die Position und Ausrichtung jedes Bauteils vor dem Absetzen auf die Lotpaste. Moderne Maschinen können mehrere zehntausend Bauteile pro Stunde bestücken.",
+      "difficulty": "mittel",
+      "tags": [
+        "pick-and-place",
+        "maschinen"
+      ]
+    },
+    {
+      "id": "smt-008",
+      "q": "Was ist Reflow-Löten?",
+      "options": [
+        "Löten durch manuelles Aufbringen von Lötzinn mit dem Lötkolben",
+        "Löten durch Erhitzen der Baugruppe im Ofen nach Temperaturprofil",
+        "Löten durch Eintauchen der Platine in eine flüssige Lotwelle",
+        "Löten durch Einwirken von Ultraschallwellen auf die Kontaktstelle"
+      ],
+      "correct": 1,
+      "explanation": "Beim Reflow-Löten durchläuft die bestückte Leiterplatte einen Ofen mit einem genau definierten Temperaturprofil. Dabei wird die aufgetragene Lotpaste erhitzt, bis sie schmilzt (Reflow) und eine zuverlässige Lötverbindung zwischen den SMD-Bauteilen und den Pads herstellt. Das Verfahren ist der Standardprozess für die SMT-Massenfertigung.",
+      "difficulty": "mittel",
+      "tags": [
+        "reflow",
+        "loeten"
+      ]
+    },
+    {
+      "id": "smt-009",
+      "q": "Welche Phasen hat ein typisches Reflow-Profil?",
+      "options": [
+        "Kalibrierung, Flussmittelauftrag, Dampfphasenlöten, Reinigung",
+        "Vorheizen, Soak (Aktivierung), Reflow (Peak), Abkühlen",
+        "Entfettung, Vorbehandlung, Wellenlöten, Nachbehandlung",
+        "Bestückung, Vortrocknung, Infrarotlöten, Sichtprüfung"
+      ],
+      "correct": 1,
+      "explanation": "Ein typisches Reflow-Profil besteht aus vier Phasen: Beim Vorheizen wird die Baugruppe langsam erwärmt, in der Soak-Phase wird das Flussmittel aktiviert und die Temperatur gleichmäßig verteilt. In der Reflow-Phase (Peak) schmilzt das Lot bei der höchsten Temperatur, und anschließend kühlt die Baugruppe kontrolliert ab. Jede Phase hat einen bestimmten Temperaturbereich und eine definierte Dauer, die exakt eingehalten werden müssen.",
+      "difficulty": "schwer",
+      "tags": [
+        "reflow",
+        "profil"
+      ]
+    },
+    {
+      "id": "smt-011",
+      "q": "Was ist die Aufgabe des Flussmittels?",
+      "options": [
+        "Erhöht Viskosität, verdickt Lotpaste, verbessert Schablonendruck",
+        "Entfernt Oxide, verbessert Benetzung, verhindert Neuoxidation",
+        "Verstärkt Leiterbahn, erhöht Strombelastbarkeit, verbessert Wärmeableitung",
+        "Fixiert Bauteile, verhindert Verrutschen, stabilisiert Positionierung"
+      ],
+      "correct": 1,
+      "explanation": "Das Flussmittel hat drei wesentliche Aufgaben beim Lötprozess: Es entfernt vorhandene Oxidschichten auf den Metalloberflächen, es verbessert die Benetzung, sodass das flüssige Lot gleichmäßig auf den Kontaktflächen fließt, und es schützt die gereinigten Oberflächen während des Lötens vor erneuter Oxidation. Ohne Flussmittel könnte das Lot keine zuverlässige Verbindung eingehen.",
+      "difficulty": "mittel",
+      "tags": [
+        "flussmittel",
+        "loeten"
+      ]
+    },
+    {
+      "id": "smt-013",
+      "q": "Was bedeutet RoHS?",
+      "options": [
+        "Regulation of Hardware Standards",
+        "Restriction of Hazardous Substances",
+        "Requirement of Homologation Systems",
+        "Reduction of Halogenated Solvents"
+      ],
+      "correct": 1,
+      "explanation": "RoHS steht für Restriction of Hazardous Substances und ist eine EU-Richtlinie, die die Verwendung bestimmter gefährlicher Stoffe in Elektro- und Elektronikgeräten einschränkt. Dazu gehören unter anderem Blei, Cadmium, Quecksilber und sechswertiges Chrom. Deshalb wird in der modernen Elektronikfertigung bleifreies Lot verwendet.",
+      "difficulty": "leicht",
+      "tags": [
+        "rohs",
+        "umwelt"
+      ]
+    },
+    {
+      "id": "smt-014",
+      "q": "Was ist eine kalte Lötstelle?",
+      "options": [
+        "Planmäßige Verbindung durch kontrolliertes Abkühlen nach Vorgabe",
+        "Fehlerhafte Verbindung durch ungenügende Erwärmung",
+        "Temporäre Verbindung durch absichtliches Kurzzeitleisten im Prototyp",
+        "Verstärkte Verbindung durch zusätzliche Lotmenge am Kontaktpunkt"
+      ],
+      "correct": 1,
+      "explanation": "Eine kalte Lötstelle entsteht, wenn beim Löten zu wenig Wärme zugeführt wird oder die Lötstelle während des Erstarrens bewegt wird. Sie ist an ihrem matten, körnigen Aussehen erkennbar und zeigt eine schlechte Benetzung der Oberflächen. Kalte Lötstellen sind elektrisch unzuverlässig und können zu intermittierenden Ausfällen führen, weshalb sie unbedingt nachgearbeitet werden müssen.",
+      "difficulty": "mittel",
+      "tags": [
+        "loetfehler",
+        "qualitaet"
+      ]
+    },
+    {
+      "id": "smt-015",
+      "q": "Was ist ein Tombstone-Effekt?",
+      "options": [
+        "Bauteil verschiebt sich seitlich durch Flussmittelaktivierung beim Reflow",
+        "Bauteil richtet sich einseitig auf wie ein Grabstein",
+        "Bauteil dreht sich um die eigene Achse durch Konvektionsströmung",
+        "Bauteil versinkt vollständig in der Lotpaste beim Bestücken"
+      ],
+      "correct": 1,
+      "explanation": "Der Tombstone-Effekt tritt auf, wenn sich ein kleines SMD-Bauteil (z.B. ein Widerstand 0402) während des Reflow-Lötens einseitig aufrichtet und senkrecht steht wie ein Grabstein. Die Ursache liegt meist in einer ungleichmäßigen Erwärmung oder unterschiedlichen Lotmengen auf den beiden Pads. Dadurch entsteht auf einer Seite eine stärkere Oberflächenspannung, die das Bauteil hochzieht.",
+      "difficulty": "mittel",
+      "tags": [
+        "loetfehler",
+        "tombstone"
+      ]
+    },
+    {
+      "id": "smt-016",
+      "q": "Was ist eine Lötbrücke?",
+      "options": [
+        "Geplante Leiterbahnverbindung zwischen zwei benachbarten Schaltungsteilen",
+        "Ungewollte Lotverbindung zwischen benachbarten Pads/Pins",
+        "Thermische Entlastungsstruktur zwischen Pad und Kupferfläche",
+        "Mechanische Verstärkungsstruktur zwischen Leiterplatte und Bauteil"
+      ],
+      "correct": 1,
+      "explanation": "Eine Lötbrücke ist eine unbeabsichtigte Verbindung aus Lot zwischen zwei benachbarten Pads oder Pins, die einen Kurzschluss verursacht. Die häufigsten Ursachen sind zu viel aufgetragene Lotpaste oder ein zu enger Pinabstand bei fein gerasterten Bauteilen. Lötbrücken müssen durch Entlötlitze oder Nacharbeit mit dem Lötkolben entfernt werden, da sie die Schaltung beschädigen können.",
+      "difficulty": "leicht",
+      "tags": [
+        "loetfehler",
+        "bruecke"
+      ]
+    },
+    {
+      "id": "smt-017",
+      "q": "Was ist AOI?",
+      "options": [
+        "Automatische Oszilloskop-Integration",
+        "Automatische Optische Inspektion",
+        "Automatische Ofentemperatur-Indikation",
+        "Automatische Oberflächen-Ionisierung"
+      ],
+      "correct": 1,
+      "explanation": "AOI steht für Automatische Optische Inspektion und ist ein kamerabasiertes Prüfverfahren in der SMT-Fertigung. Hochauflösende Kameras nehmen die bestückte und gelötete Leiterplatte auf und vergleichen das Bild mit den Sollvorgaben. So werden Bestückungsfehler, fehlende Bauteile, Lötbrücken und andere Defekte automatisch erkannt.",
+      "difficulty": "mittel",
+      "tags": [
+        "aoi",
+        "qualitaet"
+      ]
+    },
+    {
+      "id": "smt-018",
+      "q": "Was ist SPI in der SMT-Fertigung?",
+      "options": [
+        "Solder Paste Inspection (Lotpasten-Inspektion)",
+        "Stencil Precision Indicator (Schablonengenauigkeitsanzeige)",
+        "Surface Profile Indexing (Oberflächenprofilindizierung)",
+        "Substrate Placement Inspection (Substratplatzierungsprüfung)"
+      ],
+      "correct": 0,
+      "explanation": "SPI steht für Solder Paste Inspection und bezeichnet die automatische Prüfung des Lotpastenauftrags nach dem Schablonendruck. Dabei werden Volumen, Position und Form der aufgetragenen Lotpastendepots kontrolliert. Eine korrekte Lotpastenmenge ist entscheidend für die Lötqualität, weshalb SPI ein wichtiger Qualitätssicherungsschritt in der SMT-Linie ist.",
+      "difficulty": "mittel",
+      "tags": [
+        "spi",
+        "qualitaet"
+      ]
+    },
+    {
+      "id": "smt-019",
+      "q": "Was ist ein BGA (Ball Grid Array)?",
+      "options": [
+        "IC-Gehäuse mit Gull-Wing-Pins an allen vier Seiten",
+        "IC-Gehäuse mit Lotkugeln auf der Unterseite",
+        "IC-Gehäuse mit J-förmigen Anschlüssen an zwei Seiten",
+        "IC-Gehäuse mit Flachkontakten auf der Oberseite"
+      ],
+      "correct": 1,
+      "explanation": "Ein BGA (Ball Grid Array) ist ein IC-Gehäusetyp, bei dem die elektrischen Anschlüsse als kleine Lotkugeln (Balls) in einem Raster auf der Unterseite angeordnet sind. Diese Bauform ermöglicht eine sehr hohe Anschlussdichte auf kleiner Fläche und wird häufig für Prozessoren und komplexe ICs verwendet. Da die Lötstellen unter dem Gehäuse verborgen sind, ist eine Inspektion nur mittels Röntgen (X-Ray) möglich.",
+      "difficulty": "mittel",
+      "tags": [
+        "bga",
+        "bauformen"
+      ]
+    },
+    {
+      "id": "smt-020",
+      "q": "Was ist ein QFP (Quad Flat Package)?",
+      "options": [
+        "IC-Gehäuse mit Lotkugeln auf der Unterseite im Rasterformat",
+        "IC-Gehäuse mit Anschlüssen an allen vier Seiten",
+        "IC-Gehäuse mit Kontaktflächen nur an zwei gegenüberliegenden Seiten",
+        "IC-Gehäuse mit vergrabenen Anschlüssen unter dem Substratboden"
+      ],
+      "correct": 1,
+      "explanation": "Ein QFP (Quad Flat Package) ist ein flaches IC-Gehäuse, bei dem die Anschlusspins in Gull-Wing-Form an allen vier Seiten herausgeführt sind. Es gibt verschiedene Varianten wie TQFP (Thin), LQFP (Low Profile) und PQFP (Plastic) mit unterschiedlichen Abmessungen und Pinabständen. QFP-Gehäuse eignen sich gut für die automatisierte SMT-Bestückung und ermöglichen eine visuelle Inspektion der Lötstellen.",
+      "difficulty": "mittel",
+      "tags": [
+        "qfp",
+        "bauformen"
+      ]
+    },
+    {
+      "id": "smt-021",
+      "q": "Was bedeutet die Baugrößenbezeichnung 0402?",
+      "options": [
+        "4,0 × 2,0 Millimeter nach metrischer Normbezeichnung",
+        "0,04 × 0,02 Zoll (ca. 1,0 × 0,5 mm)",
+        "0,402 Zoll Diagonale nach imperialem Rundungsmaß",
+        "4,02 Millimeter Gesamtlänge nach Herstellerangabe"
+      ],
+      "correct": 1,
+      "explanation": "Die Baugrößenbezeichnung 0402 ist ein imperiales Maß, angegeben in Hundertstel Zoll: 04 bedeutet 0,04 Zoll Länge und 02 bedeutet 0,02 Zoll Breite, was ungefähr 1,0 x 0,5 mm entspricht. Im metrischen System wird dieselbe Baugröße als 1005 bezeichnet (1,0 mm x 0,5 mm). Diese sehr kleinen Bauteile erfordern eine maschinelle Bestückung, da sie von Hand kaum zu verarbeiten sind.",
+      "difficulty": "mittel",
+      "tags": [
+        "baugroesse",
+        "smd"
+      ]
+    },
+    {
+      "id": "smt-022",
+      "q": "Welche ist die richtige Reihenfolge im SMT-Prozess?",
+      "options": [
+        "Bestücken, Reflow-Löten, Lotpaste drucken, Inspektion",
+        "Lotpaste drucken → Bestücken → Reflow → Inspektion",
+        "Reflow-Löten, Lotpaste drucken, Bestücken, Inspektion",
+        "Inspektion, Bestücken, Lotpaste drucken, Reflow-Löten"
+      ],
+      "correct": 1,
+      "explanation": "Der SMT-Prozess folgt einer festen Reihenfolge: Zuerst wird die Lotpaste durch Schablonendruck auf die Pads aufgebracht, dann platziert der Pick-and-Place-Automat die Bauteile auf der Lotpaste. Anschließend durchläuft die Baugruppe den Reflow-Ofen, wo das Lot schmilzt und die Verbindungen herstellt. Zum Schluss erfolgt die Inspektion mittels AOI oder X-Ray zur Qualitätskontrolle.",
+      "difficulty": "mittel",
+      "tags": [
+        "smt",
+        "prozess"
+      ]
+    },
+    {
+      "id": "smt-023",
+      "q": "Was ist eine Leiterplatte (PCB)?",
+      "options": [
+        "Kunststoffgehäuse mit integrierten Steckverbindern für elektronische Module",
+        "Trägerplatte mit Leiterbahnen für elektronische Bauteile",
+        "Kabelbaum mit isolierten Einzelleitungen für elektrische Verdrahtung",
+        "Metallrahmen mit Befestigungspunkten für mechanische Komponenten"
+      ],
+      "correct": 1,
+      "explanation": "Eine Leiterplatte (PCB = Printed Circuit Board) ist eine isolierende Trägerplatte, auf der Leiterbahnen aus Kupfer aufgebracht sind, um elektronische Bauteile mechanisch zu tragen und elektrisch miteinander zu verbinden. Das gängigste Basismaterial ist FR4 (glasfaserverstärktes Epoxidharz). Leiterplatten können ein- oder mehrlagig aufgebaut sein, je nach Komplexität der Schaltung.",
+      "difficulty": "leicht",
+      "tags": [
+        "pcb",
+        "grundlagen"
+      ]
+    },
+    {
+      "id": "smt-024",
+      "q": "Was ist FR4?",
+      "options": [
+        "Bleifreie Lotlegierung für die Reflow-Lötung (Zinn-Silber-Kupfer)",
+        "Standard-Leiterplattenmaterial (glasfaserverstärktes Epoxidharz)",
+        "Keramisches Substratmaterial für Hochfrequenzanwendungen (Aluminiumoxid)",
+        "Flexibles Polyimid-Folienmaterial für biegsame Schaltungsträger"
+      ],
+      "correct": 1,
+      "explanation": "FR4 steht für Flame Retardant Class 4 und ist das am häufigsten verwendete Basismaterial für Leiterplatten. Es besteht aus einem Glasfasergewebe, das mit Epoxidharz getränkt und ausgehärtet wird, wodurch es mechanisch stabil und elektrisch isolierend ist. Die Bezeichnung FR4 weist auf die flammhemmenden Eigenschaften des Materials hin.",
+      "difficulty": "mittel",
+      "tags": [
+        "fr4",
+        "material"
+      ]
+    },
+    {
+      "id": "smt-026",
+      "q": "Was ist der Bestückungsdruck (Silkscreen)?",
+      "options": [
+        "Leiterbahnmuster aus Kupferfolie auf dem Trägermaterial der Platine",
+        "Aufgedruckte Beschriftungen und Symbole auf der Leiterplatte",
+        "Lötstopplackschicht zum Schutz der Leiterbahnen auf der Oberfläche",
+        "Oberflächenbeschichtung der Kontaktpads mit Zinn oder Goldbeschichtung"
+      ],
+      "correct": 1,
+      "explanation": "Der Bestückungsdruck (Silkscreen) ist die meist weiße Beschriftungsschicht auf der Leiterplatte, die Bauteilkennzeichnungen, Referenzbezeichnungen, Polaritätsmarkierungen und Firmenlogos enthält. Er dient als Orientierungshilfe bei der manuellen Bestückung, bei der Fehlersuche und bei Reparaturarbeiten. Der Silkscreen wird im Siebdruck- oder Tintenstrahlverfahren aufgebracht.",
+      "difficulty": "leicht",
+      "tags": [
+        "silkscreen",
+        "pcb"
+      ]
+    },
+    {
+      "id": "smt-028",
+      "q": "Was ist die Aufgabe eines Lötkolbens?",
+      "options": [
+        "Elektrische Prüfung der Lötstelle durch Widerstandsmessung",
+        "Wärmeübertragung zum Schmelzen des Lots",
+        "Mechanische Fixierung der Bauteile durch Andruckkraft",
+        "Optische Kontrolle der Lötverbindung durch Beleuchtung"
+      ],
+      "correct": 1,
+      "explanation": "Die Hauptaufgabe des Lötkolbens ist die gezielte Wärmeübertragung auf die Lötstelle, sodass das Lötzinn schmilzt und eine elektrisch leitende Verbindung zwischen Bauteil und Leiterbahn entsteht. Die Lötspitze überträgt dabei Wärme auf sowohl das Pad als auch den Bauteilanschluss, damit das Lot beide Oberflächen benetzen kann. Die richtige Löttemperatur und eine saubere Lötspitze sind entscheidend für eine gute Lötverbindung.",
+      "difficulty": "leicht",
+      "tags": [
+        "loetkolben",
+        "handloeten"
+      ]
+    },
+    {
+      "id": "smt-029",
+      "q": "Welche Temperatur ist typisch für bleifreies Handlöten?",
+      "options": [
+        "180-200°C",
+        "320-380°C",
+        "500-600°C",
+        "100-150°C"
+      ],
+      "correct": 1,
+      "explanation": "Beim bleifreien Handlöten wird der Lötkolben typischerweise auf 320 bis 380 Grad Celsius eingestellt. Bleifreies Lot (z.B. SAC305: Sn96,5/Ag3,0/Cu0,5) hat einen Schmelzpunkt von ca. 217 Grad Celsius, also deutlich höher als bleihaltiges Lot mit 183 Grad Celsius. Die Lötkolbentemperatur muss daher höher sein, um eine schnelle und zuverlässige Wärmeübertragung auf die Lötstelle zu gewährleisten.",
+      "difficulty": "mittel",
+      "tags": [
+        "temperatur",
+        "loeten"
+      ]
+    },
+    {
+      "id": "smt-030",
+      "q": "Was ist beim Entlöten mit Entlötlitze zu beachten?",
+      "options": [
+        "Litze vorher in Flussmittel tauchen und ohne Lötkolben andrücken",
+        "Litze auf Lötstelle drücken und mit Lötkolben erhitzen",
+        "Litze in Isopropanol einweichen und danach auf Lötstelle tupfen",
+        "Litze um Lötspitze wickeln und mit Heißluft kurz erwärmen"
+      ],
+      "correct": 1,
+      "explanation": "Beim Entlöten mit Entlötlitze wird das Kupfergeflecht direkt auf die zu entlötende Stelle gelegt und dann mit dem Lötkolben von oben erhitzt. Das flüssige Lot wird durch Kapillarwirkung in die feine Kupferlitze aufgesaugt. Die Entlötlitze ist bereits mit Flussmittel beschichtet, um die Aufnahme des Lots zu verbessern, und sollte nach Gebrauch am verbrauchten Ende abgeschnitten werden.",
+      "difficulty": "leicht",
+      "tags": [
+        "entloeten",
+        "handloeten"
+      ]
+    },
+    {
+      "id": "smt-031",
+      "q": "Was ist ESD?",
+      "options": [
+        "Electronic System Diagnostics",
+        "Elektrostatische Entladung",
+        "Enhanced Solder Deposition",
+        "Embedded Signal Distribution"
+      ],
+      "correct": 1,
+      "explanation": "ESD steht für Electrostatic Discharge, auf Deutsch elektrostatische Entladung. Dabei handelt es sich um einen plötzlichen Stromfluss zwischen zwei unterschiedlich geladenen Objekten, der empfindliche elektronische Bauteile beschädigen oder zerstören kann. Schutzmaßnahmen wie geerdete Handgelenkbänder, ESD-Matten und ableitfähige Kleidung sind in der Elektronikfertigung daher unverzichtbar.",
+      "difficulty": "leicht",
+      "tags": [
+        "esd",
+        "schutz"
+      ]
+    },
+    {
+      "id": "smt-032",
+      "q": "Welche Schutzmaßnahmen gegen ESD gibt es?",
+      "options": [
+        "Erhöhte Löttemperatur, bleifreies Lotmaterial, Flussmittelreinigung, Schutzlackierung",
+        "Erdungsarmband, ESD-Matte, ESD-Kleidung, Ionisatoren",
+        "Schutzbrille, Gehörschutz, Sicherheitshandschuhe, Absauganlage für Lötrauch",
+        "Spannungsbegrenzer, Sicherungen, Überspannungsableiter, Fehlerstromunterbrecher"
+      ],
+      "correct": 1,
+      "explanation": "Gegen ESD gibt es verschiedene Schutzmaßnahmen, die in der Elektronikfertigung konsequent eingesetzt werden müssen: Geerdete Handgelenkbänder leiten statische Ladung vom Körper ab, ESD-Matten und ableitfähige Bodenbeläge verhindern Aufladungen am Arbeitsplatz, und ESD-gerechte Kleidung sowie Schuhe sorgen für kontrollierte Ableitung. Zusätzlich neutralisieren Ionisatoren statische Ladungen auf nicht-leitenden Oberflächen und Bauteilen.",
+      "difficulty": "mittel",
+      "tags": [
+        "esd",
+        "schutzmassnahmen"
+      ]
+    },
+    {
+      "id": "smt-033",
+      "q": "Was ist ein Feeder beim Pick-and-Place?",
+      "options": [
+        "Kamerasystem zur optischen Lageerkennung der Bauteilposition",
+        "Zuführeinheit für Bauteile (Gurt, Tray)",
+        "Vakuumdüse zur präzisen Aufnahme der Einzelkomponenten",
+        "Steuerungsmodul zur programmgesteuerten Achsenbewegung der Maschine"
+      ],
+      "correct": 1,
+      "explanation": "Ein Feeder ist eine Zuführeinheit am Pick-and-Place-Automaten, die die SMD-Bauteile in der richtigen Position zur Entnahme bereitstellt. Es gibt verschiedene Typen: Gurtfeeder (Tape & Reel) für gegurtete Bauteile, Trayfeeder für Bauteile in Trays und Stickfeeder für Stangenware. Der Feeder transportiert die Bauteile schrittweise zur Abholposition, wo sie vom Bestückungskopf aufgenommen werden.",
+      "difficulty": "mittel",
+      "tags": [
+        "feeder",
+        "pick-and-place"
+      ]
+    },
+    {
+      "id": "smt-034",
+      "q": "Was ist ein Reflow-Ofen?",
+      "options": [
+        "Lötbad mit geschmolzenem Wellenlot für THT-Durchsteckbauteile",
+        "Durchlaufofen mit Temperaturzonen für SMT-Lötung",
+        "Dampfphasenkammer mit Inertgas für selektive Bauteilmontage",
+        "Infrarotstation mit Punktstrahler für manuelle BGA-Nacharbeit"
+      ],
+      "correct": 1,
+      "explanation": "Ein Reflow-Ofen ist ein Durchlaufofen mit mehreren hintereinander angeordneten Temperaturzonen, durch die die bestückte Leiterplatte auf einem Förderband transportiert wird. Jede Zone ist auf eine bestimmte Temperatur eingestellt, die zusammen das Reflow-Profil (Vorheizen, Soak, Peak, Abkühlen) bilden. Die Erwärmung erfolgt meist durch Konvektion (Heißluft) oder Infrarotstrahlung.",
+      "difficulty": "mittel",
+      "tags": [
+        "reflow",
+        "ofen"
+      ]
+    },
+    {
+      "id": "smt-035",
+      "q": "Was prüft die Röntgeninspektion (X-Ray)?",
+      "options": [
+        "Sichtbare Lötstellen und Bestückungsgenauigkeit auf der Oberfläche",
+        "Verborgene Lötstellen (BGA) und innere Fehler",
+        "Elektrische Durchgangsprüfung und Isolationswiderstand der Leiterbahnen",
+        "Mechanische Festigkeit und Vibrationsstabilität der Lötverbindungen"
+      ],
+      "correct": 1,
+      "explanation": "Die Röntgeninspektion (X-Ray) wird eingesetzt, um Lötstellen zu prüfen, die mit optischen Verfahren nicht sichtbar sind, insbesondere unter BGA-Gehäusen. Die Röntgenstrahlen durchdringen das Bauteil und machen die darunterliegenden Lotkugeln sichtbar. So können Fehler wie Voids (Hohlräume im Lot), Lötbrücken zwischen benachbarten Balls und nicht verbundene Lötstellen erkannt werden.",
+      "difficulty": "schwer",
+      "tags": [
+        "xray",
+        "inspektion"
+      ]
+    }
+  ]
+}

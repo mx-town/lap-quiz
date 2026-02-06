@@ -1,0 +1,641 @@
+{
+  "chapter": "04",
+  "title": "Halbleitertechnik",
+  "description": "Dioden, Transistoren, Thyristoren, LEDs, Fotowiderstände, Gleichrichter, Spannungsregler",
+  "questionCount": 37,
+  "questions": [
+    {
+      "id": "hl-001",
+      "q": "Wie muss eine Halbleiterdiode gepolt sein, damit Strom fließt?",
+      "options": [
+        "In Sperrrichtung: Plus an Kathode, Minus an Anode leitet den Betriebsstrom",
+        "In Durchlassrichtung: Plus an Anode, Minus an Kathode",
+        "In Wechselrichtung: abwechselnd Plus und Minus an beiden Anschlüssen",
+        "In Neutralrichtung: gleiche Polarität an Anode und Kathode angelegt"
+      ],
+      "correct": 1,
+      "explanation": "Eine Halbleiterdiode leitet Strom in Durchlassrichtung, wenn Plus an der Anode (P-Zone) und Minus an der Kathode (N-Zone) anliegt. In Sperrrichtung wird die Sperrschicht verbreitert und es fließt nur ein vernachlässigbar kleiner Sperrstrom.",
+      "difficulty": "leicht",
+      "tags": [
+        "diode",
+        "polung"
+      ]
+    },
+    {
+      "id": "hl-002",
+      "q": "Wofür werden Halbleiterdioden hauptsächlich verwendet?",
+      "options": [
+        "Signalverstärkung, Frequenzmodulation, Impedanzanpassung, Schwingkreisregelung",
+        "Gleichrichtung, LED, Spannungsbegrenzung (Z-Diode), Freilaufdiode",
+        "Induktivitätssteuerung, Kapazitätsregelung, Phasenverschiebung, Resonanzfilterung",
+        "Widerstandsanpassung, Stromverstärkung, Transformatorkopplung, Frequenzfilterung"
+      ],
+      "correct": 1,
+      "explanation": "Halbleiterdioden werden vielseitig eingesetzt: als Gleichrichter zur Umwandlung von Wechsel- in Gleichspannung, als LEDs zur Lichterzeugung, als Z-Dioden zur Spannungsstabilisierung und als Freilaufdioden zum Schutz vor Induktionsspannungen. Weitere Einsatzgebiete sind Fotodioden und Kapazitätsdioden.",
+      "difficulty": "mittel",
+      "tags": [
+        "diode",
+        "anwendungen"
+      ]
+    },
+    {
+      "id": "hl-003",
+      "q": "Was ist ein Fotowiderstand (LDR)?",
+      "options": [
+        "Ein temperaturabhängiger Widerstand - Widerstand sinkt bei Temperaturerhöhung",
+        "Ein lichtabhängiger Widerstand - Widerstand sinkt bei Lichteinstrahlung",
+        "Ein spannungsabhängiger Widerstand - Widerstand sinkt bei Spannungserhöhung",
+        "Ein druckabhängiger Widerstand - Widerstand sinkt bei mechanischer Belastung"
+      ],
+      "correct": 1,
+      "explanation": "LDR steht für Light Dependent Resistor. Bei zunehmender Beleuchtung werden im Halbleitermaterial mehr freie Ladungsträger erzeugt, wodurch der Widerstand sinkt. Typische Anwendungen sind Dämmerungsschalter und Belichtungsmesser.",
+      "difficulty": "mittel",
+      "tags": [
+        "ldr",
+        "sensoren"
+      ]
+    },
+    {
+      "id": "hl-004",
+      "q": "Was ist ein Varistor (VDR)?",
+      "options": [
+        "Ein lichtabhängiger Widerstand für automatische Helligkeitsregelung",
+        "Ein spannungsabhängiger Widerstand für Überspannungsschutz",
+        "Ein temperaturabhängiger Widerstand für thermische Absicherung",
+        "Ein frequenzabhängiger Widerstand für Hochfrequenzfilterung"
+      ],
+      "correct": 1,
+      "explanation": "VDR steht für Voltage Dependent Resistor. Bei normaler Betriebsspannung ist der Varistor hochohmig und lässt kaum Strom durch. Bei einer Überspannung wird er schlagartig niederohmig und leitet die Störenergie ab. Er wird daher als Überspannungsableiter in Schaltungen und Steckdosenleisten eingesetzt.",
+      "difficulty": "mittel",
+      "tags": [
+        "varistor",
+        "ueberspannungsschutz"
+      ]
+    },
+    {
+      "id": "hl-005",
+      "q": "Was ist der Unterschied zwischen NTC und PTC?",
+      "options": [
+        "NTC: Widerstand steigt bei Erwärmung, PTC: Widerstand sinkt bei Erwärmung",
+        "NTC: Widerstand sinkt bei Erwärmung, PTC: Widerstand steigt bei Erwärmung",
+        "NTC: Widerstand ändert sich bei Lichteinstrahlung, PTC: bei Druckänderung",
+        "NTC: Widerstand reagiert auf Magnetfelder, PTC: auf elektrische Felder"
+      ],
+      "correct": 1,
+      "explanation": "NTC (Negative Temperature Coefficient) ist ein Heißleiter, dessen Widerstand bei steigender Temperatur sinkt. PTC (Positive Temperature Coefficient) ist ein Kaltleiter, dessen Widerstand bei steigender Temperatur zunimmt. Beide werden als Temperatursensoren und zum Schutz von Schaltungen eingesetzt.",
+      "difficulty": "mittel",
+      "tags": [
+        "ntc",
+        "ptc",
+        "temperatur"
+      ]
+    },
+    {
+      "id": "hl-006",
+      "q": "Was ist eine Z-Diode (Zener-Diode)?",
+      "options": [
+        "Eine Diode zur Stromverstärkung, die in Durchlassrichtung betrieben wird",
+        "Eine Diode zur Spannungsstabilisierung, die in Sperrrichtung betrieben wird",
+        "Eine Diode zur Frequenzfilterung, die als Bandpasselement betrieben wird",
+        "Eine Diode zur Leistungsgleichrichtung, die in Wechselrichtung betrieben wird"
+      ],
+      "correct": 1,
+      "explanation": "Die Z-Diode wird gezielt in Sperrrichtung betrieben. Sobald die angelegte Spannung die sogenannte Zenerspannung erreicht, wird die Diode leitend und hält die Spannung nahezu konstant. Dadurch eignet sie sich hervorragend zur Spannungsstabilisierung in elektronischen Schaltungen.",
+      "difficulty": "mittel",
+      "tags": [
+        "z-diode",
+        "spannungsstabilisierung"
+      ]
+    },
+    {
+      "id": "hl-007",
+      "q": "Was ist eine Freilaufdiode und wozu dient sie?",
+      "options": [
+        "Eine Diode in Reihe zu kapazitiven Lasten zum Schutz vor Überspannungsspitzen",
+        "Eine Diode parallel zu induktiven Lasten zum Schutz vor Induktionsspannungen",
+        "Eine Diode in Reihe zu ohmschen Lasten zum Schutz vor Kurzschlussströmen",
+        "Eine Diode parallel zu resistiven Lasten zum Schutz vor Temperaturspitzen"
+      ],
+      "correct": 1,
+      "explanation": "Die Freilaufdiode wird parallel zu induktiven Verbrauchern wie Relais oder Spulen geschaltet. Beim Abschalten einer Spule entsteht eine hohe Induktionsspannung, die über die Freilaufdiode abgebaut wird. So werden empfindliche Schaltkontakte und nachgeschaltete Elektronik zuverlässig geschützt.",
+      "difficulty": "mittel",
+      "tags": [
+        "freilaufdiode",
+        "induktionsschutz"
+      ]
+    },
+    {
+      "id": "hl-008",
+      "q": "Was ist ein Transistor?",
+      "options": [
+        "Ein passives Halbleiterbauelement zum Filtern und Speichern von Signalen",
+        "Ein aktives Halbleiterbauelement zum Schalten und Verstärken",
+        "Ein passives Halbleiterbauelement zum Begrenzen und Gleichrichten von Strömen",
+        "Ein aktives Halbleiterbauelement zum Transformieren und Isolieren von Spannungen"
+      ],
+      "correct": 1,
+      "explanation": "Ein Transistor ist ein aktives Halbleiterbauelement mit drei Anschlüssen, das als elektronischer Schalter oder als Verstärker eingesetzt werden kann. Die wichtigsten Typen sind der bipolare Transistor (NPN/PNP) und der Feldeffekttransistor (FET). Er ist das zentrale Bauelement der modernen Elektronik.",
+      "difficulty": "leicht",
+      "tags": [
+        "transistor",
+        "grundlagen"
+      ]
+    },
+    {
+      "id": "hl-009",
+      "q": "Wie heißen die drei Anschlüsse eines bipolaren Transistors?",
+      "options": [
+        "Anode (A), Kathode (K), Gate (G)",
+        "Basis (B), Kollektor (C), Emitter (E)",
+        "Source (S), Drain (D), Gate (G)",
+        "Primär (P), Sekundär (S), Steuer (St)"
+      ],
+      "correct": 1,
+      "explanation": "Die drei Anschlüsse eines bipolaren Transistors heißen Basis (B), Kollektor (C) und Emitter (E). Die Basis dient als Steuereingang, über den Kollektor fließt der Hauptstrom ein, und der Emitter ist der gemeinsame Ausgang. Ein kleiner Basisstrom steuert dabei einen wesentlich größeren Kollektorstrom.",
+      "difficulty": "leicht",
+      "tags": [
+        "transistor",
+        "anschluesse"
+      ]
+    },
+    {
+      "id": "hl-010",
+      "q": "Was ist der Unterschied zwischen NPN- und PNP-Transistor?",
+      "options": [
+        "Gleiche Polarität: NPN schaltet bei negativem Basisstrom, PNP ebenfalls bei negativem",
+        "Unterschiedliche Polarität: NPN schaltet bei positivem Basisstrom, PNP bei negativem",
+        "Unterschiedliche Leistung: NPN verarbeitet hohe Ströme, PNP nur geringe Ströme",
+        "Unterschiedliche Bauform: NPN hat zwei Anschlüsse, PNP hat vier Anschlüsse"
+      ],
+      "correct": 1,
+      "explanation": "Der wesentliche Unterschied liegt in der Polarität der Betriebsspannung und des Basisstroms. Beim NPN-Transistor fließt der Strom von Kollektor nach Emitter bei positivem Basisstrom, beim PNP-Transistor von Emitter nach Kollektor bei negativem Basisstrom. Die Dotierungsfolge ist also genau umgekehrt.",
+      "difficulty": "mittel",
+      "tags": [
+        "transistor",
+        "npn",
+        "pnp"
+      ]
+    },
+    {
+      "id": "hl-011",
+      "q": "Was ist ein Thyristor?",
+      "options": [
+        "Ein regelbares Halbleiter-Ventil, das nach Abschaltung selbstständig sperrt",
+        "Ein steuerbares Halbleiter-Ventil, das nach Zündung selbstständig leitet",
+        "Ein programmierbares Halbleiter-Ventil, das nach Taktung selbstständig schwingt",
+        "Ein bidirektionales Halbleiter-Ventil, das nach Umpolung selbstständig wechselt"
+      ],
+      "correct": 1,
+      "explanation": "Der Thyristor ist ein steuerbares Halbleiterventil mit den drei Anschlüssen Anode, Kathode und Gate. Durch einen Zündimpuls am Gate wird er leitend und bleibt auch nach Wegfall des Zündimpulses eingeschaltet. Er sperrt erst wieder, wenn der Strom unter den Haltestrom sinkt oder bei Wechselstrom der Nulldurchgang erreicht wird.",
+      "difficulty": "mittel",
+      "tags": [
+        "thyristor",
+        "grundlagen"
+      ]
+    },
+    {
+      "id": "hl-012",
+      "q": "Wie heißen die drei Anschlüsse eines Thyristors?",
+      "options": [
+        "Basis (B), Kollektor (C), Emitter (E)",
+        "Anode (A), Kathode (K), Gate (G)",
+        "Source (S), Drain (D), Gate (G)",
+        "Eingang (E), Ausgang (A), Steuer (St)"
+      ],
+      "correct": 1,
+      "explanation": "Die drei Anschlüsse eines Thyristors sind Anode (A), Kathode (K) und Gate (G). Der Hauptstrom fließt von der Anode zur Kathode, nachdem am Gate ein Zündimpuls angelegt wurde. Die Bezeichnungen sind nicht mit denen des bipolaren Transistors zu verwechseln.",
+      "difficulty": "leicht",
+      "tags": [
+        "thyristor",
+        "anschluesse"
+      ]
+    },
+    {
+      "id": "hl-013",
+      "q": "Wie wird ein Thyristor gelöscht (ausgeschaltet)?",
+      "options": [
+        "Durch Anlegen eines negativen Zündimpulses am Gate-Anschluss",
+        "Durch Unterschreiten des Haltestroms oder Stromnulldurchgang",
+        "Durch Erhöhen der Anodenspannung über die Kippspannung hinaus",
+        "Durch Kurzschließen der Anode und Kathode über einen Lastwiderstand"
+      ],
+      "correct": 1,
+      "explanation": "Ein Thyristor kann nicht einfach über das Gate abgeschaltet werden. Er löscht nur, wenn der Anodenstrom unter den Haltestrom IH sinkt oder bei Wechselstrombetrieb automatisch beim Stromnulldurchgang. Diese Eigenschaft unterscheidet ihn grundlegend von einem Transistor.",
+      "difficulty": "mittel",
+      "tags": [
+        "thyristor",
+        "loeschen"
+      ]
+    },
+    {
+      "id": "hl-014",
+      "q": "Was ist ein Triac?",
+      "options": [
+        "Ein unidirektionaler Thyristor für Gleichstromsteuerung und Batterieladung",
+        "Ein bidirektionaler Thyristor für Wechselstromsteuerung",
+        "Ein spannungsgesteuerter Transistor für Signalverstärkung und Impedanzwandlung",
+        "Ein stromgesteuerter Gleichrichter für Netzfilterung und Spannungsregelung"
+      ],
+      "correct": 1,
+      "explanation": "Der Triac ist ein bidirektionaler Thyristor, der Strom in beiden Richtungen leiten kann. Er eignet sich daher besonders für die Steuerung von Wechselstromlasten, wie zum Beispiel in Dimmern für Beleuchtung oder in Drehzahlreglern für Motoren.",
+      "difficulty": "mittel",
+      "tags": [
+        "triac",
+        "wechselstrom"
+      ]
+    },
+    {
+      "id": "hl-015",
+      "q": "Was ist Phasenanschnittsteuerung?",
+      "options": [
+        "Sofortiges Einschalten des Stroms am Anfang jeder Halbwelle zur Frequenzregelung",
+        "Verzögertes Einschalten des Stroms innerhalb jeder Halbwelle zur Leistungsregelung",
+        "Gleichmäßiges Abschalten des Stroms am Ende jeder Halbwelle zur Spannungsregelung",
+        "Periodisches Unterbrechen des Stroms zwischen den Halbwellen zur Stromregelung"
+      ],
+      "correct": 1,
+      "explanation": "Bei der Phasenanschnittsteuerung wird der Thyristor oder Triac innerhalb jeder Halbwelle erst verzögert gezündet. Dadurch wird nur ein Teil der Halbwelle genutzt und die an die Last abgegebene Leistung reduziert. Typische Anwendungen sind Dimmer und Sanftanlaufgeräte für Motoren.",
+      "difficulty": "schwer",
+      "tags": [
+        "phasenanschnitt",
+        "leistungsregelung"
+      ]
+    },
+    {
+      "id": "hl-016",
+      "q": "Was ist eine LED?",
+      "options": [
+        "Ein spannungsabhängiger Halbleiterwiderstand, der bei Spannungsänderung Wärme erzeugt",
+        "Eine Leuchtdiode (Light Emitting Diode), die bei Stromfluss Licht emittiert",
+        "Ein stromgesteuerter Halbleiterverstärker, der bei Signaleingang Impulse erzeugt",
+        "Ein lichtempfindlicher Halbleitersensor, der bei Bestrahlung Spannung erzeugt"
+      ],
+      "correct": 1,
+      "explanation": "LED steht für Light Emitting Diode (Leuchtdiode). Es handelt sich um eine Halbleiterdiode, die bei Stromfluss in Durchlassrichtung Licht einer bestimmten Wellenlänge abstrahlt. Die Farbe des Lichts wird durch das verwendete Halbleitermaterial bestimmt.",
+      "difficulty": "leicht",
+      "tags": [
+        "led",
+        "grundlagen"
+      ]
+    },
+    {
+      "id": "hl-017",
+      "q": "Warum benötigt eine LED einen Vorwiderstand?",
+      "options": [
+        "Um die Spannung zu erhöhen, da die LED einen hohen Spannungsbedarf hat",
+        "Um den Strom zu begrenzen, da die LED selbst kaum Widerstand hat",
+        "Um die Frequenz zu filtern, da die LED empfindlich auf Störsignale reagiert",
+        "Um die Polarität zu schützen, da die LED bei Verpolung sofort durchbrennt"
+      ],
+      "correct": 1,
+      "explanation": "Eine LED hat einen sehr geringen Innenwiderstand in Durchlassrichtung. Ohne Vorwiderstand würde ein unkontrolliert hoher Strom fließen und die LED sofort zerstören. Der Vorwiderstand wird berechnet mit R = (Uversorgung - ULED) / ILED und begrenzt den Strom auf den zulässigen Nennwert.",
+      "difficulty": "mittel",
+      "tags": [
+        "led",
+        "vorwiderstand"
+      ]
+    },
+    {
+      "id": "hl-018",
+      "q": "Welche Vorteile haben LEDs gegenüber Glühlampen?",
+      "options": [
+        "Kurze Lebensdauer, hoher Stromverbrauch, starke UV-Strahlung, erschütterungsempfindlich",
+        "Hohe Lebensdauer, geringer Stromverbrauch, keine UV-Strahlung, erschütterungsfest",
+        "Hohe Wärmeentwicklung, langsamer Lichtanlauf, intensive IR-Strahlung, spannungsempfindlich",
+        "Niedrige Lichtausbeute, hoher Wartungsaufwand, starke Wärmeabgabe, frequenzempfindlich"
+      ],
+      "correct": 1,
+      "explanation": "LEDs bieten zahlreiche Vorteile gegenüber Glühlampen: eine Lebensdauer von bis zu 50.000 Stunden, einen um bis zu 90% geringeren Energieverbrauch, keine schädliche UV- oder IR-Strahlung und hohe mechanische Robustheit. Zusätzlich erreichen sie sofort ihre volle Helligkeit ohne Aufwärmzeit.",
+      "difficulty": "leicht",
+      "tags": [
+        "led",
+        "vorteile"
+      ]
+    },
+    {
+      "id": "hl-019",
+      "q": "Was ist ein Gleichrichter?",
+      "options": [
+        "Eine Schaltung zur Umwandlung von Gleichspannung in Wechselspannung mittels Oszillation",
+        "Eine Schaltung zur Umwandlung von Wechselspannung in Gleichspannung",
+        "Eine Schaltung zur Umwandlung von Niederspannung in Hochspannung mittels Induktion",
+        "Eine Schaltung zur Umwandlung von Hochfrequenz in Niederfrequenz mittels Filterung"
+      ],
+      "correct": 1,
+      "explanation": "Ein Gleichrichter wandelt Wechselspannung (AC) in Gleichspannung (DC) um. Dies geschieht mithilfe von Dioden, die den Strom nur in eine Richtung durchlassen. Es gibt verschiedene Bauformen: Einweggleichrichter mit einer Diode, Zweiweggleichrichter mit zwei Dioden und den Brückengleichrichter mit vier Dioden.",
+      "difficulty": "leicht",
+      "tags": [
+        "gleichrichter",
+        "grundlagen"
+      ]
+    },
+    {
+      "id": "hl-020",
+      "q": "Was ist ein Brückengleichrichter?",
+      "options": [
+        "Ein Gleichrichter mit zwei Dioden in Reihenschaltung für Einweggleichrichtung",
+        "Ein Gleichrichter mit vier Dioden in Brückenschaltung für Zweiweggleichrichtung",
+        "Ein Gleichrichter mit sechs Dioden in Sternschaltung für Drehstromgleichrichtung",
+        "Ein Gleichrichter mit acht Dioden in Parallelschaltung für Hochstromgleichrichtung"
+      ],
+      "correct": 1,
+      "explanation": "Der Brückengleichrichter besteht aus vier Dioden in der sogenannten Graetz-Schaltung. Er nutzt beide Halbwellen der Wechselspannung aus und erzeugt so eine pulsierende Gleichspannung mit doppelter Frequenz. Dadurch ist die nachfolgende Glättung einfacher und der Wirkungsgrad höher als beim Einweggleichrichter.",
+      "difficulty": "mittel",
+      "tags": [
+        "gleichrichter",
+        "bruecke"
+      ]
+    },
+    {
+      "id": "hl-021",
+      "q": "Wozu dient ein Glättungskondensator nach dem Gleichrichter?",
+      "options": [
+        "Zur Verstärkung der Amplitude und Erhöhung der gleichgerichteten Ausgangsspannung",
+        "Zur Reduzierung der Welligkeit (Restwelligkeit) der Gleichspannung",
+        "Zur Begrenzung des Einschaltstroms und zum Schutz der Gleichrichterdioden",
+        "Zur Anpassung der Ausgangsfrequenz und Synchronisierung der Spannungsphasen"
+      ],
+      "correct": 1,
+      "explanation": "Der Glättungskondensator (meist ein Elektrolytkondensator) wird parallel zum Ausgang des Gleichrichters geschaltet. Er lädt sich bei den Spannungsspitzen auf und gibt seine gespeicherte Energie in den Spannungstälern wieder ab. Dadurch wird die pulsierende Gleichspannung geglättet und die Restwelligkeit deutlich verringert.",
+      "difficulty": "mittel",
+      "tags": [
+        "gleichrichter",
+        "glaettung"
+      ]
+    },
+    {
+      "id": "hl-022",
+      "q": "Was ist ein Optokoppler?",
+      "options": [
+        "Ein Bauelement zur kapazitiven Kopplung mittels elektrischem Feld (Kondensator + Verstärker)",
+        "Ein Bauelement zur galvanischen Trennung mittels Licht (LED + Fototransistor)",
+        "Ein Bauelement zur induktiven Kopplung mittels Magnetfeld (Spule + Transformatorkern)",
+        "Ein Bauelement zur resistiven Kopplung mittels Wärmeleitung (Heizelement + Thermistor)"
+      ],
+      "correct": 1,
+      "explanation": "Ein Optokoppler besteht aus einer LED und einem Fotoempfänger (meist Fototransistor) in einem gemeinsamen Gehäuse. Das Signal wird optisch, also durch Licht, übertragen. Dadurch besteht keine direkte elektrische Verbindung zwischen Ein- und Ausgangsseite, was als galvanische Trennung bezeichnet wird.",
+      "difficulty": "mittel",
+      "tags": [
+        "optokoppler",
+        "galvanische-trennung"
+      ]
+    },
+    {
+      "id": "hl-023",
+      "q": "Was bedeutet galvanische Trennung?",
+      "options": [
+        "Eine niederohmige leitende Verbindung zwischen zwei Stromkreisen über Kupferleitungen",
+        "Keine direkte elektrische Verbindung zwischen zwei Stromkreisen",
+        "Eine kapazitive Energieübertragung zwischen zwei Stromkreisen über Kondensatoren",
+        "Eine gemeinsame Masseverbindung zwischen zwei Stromkreisen über Potenzialausgleich"
+      ],
+      "correct": 1,
+      "explanation": "Galvanische Trennung bedeutet, dass zwischen zwei Stromkreisen kein direkter elektrischer Kontakt besteht. Die Signal- oder Energieübertragung erfolgt stattdessen über Licht (Optokoppler), magnetische Kopplung (Transformator) oder mechanische Kopplung (Relais). Dies dient dem Schutz vor gefährlichen Spannungen und der Vermeidung von Erdschleifen.",
+      "difficulty": "mittel",
+      "tags": [
+        "galvanische-trennung",
+        "sicherheit"
+      ]
+    },
+    {
+      "id": "hl-024",
+      "q": "Was ist ein Feldeffekttransistor (FET)?",
+      "options": [
+        "Ein stromgesteuerter Transistor mit sehr niedrigem Eingangswiderstand",
+        "Ein spannungsgesteuerter Transistor mit sehr hohem Eingangswiderstand",
+        "Ein temperaturgesteuerter Transistor mit variablem Eingangswiderstand",
+        "Ein lichtgesteuerter Transistor mit frequenzabhängigem Eingangswiderstand"
+      ],
+      "correct": 1,
+      "explanation": "Der Feldeffekttransistor (FET) wird im Gegensatz zum bipolaren Transistor durch eine Spannung am Gate gesteuert und benötigt dabei nahezu keinen Steuerstrom. Sein extrem hoher Eingangswiderstand von bis zu 10^14 Ohm macht ihn besonders geeignet für empfindliche Messschaltungen und energieeffiziente Anwendungen.",
+      "difficulty": "mittel",
+      "tags": [
+        "fet",
+        "transistor"
+      ]
+    },
+    {
+      "id": "hl-025",
+      "q": "Was ist ein MOSFET?",
+      "options": [
+        "Ein Bipolartransistor mit offenem Gate (Metal Open Semiconductor Base Transistor)",
+        "Ein Feldeffekttransistor mit isoliertem Gate (Metal Oxide Semiconductor FET)",
+        "Ein Thyristor mit verstärktem Gate (Multiple Output Semiconductor Firing Element)",
+        "Ein Leistungstransistor mit gekoppeltem Gate (Modular Oxide Switching Field Emitter)"
+      ],
+      "correct": 1,
+      "explanation": "MOSFET steht für Metal Oxide Semiconductor Field Effect Transistor. Das Gate ist durch eine dünne Siliziumdioxid-Schicht vom Kanal isoliert, was einen extrem hohen Eingangswiderstand ergibt. MOSFETs können sehr schnell schalten und sind daher in der Leistungselektronik und in digitalen Schaltungen weit verbreitet.",
+      "difficulty": "mittel",
+      "tags": [
+        "mosfet",
+        "transistor"
+      ]
+    },
+    {
+      "id": "hl-026",
+      "q": "Wie heißen die Anschlüsse eines FET/MOSFET?",
+      "options": [
+        "Basis (B), Kollektor (C), Emitter (E)",
+        "Source (S), Drain (D), Gate (G)",
+        "Anode (A), Kathode (K), Gate (G)",
+        "Eingang (E), Ausgang (A), Steuer (St)"
+      ],
+      "correct": 1,
+      "explanation": "Die drei Anschlüsse eines FET bzw. MOSFET heißen Source (S, Quelle), Drain (D, Senke) und Gate (G, Steuereingang). Der Stromfluss zwischen Drain und Source wird durch die am Gate anliegende Spannung gesteuert, wobei nahezu kein Gatestrom fließt.",
+      "difficulty": "leicht",
+      "tags": [
+        "fet",
+        "anschluesse"
+      ]
+    },
+    {
+      "id": "hl-027",
+      "q": "Was ist der Vorteil eines MOSFET gegenüber einem Bipolartransistor?",
+      "options": [
+        "Hoher Steuerstrombedarf durch Basisstrom, langsameres thermisches Schaltverhalten",
+        "Nahezu leistungslose Ansteuerung durch Spannung, schnelles Schalten",
+        "Geringerer Eingangswiderstand durch niederohmige Gatestruktur, bessere Stromverstärkung",
+        "Komplexere Beschaltung durch zusätzlichen Treiberbaustein, stabilere Temperaturkompensation"
+      ],
+      "correct": 1,
+      "explanation": "Der MOSFET wird rein durch Spannung am Gate gesteuert und benötigt dabei nahezu keinen Steuerstrom, was die Ansteuerschaltung vereinfacht. Außerdem kann er extrem schnell zwischen leitendem und sperrendem Zustand wechseln. Dies führt zu geringeren Schaltverlusten und höherer Effizienz, besonders in der Leistungselektronik.",
+      "difficulty": "mittel",
+      "tags": [
+        "mosfet",
+        "vorteile"
+      ]
+    },
+    {
+      "id": "hl-030",
+      "q": "Was ist der PN-Übergang?",
+      "options": [
+        "Die Verbindungsstelle zwischen zwei unterschiedlich leitenden Metallelektroden",
+        "Die Grenzschicht zwischen P- und N-dotiertem Halbleitermaterial",
+        "Die Isolierschicht zwischen zwei identisch dotierten Halbleiterkristallen",
+        "Die Kontaktfläche zwischen einem Halbleiterchip und dem Kupferanschluss"
+      ],
+      "correct": 1,
+      "explanation": "Der PN-Übergang ist die Grenzschicht, die entsteht, wenn P-dotiertes und N-dotiertes Halbleitermaterial aufeinandertreffen. An dieser Stelle bildet sich eine Sperrschicht (Raumladungszone), in der sich Elektronen und Löcher gegenseitig neutralisieren. Der PN-Übergang ist die Grundlage aller Halbleiterbauelemente wie Dioden und Transistoren.",
+      "difficulty": "mittel",
+      "tags": [
+        "halbleiter",
+        "pn-uebergang"
+      ]
+    },
+    {
+      "id": "hl-031",
+      "q": "Was bedeutet P-Dotierung?",
+      "options": [
+        "Zugabe von 5-wertigen Atomen (Donatoren), erzeugt freie Elektronen",
+        "Zugabe von 3-wertigen Atomen (Akzeptoren), erzeugt Löcher",
+        "Zugabe von 4-wertigen Atomen (Halbleitern), erzeugt neutrale Bindungen",
+        "Zugabe von 6-wertigen Atomen (Oxidatoren), erzeugt Ionenpaare"
+      ],
+      "correct": 1,
+      "explanation": "Bei der P-Dotierung werden dreiwertige Fremdatome wie Bor oder Aluminium in das Siliziumkristallgitter eingebaut. Da diese Atome ein Elektron weniger als Silizium haben, entsteht jeweils eine Lücke (Defektelektron oder Loch). Diese Löcher wirken als positive Ladungsträger und ermöglichen die Stromleitung.",
+      "difficulty": "schwer",
+      "tags": [
+        "halbleiter",
+        "dotierung"
+      ]
+    },
+    {
+      "id": "hl-032",
+      "q": "Was bedeutet N-Dotierung?",
+      "options": [
+        "Zugabe von 3-wertigen Atomen (Akzeptoren), erzeugt bewegliche Löcher",
+        "Zugabe von 5-wertigen Atomen (Donatoren), erzeugt freie Elektronen",
+        "Zugabe von 4-wertigen Atomen (Neutralatomen), erzeugt stabile Bindungen",
+        "Zugabe von 2-wertigen Atomen (Reduktoren), erzeugt negative Ionenpaare"
+      ],
+      "correct": 1,
+      "explanation": "Bei der N-Dotierung werden fünfwertige Fremdatome wie Phosphor oder Arsen in das Siliziumkristallgitter eingebaut. Da diese Atome ein Elektron mehr als Silizium besitzen, steht jeweils ein überschüssiges Elektron als freier Ladungsträger zur Verfügung. Diese freien Elektronen ermöglichen eine gute elektrische Leitfähigkeit.",
+      "difficulty": "schwer",
+      "tags": [
+        "halbleiter",
+        "dotierung"
+      ]
+    },
+    {
+      "id": "hl-033",
+      "q": "Was ist die Durchlassspannung einer Siliziumdiode?",
+      "options": [
+        "Ca. 0,3V",
+        "Ca. 0,7V",
+        "Ca. 1,5V",
+        "Ca. 5V"
+      ],
+      "correct": 1,
+      "explanation": "Die Durchlassspannung (auch Schwellenspannung) einer Siliziumdiode beträgt ca. 0,7V. Zum Vergleich: Eine Germaniumdiode hat ca. 0,3V und eine Schottky-Diode ca. 0,3-0,4V. Bei LEDs liegt die Durchlassspannung je nach Farbe zwischen 1,5V und 3,5V.",
+      "difficulty": "mittel",
+      "tags": [
+        "diode",
+        "durchlassspannung"
+      ]
+    },
+    {
+      "id": "hl-034",
+      "q": "Welche Durchlassspannung hat eine rote LED typischerweise?",
+      "options": [
+        "Ca. 0,7V",
+        "Ca. 1,6-2,0V",
+        "Ca. 5V",
+        "Ca. 12V"
+      ],
+      "correct": 1,
+      "explanation": "Eine rote LED hat eine typische Durchlassspannung von ca. 1,6 bis 2,0V. Die Durchlassspannung steigt mit kürzerer Wellenlänge: Gelb liegt bei ca. 2,0-2,2V, Grün bei ca. 2,0-3,0V und Blau bzw. Weiß bei ca. 3,0-3,5V. Dieser Wert ist wichtig für die Berechnung des Vorwiderstands.",
+      "difficulty": "mittel",
+      "tags": [
+        "led",
+        "durchlassspannung"
+      ]
+    },
+    {
+      "id": "hl-035",
+      "q": "Was ist ein Halbleiter?",
+      "options": [
+        "Ein Material mit dauerhaft hoher Leitfähigkeit wie ein metallischer Leiter",
+        "Ein Material mit Leitfähigkeit zwischen Leiter und Isolator",
+        "Ein Material mit dauerhaft niedriger Leitfähigkeit wie ein keramischer Isolator",
+        "Ein Material mit temperaturunabhängiger Leitfähigkeit wie ein Supraleiter"
+      ],
+      "correct": 1,
+      "explanation": "Ein Halbleiter ist ein Material, dessen elektrische Leitfähigkeit zwischen der eines Leiters (z.B. Kupfer) und der eines Isolators (z.B. Glas) liegt. Durch gezielte Dotierung mit Fremdatomen und durch Temperaturänderung lässt sich die Leitfähigkeit steuern. Silizium und Germanium sind die wichtigsten Halbleitermaterialien.",
+      "difficulty": "leicht",
+      "tags": [
+        "halbleiter",
+        "grundlagen"
+      ]
+    },
+    {
+      "id": "hl-036",
+      "q": "Welche Materialien werden hauptsächlich als Halbleiter verwendet?",
+      "options": [
+        "Kupfer und Aluminium",
+        "Silizium und Germanium",
+        "Eisen und Nickel",
+        "Gold und Silber"
+      ],
+      "correct": 1,
+      "explanation": "Silizium (Si) ist das am weitesten verbreitete Halbleitermaterial und bildet die Grundlage für die meisten elektronischen Bauelemente. Germanium (Ge) wird für spezielle Anwendungen eingesetzt. Für Hochfrequenz- und Optoelektronik wird zusätzlich Galliumarsenid (GaAs) verwendet.",
+      "difficulty": "leicht",
+      "tags": [
+        "halbleiter",
+        "materialien"
+      ]
+    },
+    {
+      "id": "hl-038",
+      "q": "Was passiert bei Verpolung einer LED?",
+      "options": [
+        "Sie leuchtet mit doppelter Intensität, da der Strom in Gegenrichtung verstärkt wird",
+        "Sie leuchtet nicht und kann bei zu hoher Sperrspannung zerstört werden",
+        "Sie ändert ihre Farbe von Rot auf Blau, da die Wellenlänge sich umkehrt",
+        "Sie beginnt zu blinken, da die Sperrschicht periodisch durchbricht und sperrt"
+      ],
+      "correct": 1,
+      "explanation": "Bei Verpolung befindet sich die LED in Sperrrichtung und es fließt kein Strom, sodass sie nicht leuchtet. LEDs haben jedoch eine relativ niedrige maximale Sperrspannung von oft nur 5V. Wird diese überschritten, kann die LED durch Durchbruch der Sperrschicht dauerhaft zerstört werden.",
+      "difficulty": "mittel",
+      "tags": [
+        "led",
+        "verpolung"
+      ]
+    },
+    {
+      "id": "hl-039",
+      "q": "Wie berechnet man den Vorwiderstand für eine LED?",
+      "options": [
+        "R = Uversorgung × ILED / ULED",
+        "R = (Uversorgung - ULED) / ILED",
+        "R = ULED / (Uversorgung - ILED)",
+        "R = (ULED + Uversorgung) × ILED"
+      ],
+      "correct": 1,
+      "explanation": "Der Vorwiderstand wird berechnet mit R = (Uversorgung - ULED) / ILED. Man zieht die Durchlassspannung der LED von der Versorgungsspannung ab und teilt durch den gewünschten LED-Strom. Beispiel: Bei 12V Versorgung, 2V LED-Spannung und 20mA ergibt sich R = (12V - 2V) / 0,02A = 500 Ohm.",
+      "difficulty": "mittel",
+      "tags": [
+        "led",
+        "vorwiderstand",
+        "berechnung"
+      ]
+    },
+    {
+      "id": "hl-040",
+      "q": "Was ist der Unterschied zwischen Einweggleichrichtung und Zweiweggleichrichtung?",
+      "options": [
+        "Einweg: beide Halbwellen werden gesperrt. Zweiweg: nur eine Halbwelle wird durchgelassen",
+        "Einweg: nur eine Halbwelle wird genutzt. Zweiweg: beide Halbwellen werden genutzt",
+        "Einweg: die Frequenz wird halbiert. Zweiweg: die Frequenz wird verdoppelt im Ausgang",
+        "Einweg: die Spannung wird verdoppelt. Zweiweg: die Spannung wird auf die Hälfte reduziert"
+      ],
+      "correct": 1,
+      "explanation": "Beim Einweggleichrichter wird nur eine Halbwelle der Wechselspannung durchgelassen (50% Nutzung), die andere wird gesperrt. Beim Zweiweggleichrichter werden beide Halbwellen genutzt (100% Nutzung), wodurch eine gleichmäßigere Gleichspannung entsteht und die nachfolgende Glättung einfacher wird.",
+      "difficulty": "mittel",
+      "tags": [
+        "gleichrichter",
+        "einweg",
+        "zweiweg"
+      ]
+    }
+  ]
+}
