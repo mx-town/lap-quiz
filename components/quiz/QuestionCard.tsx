@@ -4,7 +4,6 @@ import { useState } from "react"
 import { Question } from "@/types"
 import { cn } from "@/lib/utils"
 import { normalize } from "@/lib/quiz-engine"
-import { AIExplanation } from "./AIExplanation"
 
 interface QuestionCardProps {
   question: Question
@@ -207,25 +206,6 @@ export function QuestionCard({
           </div>
         )}
 
-        {/* AI Explanation */}
-        {submitted && !isCorrect && showFeedback && (
-          <AIExplanation
-            questionId={question.id}
-            questionText={question.question_text}
-            userAnswer={
-              question.question_type === "fill_blank"
-                ? fillAnswer
-                : selected !== null && question.options
-                ? question.options[parseInt(selected)]
-                : ""
-            }
-            correctAnswer={
-              question.options
-                ? question.options[parseInt(question.correct_answer)] || question.correct_answer
-                : question.correct_answer
-            }
-          />
-        )}
 
         {/* Next button */}
         {submitted && onNext && (
