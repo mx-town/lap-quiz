@@ -41,7 +41,7 @@ export function ModeSelector() {
 
   return (
     <div className="space-y-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {topModes.map((mode) => {
           const Icon = mode.icon
           return (
@@ -63,7 +63,7 @@ export function ModeSelector() {
         })}
       </div>
       <div className="flex justify-center">
-        <Link href={bottomMode.href} className="block group w-full md:w-1/2 lg:w-1/3">
+        <Link href={bottomMode.href} className="block group w-full sm:w-1/3">
           <div className="bg-bg-surface border border-border-subtle p-6 transition-all hover:border-text-primary">
             <div className="flex items-center justify-between mb-6">
               <span className="text-[11px] font-mono text-text-muted uppercase tracking-widest">
