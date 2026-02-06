@@ -1,12 +1,11 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { Timer } from "@/components/quiz/Timer"
 import { StreakCounter } from "@/components/quiz/StreakCounter"
 import { ResultScreen } from "@/components/quiz/ResultScreen"
-import { Confetti } from "@/components/ui/Confetti"
 import { Question, QuizResult } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
 import { shuffleArray, cn } from "@/lib/utils"
@@ -24,8 +23,6 @@ export default function BlitzPage() {
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime, setStartTime] = useState<Date | null>(null)
   const [answersMap, setAnswersMap] = useState<Map<string, boolean>>(new Map())
-  const [showMilestoneConfetti, setShowMilestoneConfetti] = useState(false)
-  const [screenShake, setScreenShake] = useState(false)
 
   const startBlitz = () => {
     const blitzQuestions = SEED_QUESTIONS
@@ -40,7 +37,6 @@ export default function BlitzPage() {
     setBestStreak(0)
     setAnswersMap(new Map())
     setResult(null)
-    setShowMilestoneConfetti(false)
   }
 
   const finishBlitz = useCallback((correct: number, best: number) => {
@@ -62,17 +58,6 @@ export default function BlitzPage() {
       bestStreak: best,
     })
   }, [startTime, questions, answersMap])
-
-  const handleMilestone = useCallback((milestone: number) => {
-    if (milestone >= 10) {
-      setShowMilestoneConfetti(true)
-      setScreenShake(true)
-      setTimeout(() => {
-        setShowMilestoneConfetti(false)
-        setScreenShake(false)
-      }, 1500)
-    }
-  }, [])
 
   const handleAnswer = (answer: string) => {
     const question = questions[currentIndex]
@@ -130,25 +115,21 @@ export default function BlitzPage() {
       <>
         <Navbar />
         <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="max-w-md mx-auto bg-gradient-to-br from-cyan-950/50 to-bg-surface border-2 border-cyan-500/30 rounded-2xl p-8 text-center shadow-glow-cyan"
-          >
-            <div className="w-16 h-16 rounded-2xl bg-gradient-cyan flex items-center justify-center mx-auto mb-4">
-              <Zap className="w-8 h-8 text-white" />
+          <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle rounded-2xl p-8 text-center">
+            <div className="w-16 h-16 rounded-2xl bg-cyan-100 dark:bg-cyan-500/10 flex items-center justify-center mx-auto mb-4">
+              <Zap className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />
             </div>
-            <h1 className="text-2xl font-bold mb-4 text-cyan-400">Blitzrunde</h1>
+            <h1 className="text-2xl font-bold mb-4 text-cyan-600 dark:text-cyan-400">Blitzrunde</h1>
             <p className="text-text-secondary mb-8">
               Richtig oder Falsch — 10 Sekunden pro Frage. Baue Streaks auf für Bonuspunkte!
             </p>
             <button
               onClick={startBlitz}
-              className="w-full py-3.5 rounded-xl bg-gradient-cyan text-white font-medium hover:opacity-90 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+              className="w-full py-3.5 rounded-xl bg-cyan-600 text-white font-medium hover:bg-cyan-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
             >
               Los geht&apos;s!
             </button>
-          </motion.div>
+          </div>
         </main>
       </>
     )
@@ -158,20 +139,18 @@ export default function BlitzPage() {
 
   return (
     <>
-      <Confetti trigger={showMilestoneConfetti} />
       <Navbar />
       <main
         className={cn(
           "flex-1 transition-all duration-300",
           flashColor === "green" && "bg-accent-success/5",
-          flashColor === "red" && "bg-accent-danger/5",
-          screenShake && "animate-screen-shake"
+          flashColor === "red" && "bg-accent-danger/5"
         )}
       >
         <div className="max-w-2xl mx-auto w-full px-4 py-8 space-y-6">
           {/* Top bar */}
           <div className="flex items-center justify-between">
-            <StreakCounter streak={streak} bestStreak={bestStreak} onMilestone={handleMilestone} />
+            <StreakCounter streak={streak} bestStreak={bestStreak} />
             <Timer
               key={currentIndex}
               totalSeconds={10}
@@ -191,7 +170,7 @@ export default function BlitzPage() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              className="bg-gradient-to-br from-cyan-950/30 to-bg-surface border border-cyan-500/20 rounded-2xl p-6 md:p-8"
+              className="bg-bg-surface border border-border-subtle rounded-2xl p-6 md:p-8"
             >
               <h2 className="text-xl font-semibold text-text-primary mb-6">
                 {question.question_text}
@@ -203,7 +182,7 @@ export default function BlitzPage() {
                     <button
                       key={val}
                       onClick={() => handleAnswer(val)}
-                      className="flex-1 py-4 rounded-xl border-2 border-border-subtle text-center font-medium text-text-secondary hover:border-cyan-500 hover:text-cyan-400 transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+                      className="flex-1 py-4 rounded-xl border-2 border-border-subtle text-center font-medium text-text-secondary hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
                     >
                       {val === "true" ? "Richtig" : "Falsch"}
                     </button>

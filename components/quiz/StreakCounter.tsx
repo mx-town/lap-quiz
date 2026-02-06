@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 import { Flame } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -12,7 +11,7 @@ interface StreakCounterProps {
 }
 
 function getContainerStyle(streak: number): string {
-  if (streak >= 10) return "bg-accent-danger/10 shadow-glow-danger rounded-lg px-3 py-2"
+  if (streak >= 10) return "bg-accent-danger/10 rounded-lg px-3 py-2"
   if (streak >= 5) return "bg-accent-orange/10 rounded-lg px-3 py-2"
   if (streak >= 3) return "bg-accent-warning/10 rounded-lg px-3 py-2"
   return ""
@@ -45,32 +44,22 @@ export function StreakCounter({ streak, bestStreak, onMilestone }: StreakCounter
         getContainerStyle(streak)
       )}
     >
-      <AnimatePresence mode="popLayout">
-        <motion.div
-          key={streak}
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 1.5, opacity: 0 }}
-          className="flex items-center gap-2"
+      <div className="flex items-center gap-2">
+        <Flame
+          className={cn(
+            "w-6 h-6 transition-all",
+            getFlameColor(streak)
+          )}
+        />
+        <span
+          className={cn(
+            "text-2xl font-bold font-mono transition-all",
+            getTextColor(streak)
+          )}
         >
-          <Flame
-            className={cn(
-              "w-6 h-6 transition-all",
-              getFlameColor(streak),
-              streak >= 10 ? "glow-danger" : streak >= 5 ? "glow-warning" : ""
-            )}
-          />
-          <span
-            className={cn(
-              "text-2xl font-bold font-mono transition-all",
-              getTextColor(streak),
-              streak >= 5 && "drop-shadow-[0_0_8px_currentColor]"
-            )}
-          >
-            {streak}
-          </span>
-        </motion.div>
-      </AnimatePresence>
+          {streak}
+        </span>
+      </div>
       <span className="text-xs text-text-muted">
         Best: {bestStreak}
       </span>

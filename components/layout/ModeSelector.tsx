@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { Target, BookOpen, Zap, Wrench, Settings } from "lucide-react"
 
 const modes = [
@@ -10,73 +9,63 @@ const modes = [
     title: "Prüfungssimulation",
     subtitle: "20 Fragen · 30 Min · Alle Kapitel",
     icon: Target,
-    gradient: "bg-gradient-blue",
-    bgGradientAngle: "135deg",
     accentColor: "blue",
-    delay: 0,
   },
   {
     href: "/quiz/chapter",
     title: "Kapitelweises Lernen",
     subtitle: "Gezielt vertiefen · Sofortiges Feedback",
     icon: BookOpen,
-    gradient: "bg-gradient-violet",
-    bgGradientAngle: "90deg",
     accentColor: "violet",
-    delay: 0.1,
   },
   {
     href: "/quiz/blitz",
     title: "Blitzrunde",
     subtitle: "Richtig oder Falsch · 10 Sek. pro Frage",
     icon: Zap,
-    gradient: "bg-gradient-cyan",
-    bgGradientAngle: "45deg",
     accentColor: "cyan",
-    delay: 0.2,
   },
   {
     href: "/quiz/scenario",
     title: "Praxisszenario",
     subtitle: "Fehlersuche · Anlagenanalyse · Normen",
     icon: Wrench,
-    gradient: "bg-gradient-orange",
-    bgGradientAngle: "180deg",
     accentColor: "amber",
-    delay: 0.3,
   },
   {
     href: "/quiz/custom",
     title: "Mein Fachbereich",
     subtitle: "Dein Tätigkeitsbereich · Schwerpunkt + Querfragen",
     icon: Settings,
-    gradient: "bg-gradient-green",
-    bgGradientAngle: "225deg",
     accentColor: "green",
-    delay: 0.4,
   },
 ]
 
 const accentStyles = {
   blue: {
-    hover: "hover:border-blue-500/50",
-    shadow: "group-hover:shadow-glow-blue",
+    icon: "text-blue-600 dark:text-blue-400",
+    iconBg: "bg-blue-100 dark:bg-blue-500/10",
+    hover: "hover:border-blue-400",
   },
   violet: {
-    hover: "hover:border-violet-500/50",
-    shadow: "group-hover:shadow-glow-primary",
+    icon: "text-violet-600 dark:text-violet-400",
+    iconBg: "bg-violet-100 dark:bg-violet-500/10",
+    hover: "hover:border-violet-400",
   },
   cyan: {
-    hover: "hover:border-cyan-500/50",
-    shadow: "group-hover:shadow-glow-cyan",
+    icon: "text-cyan-600 dark:text-cyan-400",
+    iconBg: "bg-cyan-100 dark:bg-cyan-500/10",
+    hover: "hover:border-cyan-400",
   },
   amber: {
-    hover: "hover:border-amber-500/50",
-    shadow: "group-hover:shadow-glow-warning",
+    icon: "text-amber-600 dark:text-amber-400",
+    iconBg: "bg-amber-100 dark:bg-amber-500/10",
+    hover: "hover:border-amber-400",
   },
   green: {
-    hover: "hover:border-green-500/50",
-    shadow: "group-hover:shadow-glow-success",
+    icon: "text-green-600 dark:text-green-400",
+    iconBg: "bg-green-100 dark:bg-green-500/10",
+    hover: "hover:border-green-400",
   },
 }
 
@@ -87,34 +76,21 @@ export function ModeSelector() {
         const Icon = mode.icon
         const styles = accentStyles[mode.accentColor as keyof typeof accentStyles]
         return (
-          <motion.div
-            key={mode.href}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: mode.delay, duration: 0.4 }}
-          >
-            <Link href={mode.href} className="block group">
+          <Link key={mode.href} href={mode.href} className="block group">
+            <div
+              className={`rounded-2xl bg-bg-surface border border-border-subtle p-6 transition-colors ${styles.hover}`}
+            >
               <div
-                className={`relative overflow-hidden rounded-2xl bg-bg-surface border border-border-subtle p-6 transition-all duration-300 ${styles.hover} ${styles.shadow} hover:shadow-lg hover:-translate-y-1`}
-                style={{
-                  backgroundImage: `linear-gradient(${mode.bgGradientAngle}, rgba(255,255,255,0.02) 0%, transparent 50%)`,
-                }}
+                className={`w-12 h-12 rounded-xl ${styles.iconBg} flex items-center justify-center mb-4`}
               >
-                <div
-                  className={`w-12 h-12 rounded-xl ${mode.gradient} flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110`}
-                >
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-text-primary mb-1">
-                  {mode.title}
-                </h3>
-                <p className="text-sm text-text-secondary">{mode.subtitle}</p>
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.15] group-hover:opacity-25 transition-all duration-300 group-hover:scale-110">
-                  <Icon className="w-full h-full" />
-                </div>
+                <Icon className={`w-6 h-6 ${styles.icon}`} />
               </div>
-            </Link>
-          </motion.div>
+              <h3 className="text-lg font-semibold text-text-primary mb-1">
+                {mode.title}
+              </h3>
+              <p className="text-sm text-text-secondary">{mode.subtitle}</p>
+            </div>
+          </Link>
         )
       })}
     </div>

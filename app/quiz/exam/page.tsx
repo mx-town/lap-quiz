@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
-import { motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { QuestionCard } from "@/components/quiz/QuestionCard"
 import { ProgressBar } from "@/components/quiz/ProgressBar"
@@ -93,23 +92,19 @@ export default function ExamPage() {
       <>
         <Navbar />
         <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="max-w-md mx-auto bg-gradient-to-br from-blue-950/50 to-bg-surface border-2 border-blue-700/30 rounded-2xl p-8 shadow-glow-blue"
-          >
+          <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle rounded-2xl p-8">
             {/* Official badge */}
             <div className="flex justify-center mb-4">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20">
-                <Shield className="w-4 h-4 text-blue-400" />
-                <span className="text-xs font-medium text-blue-400">Offizielle LAP-Simulation</span>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20">
+                <Shield className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs font-medium text-blue-600 dark:text-blue-400">Offizielle LAP-Simulation</span>
               </div>
             </div>
 
-            <div className="w-16 h-16 rounded-2xl bg-gradient-blue flex items-center justify-center mx-auto mb-4">
-              <Target className="w-8 h-8 text-white" />
+            <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
+              <Target className="w-8 h-8 text-blue-600 dark:text-blue-400" />
             </div>
-            <h1 className="text-2xl font-bold mb-2 text-center text-blue-400">Prüfungssimulation</h1>
+            <h1 className="text-2xl font-bold mb-2 text-center text-blue-600 dark:text-blue-400">Prüfungssimulation</h1>
             <p className="text-text-secondary mb-8 text-center">
               Simuliert das mündliche LAP-Fachgespräch. Zufällige Fragen aus allen Kapiteln — keine Rückkehr zu beantworteten Fragen.
             </p>
@@ -126,7 +121,7 @@ export default function ExamPage() {
                         "flex-1 py-2.5 rounded-lg border-2 text-sm font-medium transition-all",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
                         config.count === n
-                          ? "border-blue-500 bg-blue-500/10 text-blue-400"
+                          ? "border-blue-500 bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400"
                           : "border-border-subtle text-text-muted hover:border-border-panel"
                       )}
                     >
@@ -147,7 +142,7 @@ export default function ExamPage() {
                         "flex-1 py-2.5 rounded-lg border-2 text-sm font-medium transition-all flex items-center justify-center gap-1.5",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
                         config.timeMinutes === m
-                          ? "border-blue-500 bg-blue-500/10 text-blue-400"
+                          ? "border-blue-500 bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400"
                           : "border-border-subtle text-text-muted hover:border-border-panel"
                       )}
                     >
@@ -161,11 +156,11 @@ export default function ExamPage() {
 
             <button
               onClick={startExam}
-              className="w-full py-3.5 rounded-xl bg-gradient-blue text-white font-medium hover:opacity-90 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+              className="w-full py-3.5 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
             >
               Prüfung starten
             </button>
-          </motion.div>
+          </div>
         </main>
       </>
     )
@@ -176,8 +171,8 @@ export default function ExamPage() {
       <Navbar />
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8">
         <div className="max-w-2xl mx-auto space-y-6">
-          {/* Blue-themed header bar */}
-          <div className="flex items-center gap-6 bg-blue-950/30 rounded-xl p-4 border border-blue-500/20">
+          {/* Header bar */}
+          <div className="flex items-center gap-6 bg-bg-surface rounded-xl p-4 border border-border-subtle">
             <div className="flex-1">
               <ProgressBar current={currentIndex + 1} total={questions.length} correctCount={correctCount} />
             </div>

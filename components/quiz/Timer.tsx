@@ -18,9 +18,9 @@ function getTimerColor(percent: number): string {
 }
 
 function getTimerBarStyle(percent: number): string {
-  if (percent < 20) return "bg-accent-danger shadow-glow-danger"
+  if (percent < 20) return "bg-accent-danger"
   if (percent < 50) return "bg-accent-warning"
-  return "bg-gradient-to-r from-accent-primary to-accent-secondary"
+  return "bg-accent-primary"
 }
 
 export function Timer({ totalSeconds, onTimeUp, isRunning, variant = "bar", onCritical }: TimerProps) {
@@ -77,19 +77,13 @@ export function Timer({ totalSeconds, onTimeUp, isRunning, variant = "bar", onCr
             strokeDashoffset={offset}
             strokeLinecap="round"
             className={cn("transition-all duration-1000", getTimerColor(percent))}
-            style={{
-              filter: isLow ? "drop-shadow(0 0 4px currentColor)" : undefined
-            }}
           />
         </svg>
         <span
           className={cn(
             "absolute text-sm font-mono font-bold transition-all",
-            isLow ? "text-accent-danger animate-pulse" : "text-text-primary"
+            isLow ? "text-accent-danger" : "text-text-primary"
           )}
-          style={{
-            filter: isLow ? "drop-shadow(0 0 4px currentColor)" : undefined
-          }}
         >
           {remaining}
         </span>
@@ -104,11 +98,8 @@ export function Timer({ totalSeconds, onTimeUp, isRunning, variant = "bar", onCr
         <span
           className={cn(
             "font-mono transition-all",
-            isLow ? "text-accent-danger animate-pulse" : "text-text-secondary"
+            isLow ? "text-accent-danger" : "text-text-secondary"
           )}
-          style={{
-            filter: isLow ? "drop-shadow(0 0 4px currentColor)" : undefined
-          }}
         >
           {formatTime(remaining)}
         </span>

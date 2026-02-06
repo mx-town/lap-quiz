@@ -44,7 +44,7 @@ export function Slider({
         <div className="h-2 bg-bg-tertiary rounded-full overflow-hidden">
           {/* Filled track */}
           <div
-            className="h-full bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full transition-all duration-150"
+            className="h-full bg-accent-primary rounded-full transition-all duration-150"
             style={{ width: `${percent}%` }}
           />
         </div>
@@ -60,7 +60,7 @@ export function Slider({
         />
         {/* Custom thumb */}
         <div
-          className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white rounded-full shadow-lg border-2 border-accent-primary pointer-events-none transition-all duration-150 hover:scale-110"
+          className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white rounded-full shadow-md border-2 border-accent-primary pointer-events-none transition-all duration-150"
           style={{ left: `calc(${percent}% - 10px)` }}
         />
       </div>

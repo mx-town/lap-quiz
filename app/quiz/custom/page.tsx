@@ -2,12 +2,11 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { Slider } from "@/components/ui/Slider"
 import { PRESET_PROFILES, CHAPTERS } from "@/types"
 import { cn } from "@/lib/utils"
-import { Settings, ChevronRight, SlidersHorizontal, ArrowRight } from "lucide-react"
+import { Settings, SlidersHorizontal } from "lucide-react"
 
 export default function CustomPage() {
   const [selectedProfile, setSelectedProfile] = useState<string | null>(null)
@@ -20,30 +19,24 @@ export default function CustomPage() {
     <>
       <Navbar />
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <div>
           <h1 className="text-3xl font-bold mb-2">Mein Fachbereich</h1>
           <p className="text-text-secondary mb-8">
             Wähle dein Berufsprofil — 60% Schwerpunktfragen, 40% Querfragen aus dem gesamten Curriculum
           </p>
-        </motion.div>
+        </div>
 
         {/* Profile grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-          {PRESET_PROFILES.map((p, i) => (
-            <motion.button
+          {PRESET_PROFILES.map((p) => (
+            <button
               key={p.id}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.03 }}
               onClick={() => setSelectedProfile(p.id)}
               className={cn(
-                "text-left p-4 rounded-xl border-2 transition-all hover:-translate-y-0.5",
+                "text-left p-4 rounded-xl border-2 transition-all",
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-green focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary",
                 selectedProfile === p.id
-                  ? "border-accent-green bg-accent-green/10 shadow-glow-success"
+                  ? "border-accent-green bg-green-50 dark:bg-accent-green/10"
                   : "border-border-subtle hover:border-border-panel bg-bg-surface"
               )}
             >
@@ -62,24 +55,14 @@ export default function CustomPage() {
                   )
                 })}
               </div>
-            </motion.button>
+            </button>
           ))}
         </div>
 
         {/* Configuration */}
         {selectedProfile && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="max-w-md mx-auto"
-          >
-            {/* Visual connector arrow */}
-            <div className="flex justify-center mb-4">
-              <ArrowRight className="w-6 h-6 text-accent-green rotate-90" />
-            </div>
-
-            <div className="bg-bg-surface border-2 border-accent-green/30 rounded-2xl p-6 space-y-6 shadow-glow-success">
+          <div className="max-w-md mx-auto">
+            <div className="bg-bg-surface border border-border-subtle rounded-2xl p-6 space-y-6">
               <div className="flex items-center gap-2 mb-2">
                 <SlidersHorizontal className="w-5 h-5 text-accent-green" />
                 <h2 className="font-semibold">Konfiguration</h2>
@@ -121,7 +104,7 @@ export default function CustomPage() {
                         "py-2.5 rounded-lg border-2 text-sm font-medium transition-all",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-green focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
                         questionCount === n
-                          ? "border-accent-green bg-accent-green/10 text-accent-green"
+                          ? "border-accent-green bg-green-50 dark:bg-accent-green/10 text-accent-green"
                           : "border-border-subtle text-text-muted hover:border-border-panel"
                       )}
                     >
@@ -149,12 +132,12 @@ export default function CustomPage() {
               {/* Start button */}
               <Link
                 href={`/quiz/custom/play?profile=${selectedProfile}&weight=${focusWeight}&count=${questionCount}`}
-                className="block w-full py-3.5 rounded-xl bg-gradient-green text-white text-center font-medium hover:opacity-90 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-green focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+                className="block w-full py-3.5 rounded-xl bg-green-600 text-white text-center font-medium hover:bg-green-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-green focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
               >
                 Quiz starten
               </Link>
             </div>
-          </motion.div>
+          </div>
         )}
       </main>
     </>

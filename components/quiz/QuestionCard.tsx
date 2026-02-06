@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
 import { Question } from "@/types"
 import { cn } from "@/lib/utils"
 import { normalize } from "@/lib/quiz-engine"
@@ -99,12 +98,9 @@ export function QuestionCard({
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
+    <div
       className={cn(
         "w-full max-w-2xl mx-auto",
-        submitted && isCorrect && "animate-celebrate",
         submitted && !isCorrect && "animate-shake"
       )}
     >
@@ -243,9 +239,7 @@ export function QuestionCard({
 
         {/* Feedback */}
         {submitted && showFeedback && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
             className={cn(
               "mt-6 p-4 rounded-xl",
               isCorrect ? "bg-accent-success/10" : "bg-accent-danger/10"
@@ -257,7 +251,7 @@ export function QuestionCard({
             {question.explanation && (
               <p className="text-sm text-text-secondary">{question.explanation}</p>
             )}
-          </motion.div>
+          </div>
         )}
 
         {/* AI Explanation */}
@@ -290,6 +284,6 @@ export function QuestionCard({
           </button>
         )}
       </div>
-    </motion.div>
+    </div>
   )
 }

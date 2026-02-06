@@ -8,11 +8,10 @@ import { cn, formatPercent, formatTime, getScoreColor, getScoreBg } from "@/lib/
 import { Trophy, RotateCcw, Home, TrendingUp, Medal, Flame } from "lucide-react"
 
 function getProgressBarColor(percent: number): string {
-  if (percent >= 70) return "bg-accent-success shadow-glow-success"
+  if (percent >= 70) return "bg-accent-success"
   if (percent >= 50) return "bg-accent-warning"
   return "bg-accent-danger"
 }
-import { Confetti } from "@/components/ui/Confetti"
 
 interface ResultScreenProps {
   result: QuizResult
@@ -22,7 +21,6 @@ export function ResultScreen({ result }: ResultScreenProps) {
   const passed = result.scorePercent >= 70
   const excellent = result.scorePercent >= 90
   const [displayScore, setDisplayScore] = useState(0)
-  const [showConfetti, setShowConfetti] = useState(false)
 
   // Animated counter for score
   useEffect(() => {
@@ -37,17 +35,13 @@ export function ResultScreen({ result }: ResultScreenProps) {
       if (current >= result.scorePercent) {
         setDisplayScore(result.scorePercent)
         clearInterval(interval)
-        // Trigger confetti after counter finishes for excellent scores
-        if (excellent) {
-          setShowConfetti(true)
-        }
       } else {
         setDisplayScore(current)
       }
     }, stepDuration)
 
     return () => clearInterval(interval)
-  }, [result.scorePercent, excellent])
+  }, [result.scorePercent])
 
   const getTrophyIcon = () => {
     if (excellent) return <Trophy className="w-8 h-8 text-accent-warning" />
@@ -56,146 +50,104 @@ export function ResultScreen({ result }: ResultScreenProps) {
   }
 
   return (
-    <>
-      <Confetti trigger={showConfetti} />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="w-full max-w-2xl mx-auto"
-      >
-        <div className="bg-bg-surface border border-border-subtle rounded-2xl p-8 text-center">
-          {/* Score */}
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, type: "spring" }}
-            className={cn(
-              "w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center relative",
-              getScoreBg(result.scorePercent),
-              excellent && "shadow-glow-warning",
-              passed && !excellent && "shadow-glow-success"
-            )}
-          >
-            {/* Trophy/Medal overlay */}
-            {getTrophyIcon() && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 }}
-                className="absolute -top-4 left-1/2 -translate-x-1/2"
-              >
-                {getTrophyIcon()}
-              </motion.div>
-            )}
-            <div>
-              <motion.p
-                className={cn("text-4xl font-bold", getScoreColor(result.scorePercent))}
-              >
-                {formatPercent(displayScore)}
-              </motion.p>
-            </div>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-2xl font-bold mb-2"
-          >
-            {excellent ? "Ausgezeichnet!" : passed ? "Bestanden!" : "Nicht bestanden"}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-text-secondary mb-2"
-          >
-            {result.correctAnswers} von {result.totalQuestions} richtig · {formatTime(result.durationSeconds)}
-          </motion.p>
-          {result.bestStreak !== undefined && result.bestStreak > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="flex items-center justify-center gap-1.5 text-amber-400 mb-8"
-            >
-              <Flame className="w-4 h-4" />
-              <span className="text-sm font-medium">Beste Serie: {result.bestStreak}</span>
-            </motion.div>
+    <div className="w-full max-w-2xl mx-auto">
+      <div className="bg-bg-surface border border-border-subtle rounded-2xl p-8 text-center">
+        {/* Score */}
+        <div
+          className={cn(
+            "w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center relative",
+            getScoreBg(result.scorePercent)
           )}
-          {(result.bestStreak === undefined || result.bestStreak <= 0) && <div className="mb-6" />}
-
-          {/* Chapter breakdown */}
-          <div className="text-left mb-8">
-            <h3 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
-              Auswertung nach Kapitel
-            </h3>
-            <div className="space-y-2">
-              {Object.entries(result.byChapter).map(([chapterNum, stats], index) => {
-                const chapter = CHAPTERS.find((c) => c.number === parseInt(chapterNum))
-                const percent = stats.total > 0 ? (stats.correct / stats.total) * 100 : 0
-                return (
-                  <motion.div
-                    key={chapterNum}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.6 + index * 0.05 }}
-                    className="flex items-center gap-3"
-                  >
-                    <span className="text-xs text-text-muted w-6 font-mono">{chapterNum}</span>
-                    <span className="text-sm text-text-secondary flex-1 truncate">
-                      {chapter?.name || `Kapitel ${chapterNum}`}
-                    </span>
-                    <div className="w-24 h-2.5 bg-bg-tertiary border border-border-subtle rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${percent}%` }}
-                        transition={{ duration: 0.7, delay: 0.8 + index * 0.05, ease: "easeOut" }}
-                        className={cn("h-full rounded-full", getProgressBarColor(percent))}
-                      />
-                    </div>
-                    <span className={cn("text-xs font-mono w-10 text-right", getScoreColor(percent))}>
-                      {stats.correct}/{stats.total}
-                    </span>
-                  </motion.div>
-                )
-              })}
+        >
+          {/* Trophy/Medal overlay */}
+          {getTrophyIcon() && (
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+              {getTrophyIcon()}
             </div>
+          )}
+          <div>
+            <p className={cn("text-4xl font-bold", getScoreColor(result.scorePercent))}>
+              {formatPercent(displayScore)}
+            </p>
           </div>
-
-          {/* Actions */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
-            className="flex flex-col sm:flex-row gap-3"
-          >
-            <Link
-              href={result.mode === "chapter" && result.chapterNumber
-                ? `/quiz/chapter/${result.chapterNumber}`
-                : `/quiz/${result.mode}`}
-              className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-accent-primary text-white font-medium hover:bg-accent-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
-            >
-              <RotateCcw className="w-4 h-4" />
-              Nochmal
-            </Link>
-            <Link
-              href="/stats"
-              className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-bg-tertiary text-text-secondary font-medium hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
-            >
-              <TrendingUp className="w-4 h-4" />
-              Statistik
-            </Link>
-            <Link
-              href="/"
-              className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-bg-tertiary text-text-secondary font-medium hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
-            >
-              <Home className="w-4 h-4" />
-              Start
-            </Link>
-          </motion.div>
         </div>
-      </motion.div>
-    </>
+
+        <h2 className="text-2xl font-bold mb-2">
+          {excellent ? "Ausgezeichnet!" : passed ? "Bestanden!" : "Nicht bestanden"}
+        </h2>
+        <p className="text-text-secondary mb-2">
+          {result.correctAnswers} von {result.totalQuestions} richtig · {formatTime(result.durationSeconds)}
+        </p>
+        {result.bestStreak !== undefined && result.bestStreak > 0 && (
+          <div className="flex items-center justify-center gap-1.5 text-amber-500 mb-8">
+            <Flame className="w-4 h-4" />
+            <span className="text-sm font-medium">Beste Serie: {result.bestStreak}</span>
+          </div>
+        )}
+        {(result.bestStreak === undefined || result.bestStreak <= 0) && <div className="mb-6" />}
+
+        {/* Chapter breakdown */}
+        <div className="text-left mb-8">
+          <h3 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+            Auswertung nach Kapitel
+          </h3>
+          <div className="space-y-2">
+            {Object.entries(result.byChapter).map(([chapterNum, stats], index) => {
+              const chapter = CHAPTERS.find((c) => c.number === parseInt(chapterNum))
+              const percent = stats.total > 0 ? (stats.correct / stats.total) * 100 : 0
+              return (
+                <div
+                  key={chapterNum}
+                  className="flex items-center gap-3"
+                >
+                  <span className="text-xs text-text-muted w-6 font-mono">{chapterNum}</span>
+                  <span className="text-sm text-text-secondary flex-1 truncate">
+                    {chapter?.name || `Kapitel ${chapterNum}`}
+                  </span>
+                  <div className="w-24 h-2.5 bg-bg-tertiary border border-border-subtle rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: `${percent}%` }}
+                      transition={{ duration: 0.7, delay: 0.3 + index * 0.05, ease: "easeOut" }}
+                      className={cn("h-full rounded-full", getProgressBarColor(percent))}
+                    />
+                  </div>
+                  <span className={cn("text-xs font-mono w-10 text-right", getScoreColor(percent))}>
+                    {stats.correct}/{stats.total}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Actions */}
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Link
+            href={result.mode === "chapter" && result.chapterNumber
+              ? `/quiz/chapter/${result.chapterNumber}`
+              : `/quiz/${result.mode}`}
+            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-accent-primary text-white font-medium hover:bg-accent-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+          >
+            <RotateCcw className="w-4 h-4" />
+            Nochmal
+          </Link>
+          <Link
+            href="/stats"
+            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-bg-tertiary text-text-secondary font-medium hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+          >
+            <TrendingUp className="w-4 h-4" />
+            Statistik
+          </Link>
+          <Link
+            href="/"
+            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-bg-tertiary text-text-secondary font-medium hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+          >
+            <Home className="w-4 h-4" />
+            Start
+          </Link>
+        </div>
+      </div>
+    </div>
   )
 }
