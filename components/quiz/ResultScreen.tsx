@@ -112,15 +112,13 @@ export function ResultScreen({ result }: ResultScreenProps) {
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-3">
-          <Link
-            href={result.mode === "chapter" && result.chapterNumber
-              ? `/quiz/chapter/${result.chapterNumber}`
-              : `/quiz/${result.mode}`}
+          <button
+            onClick={() => window.location.reload()}
             className="flex-1 flex items-center justify-center gap-2 py-3 bg-text-primary text-bg-primary font-medium hover:bg-accent-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface uppercase tracking-wider text-[13px]"
           >
             <RotateCcw className="w-4 h-4" />
             Nochmal
-          </Link>
+          </button>
           <Link
             href="/stats"
             className="flex-1 flex items-center justify-center gap-2 py-3 bg-bg-tertiary text-text-secondary font-medium hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface uppercase tracking-wider text-[13px]"
