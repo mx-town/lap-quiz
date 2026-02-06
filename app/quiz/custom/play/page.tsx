@@ -26,20 +26,21 @@ function CustomPlayContent() {
 
   if (!profile) {
     return (
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
-        <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle rounded-2xl p-8 text-center">
-          <div className="w-16 h-16 rounded-2xl bg-accent-danger/10 flex items-center justify-center mx-auto mb-4">
-            <AlertTriangle className="w-8 h-8 text-accent-danger" />
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+        <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle p-8">
+          <div className="flex items-center gap-3 mb-6">
+            <AlertTriangle className="w-5 h-5 text-accent-danger" />
+            <span className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Fehler</span>
           </div>
-          <h1 className="text-2xl font-bold mb-2">Ungueltiges Profil</h1>
-          <p className="text-text-secondary mb-6">
+          <h1 className="text-2xl font-bold mb-2 tracking-tight">Ungültiges Profil</h1>
+          <p className="text-sm text-text-muted mb-6">
             Das Profil &quot;{profileId}&quot; wurde nicht gefunden.
           </p>
           <Link
             href="/quiz/custom"
-            className="inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-accent-primary text-white font-medium hover:bg-accent-secondary transition-colors"
+            className="inline-flex items-center justify-center gap-2 py-3 px-6 bg-text-primary text-bg-primary font-medium hover:bg-accent-primary transition-colors uppercase tracking-wider text-[13px]"
           >
-            Zurueck zur Auswahl
+            Zurück zur Auswahl
           </Link>
         </div>
       </main>
@@ -48,7 +49,6 @@ function CustomPlayContent() {
 
   const focusChapters: number[] = [...profile.focusChapters]
 
-  // Build question pool with focus/cross split
   const focusCount = Math.round(count * (weight / 100))
   const crossCount = count - focusCount
 
@@ -103,7 +103,7 @@ function CustomPlayContent() {
 
   if (result) {
     return (
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
         <ResultScreen result={result} />
       </main>
     )
@@ -111,17 +111,17 @@ function CustomPlayContent() {
 
   if (questions.length === 0) {
     return (
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12 text-center">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 text-center">
         <p className="text-text-muted">Keine Fragen für dieses Profil vorhanden.</p>
       </main>
     )
   }
 
   return (
-    <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8">
+    <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
       <div className="max-w-2xl mx-auto space-y-6">
         <div>
-          <h1 className="text-lg font-semibold mb-1">{profile?.name || "Mein Fachbereich"}</h1>
+          <h1 className="text-base font-semibold mb-2 tracking-tight">{profile?.name || "Mein Fachbereich"}</h1>
           <ProgressBar current={currentIndex + 1} total={questions.length} correctCount={correctCount} />
         </div>
         <QuestionCard
@@ -143,7 +143,7 @@ export default function CustomPlayPage() {
   return (
     <>
       <Navbar />
-      <Suspense fallback={<div className="flex-1 flex items-center justify-center text-text-muted">Laden...</div>}>
+      <Suspense fallback={<div className="flex-1 flex items-center justify-center text-text-muted font-mono text-sm">Laden...</div>}>
         <CustomPlayContent />
       </Suspense>
     </>

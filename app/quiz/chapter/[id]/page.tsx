@@ -23,7 +23,6 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const nextCountRef = useRef<number>(0)
 
-  // Filter questions for this chapter
   const questions: Question[] = isValidChapter
     ? SEED_QUESTIONS
         .filter((q) => q.chapter_number === chapterNum)
@@ -67,17 +66,16 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
     nextCountRef.current = newCount
   }
 
-  // Bug 4: Invalid chapter ID
   if (!isValidChapter) {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12 text-center">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 text-center">
           <p className="text-text-primary text-lg font-semibold mb-2">Kapitel nicht gefunden</p>
-          <p className="text-text-muted mb-6">Die angegebene Kapitel-ID ist ungültig.</p>
+          <p className="text-text-muted mb-6 text-sm">Die angegebene Kapitel-ID ist ungültig.</p>
           <Link
             href="/quiz/chapter"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent-primary text-white font-medium hover:bg-accent-secondary transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-text-primary text-bg-primary font-medium hover:bg-accent-primary transition-colors uppercase tracking-wider text-[13px]"
           >
             Zur Kapitelauswahl
           </Link>
@@ -90,7 +88,7 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
           <ResultScreen result={result} />
         </main>
       </>
@@ -101,7 +99,7 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12 text-center">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 text-center">
           <p className="text-text-muted">Keine Fragen für Kapitel {chapterNum} vorhanden.</p>
         </main>
       </>
@@ -111,11 +109,12 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
   return (
     <>
       <Navbar />
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
         <div className="max-w-2xl mx-auto space-y-6">
           <div>
-            <h1 className="text-lg font-semibold mb-1">
-              Kap. {chapterNum}: {chapter?.name}
+            <h1 className="text-base font-semibold mb-2 tracking-tight">
+              <span className="text-text-muted font-mono mr-2">{String(chapterNum).padStart(2, "0")}</span>
+              {chapter?.name}
             </h1>
             <ProgressBar current={currentIndex + 1} total={questions.length} correctCount={correctCount} />
           </div>

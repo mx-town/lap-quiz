@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Navbar } from "@/components/layout/Navbar"
 import { CHAPTERS } from "@/types"
+import { CHAPTER_QUESTIONS } from "@/lib/questions"
 import {
   Shield,
   Zap,
@@ -15,7 +16,6 @@ import {
   Settings,
   Network,
   CircuitBoard,
-  HelpCircle,
   type LucideIcon,
 } from "lucide-react"
 
@@ -33,44 +33,35 @@ const iconMap: Record<string, LucideIcon> = {
   CircuitBoard,
 }
 
-// Placeholder question counts - will be replaced with actual data from Supabase
-const questionCounts: Record<number, number> = {
-  1: 15, 2: 22, 3: 18, 4: 25, 5: 20, 6: 17, 7: 12, 8: 19, 9: 14, 10: 21, 11: 16
-}
-
 export default function ChapterPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
-        <div>
-          <h1 className="text-3xl font-bold mb-2">Kapitelweises Lernen</h1>
-          <p className="text-text-secondary mb-8">Wähle ein Kapitel zur gezielten Vertiefung</p>
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+        <div className="mb-10">
+          <h1 className="text-3xl font-bold tracking-tight mb-2">Kapitelweises Lernen</h1>
+          <p className="text-sm text-text-muted">Wähle ein Kapitel zur gezielten Vertiefung</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
           {CHAPTERS.map((chapter) => {
             const Icon = iconMap[chapter.icon] || Box
-            const questionCount = questionCounts[chapter.number] || 0
+            const questionCount = CHAPTER_QUESTIONS[chapter.number]?.length ?? 0
             return (
               <Link key={chapter.number} href={`/quiz/chapter/${chapter.number}`} className="block group">
-                <div className="bg-bg-surface border border-border-subtle rounded-xl p-5 transition-colors hover:border-border-panel">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-accent-primary/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-accent-primary" />
-                      </div>
-                      <span className="text-xs font-mono text-text-muted">Kap. {chapter.number}</span>
-                    </div>
-                    {/* Question count badge */}
-                    <div className="flex items-center gap-1 text-xs text-text-muted bg-bg-tertiary px-2 py-1 rounded-full">
-                      <HelpCircle className="w-3 h-3" />
-                      <span>{questionCount}</span>
-                    </div>
+                <div className="bg-bg-surface border border-border-subtle p-5 transition-all hover:border-text-primary">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[11px] font-mono text-text-muted uppercase tracking-widest">
+                      {String(chapter.number).padStart(2, "0")}
+                    </span>
+                    <Icon className="w-4 h-4 text-text-muted group-hover:text-accent-primary transition-colors" />
                   </div>
-                  <h3 className="font-semibold text-text-primary group-hover:text-accent-primary transition-colors">
+                  <h3 className="text-sm font-semibold text-text-primary group-hover:text-accent-primary transition-colors mb-1 tracking-tight">
                     {chapter.name}
                   </h3>
+                  <span className="text-[11px] font-mono text-text-muted">
+                    {questionCount} Fragen
+                  </span>
                 </div>
               </Link>
             )

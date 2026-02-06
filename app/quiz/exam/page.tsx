@@ -10,7 +10,7 @@ import { Question, QuizResult } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
 import { shuffleArray, cn } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
-import { Target, Shield, Clock } from "lucide-react"
+import { Target, Clock } from "lucide-react"
 
 export default function ExamPage() {
   const [started, setStarted] = useState(false)
@@ -23,7 +23,6 @@ export default function ExamPage() {
   const [config, setConfig] = useState({ count: 20, timeMinutes: 30 })
 
   const startExam = () => {
-    // Use seed questions for now; replace with Supabase fetch later
     const q = shuffleArray(SEED_QUESTIONS.map((sq, i) => ({ ...sq, id: `seed-${i}` }))).slice(0, config.count)
     setQuestions(q)
     setStarted(true)
@@ -80,7 +79,7 @@ export default function ExamPage() {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
           <ResultScreen result={result} />
         </main>
       </>
@@ -91,38 +90,32 @@ export default function ExamPage() {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
-          <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle rounded-2xl p-8">
-            {/* Official badge */}
-            <div className="flex justify-center mb-4">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20">
-                <Shield className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                <span className="text-xs font-medium text-blue-600 dark:text-blue-400">Offizielle LAP-Simulation</span>
-              </div>
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+          <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Target className="w-5 h-5 text-accent-primary" />
+              <span className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Offizielle LAP-Simulation</span>
             </div>
 
-            <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
-              <Target className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-            </div>
-            <h1 className="text-2xl font-bold mb-2 text-center text-blue-600 dark:text-blue-400">Prüfungssimulation</h1>
-            <p className="text-text-secondary mb-8 text-center">
+            <h1 className="text-2xl font-bold mb-2 tracking-tight">Prüfungssimulation</h1>
+            <p className="text-sm text-text-muted mb-8">
               Simuliert das mündliche LAP-Fachgespräch. Zufällige Fragen aus allen Kapiteln — keine Rückkehr zu beantworteten Fragen.
             </p>
 
-            <div className="space-y-4 mb-8">
+            <div className="space-y-6 mb-8">
               <div>
-                <label className="text-sm text-text-secondary block mb-2">Fragenanzahl</label>
+                <label className="text-[11px] font-mono uppercase tracking-widest text-text-muted block mb-3">Fragenanzahl</label>
                 <div className="flex gap-2">
                   {[10, 20, 30].map((n) => (
                     <button
                       key={n}
                       onClick={() => setConfig((c) => ({ ...c, count: n }))}
                       className={cn(
-                        "flex-1 py-2.5 rounded-lg border-2 text-sm font-medium transition-all",
-                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
+                        "flex-1 py-2.5 border-2 text-sm font-medium transition-all",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
                         config.count === n
-                          ? "border-blue-500 bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400"
-                          : "border-border-subtle text-text-muted hover:border-border-panel"
+                          ? "border-text-primary text-text-primary"
+                          : "border-border-subtle text-text-muted hover:border-text-muted"
                       )}
                     >
                       {n}
@@ -132,18 +125,18 @@ export default function ExamPage() {
               </div>
 
               <div>
-                <label className="text-sm text-text-secondary block mb-2">Zeitlimit</label>
+                <label className="text-[11px] font-mono uppercase tracking-widest text-text-muted block mb-3">Zeitlimit</label>
                 <div className="flex gap-2">
                   {[15, 30, 45].map((m) => (
                     <button
                       key={m}
                       onClick={() => setConfig((c) => ({ ...c, timeMinutes: m }))}
                       className={cn(
-                        "flex-1 py-2.5 rounded-lg border-2 text-sm font-medium transition-all flex items-center justify-center gap-1.5",
-                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
+                        "flex-1 py-2.5 border-2 text-sm font-medium transition-all flex items-center justify-center gap-1.5",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
                         config.timeMinutes === m
-                          ? "border-blue-500 bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400"
-                          : "border-border-subtle text-text-muted hover:border-border-panel"
+                          ? "border-text-primary text-text-primary"
+                          : "border-border-subtle text-text-muted hover:border-text-muted"
                       )}
                     >
                       <Clock className="w-3.5 h-3.5" />
@@ -156,7 +149,7 @@ export default function ExamPage() {
 
             <button
               onClick={startExam}
-              className="w-full py-3.5 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+              className="w-full py-3.5 bg-text-primary text-bg-primary font-medium hover:bg-accent-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface uppercase tracking-wider text-[13px]"
             >
               Prüfung starten
             </button>
@@ -169,10 +162,9 @@ export default function ExamPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
         <div className="max-w-2xl mx-auto space-y-6">
-          {/* Header bar */}
-          <div className="flex items-center gap-6 bg-bg-surface rounded-xl p-4 border border-border-subtle">
+          <div className="flex items-center gap-6 bg-bg-surface p-4 border border-border-subtle">
             <div className="flex-1">
               <ProgressBar current={currentIndex + 1} total={questions.length} correctCount={correctCount} />
             </div>

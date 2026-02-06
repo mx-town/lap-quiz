@@ -8,7 +8,7 @@ export function Skeleton({ className }: SkeletonProps) {
   return (
     <div
       className={cn(
-        "animate-pulse bg-bg-tertiary rounded",
+        "animate-pulse bg-bg-tertiary",
         className
       )}
     />
@@ -17,14 +17,14 @@ export function Skeleton({ className }: SkeletonProps) {
 
 export function CardSkeleton() {
   return (
-    <div className="bg-bg-surface border border-border-subtle rounded-xl p-6 space-y-4">
+    <div className="bg-bg-surface border border-border-subtle p-6 space-y-4">
       <div className="flex items-center gap-3">
-        <Skeleton className="w-10 h-10 rounded-lg" />
+        <Skeleton className="w-10 h-10" />
         <Skeleton className="h-4 w-24" />
       </div>
       <Skeleton className="h-6 w-3/4" />
       <Skeleton className="h-4 w-full" />
-      <Skeleton className="h-2 w-full rounded-full" />
+      <Skeleton className="h-1.5 w-full" />
     </div>
   )
 }
@@ -36,7 +36,7 @@ export function ProgressBarSkeleton() {
         <Skeleton className="h-3 w-12" />
         <Skeleton className="h-3 w-16" />
       </div>
-      <Skeleton className="h-2.5 w-full rounded-full" />
+      <Skeleton className="h-1.5 w-full" />
     </div>
   )
 }
@@ -44,31 +44,24 @@ export function ProgressBarSkeleton() {
 export function QuestionCardSkeleton() {
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <div className="bg-bg-surface border border-border-subtle rounded-2xl p-6 md:p-8 space-y-6">
-        {/* Header */}
+      <div className="bg-bg-surface border border-border-subtle p-6 md:p-8 space-y-6">
         <div className="flex items-center justify-between">
           <Skeleton className="h-4 w-24" />
           <div className="flex items-center gap-2">
-            <Skeleton className="h-5 w-20 rounded-full" />
-            <Skeleton className="h-5 w-14 rounded-full" />
+            <Skeleton className="h-5 w-20" />
+            <Skeleton className="h-5 w-14" />
           </div>
         </div>
-
-        {/* Question */}
         <div className="space-y-2">
           <Skeleton className="h-6 w-full" />
           <Skeleton className="h-6 w-3/4" />
         </div>
-
-        {/* Options */}
         <div className="space-y-3">
           {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} className="h-14 w-full rounded-xl" />
+            <Skeleton key={i} className="h-14 w-full" />
           ))}
         </div>
-
-        {/* Button */}
-        <Skeleton className="h-12 w-full rounded-xl" />
+        <Skeleton className="h-12 w-full" />
       </div>
     </div>
   )
@@ -76,9 +69,9 @@ export function QuestionCardSkeleton() {
 
 export function StatsCardSkeleton() {
   return (
-    <div className="bg-bg-surface border border-border-subtle rounded-xl p-6">
+    <div className="bg-bg-surface border border-border-subtle p-6">
       <div className="flex items-center gap-3 mb-3">
-        <Skeleton className="w-10 h-10 rounded-lg" />
+        <Skeleton className="w-10 h-10" />
         <Skeleton className="h-4 w-24" />
       </div>
       <Skeleton className="h-8 w-16 mb-1" />
@@ -89,11 +82,11 @@ export function StatsCardSkeleton() {
 
 export function ChapterCardSkeleton() {
   return (
-    <div className="bg-bg-surface border border-border-subtle rounded-xl p-4 flex items-center gap-4">
+    <div className="bg-bg-surface border border-border-subtle p-4 flex items-center gap-4">
       <Skeleton className="w-6 h-4" />
       <div className="flex-1 space-y-2">
         <Skeleton className="h-4 w-3/4" />
-        <Skeleton className="h-2 w-full rounded-full" />
+        <Skeleton className="h-1.5 w-full" />
       </div>
       <Skeleton className="h-4 w-8" />
     </div>

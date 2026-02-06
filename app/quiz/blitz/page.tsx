@@ -86,7 +86,6 @@ export default function BlitzPage() {
   }
 
   const handleTimeUp = useCallback(() => {
-    // Skip to next question on time up
     if (currentIndex + 1 >= questions.length) {
       finishBlitz(correctCount, bestStreak)
     } else {
@@ -103,7 +102,7 @@ export default function BlitzPage() {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
           <ResultScreen result={result} />
         </main>
       </>
@@ -114,20 +113,21 @@ export default function BlitzPage() {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
-          <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle rounded-2xl p-8 text-center">
-            <div className="w-16 h-16 rounded-2xl bg-cyan-100 dark:bg-cyan-500/10 flex items-center justify-center mx-auto mb-4">
-              <Zap className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+          <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Zap className="w-5 h-5 text-accent-primary" />
+              <span className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Schnellmodus</span>
             </div>
-            <h1 className="text-2xl font-bold mb-4 text-cyan-600 dark:text-cyan-400">Blitzrunde</h1>
-            <p className="text-text-secondary mb-8">
-              Richtig oder Falsch — 10 Sekunden pro Frage. Baue Streaks auf für Bonuspunkte!
+            <h1 className="text-2xl font-bold mb-2 tracking-tight">Blitzrunde</h1>
+            <p className="text-sm text-text-muted mb-8">
+              Richtig oder Falsch — 20 Sekunden pro Frage. Baue Streaks auf für Bonuspunkte!
             </p>
             <button
               onClick={startBlitz}
-              className="w-full py-3.5 rounded-xl bg-cyan-600 text-white font-medium hover:bg-cyan-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+              className="w-full py-3.5 bg-text-primary text-bg-primary font-medium hover:bg-accent-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface uppercase tracking-wider text-[13px]"
             >
-              Los geht&apos;s!
+              Los geht&apos;s
             </button>
           </div>
         </main>
@@ -147,18 +147,18 @@ export default function BlitzPage() {
           flashColor === "red" && "bg-accent-danger/5"
         )}
       >
-        <div className="max-w-2xl mx-auto w-full px-4 py-8 space-y-6">
+        <div className="max-w-2xl mx-auto w-full px-6 py-8 space-y-6">
           {/* Top bar */}
           <div className="flex items-center justify-between">
             <StreakCounter streak={streak} bestStreak={bestStreak} />
             <Timer
               key={currentIndex}
-              totalSeconds={10}
+              totalSeconds={20}
               onTimeUp={handleTimeUp}
               isRunning={true}
               variant="ring"
             />
-            <span className="text-sm text-text-muted font-mono">
+            <span className="text-[11px] font-mono text-text-muted uppercase tracking-widest">
               {currentIndex + 1}/{questions.length}
             </span>
           </div>
@@ -167,22 +167,22 @@ export default function BlitzPage() {
           <AnimatePresence mode="wait">
             <motion.div
               key={question.id}
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              className="bg-bg-surface border border-border-subtle rounded-2xl p-6 md:p-8"
+              exit={{ opacity: 0, x: -40 }}
+              className="bg-bg-surface border border-border-subtle p-6 md:p-8"
             >
-              <h2 className="text-xl font-semibold text-text-primary mb-6">
+              <h2 className="text-lg font-semibold text-text-primary mb-6 tracking-tight">
                 {question.question_text}
               </h2>
 
               {question.question_type === "true_false" && (
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   {["true", "false"].map((val) => (
                     <button
                       key={val}
                       onClick={() => handleAnswer(val)}
-                      className="flex-1 py-4 rounded-xl border-2 border-border-subtle text-center font-medium text-text-secondary hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+                      className="flex-1 py-4 border-2 border-border-subtle text-center font-medium text-text-secondary hover:border-text-primary hover:text-text-primary transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
                     >
                       {val === "true" ? "Richtig" : "Falsch"}
                     </button>
@@ -196,9 +196,9 @@ export default function BlitzPage() {
                     <button
                       key={i}
                       onClick={() => handleAnswer(String(i))}
-                      className="w-full text-left p-4 rounded-xl border-2 border-border-subtle text-text-secondary hover:border-cyan-500 hover:text-text-primary transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+                      className="w-full text-left p-4 border-2 border-border-subtle text-text-secondary hover:border-text-primary hover:text-text-primary transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface text-[14px]"
                     >
-                      <span className="font-mono text-sm mr-3 opacity-50">
+                      <span className="font-mono text-[12px] mr-3 text-text-muted">
                         {String.fromCharCode(65 + i)}
                       </span>
                       {option}

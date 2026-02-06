@@ -3,33 +3,34 @@
 @tailwind utilities;
 
 :root {
-  /* Light (default) */
+  /* Swiss Design — Light */
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f9fafb;
-  --color-bg-tertiary: #f3f4f6;
+  --color-bg-secondary: #fafafa;
+  --color-bg-tertiary: #f0f0f0;
   --color-bg-surface: #ffffff;
-  --color-text-primary: #111827;
-  --color-text-secondary: #4b5563;
-  --color-text-muted: #9ca3af;
-  --color-border-subtle: #e5e7eb;
-  --color-border-panel: #d1d5db;
-  --color-accent-primary: #7c3aed;
-  --color-accent-secondary: #6d28d9;
+  --color-text-primary: #0a0a0a;
+  --color-text-secondary: #525252;
+  --color-text-muted: #a3a3a3;
+  --color-border-subtle: #e5e5e5;
+  --color-border-panel: #d4d4d4;
+  --color-accent-primary: #dc2626;
+  --color-accent-secondary: #b91c1c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg-primary: #09090b;
-    --color-bg-secondary: #18181b;
-    --color-bg-tertiary: #27272a;
-    --color-bg-surface: #18181b;
-    --color-text-primary: #f4f4f5;
-    --color-text-secondary: #a1a1aa;
-    --color-text-muted: #71717a;
-    --color-border-subtle: #27272a;
-    --color-border-panel: #3f3f46;
-    --color-accent-primary: #8b5cf6;
-    --color-accent-secondary: #7c3aed;
+    /* Swiss Design — Dark */
+    --color-bg-primary: #0a0a0a;
+    --color-bg-secondary: #141414;
+    --color-bg-tertiary: #1f1f1f;
+    --color-bg-surface: #141414;
+    --color-text-primary: #fafafa;
+    --color-text-secondary: #a3a3a3;
+    --color-text-muted: #737373;
+    --color-border-subtle: #262626;
+    --color-border-panel: #404040;
+    --color-accent-primary: #ef4444;
+    --color-accent-secondary: #dc2626;
   }
 }
 
@@ -40,22 +41,23 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-border-panel);
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -73,15 +75,14 @@ body {
 
 @layer utilities {
   .text-heading {
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    letter-spacing: -0.025em;
   }
 
   .text-body {
     line-height: 1.6;
   }
 
-  /* Focus ring utility */
   .focus-ring {
     @apply focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary;
   }

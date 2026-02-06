@@ -4,8 +4,8 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { QuizResult, CHAPTERS } from "@/types"
-import { cn, formatPercent, formatTime, getScoreColor, getScoreBg } from "@/lib/utils"
-import { Trophy, RotateCcw, Home, TrendingUp, Medal, Flame } from "lucide-react"
+import { cn, formatPercent, formatTime, getScoreColor } from "@/lib/utils"
+import { RotateCcw, Home, TrendingUp, Flame } from "lucide-react"
 
 function getProgressBarColor(percent: number): string {
   if (percent >= 70) return "bg-accent-success"
@@ -22,7 +22,6 @@ export function ResultScreen({ result }: ResultScreenProps) {
   const excellent = result.scorePercent >= 90
   const [displayScore, setDisplayScore] = useState(0)
 
-  // Animated counter for score
   useEffect(() => {
     const duration = 1000
     const steps = 30
@@ -43,55 +42,36 @@ export function ResultScreen({ result }: ResultScreenProps) {
     return () => clearInterval(interval)
   }, [result.scorePercent])
 
-  const getTrophyIcon = () => {
-    if (excellent) return <Trophy className="w-8 h-8 text-accent-warning" />
-    if (passed) return <Medal className="w-8 h-8 text-accent-success" />
-    return null
-  }
-
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <div className="bg-bg-surface border border-border-subtle rounded-2xl p-8 text-center">
+      <div className="bg-bg-surface border border-border-subtle p-8">
         {/* Score */}
-        <div
-          className={cn(
-            "w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center relative",
-            getScoreBg(result.scorePercent)
-          )}
-        >
-          {/* Trophy/Medal overlay */}
-          {getTrophyIcon() && (
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-              {getTrophyIcon()}
-            </div>
-          )}
-          <div>
-            <p className={cn("text-4xl font-bold", getScoreColor(result.scorePercent))}>
-              {formatPercent(displayScore)}
+        <div className="text-center mb-10">
+          <p className={cn("text-6xl font-bold font-mono tracking-tight", getScoreColor(result.scorePercent))}>
+            {formatPercent(displayScore)}
+          </p>
+          <div className="mt-3 space-y-1">
+            <p className="text-lg font-semibold text-text-primary">
+              {excellent ? "Ausgezeichnet" : passed ? "Bestanden" : "Nicht bestanden"}
+            </p>
+            <p className="text-sm text-text-muted">
+              {result.correctAnswers} von {result.totalQuestions} richtig · {formatTime(result.durationSeconds)}
             </p>
           </div>
+          {result.bestStreak !== undefined && result.bestStreak > 0 && (
+            <div className="flex items-center justify-center gap-1.5 mt-3 text-text-secondary">
+              <Flame className="w-4 h-4" />
+              <span className="text-[13px] font-mono">Beste Serie: {result.bestStreak}</span>
+            </div>
+          )}
         </div>
 
-        <h2 className="text-2xl font-bold mb-2">
-          {excellent ? "Ausgezeichnet!" : passed ? "Bestanden!" : "Nicht bestanden"}
-        </h2>
-        <p className="text-text-secondary mb-2">
-          {result.correctAnswers} von {result.totalQuestions} richtig · {formatTime(result.durationSeconds)}
-        </p>
-        {result.bestStreak !== undefined && result.bestStreak > 0 && (
-          <div className="flex items-center justify-center gap-1.5 text-amber-500 mb-8">
-            <Flame className="w-4 h-4" />
-            <span className="text-sm font-medium">Beste Serie: {result.bestStreak}</span>
-          </div>
-        )}
-        {(result.bestStreak === undefined || result.bestStreak <= 0) && <div className="mb-6" />}
-
         {/* Chapter breakdown */}
-        <div className="text-left mb-8">
-          <h3 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+        <div className="mb-10">
+          <h3 className="text-[11px] font-mono text-text-muted uppercase tracking-widest mb-4">
             Auswertung nach Kapitel
           </h3>
-          <div className="space-y-2">
+          <div className="space-y-3">
             {Object.entries(result.byChapter).map(([chapterNum, stats], index) => {
               const chapter = CHAPTERS.find((c) => c.number === parseInt(chapterNum))
               const percent = stats.total > 0 ? (stats.correct / stats.total) * 100 : 0
@@ -100,19 +80,19 @@ export function ResultScreen({ result }: ResultScreenProps) {
                   key={chapterNum}
                   className="flex items-center gap-3"
                 >
-                  <span className="text-xs text-text-muted w-6 font-mono">{chapterNum}</span>
-                  <span className="text-sm text-text-secondary flex-1 truncate">
+                  <span className="text-[11px] text-text-muted w-5 font-mono">{chapterNum}</span>
+                  <span className="text-[13px] text-text-secondary flex-1 truncate">
                     {chapter?.name || `Kapitel ${chapterNum}`}
                   </span>
-                  <div className="w-24 h-2.5 bg-bg-tertiary border border-border-subtle rounded-full overflow-hidden">
+                  <div className="w-20 h-1.5 bg-bg-tertiary overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${percent}%` }}
                       transition={{ duration: 0.7, delay: 0.3 + index * 0.05, ease: "easeOut" }}
-                      className={cn("h-full rounded-full", getProgressBarColor(percent))}
+                      className={cn("h-full", getProgressBarColor(percent))}
                     />
                   </div>
-                  <span className={cn("text-xs font-mono w-10 text-right", getScoreColor(percent))}>
+                  <span className={cn("text-[12px] font-mono w-10 text-right", getScoreColor(percent))}>
                     {stats.correct}/{stats.total}
                   </span>
                 </div>
@@ -127,21 +107,21 @@ export function ResultScreen({ result }: ResultScreenProps) {
             href={result.mode === "chapter" && result.chapterNumber
               ? `/quiz/chapter/${result.chapterNumber}`
               : `/quiz/${result.mode}`}
-            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-accent-primary text-white font-medium hover:bg-accent-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+            className="flex-1 flex items-center justify-center gap-2 py-3 bg-text-primary text-bg-primary font-medium hover:bg-accent-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface uppercase tracking-wider text-[13px]"
           >
             <RotateCcw className="w-4 h-4" />
             Nochmal
           </Link>
           <Link
             href="/stats"
-            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-bg-tertiary text-text-secondary font-medium hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+            className="flex-1 flex items-center justify-center gap-2 py-3 bg-bg-tertiary text-text-secondary font-medium hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface uppercase tracking-wider text-[13px]"
           >
             <TrendingUp className="w-4 h-4" />
             Statistik
           </Link>
           <Link
             href="/"
-            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-bg-tertiary text-text-secondary font-medium hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+            className="flex-1 flex items-center justify-center gap-2 py-3 bg-bg-tertiary text-text-secondary font-medium hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface uppercase tracking-wider text-[13px]"
           >
             <Home className="w-4 h-4" />
             Start

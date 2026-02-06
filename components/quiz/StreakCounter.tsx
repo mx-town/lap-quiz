@@ -10,24 +10,11 @@ interface StreakCounterProps {
   onMilestone?: (milestone: number) => void
 }
 
-function getContainerStyle(streak: number): string {
-  if (streak >= 10) return "bg-accent-danger/10 rounded-lg px-3 py-2"
-  if (streak >= 5) return "bg-accent-orange/10 rounded-lg px-3 py-2"
-  if (streak >= 3) return "bg-accent-warning/10 rounded-lg px-3 py-2"
-  return ""
-}
-
 function getFlameColor(streak: number): string {
   if (streak >= 10) return "text-accent-danger"
-  if (streak >= 5) return "text-accent-orange"
-  if (streak >= 1) return "text-accent-warning"
+  if (streak >= 5) return "text-accent-warning"
+  if (streak >= 1) return "text-text-primary"
   return "text-text-muted"
-}
-
-function getTextColor(streak: number): string {
-  if (streak >= 10) return "text-accent-danger"
-  if (streak >= 5) return "text-accent-orange"
-  return "text-text-primary"
 }
 
 export function StreakCounter({ streak, bestStreak, onMilestone }: StreakCounterProps) {
@@ -38,29 +25,21 @@ export function StreakCounter({ streak, bestStreak, onMilestone }: StreakCounter
   }, [streak, onMilestone])
 
   return (
-    <div
-      className={cn(
-        "flex items-center gap-4 transition-all duration-300",
-        getContainerStyle(streak)
-      )}
-    >
+    <div className="flex items-center gap-4">
       <div className="flex items-center gap-2">
         <Flame
-          className={cn(
-            "w-6 h-6 transition-all",
-            getFlameColor(streak)
-          )}
+          className={cn("w-5 h-5 transition-all", getFlameColor(streak))}
         />
         <span
           className={cn(
-            "text-2xl font-bold font-mono transition-all",
-            getTextColor(streak)
+            "text-xl font-bold font-mono transition-all",
+            streak >= 5 ? "text-accent-primary" : "text-text-primary"
           )}
         >
           {streak}
         </span>
       </div>
-      <span className="text-xs text-text-muted">
+      <span className="text-[11px] font-mono text-text-muted uppercase tracking-widest">
         Best: {bestStreak}
       </span>
     </div>

@@ -18,7 +18,7 @@ export function ProgressBar({ current, total, correctCount, showSegments = false
 
   return (
     <div className="w-full">
-      <div className="flex justify-between text-xs text-text-muted mb-2">
+      <div className="flex justify-between text-[11px] font-mono uppercase tracking-widest text-text-muted mb-2">
         <span>
           {current} / {total}
         </span>
@@ -26,28 +26,20 @@ export function ProgressBar({ current, total, correctCount, showSegments = false
           <span className="text-accent-success">{correctCount} richtig</span>
         )}
       </div>
-      <div className="w-full h-2.5 bg-bg-tertiary rounded-full overflow-hidden border border-border-subtle">
+      <div className="w-full h-1.5 bg-bg-tertiary overflow-hidden">
         {showSegments && correctCount !== undefined ? (
           <>
-            {/* Correct answers segment */}
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: `${correctPercent}%` }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="h-full bg-accent-success rounded-l-full absolute"
-            />
-            {/* Total progress segment */}
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: `${percent}%` }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="h-full bg-accent-primary/50 rounded-full relative"
+              className="h-full bg-text-muted relative"
             >
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${current > 0 ? (correctCount / current) * 100 : 0}%` }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-                className="h-full bg-accent-success rounded-l-full absolute left-0 top-0"
+                className="h-full bg-accent-success absolute left-0 top-0"
               />
             </motion.div>
           </>
@@ -56,7 +48,7 @@ export function ProgressBar({ current, total, correctCount, showSegments = false
             initial={{ width: 0 }}
             animate={{ width: `${percent}%` }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="h-full bg-accent-primary rounded-full"
+            className="h-full bg-text-primary"
           />
         )}
       </div>
