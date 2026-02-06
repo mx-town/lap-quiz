@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Target, BookOpen, Zap, Wrench, Settings } from "lucide-react"
+import { Target, BookOpen, Zap, Settings } from "lucide-react"
 
 const modes = [
   {
@@ -25,14 +25,7 @@ const modes = [
     icon: Zap,
     accentColor: "cyan",
   },
-  {
-    href: "/quiz/scenario",
-    title: "Praxisszenario",
-    subtitle: "Fehlersuche · Anlagenanalyse · Normen",
-    icon: Wrench,
-    accentColor: "amber",
-  },
-  {
+{
     href: "/quiz/custom",
     title: "Mein Fachbereich",
     subtitle: "Dein Tätigkeitsbereich · Schwerpunkt + Querfragen",
@@ -57,11 +50,6 @@ const accentStyles = {
     iconBg: "bg-cyan-100 dark:bg-cyan-500/10",
     hover: "hover:border-cyan-400",
   },
-  amber: {
-    icon: "text-amber-600 dark:text-amber-400",
-    iconBg: "bg-amber-100 dark:bg-amber-500/10",
-    hover: "hover:border-amber-400",
-  },
   green: {
     icon: "text-green-600 dark:text-green-400",
     iconBg: "bg-green-100 dark:bg-green-500/10",
@@ -70,29 +58,53 @@ const accentStyles = {
 }
 
 export function ModeSelector() {
+  const topModes = modes.slice(0, 3)
+  const bottomMode = modes[3]
+  const BottomIcon = bottomMode.icon
+  const bottomStyles = accentStyles[bottomMode.accentColor as keyof typeof accentStyles]
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {modes.map((mode) => {
-        const Icon = mode.icon
-        const styles = accentStyles[mode.accentColor as keyof typeof accentStyles]
-        return (
-          <Link key={mode.href} href={mode.href} className="block group">
-            <div
-              className={`rounded-2xl bg-bg-surface border border-border-subtle p-6 transition-colors ${styles.hover}`}
-            >
+    <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {topModes.map((mode) => {
+          const Icon = mode.icon
+          const styles = accentStyles[mode.accentColor as keyof typeof accentStyles]
+          return (
+            <Link key={mode.href} href={mode.href} className="block group">
               <div
-                className={`w-12 h-12 rounded-xl ${styles.iconBg} flex items-center justify-center mb-4`}
+                className={`rounded-2xl bg-bg-surface border border-border-subtle p-6 transition-colors ${styles.hover}`}
               >
-                <Icon className={`w-6 h-6 ${styles.icon}`} />
+                <div
+                  className={`w-12 h-12 rounded-xl ${styles.iconBg} flex items-center justify-center mb-4`}
+                >
+                  <Icon className={`w-6 h-6 ${styles.icon}`} />
+                </div>
+                <h3 className="text-lg font-semibold text-text-primary mb-1">
+                  {mode.title}
+                </h3>
+                <p className="text-sm text-text-secondary">{mode.subtitle}</p>
               </div>
-              <h3 className="text-lg font-semibold text-text-primary mb-1">
-                {mode.title}
-              </h3>
-              <p className="text-sm text-text-secondary">{mode.subtitle}</p>
+            </Link>
+          )
+        })}
+      </div>
+      <div className="flex justify-center">
+        <Link href={bottomMode.href} className="block group w-full md:w-1/2 lg:w-1/3">
+          <div
+            className={`rounded-2xl bg-bg-surface border border-border-subtle p-6 transition-colors ${bottomStyles.hover}`}
+          >
+            <div
+              className={`w-12 h-12 rounded-xl ${bottomStyles.iconBg} flex items-center justify-center mb-4`}
+            >
+              <BottomIcon className={`w-6 h-6 ${bottomStyles.icon}`} />
             </div>
-          </Link>
-        )
-      })}
+            <h3 className="text-lg font-semibold text-text-primary mb-1">
+              {bottomMode.title}
+            </h3>
+            <p className="text-sm text-text-secondary">{bottomMode.subtitle}</p>
+          </div>
+        </Link>
+      </div>
     </div>
   )
 }

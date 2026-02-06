@@ -45,24 +45,6 @@ function getInputStyle(isSubmitted: boolean, isCorrect: boolean): string {
   return "border-border-subtle focus:border-accent-primary"
 }
 
-function getScenarioOptionStyle(
-  isSubmitted: boolean,
-  isSelected: boolean,
-  optionIndex: string,
-  correctIndices: string[]
-): string {
-  if (isSubmitted && correctIndices.includes(optionIndex)) {
-    return "border-accent-success bg-accent-success/10 text-accent-success border-l-4"
-  }
-  if (isSubmitted && isSelected && !correctIndices.includes(optionIndex)) {
-    return "border-accent-danger bg-accent-danger/10 text-accent-danger border-l-4"
-  }
-  if (isSelected) {
-    return "border-accent-primary bg-accent-primary/10 text-text-primary border-l-4"
-  }
-  return "border-border-subtle hover:border-border-panel text-text-secondary hover:bg-bg-tertiary/50"
-}
-
 export function QuestionCard({
   question,
   index,
@@ -81,10 +63,6 @@ export function QuestionCard({
     (() => {
       if (question.question_type === "fill_blank") {
         return normalize(fillAnswer) === normalize(question.correct_answer)
-      }
-      if (question.question_type === "scenario") {
-        const correctIndices = question.correct_answer.split(",").map((s) => s.trim())
-        return selected !== null && correctIndices.includes(selected)
       }
       return selected === question.correct_answer
     })()
@@ -196,31 +174,6 @@ export function QuestionCard({
                 Richtige Antwort: {question.correct_answer}
               </p>
             )}
-          </div>
-        )}
-
-        {question.question_type === "scenario" && question.options && (
-          <div className="space-y-4">
-            <p className="text-sm text-text-secondary mb-4">
-              Wähle die richtige(n) Maßnahme(n):
-            </p>
-            {question.options.map((option, i) => {
-              const correctIndices = question.correct_answer.split(",").map((s) => s.trim())
-              return (
-                <button
-                  key={i}
-                  onClick={() => !submitted && setSelected(String(i))}
-                  disabled={submitted}
-                  className={cn(
-                    "w-full text-left p-5 rounded-xl border-2 transition-all",
-                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
-                    getScenarioOptionStyle(submitted, selected === String(i), String(i), correctIndices)
-                  )}
-                >
-                  {option}
-                </button>
-              )
-            })}
           </div>
         )}
 

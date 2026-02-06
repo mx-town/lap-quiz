@@ -1,6 +1,6 @@
-export type QuestionType = "multiple_choice" | "true_false" | "fill_blank" | "scenario"
+export type QuestionType = "multiple_choice" | "true_false" | "fill_blank"
 
-export type QuizMode = "exam" | "chapter" | "blitz" | "scenario" | "custom"
+export type QuizMode = "exam" | "chapter" | "blitz" | "custom"
 
 export type Difficulty = 1 | 2 | 3
 

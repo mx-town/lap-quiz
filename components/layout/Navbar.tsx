@@ -12,7 +12,6 @@ export function Navbar() {
     { href: "/quiz/exam", label: "Prüfung" },
     { href: "/quiz/chapter", label: "Kapitel" },
     { href: "/quiz/blitz", label: "Blitz" },
-    { href: "/quiz/scenario", label: "Szenario" },
     { href: "/quiz/custom", label: "Fachbereich" },
     { href: "/stats", label: "Statistik" },
   ]

@@ -14,7 +14,7 @@ export default function HomePage() {
             <span className="text-text-primary">Quiz</span>
           </h1>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Mechatronik-Prüfungsvorbereitung — 5 Quiz-Modi, 11 Kapitel, KI-gestützte Erklärungen
+            Mechatronik-Prüfungsvorbereitung — 4 Quiz-Modi, 12 Kapitel, KI-gestützte Erklärungen
           </p>
         </div>
 

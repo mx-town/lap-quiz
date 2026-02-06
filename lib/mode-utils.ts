@@ -13,13 +13,6 @@ export const modeConfig = {
     text: 'text-blue-600 dark:text-blue-400',
     bg: 'bg-blue-100 dark:bg-blue-500/10',
   },
-  scenario: {
-    color: 'amber',
-    border: 'border-amber-500/30',
-    hoverBorder: 'hover:border-amber-400',
-    text: 'text-amber-600 dark:text-amber-400',
-    bg: 'bg-amber-100 dark:bg-amber-500/10',
-  },
   chapter: {
     color: 'violet',
     border: 'border-violet-500/30',

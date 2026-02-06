@@ -31,15 +31,6 @@ export async function fetchQuestions(
     return shuffleArray(data || []).slice(0, count)
   }
 
-  if (mode === "scenario") {
-    const { data } = await supabase
-      .from("questions")
-      .select("*")
-      .eq("question_type", "scenario")
-      .limit(count)
-    return shuffleArray(data || [])
-  }
-
   if (mode === "custom" && options?.profile) {
     return fetchCustomQuestions(options.profile)
   }
@@ -108,11 +99,6 @@ export function checkAnswer(question: Question, answer: string): boolean {
   }
   if (question.question_type === "fill_blank") {
     return normalize(answer) === normalize(question.correct_answer)
-  }
-  if (question.question_type === "scenario") {
-    // Scenario: correct_answer can be comma-separated indices
-    const correctIndices = question.correct_answer.split(",").map((s) => s.trim())
-    return correctIndices.includes(answer)
   }
   return false
 }
