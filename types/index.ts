@@ -21,55 +21,6 @@ export interface Question {
   source: QuestionSource
 }
 
-export interface UserProgress {
-  id: string
-  user_id: string
-  question_id: string
-  answered_correctly: boolean
-  answer_given: string
-  time_taken_seconds: number
-  session_mode: QuizMode
-  answered_at: string
-}
-
-export interface QuizSession {
-  id: string
-  user_id: string
-  mode: QuizMode
-  chapter_filter: number | null
-  total_questions: number
-  correct_answers: number
-  score_percent: number
-  duration_seconds: number
-  started_at: string
-  finished_at: string | null
-}
-
-export interface CustomProfile {
-  id: string
-  user_id: string
-  profile_name: string
-  preset_profile: string | null
-  focus_chapters: number[]
-  focus_weight: number
-  excluded_chapters: number[]
-  difficulty_filter: "easy" | "medium" | "hard" | "mixed"
-  question_count: number
-  time_limit_minutes: number | null
-  extra_tags: string[]
-  is_default: boolean
-}
-
-export interface QuizState {
-  questions: Question[]
-  currentIndex: number
-  answers: Map<string, string>
-  correctCount: number
-  startedAt: Date
-  mode: QuizMode
-  isFinished: boolean
-}
-
 export interface QuizResult {
   totalQuestions: number
   correctAnswers: number

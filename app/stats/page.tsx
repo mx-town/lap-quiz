@@ -1,10 +1,13 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { CHAPTERS } from "@/types"
 import { BarChart3, Trophy, Target } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { getStats, StatsOverview } from "@/lib/local-storage"
+import { CHAPTER_QUESTIONS } from "@/lib/questions"
 
 function getProgressBarColor(percent: number): string {
   if (percent >= 70) return "bg-accent-success"
@@ -20,9 +23,25 @@ function getScoreTextColor(percent: number): string {
 }
 
 export default function StatsPage() {
-  const sampleProgress: Record<number, number> = {
-    1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0
+  const [stats, setStats] = useState<StatsOverview | null>(null)
+
+  useEffect(() => {
+    setStats(getStats())
+  }, [])
+
+  const chapterTotal = (chapterNum: number): number =>
+    CHAPTER_QUESTIONS[chapterNum]?.length ?? 0
+
+  const chapterCorrect = (chapterNum: number): number =>
+    stats?.chapterCorrect[chapterNum] ?? 0
+
+  const chapterPercent = (chapterNum: number): number => {
+    const total = chapterTotal(chapterNum)
+    if (total === 0) return 0
+    return Math.round((chapterCorrect(chapterNum) / total) * 100)
   }
+
+  const overallPercent = stats ? Math.round(stats.averageScore) : 0
 
   return (
     <>
@@ -38,10 +57,14 @@ export default function StatsPage() {
           <div className="bg-bg-surface border border-border-subtle p-6">
             <div className="flex items-center gap-3 mb-4">
               <Target className="w-4 h-4 text-accent-primary" />
-              <span className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Gesamtfortschritt</span>
+              <span className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Durchschnitt</span>
             </div>
-            <p className="text-3xl font-bold font-mono text-text-primary">—</p>
-            <p className="text-[12px] text-text-muted mt-1">Melde dich an, um deinen Fortschritt zu speichern</p>
+            <p className="text-3xl font-bold font-mono text-text-primary">
+              {stats && stats.totalSessions > 0 ? `${overallPercent}%` : "—"}
+            </p>
+            {stats && stats.totalSessions > 0 && (
+              <p className="text-[12px] text-text-muted mt-1">aus {stats.totalSessions} Sessions</p>
+            )}
           </div>
 
           <div className="bg-bg-surface border border-border-subtle p-6">
@@ -49,7 +72,9 @@ export default function StatsPage() {
               <Trophy className="w-4 h-4 text-accent-success" />
               <span className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Beste Blitz-Streak</span>
             </div>
-            <p className="text-3xl font-bold font-mono text-text-primary">—</p>
+            <p className="text-3xl font-bold font-mono text-text-primary">
+              {stats && stats.bestStreak > 0 ? stats.bestStreak : "—"}
+            </p>
           </div>
 
           <div className="bg-bg-surface border border-border-subtle p-6">
@@ -57,7 +82,9 @@ export default function StatsPage() {
               <BarChart3 className="w-4 h-4 text-accent-warning" />
               <span className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Sessions gesamt</span>
             </div>
-            <p className="text-3xl font-bold font-mono text-text-primary">—</p>
+            <p className="text-3xl font-bold font-mono text-text-primary">
+              {stats ? stats.totalSessions : "—"}
+            </p>
           </div>
         </div>
 
@@ -67,7 +94,9 @@ export default function StatsPage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {CHAPTERS.map((chapter, index) => {
-            const percent = sampleProgress[chapter.number] || 0
+            const percent = chapterPercent(chapter.number)
+            const correct = chapterCorrect(chapter.number)
+            const total = chapterTotal(chapter.number)
             return (
               <div
                 key={chapter.number}
@@ -75,7 +104,10 @@ export default function StatsPage() {
               >
                 <span className="text-[11px] font-mono text-text-muted w-5">{String(chapter.number).padStart(2, "0")}</span>
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-text-primary mb-2 tracking-tight">{chapter.name}</p>
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-sm font-medium text-text-primary tracking-tight">{chapter.name}</p>
+                    <span className="text-[11px] font-mono text-text-muted">{correct}/{total}</span>
+                  </div>
                   <div className="w-full h-1.5 bg-bg-tertiary overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
@@ -92,10 +124,6 @@ export default function StatsPage() {
             )
           })}
         </div>
-
-        <p className="text-center text-text-muted text-[12px] mt-12 font-mono">
-          Statistikdaten werden nach Supabase-Anbindung angezeigt.
-        </p>
       </main>
     </>
   )

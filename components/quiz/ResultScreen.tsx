@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { QuizResult, CHAPTERS } from "@/types"
 import { cn, formatPercent, formatTime, getScoreColor } from "@/lib/utils"
+import { saveSession } from "@/lib/local-storage"
 import { RotateCcw, Home, TrendingUp, Flame } from "lucide-react"
 
 function getProgressBarColor(percent: number): string {
@@ -21,6 +22,14 @@ export function ResultScreen({ result }: ResultScreenProps) {
   const passed = result.scorePercent >= 70
   const excellent = result.scorePercent >= 90
   const [displayScore, setDisplayScore] = useState(0)
+  const savedRef = useRef(false)
+
+  useEffect(() => {
+    if (!savedRef.current) {
+      savedRef.current = true
+      saveSession(result)
+    }
+  }, [result])
 
   useEffect(() => {
     const duration = 1000

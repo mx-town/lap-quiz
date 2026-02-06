@@ -21,6 +21,7 @@ export default function BlitzPage() {
   const [bestStreak, setBestStreak] = useState(0)
   const [flashColor, setFlashColor] = useState<"green" | "red" | null>(null)
   const [answered, setAnswered] = useState(false)
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime, setStartTime] = useState<Date | null>(null)
   const [answersMap, setAnswersMap] = useState<Map<string, boolean>>(new Map())
@@ -38,6 +39,7 @@ export default function BlitzPage() {
     setBestStreak(0)
     setAnswersMap(new Map())
     setAnswered(false)
+    setSelectedAnswer(null)
     setResult(null)
   }
 
@@ -64,6 +66,7 @@ export default function BlitzPage() {
   const handleAnswer = (answer: string) => {
     if (answered) return
     setAnswered(true)
+    setSelectedAnswer(answer)
     const question = questions[currentIndex]
     const correct = checkAnswer(question, answer)
     setAnswersMap((prev) => new Map(prev).set(question.id, correct))
@@ -82,6 +85,7 @@ export default function BlitzPage() {
     setTimeout(() => {
       setFlashColor(null)
       setAnswered(false)
+      setSelectedAnswer(null)
       if (currentIndex + 1 >= questions.length) {
         finishBlitz(correct ? correctCount + 1 : correctCount, correct ? Math.max(bestStreak, streak + 1) : bestStreak)
       } else {
@@ -100,6 +104,7 @@ export default function BlitzPage() {
       setTimeout(() => {
         setFlashColor(null)
         setAnswered(false)
+        setSelectedAnswer(null)
         setCurrentIndex((i) => i + 1)
       }, 600)
     }
@@ -150,8 +155,8 @@ export default function BlitzPage() {
       <main
         className={cn(
           "flex-1 transition-all duration-300",
-          flashColor === "green" && "bg-accent-success/5",
-          flashColor === "red" && "bg-accent-danger/5"
+          flashColor === "green" && "bg-accent-success/20",
+          flashColor === "red" && "bg-accent-danger/20"
         )}
       >
         <div className="max-w-2xl mx-auto w-full px-6 py-8 space-y-6">
@@ -185,32 +190,57 @@ export default function BlitzPage() {
 
               {question.question_type === "true_false" && (
                 <div className="flex gap-3">
-                  {["true", "false"].map((val) => (
-                    <button
-                      key={val}
-                      onClick={() => handleAnswer(val)}
-                      className="flex-1 py-4 border-2 border-border-subtle text-center font-medium text-text-secondary hover:border-text-primary hover:text-text-primary transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
-                    >
-                      {val === "true" ? "Richtig" : "Falsch"}
-                    </button>
-                  ))}
+                  {["true", "false"].map((val) => {
+                    const isCorrectOption = val === question.correct_answer
+                    const isSelected = selectedAnswer === val
+                    return (
+                      <button
+                        key={val}
+                        onClick={() => handleAnswer(val)}
+                        disabled={answered}
+                        className={cn(
+                          "flex-1 py-4 border-2 text-center font-medium transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
+                          answered && isCorrectOption
+                            ? "border-accent-success bg-accent-success/15 text-accent-success"
+                            : answered && isSelected && !isCorrectOption
+                              ? "border-accent-danger bg-accent-danger/15 text-accent-danger"
+                              : "border-border-subtle text-text-secondary hover:border-text-primary hover:text-text-primary"
+                        )}
+                      >
+                        {val === "true" ? "Richtig" : "Falsch"}
+                      </button>
+                    )
+                  })}
                 </div>
               )}
 
               {question.question_type === "multiple_choice" && question.options && (
                 <div className="space-y-3">
-                  {question.options.map((option, i) => (
-                    <button
-                      key={i}
-                      onClick={() => handleAnswer(String(i))}
-                      className="w-full text-left p-4 border-2 border-border-subtle text-text-secondary hover:border-text-primary hover:text-text-primary transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface text-[14px]"
-                    >
-                      <span className="font-mono text-[12px] mr-3 text-text-muted">
-                        {String.fromCharCode(65 + i)}
-                      </span>
-                      {option}
-                    </button>
-                  ))}
+                  {question.options.map((option, i) => {
+                    const optKey = String(i)
+                    const isCorrectOption = optKey === question.correct_answer
+                    const isSelected = selectedAnswer === optKey
+                    return (
+                      <button
+                        key={i}
+                        onClick={() => handleAnswer(optKey)}
+                        disabled={answered}
+                        className={cn(
+                          "w-full text-left p-4 border-2 transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface text-[14px]",
+                          answered && isCorrectOption
+                            ? "border-accent-success bg-accent-success/15 text-accent-success"
+                            : answered && isSelected && !isCorrectOption
+                              ? "border-accent-danger bg-accent-danger/15 text-accent-danger"
+                              : "border-border-subtle text-text-secondary hover:border-text-primary hover:text-text-primary"
+                        )}
+                      >
+                        <span className="font-mono text-[12px] mr-3 text-text-muted">
+                          {String.fromCharCode(65 + i)}
+                        </span>
+                        {option}
+                      </button>
+                    )
+                  })}
                 </div>
               )}
             </motion.div>
