@@ -20,6 +20,7 @@ export default function BlitzPage() {
   const [streak, setStreak] = useState(0)
   const [bestStreak, setBestStreak] = useState(0)
   const [flashColor, setFlashColor] = useState<"green" | "red" | null>(null)
+  const [answered, setAnswered] = useState(false)
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime, setStartTime] = useState<Date | null>(null)
   const [answersMap, setAnswersMap] = useState<Map<string, boolean>>(new Map())
@@ -36,6 +37,7 @@ export default function BlitzPage() {
     setStreak(0)
     setBestStreak(0)
     setAnswersMap(new Map())
+    setAnswered(false)
     setResult(null)
   }
 
@@ -60,6 +62,8 @@ export default function BlitzPage() {
   }, [startTime, questions, answersMap])
 
   const handleAnswer = (answer: string) => {
+    if (answered) return
+    setAnswered(true)
     const question = questions[currentIndex]
     const correct = checkAnswer(question, answer)
     setAnswersMap((prev) => new Map(prev).set(question.id, correct))
@@ -77,6 +81,7 @@ export default function BlitzPage() {
 
     setTimeout(() => {
       setFlashColor(null)
+      setAnswered(false)
       if (currentIndex + 1 >= questions.length) {
         finishBlitz(correct ? correctCount + 1 : correctCount, correct ? Math.max(bestStreak, streak + 1) : bestStreak)
       } else {
@@ -90,9 +95,11 @@ export default function BlitzPage() {
       finishBlitz(correctCount, bestStreak)
     } else {
       setStreak(0)
+      setAnswered(true)
       setFlashColor("red")
       setTimeout(() => {
         setFlashColor(null)
+        setAnswered(false)
         setCurrentIndex((i) => i + 1)
       }, 600)
     }
