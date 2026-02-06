@@ -10,6 +10,7 @@ import { Question, QuizResult } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
 import { shuffleArray, cn } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
+import { Slider } from "@/components/ui/Slider"
 import { Target, Clock } from "lucide-react"
 
 export default function ExamPage() {
@@ -104,24 +105,18 @@ export default function ExamPage() {
 
             <div className="space-y-6 mb-8">
               <div>
-                <label className="text-[11px] font-mono uppercase tracking-widest text-text-muted block mb-3">Fragenanzahl</label>
-                <div className="flex gap-2">
-                  {[10, 20, 30].map((n) => (
-                    <button
-                      key={n}
-                      onClick={() => setConfig((c) => ({ ...c, count: n }))}
-                      className={cn(
-                        "flex-1 py-2.5 border-2 text-sm font-medium transition-all",
-                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
-                        config.count === n
-                          ? "border-text-primary text-text-primary"
-                          : "border-border-subtle text-text-muted hover:border-text-muted"
-                      )}
-                    >
-                      {n}
-                    </button>
-                  ))}
+                <div className="flex justify-between items-center mb-2">
+                  <label className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Fragenanzahl</label>
+                  <span className="text-sm font-mono font-medium text-text-primary">{config.count}</span>
                 </div>
+                <Slider
+                  value={config.count}
+                  onChange={(v) => setConfig((c) => ({ ...c, count: v }))}
+                  min={5}
+                  max={50}
+                  step={1}
+                  showValue={false}
+                />
               </div>
 
               <div>

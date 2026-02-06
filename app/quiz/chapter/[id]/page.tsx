@@ -8,6 +8,7 @@ import { ProgressBar } from "@/components/quiz/ProgressBar"
 import { ResultScreen } from "@/components/quiz/ResultScreen"
 import { Question, QuizResult, CHAPTERS } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
+import { shuffleArray } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
 
 export default function ChapterQuizPage({ params }: { params: { id: string } }) {
@@ -23,11 +24,15 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const nextCountRef = useRef<number>(0)
 
-  const questions: Question[] = isValidChapter
-    ? SEED_QUESTIONS
-        .filter((q) => q.chapter_number === chapterNum)
-        .map((q, i) => ({ ...q, id: `chapter-${chapterNum}-${i}` }))
-    : []
+  const [questions] = useState<Question[]>(() =>
+    isValidChapter
+      ? shuffleArray(
+          SEED_QUESTIONS
+            .filter((q) => q.chapter_number === chapterNum)
+            .map((q, i) => ({ ...q, id: `chapter-${chapterNum}-${i}` }))
+        )
+      : []
+  )
 
   const finishQuiz = (correct: number) => {
     const duration = Math.round((Date.now() - startTime.getTime()) / 1000)

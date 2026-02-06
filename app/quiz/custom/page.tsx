@@ -94,24 +94,18 @@ export default function CustomPage() {
 
               {/* Question count */}
               <div>
-                <label className="text-[11px] font-mono uppercase tracking-widest text-text-muted block mb-3">Fragenanzahl</label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {[15, 20, 25, 30].map((n) => (
-                    <button
-                      key={n}
-                      onClick={() => setQuestionCount(n)}
-                      className={cn(
-                        "py-2.5 border-2 text-sm font-medium transition-all",
-                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
-                        questionCount === n
-                          ? "border-text-primary text-text-primary"
-                          : "border-border-subtle text-text-muted hover:border-text-muted"
-                      )}
-                    >
-                      {n}
-                    </button>
-                  ))}
+                <div className="flex justify-between items-center mb-2">
+                  <label className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Fragenanzahl</label>
+                  <span className="text-sm font-mono font-medium text-text-primary">{questionCount}</span>
                 </div>
+                <Slider
+                  value={questionCount}
+                  onChange={setQuestionCount}
+                  min={5}
+                  max={50}
+                  step={1}
+                  showValue={false}
+                />
               </div>
 
               {/* Focus chapters summary */}
