@@ -23,6 +23,7 @@ export default function BlitzPage() {
   const [flashColor, setFlashColor] = useState<"green" | "red" | null>(null)
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime, setStartTime] = useState<Date | null>(null)
+  const [answersMap, setAnswersMap] = useState<Map<string, boolean>>(new Map())
   const [showMilestoneConfetti, setShowMilestoneConfetti] = useState(false)
   const [screenShake, setScreenShake] = useState(false)
 
@@ -37,6 +38,7 @@ export default function BlitzPage() {
     setCorrectCount(0)
     setStreak(0)
     setBestStreak(0)
+    setAnswersMap(new Map())
     setResult(null)
     setShowMilestoneConfetti(false)
   }
@@ -48,6 +50,7 @@ export default function BlitzPage() {
     questions.forEach((q) => {
       if (!byChapter[q.chapter_number]) byChapter[q.chapter_number] = { total: 0, correct: 0 }
       byChapter[q.chapter_number].total++
+      if (answersMap.get(q.id)) byChapter[q.chapter_number].correct++
     })
     setResult({
       totalQuestions: questions.length,
@@ -56,8 +59,9 @@ export default function BlitzPage() {
       durationSeconds: duration,
       byChapter,
       mode: "blitz",
+      bestStreak: best,
     })
-  }, [startTime, questions])
+  }, [startTime, questions, answersMap])
 
   const handleMilestone = useCallback((milestone: number) => {
     if (milestone >= 10) {
@@ -73,6 +77,7 @@ export default function BlitzPage() {
   const handleAnswer = (answer: string) => {
     const question = questions[currentIndex]
     const correct = checkAnswer(question, answer)
+    setAnswersMap((prev) => new Map(prev).set(question.id, correct))
 
     if (correct) {
       setCorrectCount((c) => c + 1)

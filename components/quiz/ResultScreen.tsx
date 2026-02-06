@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { QuizResult, CHAPTERS } from "@/types"
 import { cn, formatPercent, formatTime, getScoreColor, getScoreBg } from "@/lib/utils"
-import { Trophy, RotateCcw, Home, TrendingUp, Medal } from "lucide-react"
+import { Trophy, RotateCcw, Home, TrendingUp, Medal, Flame } from "lucide-react"
 
 function getProgressBarColor(percent: number): string {
   if (percent >= 70) return "bg-accent-success shadow-glow-success"
@@ -108,10 +108,22 @@ export function ResultScreen({ result }: ResultScreenProps) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-text-secondary mb-8"
+            className="text-text-secondary mb-2"
           >
             {result.correctAnswers} von {result.totalQuestions} richtig · {formatTime(result.durationSeconds)}
           </motion.p>
+          {result.bestStreak !== undefined && result.bestStreak > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex items-center justify-center gap-1.5 text-amber-400 mb-8"
+            >
+              <Flame className="w-4 h-4" />
+              <span className="text-sm font-medium">Beste Serie: {result.bestStreak}</span>
+            </motion.div>
+          )}
+          {(result.bestStreak === undefined || result.bestStreak <= 0) && <div className="mb-6" />}
 
           {/* Chapter breakdown */}
           <div className="text-left mb-8">

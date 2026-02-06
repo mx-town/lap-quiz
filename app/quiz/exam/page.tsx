@@ -63,15 +63,14 @@ export default function ExamPage() {
     const correct = checkAnswer(question, answer)
     if (correct) setCorrectCount((c) => c + 1)
     setAnswers((prev) => new Map(prev).set(question.id, correct))
+  }
 
-    // Move to next after delay
-    setTimeout(() => {
-      if (currentIndex + 1 >= questions.length) {
-        finishExam()
-      } else {
-        setCurrentIndex((i) => i + 1)
-      }
-    }, 1500)
+  const handleNext = () => {
+    if (currentIndex + 1 >= questions.length) {
+      finishExam()
+    } else {
+      setCurrentIndex((i) => i + 1)
+    }
   }
 
   const handleTimeUp = useCallback(() => {
@@ -196,6 +195,7 @@ export default function ExamPage() {
               index={currentIndex}
               total={questions.length}
               onAnswer={handleAnswer}
+              onNext={handleNext}
               showFeedback={true}
             />
           )}

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, Suspense } from "react"
+import { useState, useCallback, useRef, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { Navbar } from "@/components/layout/Navbar"
 import { QuestionCard } from "@/components/quiz/QuestionCard"
@@ -10,15 +10,43 @@ import { Question, QuizResult, PRESET_PROFILES } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
 import { shuffleArray } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
+import Link from "next/link"
+import { AlertTriangle } from "lucide-react"
 
 function CustomPlayContent() {
   const searchParams = useSearchParams()
   const profileId = searchParams.get("profile") || "schaltschrankbau"
-  const weight = parseInt(searchParams.get("weight") || "60")
-  const count = parseInt(searchParams.get("count") || "20")
+  const rawWeight = parseInt(searchParams.get("weight") || "60")
+  const rawCount = parseInt(searchParams.get("count") || "20")
+
+  const weight = isNaN(rawWeight) || rawWeight < 50 || rawWeight > 80 ? 60 : rawWeight
+  const count = isNaN(rawCount) || rawCount < 1 ? 20 : rawCount
 
   const profile = PRESET_PROFILES.find((p) => p.id === profileId)
-  const focusChapters: number[] = profile ? [...profile.focusChapters] : [1, 2, 3]
+
+  if (!profile) {
+    return (
+      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
+        <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle rounded-2xl p-8 text-center">
+          <div className="w-16 h-16 rounded-2xl bg-accent-danger/10 flex items-center justify-center mx-auto mb-4">
+            <AlertTriangle className="w-8 h-8 text-accent-danger" />
+          </div>
+          <h1 className="text-2xl font-bold mb-2">Ungueltiges Profil</h1>
+          <p className="text-text-secondary mb-6">
+            Das Profil &quot;{profileId}&quot; wurde nicht gefunden.
+          </p>
+          <Link
+            href="/quiz/custom"
+            className="inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-accent-primary text-white font-medium hover:bg-accent-secondary transition-colors"
+          >
+            Zurueck zur Auswahl
+          </Link>
+        </div>
+      </main>
+    )
+  }
+
+  const focusChapters: number[] = [...profile.focusChapters]
 
   // Build question pool with focus/cross split
   const focusCount = Math.round(count * (weight / 100))
@@ -37,33 +65,40 @@ function CustomPlayContent() {
   const [correctCount, setCorrectCount] = useState(0)
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime] = useState(new Date())
+  const correctByChapterRef = useRef<Record<number, number>>({})
 
   const handleAnswer = (answer: string) => {
     const question = questions[currentIndex]
     const correct = checkAnswer(question, answer)
-    const newCount = correct ? correctCount + 1 : correctCount
-    if (correct) setCorrectCount(newCount)
+    if (correct) {
+      setCorrectCount((c) => c + 1)
+      correctByChapterRef.current[question.chapter_number] = (correctByChapterRef.current[question.chapter_number] || 0) + 1
+    }
+  }
 
-    setTimeout(() => {
-      if (currentIndex + 1 >= questions.length) {
-        const duration = Math.round((Date.now() - startTime.getTime()) / 1000)
-        const byChapter: Record<number, { total: number; correct: number }> = {}
-        questions.forEach((q, i) => {
-          if (!byChapter[q.chapter_number]) byChapter[q.chapter_number] = { total: 0, correct: 0 }
-          byChapter[q.chapter_number].total++
-        })
-        setResult({
-          totalQuestions: questions.length,
-          correctAnswers: newCount,
-          scorePercent: questions.length > 0 ? (newCount / questions.length) * 100 : 0,
-          durationSeconds: duration,
-          byChapter,
-          mode: "custom",
-        })
-      } else {
-        setCurrentIndex((i) => i + 1)
-      }
-    }, 2000)
+  const handleNext = () => {
+    if (currentIndex + 1 >= questions.length) {
+      const duration = Math.round((Date.now() - startTime.getTime()) / 1000)
+      const byChapter: Record<number, { total: number; correct: number }> = {}
+      questions.forEach((q) => {
+        if (!byChapter[q.chapter_number]) byChapter[q.chapter_number] = { total: 0, correct: 0 }
+        byChapter[q.chapter_number].total++
+      })
+      Object.keys(byChapter).forEach((ch) => {
+        byChapter[Number(ch)].correct = correctByChapterRef.current[Number(ch)] || 0
+      })
+      const totalCorrect = Object.values(correctByChapterRef.current).reduce((a, b) => a + b, 0)
+      setResult({
+        totalQuestions: questions.length,
+        correctAnswers: totalCorrect,
+        scorePercent: questions.length > 0 ? (totalCorrect / questions.length) * 100 : 0,
+        durationSeconds: duration,
+        byChapter,
+        mode: "custom",
+      })
+    } else {
+      setCurrentIndex((i) => i + 1)
+    }
   }
 
   if (result) {
@@ -95,6 +130,7 @@ function CustomPlayContent() {
           index={currentIndex}
           total={questions.length}
           onAnswer={handleAnswer}
+          onNext={handleNext}
           showFeedback={true}
           isFocus={(questions[currentIndex] as any)._isFocus}
         />

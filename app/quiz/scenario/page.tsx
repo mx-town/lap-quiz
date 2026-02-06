@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { QuestionCard } from "@/components/quiz/QuestionCard"
@@ -17,6 +17,7 @@ export default function ScenarioPage() {
   const [correctCount, setCorrectCount] = useState(0)
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime] = useState(new Date())
+  const correctByChapterRef = useRef<Record<number, number>>({})
 
   const questions: Question[] = SEED_QUESTIONS
     .filter((q) => q.question_type === "scenario")
@@ -25,29 +26,35 @@ export default function ScenarioPage() {
   const handleAnswer = (answer: string) => {
     const question = questions[currentIndex]
     const correct = checkAnswer(question, answer)
-    const newCount = correct ? correctCount + 1 : correctCount
-    if (correct) setCorrectCount(newCount)
+    if (correct) {
+      setCorrectCount((c) => c + 1)
+      correctByChapterRef.current[question.chapter_number] = (correctByChapterRef.current[question.chapter_number] || 0) + 1
+    }
+  }
 
-    setTimeout(() => {
-      if (currentIndex + 1 >= questions.length) {
-        const duration = Math.round((Date.now() - startTime.getTime()) / 1000)
-        const byChapter: Record<number, { total: number; correct: number }> = {}
-        questions.forEach((q) => {
-          if (!byChapter[q.chapter_number]) byChapter[q.chapter_number] = { total: 0, correct: 0 }
-          byChapter[q.chapter_number].total++
-        })
-        setResult({
-          totalQuestions: questions.length,
-          correctAnswers: newCount,
-          scorePercent: questions.length > 0 ? (newCount / questions.length) * 100 : 0,
-          durationSeconds: duration,
-          byChapter,
-          mode: "scenario",
-        })
-      } else {
-        setCurrentIndex((i) => i + 1)
-      }
-    }, 2500)
+  const handleNext = () => {
+    if (currentIndex + 1 >= questions.length) {
+      const duration = Math.round((Date.now() - startTime.getTime()) / 1000)
+      const byChapter: Record<number, { total: number; correct: number }> = {}
+      questions.forEach((q) => {
+        if (!byChapter[q.chapter_number]) byChapter[q.chapter_number] = { total: 0, correct: 0 }
+        byChapter[q.chapter_number].total++
+      })
+      Object.keys(byChapter).forEach((ch) => {
+        byChapter[Number(ch)].correct = correctByChapterRef.current[Number(ch)] || 0
+      })
+      const totalCorrect = Object.values(correctByChapterRef.current).reduce((a, b) => a + b, 0)
+      setResult({
+        totalQuestions: questions.length,
+        correctAnswers: totalCorrect,
+        scorePercent: questions.length > 0 ? (totalCorrect / questions.length) * 100 : 0,
+        durationSeconds: duration,
+        byChapter,
+        mode: "scenario",
+      })
+    } else {
+      setCurrentIndex((i) => i + 1)
+    }
   }
 
   if (result) {
@@ -135,6 +142,7 @@ export default function ScenarioPage() {
             index={currentIndex}
             total={questions.length}
             onAnswer={handleAnswer}
+            onNext={handleNext}
             showFeedback={true}
           />
         </div>

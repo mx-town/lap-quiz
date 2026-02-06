@@ -78,6 +78,7 @@ export interface QuizResult {
   byChapter: Record<number, { total: number; correct: number }>
   mode: QuizMode
   chapterNumber?: number
+  bestStreak?: number
 }
 
 export const CHAPTERS = [
