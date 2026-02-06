@@ -8,10 +8,10 @@ import { Timer } from "@/components/quiz/Timer"
 import { ResultScreen } from "@/components/quiz/ResultScreen"
 import { Question, QuizResult } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
-import { shuffleArray, cn } from "@/lib/utils"
+import { shuffleArray } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
 import { Slider } from "@/components/ui/Slider"
-import { Target, Clock } from "lucide-react"
+import { Target } from "lucide-react"
 
 export default function ExamPage() {
   const [started, setStarted] = useState(false)
@@ -120,25 +120,18 @@ export default function ExamPage() {
               </div>
 
               <div>
-                <label className="text-[11px] font-mono uppercase tracking-widest text-text-muted block mb-3">Zeitlimit</label>
-                <div className="flex gap-2">
-                  {[15, 30, 45].map((m) => (
-                    <button
-                      key={m}
-                      onClick={() => setConfig((c) => ({ ...c, timeMinutes: m }))}
-                      className={cn(
-                        "flex-1 py-2.5 border-2 text-sm font-medium transition-all flex items-center justify-center gap-1.5",
-                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface",
-                        config.timeMinutes === m
-                          ? "border-text-primary text-text-primary"
-                          : "border-border-subtle text-text-muted hover:border-text-muted"
-                      )}
-                    >
-                      <Clock className="w-3.5 h-3.5" />
-                      {m} Min
-                    </button>
-                  ))}
+                <div className="flex justify-between items-center mb-2">
+                  <label className="text-[11px] font-mono uppercase tracking-widest text-text-muted">Zeitlimit</label>
+                  <span className="text-sm font-mono font-medium text-text-primary">{config.timeMinutes} Min</span>
                 </div>
+                <Slider
+                  value={config.timeMinutes}
+                  onChange={(v) => setConfig((c) => ({ ...c, timeMinutes: v }))}
+                  min={5}
+                  max={60}
+                  step={5}
+                  showValue={false}
+                />
               </div>
             </div>
 
