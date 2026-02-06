@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Question } from "@/types"
 import { cn } from "@/lib/utils"
+import { normalize } from "@/lib/quiz-engine"
 import { AIExplanation } from "./AIExplanation"
 
 interface QuestionCardProps {
@@ -13,6 +14,7 @@ interface QuestionCardProps {
   onAnswer: (answer: string) => void
   showFeedback?: boolean
   isFocus?: boolean
+  onNext?: () => void
 }
 
 function getOptionStyle(
@@ -69,6 +71,7 @@ export function QuestionCard({
   onAnswer,
   showFeedback = false,
   isFocus,
+  onNext,
 }: QuestionCardProps) {
   const [selected, setSelected] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
@@ -78,7 +81,6 @@ export function QuestionCard({
     submitted &&
     (() => {
       if (question.question_type === "fill_blank") {
-        const normalize = (s: string) => s.toLowerCase().replace(/\s+/g, " ").replace(/,/g, ".").trim()
         return normalize(fillAnswer) === normalize(question.correct_answer)
       }
       if (question.question_type === "scenario") {
@@ -194,7 +196,7 @@ export function QuestionCard({
               )}
             />
             {submitted && !isCorrect && (
-              <p className="mt-2 text-sm text-accent-success">
+              <p className="mt-2 text-sm text-text-secondary">
                 Richtige Antwort: {question.correct_answer}
               </p>
             )}
@@ -276,6 +278,16 @@ export function QuestionCard({
                 : question.correct_answer
             }
           />
+        )}
+
+        {/* Skip / Next button */}
+        {submitted && onNext && (
+          <button
+            onClick={onNext}
+            className="mt-4 w-full py-3 rounded-xl bg-bg-tertiary text-text-secondary font-medium transition-all hover:bg-border-subtle hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+          >
+            Weiter
+          </button>
         )}
       </div>
     </motion.div>

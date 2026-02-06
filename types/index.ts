@@ -77,6 +77,7 @@ export interface QuizResult {
   durationSeconds: number
   byChapter: Record<number, { total: number; correct: number }>
   mode: QuizMode
+  chapterNumber?: number
 }
 
 export const CHAPTERS = [
