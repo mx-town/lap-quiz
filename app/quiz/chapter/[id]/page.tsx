@@ -65,10 +65,6 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
     const newCount = correct ? correctCount + 1 : correctCount
     if (correct) setCorrectCount(newCount)
     nextCountRef.current = newCount
-
-    timeoutRef.current = setTimeout(() => {
-      goToNext(newCount)
-    }, 2000)
   }
 
   // Bug 4: Invalid chapter ID
