@@ -8,12 +8,12 @@
       "id": "mot-001",
       "q": "Welches Grundprinzip nutzen Elektromotoren?",
       "options": [
-        "Kapazitive Energiespeicherung im Dielektrikum (Kondensatoreffekt)",
-        "Elektromagnetische Kraftwirkung (Lorentzkraft)",
         "Thermoelektrische Spannungserzeugung durch Temperaturdifferenz (Seebeck-Effekt)",
-        "Induktive Kopplung zwischen zwei ruhenden Spulen (Transformatorprinzip)"
+        "Induktive Kopplung zwischen zwei ruhenden Spulen (Transformatorprinzip)",
+        "Kapazitive Energiespeicherung im Dielektrikum (Kondensatoreffekt)",
+        "Elektromagnetische Kraftwirkung (Lorentzkraft)"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Elektromotoren basieren auf der Lorentzkraft: Ein stromdurchflossener Leiter im Magnetfeld erfaehrt eine Kraft (F = B x I x l). Dadurch wird elektrische Energie in mechanische Energie (Drehbewegung) umgewandelt. Ohne Magnetfeld und Stromfluss kann kein Drehmoment erzeugt werden.",
       "difficulty": "leicht",
       "tags": [
@@ -27,8 +27,8 @@
       "options": [
         "Synchron: Rotor dreht langsamer als das Drehfeld. Asynchron: Rotor dreht mit Drehfeldfrequenz",
         "Synchron: Rotor dreht mit Drehfeldfrequenz. Asynchron: Rotor dreht langsamer (Schlupf)",
-        "Synchron: Rotor benoetigt Schleifringe zur Erregung. Asynchron: Rotor hat Permanentmagnete",
-        "Synchron: Rotor arbeitet nur mit Gleichstrom. Asynchron: Rotor braucht Wechselstrom"
+        "Synchron: Rotor arbeitet nur mit Gleichstrom. Asynchron: Rotor braucht Wechselstrom",
+        "Synchron: Rotor benoetigt Schleifringe zur Erregung. Asynchron: Rotor hat Permanentmagnete"
       ],
       "correct": 1,
       "explanation": "Beim Synchronmotor dreht der Rotor exakt mit der Drehfeldfrequenz (n = ns), es gibt keinen Schlupf. Beim Asynchronmotor hingegen dreht der Rotor immer etwas langsamer als das Drehfeld (n < ns), diese Differenz nennt man Schlupf. Der Schlupf ist beim Asynchronmotor notwendig, damit im Rotor eine Spannung induziert wird und ein Drehmoment entsteht.",
@@ -42,13 +42,13 @@
       "id": "mot-003",
       "q": "Was ist die Drehfelddrehzahl bei 50Hz und 2 Polpaaren?",
       "options": [
-        "3000 min\u207b\u00b9",
-        "1500 min\u207b\u00b9",
-        "1000 min\u207b\u00b9",
-        "750 min\u207b\u00b9"
+        "3000 min⁻¹",
+        "1500 min⁻¹",
+        "1000 min⁻¹",
+        "750 min⁻¹"
       ],
       "correct": 1,
-      "explanation": "Die Synchrondrehzahl berechnet sich mit der Formel ns = f x 60 / p. Bei 50 Hz und p = 2 Polpaaren ergibt sich ns = 50 x 60 / 2 = 1500 min\u207b\u00b9. Die anderen Werte ergeben sich bei anderen Polpaarzahlen: 3000 bei p=1, 1000 bei p=3 und 750 bei p=4.",
+      "explanation": "Die Synchrondrehzahl berechnet sich mit der Formel ns = f x 60 / p. Bei 50 Hz und p = 2 Polpaaren ergibt sich ns = 50 x 60 / 2 = 1500 min⁻¹. Die anderen Werte ergeben sich bei anderen Polpaarzahlen: 3000 bei p=1, 1000 bei p=3 und 750 bei p=4.",
       "difficulty": "mittel",
       "tags": [
         "drehzahl",
@@ -59,13 +59,13 @@
       "id": "mot-004",
       "q": "Was ist der Schlupf?",
       "options": [
-        "Die absolute Drehfeldgeschwindigkeit bezogen auf die Polpaarzahl des Stators",
         "Die relative Differenz zwischen Drehfeld- und Rotordrehzahl",
-        "Die prozentuale Abweichung der Netzfrequenz vom Sollwert des Umrichters",
-        "Die thermische Verlustleistung bezogen auf die mechanische Wellenleistung"
+        "Die absolute Drehfeldgeschwindigkeit bezogen auf die Polpaarzahl des Stators",
+        "Die thermische Verlustleistung bezogen auf die mechanische Wellenleistung",
+        "Die prozentuale Abweichung der Netzfrequenz vom Sollwert des Umrichters"
       ],
-      "correct": 1,
-      "explanation": "Der Schlupf beschreibt die relative Drehzahldifferenz zwischen Drehfeld und Rotor. Er wird berechnet mit s = (ns - n) / ns. Zum Beispiel ergibt sich bei ns = 1500 min\u207b\u00b9 und n = 1450 min\u207b\u00b9 ein Schlupf von 3,3 %. Der Schlupf ist beim Asynchronmotor zwingend notwendig, damit im Rotor eine Spannung induziert wird und ein Drehmoment entsteht.",
+      "correct": 0,
+      "explanation": "Der Schlupf beschreibt die relative Drehzahldifferenz zwischen Drehfeld und Rotor. Er wird berechnet mit s = (ns - n) / ns. Zum Beispiel ergibt sich bei ns = 1500 min⁻¹ und n = 1450 min⁻¹ ein Schlupf von 3,3 %. Der Schlupf ist beim Asynchronmotor zwingend notwendig, damit im Rotor eine Spannung induziert wird und ein Drehmoment entsteht.",
       "difficulty": "mittel",
       "tags": [
         "schlupf",
@@ -76,12 +76,12 @@
       "id": "mot-005",
       "q": "Was ist ein Drehstrom-Asynchronmotor mit Kurzschlussläufer?",
       "options": [
-        "Motor mit Schleifringen und externen Widerstaenden im Rotorkreis",
         "Motor mit kurzgeschlossener Käfigwicklung im Rotor",
-        "Motor mit permanentmagnetisch erregtem Rotor und Encoder-Rueckfuehrung",
-        "Motor mit elektronisch kommutierter Gleichstromwicklung im Stator"
+        "Motor mit elektronisch kommutierter Gleichstromwicklung im Stator",
+        "Motor mit Schleifringen und externen Widerstaenden im Rotorkreis",
+        "Motor mit permanentmagnetisch erregtem Rotor und Encoder-Rueckfuehrung"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der Kurzschlusslaeufer (auch Kaefiglaeufer genannt) besitzt einen Rotor mit Aluminiumstaeben, die an beiden Seiten durch Kurzschlussringe verbunden sind. Diese Bauart ist aeusserst robust, wartungsarm und bildet den industriellen Standardmotor, weil keine Buersten oder Schleifringe verschleissen.",
       "difficulty": "mittel",
       "tags": [
@@ -93,12 +93,12 @@
       "id": "mot-006",
       "q": "Wie wird die Drehrichtung eines Drehstrommotors geändert?",
       "options": [
-        "Die Betriebsspannung wird stufenweise von 400V auf 690V erhoeht",
-        "Zwei beliebige Außenleiter (Phasen) tauschen",
         "Alle drei Phasen werden gleichzeitig in umgekehrter Reihenfolge angeschlossen",
-        "Die Netzfrequenz wird von 50 Hz auf 60 Hz umgestellt"
+        "Die Netzfrequenz wird von 50 Hz auf 60 Hz umgestellt",
+        "Zwei beliebige Außenleiter (Phasen) tauschen",
+        "Die Betriebsspannung wird stufenweise von 400V auf 690V erhoeht"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Um die Drehrichtung eines Drehstrommotors umzukehren, muessen zwei beliebige Phasen (z.B. L1 und L2) vertauscht werden. Dadurch aendert sich die Phasenfolge und das Drehfeld dreht in die entgegengesetzte Richtung. Es genuegt, nur zwei der drei Phasen zu tauschen.",
       "difficulty": "leicht",
       "tags": [
@@ -110,12 +110,12 @@
       "id": "mot-007",
       "q": "Was ist die Stern-Dreieck-Schaltung?",
       "options": [
-        "Eine Schutzschaltung zur Ueberwachung der Wicklungstemperatur im Motorbetrieb",
         "Ein Anlassverfahren zur Reduzierung des Anlaufstroms",
-        "Eine Bremsschaltung zur generatorischen Energierueckspeisung ins Versorgungsnetz",
-        "Eine Drehzahlregelung durch stufenweises Umschalten der Wicklungsgruppen"
+        "Eine Schutzschaltung zur Ueberwachung der Wicklungstemperatur im Motorbetrieb",
+        "Eine Drehzahlregelung durch stufenweises Umschalten der Wicklungsgruppen",
+        "Eine Bremsschaltung zur generatorischen Energierueckspeisung ins Versorgungsnetz"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Die Stern-Dreieck-Schaltung ist ein Anlassverfahren, bei dem der Motor zuerst in Sternschaltung gestartet wird. Dabei betraegt die Strangspannung nur 1/Wurzel(3) und der Anlaufstrom sinkt auf ein Drittel. Nach dem Hochlauf wird auf Dreieckschaltung umgeschaltet, womit der Motor seine volle Leistung erreicht.",
       "difficulty": "mittel",
       "tags": [
@@ -127,12 +127,12 @@
       "id": "mot-008",
       "q": "Um welchen Faktor reduziert sich der Anlaufstrom bei Stern-Dreieck?",
       "options": [
-        "Um Faktor 2 (auf 1/2 des Dreieck-Anlaufstroms)",
         "Um Faktor 3 (auf 1/3)",
         "Um Faktor 4 (auf 1/4 des Dreieck-Anlaufstroms)",
-        "Um Faktor 1,73 (auf 1/Wurzel 3 des Stroms)"
+        "Um Faktor 1,73 (auf 1/Wurzel 3 des Stroms)",
+        "Um Faktor 2 (auf 1/2 des Dreieck-Anlaufstroms)"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei der Stern-Dreieck-Schaltung reduziert sich der Anlaufstrom auf ein Drittel des Dreieck-Anlaufstroms (Faktor 3). Allerdings sinkt auch das Anlaufdrehmoment auf ein Drittel. Deshalb eignet sich dieses Verfahren nur fuer Anwendungen, bei denen der Motor ohne grosse Last anlaeuft.",
       "difficulty": "mittel",
       "tags": [
@@ -144,12 +144,12 @@
       "id": "mot-009",
       "q": "Was ist ein Sanftanlasser (Softstarter)?",
       "options": [
-        "Ein mechanisches Getriebe mit stufenloser Uebersetzungsanpassung beim Anlauf",
         "Ein elektronisches Gerät zur sanften Hochfahrt durch Spannungsregelung",
+        "Ein thyristorgesteuerter Gleichrichter zur Umwandlung von Wechsel- in Gleichstrom",
         "Ein vorgeschalteter Spartransformator zur Reduzierung der Netzspannung",
-        "Ein thyristorgesteuerter Gleichrichter zur Umwandlung von Wechsel- in Gleichstrom"
+        "Ein mechanisches Getriebe mit stufenloser Uebersetzungsanpassung beim Anlauf"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Sanftanlasser ist ein elektronisches Geraet, das die Motorspannung mittels Thyristoren beim Anlauf stufenlos von einem niedrigen Wert bis zur vollen Netzspannung hochregelt. Dadurch werden Anlaufstrom und mechanische Belastung reduziert. Im Gegensatz zur Stern-Dreieck-Schaltung gibt es keinen harten Umschaltstoss.",
       "difficulty": "mittel",
       "tags": [
@@ -161,10 +161,10 @@
       "id": "mot-010",
       "q": "Was ist ein Frequenzumrichter (FU)?",
       "options": [
-        "Ein Spartransformator zur stufenweisen Anpassung der Betriebsspannung am Motor",
+        "Ein elektronischer Leistungsschalter zur Ueberstromabschaltung bei Motorblockade",
         "Ein Gerät zur stufenlosen Drehzahlregelung durch Frequenz- und Spannungsänderung",
-        "Ein Brueckengleichrichter zur Umwandlung von Drehstrom in glatten Gleichstrom",
-        "Ein elektronischer Leistungsschalter zur Ueberstromabschaltung bei Motorblockade"
+        "Ein Spartransformator zur stufenweisen Anpassung der Betriebsspannung am Motor",
+        "Ein Brueckengleichrichter zur Umwandlung von Drehstrom in glatten Gleichstrom"
       ],
       "correct": 1,
       "explanation": "Ein Frequenzumrichter wandelt die Netzspannung mit fester Frequenz (50 Hz) in eine Spannung mit variabler Frequenz und Amplitude um. Damit kann die Drehzahl eines Drehstrommotors stufenlos von nahezu 0 bis ueber die Nenndrehzahl geregelt werden. Dies ist besonders energieeffizient bei Teillastbetrieb.",
@@ -178,10 +178,10 @@
       "id": "mot-012",
       "q": "Was ist der Vorteil des Frequenzumrichters gegenüber Y/Δ?",
       "options": [
-        "Geringere Anschaffungskosten, einfachere Verdrahtung und schnellere Inbetriebnahme ohne Parametrierung",
-        "Stufenlose Drehzahl, volles Drehmoment auch bei niedrigen Drehzahlen, Energieeinsparung",
         "Einfacherer Aufbau mit nur zwei Schuetzen und einem Zeitrelais fuer die Umschaltung",
-        "Hoeherer Anlaufstrom, dadurch schnelleres Hochlaufen und kuerzere Anlaufzeit des Motors"
+        "Stufenlose Drehzahl, volles Drehmoment auch bei niedrigen Drehzahlen, Energieeinsparung",
+        "Hoeherer Anlaufstrom, dadurch schnelleres Hochlaufen und kuerzere Anlaufzeit des Motors",
+        "Geringere Anschaffungskosten, einfachere Verdrahtung und schnellere Inbetriebnahme ohne Parametrierung"
       ],
       "correct": 1,
       "explanation": "Der Frequenzumrichter bietet gegenueber der Stern-Dreieck-Schaltung entscheidende Vorteile: stufenlose Drehzahlregelung, volles Drehmoment bereits ab 0 Hz, sanfter Anlauf ohne Stromstoss und deutliche Energieeinsparung bei Teillast. Zusaetzlich ermoeglicht er einen 4-Quadrantenbetrieb mit generatorischer Bremsung.",
@@ -195,12 +195,12 @@
       "id": "mot-013",
       "q": "Aus welchen Hauptkomponenten besteht ein Frequenzumrichter?",
       "options": [
-        "Leistungstransistor, Kuehlkoerper, Temperaturueberwachung",
         "Gleichrichter, Zwischenkreis, Wechselrichter",
-        "Eingangskondensator, Spannungsregler, Ausgangsdrossel",
-        "Steuertransformator, Relaisschaltung, Motorklemmenbrett"
+        "Leistungstransistor, Kuehlkoerper, Temperaturueberwachung",
+        "Steuertransformator, Relaisschaltung, Motorklemmenbrett",
+        "Eingangskondensator, Spannungsregler, Ausgangsdrossel"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Frequenzumrichter besteht aus drei Hauptkomponenten: Der Gleichrichter wandelt die Netz-Wechselspannung in Gleichspannung um. Der Zwischenkreis glaettet diese Gleichspannung und dient als Energiespeicher. Der Wechselrichter erzeugt daraus eine Wechselspannung mit variabler Frequenz und Amplitude fuer den Motor.",
       "difficulty": "mittel",
       "tags": [
@@ -213,11 +213,11 @@
       "q": "Was ist PWM bei Frequenzumrichtern?",
       "options": [
         "Eine spezielle Motorbauart mit integriertem Positionsgeber am Wellenstumpf",
-        "Pulsweitenmodulation zur Erzeugung der Ausgangsspannung",
         "Ein elektronisches Schutzgeraet gegen Ueberspannung und Kurzschluss im Zwischenkreis",
-        "Ein normiertes Messverfahren zur Bestimmung der Oberwellenbelastung am Netz"
+        "Ein normiertes Messverfahren zur Bestimmung der Oberwellenbelastung am Netz",
+        "Pulsweitenmodulation zur Erzeugung der Ausgangsspannung"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "PWM steht fuer Pulsweitenmodulation. Der Wechselrichter schaltet dabei die Gleichspannung des Zwischenkreises mit hoher Frequenz ein und aus. Durch unterschiedlich lange Ein- und Aus-Zeiten entsteht im Mittel eine sinusaehnliche Spannung mit variabler Frequenz, die den Motor antreibt.",
       "difficulty": "schwer",
       "tags": [
@@ -229,12 +229,12 @@
       "id": "mot-015",
       "q": "Was ist ein Motorschutzschalter?",
       "options": [
-        "Ein Fehlerstromschutzschalter zur Erkennung von Isolationsfehlern in der Motorwicklung",
-        "Ein Schalter mit thermischem und magnetischem Auslöser zum Motorschutz",
         "Ein Leistungsschalter zur selektiven Abschaltung bei Kurzschluss im Verteilernetz",
-        "Ein elektronischer Sanftanlasser mit integrierter Phasenueberwachung und Drehzahlbegrenzung"
+        "Ein elektronischer Sanftanlasser mit integrierter Phasenueberwachung und Drehzahlbegrenzung",
+        "Ein Schalter mit thermischem und magnetischem Auslöser zum Motorschutz",
+        "Ein Fehlerstromschutzschalter zur Erkennung von Isolationsfehlern in der Motorwicklung"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Der Motorschutzschalter schuetzt den Motor vor zwei Gefahren: Der thermische Ausloeser reagiert verzoegert auf Ueberlast und schuetzt vor Ueberhitzung. Der magnetische Ausloeser reagiert sofort bei Kurzschluss. Der Nennstrom ist einstellbar und wird auf den Motornennstrom abgestimmt.",
       "difficulty": "leicht",
       "tags": [
@@ -246,12 +246,12 @@
       "id": "mot-017",
       "q": "Was passiert bei Phasenausfall (Einphasenlauf) eines Drehstrommotors?",
       "options": [
-        "Der Motor laeuft mit unveraenderter Drehzahl und unveraendertem Drehmoment weiter",
         "Motor erwärmt sich stark, kann verbrennen (Strom in verbleibenden Phasen steigt)",
         "Der Motor stoppt sofort und die Sicherung loest durch Ueberstrom unverzueglich aus",
+        "Der Motor laeuft mit unveraenderter Drehzahl und unveraendertem Drehmoment weiter",
         "Die Rotordrehzahl verdoppelt sich durch Resonanzeffekte im verbleibenden Wicklungsstrang"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei Phasenausfall laeuft der Motor eventuell weiter, aber der Strom in den verbleibenden zwei Wicklungen steigt stark an (bis zum Wurzel-3-fachen). Dies fuehrt zu gefaehrlicher Ueberhitzung und kann die Wicklung zerstoeren. Deshalb wird ein Phasenwachter eingesetzt, der den Motor bei Phasenausfall rechtzeitig abschaltet.",
       "difficulty": "mittel",
       "tags": [
@@ -265,8 +265,8 @@
       "options": [
         "Ein einzelnes Wendeschuetz mit integrierter Phasenumschaltung fuer beide Drehrichtungen",
         "Zwei Schütze, die zwei Phasen vertauschen, mit elektrischer und mechanischer Verriegelung",
-        "Drei Schuetze mit jeweils einem Oeffner und einem Schliesser pro Drehrichtung",
-        "Ein Hauptschuetz mit vorgeschaltetem Stern-Dreieck-Umschalter und Zeitrelais"
+        "Ein Hauptschuetz mit vorgeschaltetem Stern-Dreieck-Umschalter und Zeitrelais",
+        "Drei Schuetze mit jeweils einem Oeffner und einem Schliesser pro Drehrichtung"
       ],
       "correct": 1,
       "explanation": "Eine Wendeschuetzschaltung besteht aus zwei Schuetzen: K1 fuer Rechtslauf und K2 fuer Linkslauf. Eines der Schuetze vertauscht dabei zwei Phasen. Damit niemals beide Schuetze gleichzeitig einschalten (was einen Kurzschluss verursachen wuerde), ist eine gegenseitige Verriegelung sowohl elektrisch ueber Oeffnerkontakte als auch mechanisch vorgeschrieben.",
@@ -280,9 +280,9 @@
       "id": "mot-020",
       "q": "Warum ist die Verriegelung bei der Wendeschützschaltung wichtig?",
       "options": [
-        "Ermoeglicht hoehere Drehfeldgeschwindigkeit durch optimierte Phasenfolge beim Umschalten",
-        "Verhindert gleichzeitiges Einschalten beider Schütze (Kurzschluss)",
         "Reduziert die Geraeuschentwicklung durch synchronisiertes Schalten der Schuetzkontakte",
+        "Verhindert gleichzeitiges Einschalten beider Schütze (Kurzschluss)",
+        "Ermoeglicht hoehere Drehfeldgeschwindigkeit durch optimierte Phasenfolge beim Umschalten",
         "Erhoeht das verfuegbare Drehmoment durch verzoegertes Zuschalten der dritten Phase"
       ],
       "correct": 1,
@@ -298,11 +298,11 @@
       "q": "Was ist ein Servomotor?",
       "options": [
         "Ein standardmaessiger Asynchronmotor mit Kaefiglaeufer fuer industrielle Daueranwendungen",
-        "Ein hochdynamischer Motor für präzise Positionierung mit Rückführung",
         "Ein einphasiger Spaltpolmotor fuer Kleingeraete mit geringer Anlaufleistung",
+        "Ein hochdynamischer Motor für präzise Positionierung mit Rückführung",
         "Ein ungesteuert betriebener Drehstrommotor ohne Positionsrueckfuehrung und Regelkreis"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Servomotor ist ein hochdynamischer Motor (meist permanentmagneterregter Synchronmotor oder buerstenloser DC-Motor) mit integriertem Encoder zur Positionsrueckfuehrung. Er ermoeglicht extrem praezise Positions- und Drehzahlregelung und wird in der Robotik, CNC-Bearbeitung und Automatisierungstechnik eingesetzt.",
       "difficulty": "mittel",
       "tags": [
@@ -314,12 +314,12 @@
       "id": "mot-025",
       "q": "Was ist ein Schrittmotor?",
       "options": [
-        "Ein Drehstrommotor fuer kontinuierliche Drehbewegung mit hohem Dauerdrehmoment",
-        "Ein Motor, der sich in definierten Winkelschritten bewegt",
+        "Ein einphasiger Kondensatormotor mit integriertem Anlaufkondensator und Fliehkraftschalter",
         "Ein dreiphasiger Asynchronmotor mit Kaefiglaeufer und Frequenzumrichtersteuerung",
-        "Ein einphasiger Kondensatormotor mit integriertem Anlaufkondensator und Fliehkraftschalter"
+        "Ein Drehstrommotor fuer kontinuierliche Drehbewegung mit hohem Dauerdrehmoment",
+        "Ein Motor, der sich in definierten Winkelschritten bewegt"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein Schrittmotor dreht sich in diskreten Winkelschritten, typischerweise 1,8 Grad pro Schritt, was 200 Schritten pro Umdrehung entspricht. Durch Zaehlen der Schritte ist eine Positionierung ohne zusaetzlichen Encoder moeglich. Schrittmotoren werden haeufig in 3D-Druckern, CNC-Maschinen und Positioniersystemen eingesetzt.",
       "difficulty": "mittel",
       "tags": [
@@ -331,10 +331,10 @@
       "id": "mot-026",
       "q": "Was ist der Unterschied zwischen Betriebsart S1 und S3?",
       "options": [
-        "S1: Kurzzeitbetrieb mit begrenzter Einschaltdauer. S3: Dauerbetrieb ohne thermische Begrenzung",
-        "S1: Dauerbetrieb. S3: Aussetz-Betrieb mit definierter Einschaltdauer",
         "S1: Aussetzbetrieb mit langen Pausen. S3: Dauerbetrieb bei reduzierter Nennleistung",
-        "S1: Betrieb mit haeufigen Reversiervorgaengen. S3: Betrieb mit konstanter Belastung"
+        "S1: Dauerbetrieb. S3: Aussetz-Betrieb mit definierter Einschaltdauer",
+        "S1: Betrieb mit haeufigen Reversiervorgaengen. S3: Betrieb mit konstanter Belastung",
+        "S1: Kurzzeitbetrieb mit begrenzter Einschaltdauer. S3: Dauerbetrieb ohne thermische Begrenzung"
       ],
       "correct": 1,
       "explanation": "S1 bezeichnet den Dauerbetrieb, bei dem der Motor ununterbrochen mit Nennlast laeuft (100 % Einschaltdauer). S3 ist der Aussetzbetrieb mit definierter Einschaltdauer, z.B. S3 25 % bedeutet 25 % eingeschaltet und 75 % ausgeschaltet innerhalb einer Spielzeit von 10 Minuten. In den Pausen kann der Motor abkuehlen.",
@@ -349,11 +349,11 @@
       "q": "Was steht auf dem Typenschild eines Motors?",
       "options": [
         "Anschaffungspreis, Liefertermin, Herstellergarantie, Bestellnummer und Kundennummer des Kaeufers",
-        "Leistung, Spannung, Strom, Drehzahl, Frequenz, cos \u03c6, Schutzart, Betriebsart",
         "Gehaeusefarbe, Motorgewicht, Verpackungsgroesse, Transporthinweise und Lagerbedingungen",
-        "Abmessungen, Wellenlaenge, Gehaeusebreite, Klemmendeckelmaterial und Oberflaeche des Lacks"
+        "Abmessungen, Wellenlaenge, Gehaeusebreite, Klemmendeckelmaterial und Oberflaeche des Lacks",
+        "Leistung, Spannung, Strom, Drehzahl, Frequenz, cos φ, Schutzart, Betriebsart"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Das Motortypenschild enthaelt alle wichtigen technischen Bemessungsdaten: Nennleistung in kW, Nennspannung (Y/Dreieck), Nennstrom, Nenndrehzahl, Frequenz, Leistungsfaktor cos phi, Schutzart (IP-Code), Isolationsklasse und Betriebsart. Diese Daten sind fuer die korrekte Auslegung und den sicheren Betrieb des Motors unerlässlich.",
       "difficulty": "leicht",
       "tags": [
@@ -365,9 +365,9 @@
       "id": "mot-029",
       "q": "Was bedeutet die Angabe '400V Δ / 690V Y' auf dem Typenschild?",
       "options": [
-        "Der Motor darf ausschliesslich an einem 400V-Drehstromnetz in Sternschaltung betrieben werden",
-        "Motor kann bei 400V in Dreieck oder bei 690V in Stern betrieben werden",
         "Der Motor ist ausschliesslich fuer den Betrieb am 690V-Drehstromnetz in Dreieckschaltung geeignet",
+        "Motor kann bei 400V in Dreieck oder bei 690V in Stern betrieben werden",
+        "Der Motor darf ausschliesslich an einem 400V-Drehstromnetz in Sternschaltung betrieben werden",
         "Es handelt sich um zwei separate Wicklungssysteme fuer unterschiedliche Motorleistungen"
       ],
       "correct": 1,
@@ -383,11 +383,11 @@
       "q": "Was ist der Leistungsfaktor cos φ?",
       "options": [
         "Das Verhaeltnis von Nennspannung zu Leerlaufspannung an den Motorklemmen",
-        "Das Verhältnis von Wirkleistung zu Scheinleistung",
+        "Die Nenndrehzahl des Rotors bezogen auf die Synchrondrehzahl des Drehfeldes",
         "Die Betriebsfrequenz des Drehfeldes bezogen auf die Netzfrequenz des Versorgungsnetzes",
-        "Die Nenndrehzahl des Rotors bezogen auf die Synchrondrehzahl des Drehfeldes"
+        "Das Verhältnis von Wirkleistung zu Scheinleistung"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Der Leistungsfaktor cos phi gibt das Verhaeltnis von Wirkleistung (P) zu Scheinleistung (S) an. Bei Motoren liegt er typischerweise zwischen 0,8 und 0,9. Ein niedriger cos phi bedeutet einen hohen Blindstromanteil, der das Netz belastet und durch Kompensation (z.B. mit Kondensatoren) verbessert werden sollte.",
       "difficulty": "mittel",
       "tags": [
@@ -399,10 +399,10 @@
       "id": "mot-031",
       "q": "Was ist ein Gleichstrommotor?",
       "options": [
-        "Ein Motor, der ausschliesslich mit einphasigem Wechselstrom am 230V-Netz betrieben wird",
-        "Ein Motor, der mit Gleichstrom betrieben wird, mit Kommutator oder elektronisch",
         "Ein dreiphasiger Transformator zur galvanischen Trennung zwischen Netz und Verbraucher",
-        "Ein rotierender Drehstromgenerator zur Erzeugung von Wechselspannung im Kraftwerk"
+        "Ein Motor, der mit Gleichstrom betrieben wird, mit Kommutator oder elektronisch",
+        "Ein rotierender Drehstromgenerator zur Erzeugung von Wechselspannung im Kraftwerk",
+        "Ein Motor, der ausschliesslich mit einphasigem Wechselstrom am 230V-Netz betrieben wird"
       ],
       "correct": 1,
       "explanation": "Ein Gleichstrommotor wird mit Gleichstrom (DC) betrieben. Seine Drehzahl laesst sich einfach ueber die angelegte Spannung regeln. Es gibt zwei Bauarten: klassisch mit Buersten und mechanischem Kommutator (verschleissanfaellig) oder buerstenlos (BLDC) mit elektronischer Kommutierung, was wartungsaermer ist.",
@@ -416,12 +416,12 @@
       "id": "mot-034",
       "q": "Was ist die Schutzart IP bei Motoren?",
       "options": [
-        "Die thermische Isolationsklasse der Wicklungsdraehte im Stator und Rotor",
         "Der Schutz gegen Berührung, Fremdkörper und Wasser (z.B. IP55)",
+        "Die normierte Effizienzklasse gemaess europaeischer Oekodesign-Verordnung fuer Motoren",
         "Die elektrische Leistungsklasse zur Einordnung der maximalen Motorabgabeleistung",
-        "Die normierte Effizienzklasse gemaess europaeischer Oekodesign-Verordnung fuer Motoren"
+        "Die thermische Isolationsklasse der Wicklungsdraehte im Stator und Rotor"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "IP steht fuer International Protection und gibt an, wie gut ein Motor gegen das Eindringen von Fremdkoerpern und Wasser geschuetzt ist. Die erste Ziffer (0-6) beschreibt den Schutz gegen Beruehrung und Fremdkoerper, die zweite Ziffer (0-9) den Schutz gegen Wasser. Beispiel: IP55 bedeutet staubgeschuetzt und strahlwassergeschuetzt.",
       "difficulty": "leicht",
       "tags": [
@@ -435,8 +435,8 @@
       "options": [
         "Mechanische Bremsung durch Bremsbacken oder Bremsscheibe an der Motorwelle",
         "Motor arbeitet als Generator und speist Energie ins Netz oder Bremswiderstand",
-        "Sofortiges Abschalten aller drei Phasen zum schnellen Stillstand des Motors",
-        "Umkehr des Drehfeldes durch Vertauschen zweier Phasen bei laufendem Motor"
+        "Umkehr des Drehfeldes durch Vertauschen zweier Phasen bei laufendem Motor",
+        "Sofortiges Abschalten aller drei Phasen zum schnellen Stillstand des Motors"
       ],
       "correct": 1,
       "explanation": "Bei der generatorischen Bremsung wird der Motor ueber seine Synchrondrehzahl angetrieben (n > ns) und arbeitet dann als Generator. Die dabei erzeugte elektrische Energie kann entweder ueber den Frequenzumrichter ins Netz zurueckgespeist oder in einem Bremswiderstand in Waerme umgewandelt werden.",
@@ -450,12 +450,12 @@
       "id": "mot-037",
       "q": "Was ist Gegenstrombremsung?",
       "options": [
-        "Sanftes Auslaufen des Motors durch langsames Absenken der Frequenzumrichter-Frequenz",
         "Drehfeld wird umgekehrt, Motor bremst schnell ab (hohe Strombelastung)",
-        "Generatorisches Bremsen durch Energierueckspeisung ueber den Zwischenkreis ins Versorgungsnetz",
-        "Mechanisches Abbremsen durch elektromagnetisch betaetigte Haltebremse an der Rotorwelle"
+        "Sanftes Auslaufen des Motors durch langsames Absenken der Frequenzumrichter-Frequenz",
+        "Mechanisches Abbremsen durch elektromagnetisch betaetigte Haltebremse an der Rotorwelle",
+        "Generatorisches Bremsen durch Energierueckspeisung ueber den Zwischenkreis ins Versorgungsnetz"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei der Gegenstrombremsung werden zwei Phasen bei laufendem Motor vertauscht, wodurch sich das Drehfeld umkehrt und gegen den noch drehenden Rotor arbeitet. Dies fuehrt zu einer sehr starken Bremswirkung, allerdings bei extrem hohem Stromfluss. Wichtig: Bei Drehzahl null muss der Motor sofort abgeschaltet werden, da er sonst in die Gegenrichtung anlaufen wuerde.",
       "difficulty": "schwer",
       "tags": [
@@ -467,9 +467,9 @@
       "id": "mot-038",
       "q": "Was ist ein Dahlander-Motor?",
       "options": [
-        "Ein einphasiger Wechselstrommotor mit Anlaufkondensator und Betriebskondensator",
-        "Ein polumschaltbarer Motor mit zwei Drehzahlen (1:2 Verhältnis)",
         "Ein permanentmagneterregter Gleichstrommotor mit elektronischer Kommutierung",
+        "Ein polumschaltbarer Motor mit zwei Drehzahlen (1:2 Verhältnis)",
+        "Ein einphasiger Wechselstrommotor mit Anlaufkondensator und Betriebskondensator",
         "Ein buerstenloser Servomotor mit integriertem Absolutwertgeber am Wellenstumpf"
       ],
       "correct": 1,
@@ -484,12 +484,12 @@
       "id": "mot-039",
       "q": "Was ist ein Getriebemotor?",
       "options": [
-        "Ein Elektromotor ohne angeflanschtes Getriebe fuer den direkten Wellenantrieb",
         "Motor mit angebautem Getriebe zur Drehzahl-/Drehmomentanpassung",
-        "Ein einzelnes mechanisches Getriebe ohne eigenen elektrischen Antriebsmotor",
-        "Ein spezieller Hochdrehzahlmotor fuer Anwendungen ueber 10000 Umdrehungen pro Minute"
+        "Ein spezieller Hochdrehzahlmotor fuer Anwendungen ueber 10000 Umdrehungen pro Minute",
+        "Ein Elektromotor ohne angeflanschtes Getriebe fuer den direkten Wellenantrieb",
+        "Ein einzelnes mechanisches Getriebe ohne eigenen elektrischen Antriebsmotor"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Getriebemotor ist eine kompakte Einheit aus Elektromotor und angeflanschtem Getriebe. Das Getriebe reduziert die hohe Motordrehzahl und erhoeht gleichzeitig das Drehmoment gemaess dem Uebersetzungsverhaeltnis (i = n1/n2). Gaengige Bauarten sind Stirnrad-, Schnecken-, Kegelrad- und Planetengetriebe.",
       "difficulty": "leicht",
       "tags": [
@@ -501,12 +501,12 @@
       "id": "mot-040",
       "q": "Was gibt das Bemessungsdrehmoment Mn an?",
       "options": [
+        "Das generatorische Bremsmoment bei Energierueckspeisung ins Versorgungsnetz",
         "Das maximale Anlaufmoment beim Einschalten des stillstehenden Motors",
-        "Das Drehmoment bei Nennleistung und Nenndrehzahl",
         "Das hoechste Kippmoment kurz vor dem Abwuergen des Motorrotors",
-        "Das generatorische Bremsmoment bei Energierueckspeisung ins Versorgungsnetz"
+        "Das Drehmoment bei Nennleistung und Nenndrehzahl"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Das Bemessungsdrehmoment (auch Nennmoment) ist das Drehmoment, das der Motor bei seiner Nennleistung und Nenndrehzahl dauerhaft abgeben kann. Es wird berechnet mit Mn = Pn / (2 x pi x nn). Dieses Moment darf im Dauerbetrieb nicht ueberschritten werden, um eine Ueberhitzung zu vermeiden.",
       "difficulty": "mittel",
       "tags": [
@@ -518,12 +518,12 @@
       "id": "mot-041",
       "q": "Was ist das Kippmoment?",
       "options": [
-        "Das Bemessungsdrehmoment bei Nennleistung und Nenndrehzahl im Dauerbetrieb",
-        "Das maximale Moment, bei dessen Überschreitung der Motor abwürgt",
         "Das Anlaufdrehmoment beim Einschalten des stillstehenden Asynchronmotors",
-        "Das generatorische Bremsmoment bei Drehzahlen oberhalb der Synchrondrehzahl"
+        "Das generatorische Bremsmoment bei Drehzahlen oberhalb der Synchrondrehzahl",
+        "Das maximale Moment, bei dessen Überschreitung der Motor abwürgt",
+        "Das Bemessungsdrehmoment bei Nennleistung und Nenndrehzahl im Dauerbetrieb"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Das Kippmoment ist das Maximum der Drehmomentkennlinie eines Asynchronmotors. Wird dieses Moment ueberschritten, bricht die Drehzahl stark ein und der Motor bleibt stehen (er kippt). Das Verhaeltnis von Kippmoment zu Nennmoment (Mk/Mn) betraegt typischerweise 2 bis 3.",
       "difficulty": "schwer",
       "tags": [
@@ -535,12 +535,12 @@
       "id": "mot-042",
       "q": "Was ist ein Schleifringläufermotor?",
       "options": [
-        "Ein Asynchronmotor mit kurzgeschlossener Kaefigwicklung im Rotorteil",
         "Asynchronmotor mit Schleifringen zum Anschluss von Anlasswiderständen",
+        "Ein elektronisch kommutierter Gleichstrommotor ohne mechanische Buersten und Kommutator",
         "Ein permanentmagneterregter Synchronmotor mit Encoderrueckfuehrung zur Positionsregelung",
-        "Ein elektronisch kommutierter Gleichstrommotor ohne mechanische Buersten und Kommutator"
+        "Ein Asynchronmotor mit kurzgeschlossener Kaefigwicklung im Rotorteil"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Beim Schleifringlaeufermotor ist die Rotorwicklung ueber Schleifringe und Buersten nach aussen gefuehrt. Dadurch koennen externe Widerstaende in den Rotorkreis geschaltet werden, was ein hohes Anlaufmoment bei niedrigem Anlaufstrom ermoeglicht. Heute wird diese Bauart weitgehend durch Frequenzumrichter-gespeiste Kaefiglaeufer ersetzt.",
       "difficulty": "schwer",
       "tags": [
@@ -552,12 +552,12 @@
       "id": "mot-043",
       "q": "Warum muss ein Motor mit FU-Betrieb oft fremdbelüftet werden?",
       "options": [
-        "Weil der Motor bei hoher Drehzahl seine Nennleistung ueberschreitet und thermisch ueberlastet wird",
-        "Weil bei niedriger Drehzahl der eigene Lüfter nicht genug kühlt",
+        "Weil die Motorwicklung durch hoehere Isolationsklasse keine Eigenwaerme abfuehren kann",
         "Weil der Frequenzumrichter selbst zu viel Abwaerme an den Motor abgibt",
-        "Weil die Motorwicklung durch hoehere Isolationsklasse keine Eigenwaerme abfuehren kann"
+        "Weil bei niedriger Drehzahl der eigene Lüfter nicht genug kühlt",
+        "Weil der Motor bei hoher Drehzahl seine Nennleistung ueberschreitet und thermisch ueberlastet wird"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Der Eigenluefter sitzt auf der Motorwelle und seine Kuehlleistung ist direkt von der Drehzahl abhaengig. Bei niedrigen Drehzahlen dreht der Luefter zu langsam und kann die Motorwaerme nicht ausreichend abfuehren. Deshalb wird ein separater Fremdluefter mit eigenem Antrieb eingesetzt, der unabhaengig von der Motordrehzahl konstant kuehlt.",
       "difficulty": "mittel",
       "tags": [
@@ -569,12 +569,12 @@
       "id": "mot-044",
       "q": "Was ist ein Linearmotor?",
       "options": [
-        "Ein konventionell rotierender Drehstrommotor mit zylindrischem Stator und Rotor",
-        "Ein Motor, der lineare Bewegung ohne Getriebe/Spindel erzeugt",
+        "Ein rotierender Schrittmotor mit angebauter Kugelgewindespindel zur Positionierung",
         "Ein Getriebemotor mit nachgeschalteter Zahnstange zur Linearbewegungsumsetzung",
-        "Ein rotierender Schrittmotor mit angebauter Kugelgewindespindel zur Positionierung"
+        "Ein Motor, der lineare Bewegung ohne Getriebe/Spindel erzeugt",
+        "Ein konventionell rotierender Drehstrommotor mit zylindrischem Stator und Rotor"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Linearmotor erzeugt direkt eine geradlinige Bewegung ohne Umwandlung von Rotation in Translation. Man kann ihn sich als aufgerollten Drehstrommotor vorstellen. Durch den Wegfall mechanischer Uebertragungselemente wie Getriebe oder Spindeln erreicht er hohe Geschwindigkeiten und Praezision, z.B. in Hochgeschwindigkeitszuegen und Handhabungssystemen.",
       "difficulty": "mittel",
       "tags": [
@@ -586,12 +586,12 @@
       "id": "mot-045",
       "q": "Was ist EMV-gerechte Installation bei Frequenzumrichtern?",
       "options": [
-        "Verwendung moeglichst langer ungeschirmter Motorleitungen zur besseren Waermeableitung",
         "Geschirmte Motorkabel, kurze Leitungslängen, Filter, fachgerechte Erdung",
+        "Verwendung moeglichst langer ungeschirmter Motorleitungen zur besseren Waermeableitung",
         "Verzicht auf besondere Massnahmen, da moderne Frequenzumrichter keine Stoerungen erzeugen",
         "Ausschliessliche Verwendung ungeschirmter Standardkabel mit minimaler Erdungsverbindung"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Frequenzumrichter erzeugen durch das schnelle Schalten hochfrequente Stoerungen, die andere Geraete beeintraechtigen koennen. Eine EMV-gerechte Installation umfasst geschirmte Motorkabel (Schirm beidseitig aufgelegt), moeglichst kurze Leitungswege, EMV-Filter am Eingang, grossflaechige Erdung und ausreichend Abstand zu empfindlichen Signalleitungen.",
       "difficulty": "mittel",
       "tags": [

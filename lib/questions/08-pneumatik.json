@@ -8,12 +8,12 @@
       "id": "pn-001",
       "q": "Was ist Pneumatik?",
       "options": [
+        "Steuerung und Antrieb mit elektrischem Strom",
         "Steuerung und Antrieb mit Hydraulikfluid",
         "Steuerung und Antrieb mit Druckluft",
-        "Steuerung und Antrieb mit elektrischem Strom",
         "Steuerung und Antrieb mit Wasserdampf"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Pneumatik bezeichnet die Technik, bei der komprimierte Luft (Druckluft) zur Energie- und Signalübertragung verwendet wird. Sie kommt in der Automatisierungstechnik für Steuerungen, Antriebe und Handhabungssysteme zum Einsatz, weil Druckluft sicher, sauber und einfach verfügbar ist.",
       "difficulty": "leicht",
       "tags": [
@@ -25,10 +25,10 @@
       "id": "pn-002",
       "q": "Welcher Betriebsdruck ist in der industriellen Pneumatik üblich?",
       "options": [
-        "0,5 bar (0,2-1 bar)",
-        "6 bar (4-8 bar)",
         "25 bar (20-30 bar)",
-        "100 bar (80-120 bar)"
+        "6 bar (4-8 bar)",
+        "100 bar (80-120 bar)",
+        "0,5 bar (0,2-1 bar)"
       ],
       "correct": 1,
       "explanation": "Der Standard-Betriebsdruck in der industriellen Pneumatik liegt bei etwa 6 bar, wobei der übliche Bereich zwischen 4 und 8 bar liegt. Dieser Druckbereich bietet einen guten Kompromiss zwischen Leistung, Sicherheit und Wirtschaftlichkeit für die meisten Anwendungen.",
@@ -42,9 +42,9 @@
       "id": "pn-003",
       "q": "Was ist ein Kompressor?",
       "options": [
-        "Eine Maschine zur Verteilung von Druckluft durch Rohrleitungen",
-        "Eine Maschine zur Erzeugung von Druckluft durch Verdichtung",
         "Eine Maschine zur Trocknung von Druckluft durch Kühlung",
+        "Eine Maschine zur Erzeugung von Druckluft durch Verdichtung",
+        "Eine Maschine zur Verteilung von Druckluft durch Rohrleitungen",
         "Eine Maschine zur Reinigung von Druckluft durch Filterung"
       ],
       "correct": 1,
@@ -59,12 +59,12 @@
       "id": "pn-004",
       "q": "Woraus besteht eine Wartungseinheit?",
       "options": [
+        "Aus Sensor, Steuerung und Aktor (SSA-Einheit)",
         "Aus Kompressor, Druckbehälter und Manometer (KDM-Einheit)",
         "Aus Filter, Druckregler und Öler (FRL-Einheit)",
-        "Aus Ventil, Zylinder und Drossel (VZD-Einheit)",
-        "Aus Sensor, Steuerung und Aktor (SSA-Einheit)"
+        "Aus Ventil, Zylinder und Drossel (VZD-Einheit)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die Wartungseinheit, auch FRL-Einheit genannt, besteht aus drei Komponenten: dem Filter zur Reinigung der Druckluft, dem Regler zur Druckeinstellung und dem Lubricator (Öler) zur Schmierung. Sie wird direkt vor den Verbrauchern eingebaut und sorgt für eine optimale Druckluftqualität.",
       "difficulty": "mittel",
       "tags": [
@@ -76,12 +76,12 @@
       "id": "pn-005",
       "q": "Welche Aufgabe hat der Filter in der Wartungseinheit?",
       "options": [
-        "Erhöhung des Systemdrucks auf den eingestellten Arbeitsdruck der Anlage",
         "Entfernung von Wasser, Öl und Schmutzpartikeln aus der Druckluft",
         "Zugabe von Schmierstoff in feiner Vernebelung zur Druckluft",
-        "Messung des aktuellen Druckwerts am Ausgang der Wartungseinheit"
+        "Messung des aktuellen Druckwerts am Ausgang der Wartungseinheit",
+        "Erhöhung des Systemdrucks auf den eingestellten Arbeitsdruck der Anlage"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der Filter in der Wartungseinheit reinigt die Druckluft von Kondenswasser, Ölnebel und Feststoffpartikeln, die den nachfolgenden Komponenten schaden würden. Der Filterbecher muss regelmässig entwässert werden, entweder manuell oder über eine automatische Entwässerung.",
       "difficulty": "leicht",
       "tags": [
@@ -93,12 +93,12 @@
       "id": "pn-006",
       "q": "Welche Aufgabe hat der Druckregler?",
       "options": [
+        "Absperrung und Entlüftung der gesamten Druckleitung",
         "Reinigung und Trocknung der zugeführten Druckluft",
         "Reduzierung und Konstanthaltung des Betriebsdrucks",
-        "Vernebelung von Schmieröl in der Druckluft",
-        "Absperrung und Entlüftung der gesamten Druckleitung"
+        "Vernebelung von Schmieröl in der Druckluft"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Der Druckregler hat die Aufgabe, den höheren Netzdruck auf den gewünschten Arbeitsdruck zu reduzieren und diesen konstant zu halten. Ein integriertes Manometer zeigt den eingestellten Druck an, sodass der Bediener den Wert jederzeit ablesen und anpassen kann.",
       "difficulty": "leicht",
       "tags": [
@@ -110,9 +110,9 @@
       "id": "pn-007",
       "q": "Welche Aufgabe hat der Öler (Nebelöler)?",
       "options": [
-        "Abscheidung von Feuchtigkeit aus der komprimierten Druckluft",
-        "Zugabe von Öl zur Schmierung beweglicher Teile",
         "Regulierung des Druckniveaus auf den Sollwert",
+        "Zugabe von Öl zur Schmierung beweglicher Teile",
+        "Abscheidung von Feuchtigkeit aus der komprimierten Druckluft",
         "Filterung von Schmutzpartikeln aus der Druckluft"
       ],
       "correct": 1,
@@ -127,10 +127,10 @@
       "id": "pn-008",
       "q": "Was ist ein einfachwirkender Zylinder?",
       "options": [
-        "Ein Zylinder mit zwei Druckluftanschlüssen, Bewegung durch Druckluft in beide Richtungen",
-        "Ein Zylinder mit einem Druckluftanschluss, Rückstellung durch Feder",
         "Ein Zylinder mit stufenloser Positionierung, Arretierung durch Klemmeinheit",
-        "Ein Zylinder mit integrierter Endlagendämpfung, Steuerung durch Drosseln"
+        "Ein Zylinder mit einem Druckluftanschluss, Rückstellung durch Feder",
+        "Ein Zylinder mit integrierter Endlagendämpfung, Steuerung durch Drosseln",
+        "Ein Zylinder mit zwei Druckluftanschlüssen, Bewegung durch Druckluft in beide Richtungen"
       ],
       "correct": 1,
       "explanation": "Ein einfachwirkender Zylinder hat nur einen Druckluftanschluss und erzeugt Kraft in eine Richtung. Die Rückbewegung erfolgt durch eine eingebaute Feder oder durch das Eigengewicht der Last. Er wird häufig für einfache Spann- und Auswurfvorgänge eingesetzt.",
@@ -144,10 +144,10 @@
       "id": "pn-009",
       "q": "Was ist ein doppeltwirkender Zylinder?",
       "options": [
-        "Ein Zylinder mit einem Anschluss, Rückstellung erfolgt durch eine eingebaute Druckfeder",
+        "Ein Zylinder mit vier Anschlüssen, Geschwindigkeitsregelung über integrierte Drosseln",
         "Ein Zylinder mit zwei Anschlüssen, Bewegung in beide Richtungen durch Druckluft",
         "Ein Zylinder mit drei Anschlüssen, Zwischenposition durch Arretierung einstellbar",
-        "Ein Zylinder mit vier Anschlüssen, Geschwindigkeitsregelung über integrierte Drosseln"
+        "Ein Zylinder mit einem Anschluss, Rückstellung erfolgt durch eine eingebaute Druckfeder"
       ],
       "correct": 1,
       "explanation": "Ein doppeltwirkender Zylinder besitzt zwei Druckluftanschlüsse und kann in beide Richtungen durch Druckluft bewegt werden. Dadurch kann er sowohl beim Ausfahren als auch beim Einfahren Kraft ausüben, was ihn zum am häufigsten eingesetzten Zylindertyp in der Pneumatik macht.",
@@ -161,10 +161,10 @@
       "id": "pn-011",
       "q": "Was ist ein 3/2-Wegeventil?",
       "options": [
-        "Ein Ventil mit 3 Anschlüssen und 3 Schaltstellungen für Mittelstellung",
+        "Ein Ventil mit 5 Anschlüssen und 2 Schaltstellungen für Zylindersteuerung",
         "Ein Ventil mit 3 Anschlüssen und 2 Schaltstellungen",
         "Ein Ventil mit 2 Anschlüssen und 2 Schaltstellungen für Absperrung",
-        "Ein Ventil mit 5 Anschlüssen und 2 Schaltstellungen für Zylindersteuerung"
+        "Ein Ventil mit 3 Anschlüssen und 3 Schaltstellungen für Mittelstellung"
       ],
       "correct": 1,
       "explanation": "Ein 3/2-Wegeventil hat 3 Anschlüsse (P für Druck, A für Arbeit, R für Entlüftung) und 2 Schaltstellungen. Die erste Zahl gibt immer die Anzahl der Anschlüsse an, die zweite die Anzahl der Schaltstellungen. Es wird typischerweise zur Ansteuerung einfachwirkender Zylinder verwendet.",
@@ -178,12 +178,12 @@
       "id": "pn-012",
       "q": "Was ist ein 5/2-Wegeventil?",
       "options": [
-        "Ein Ventil mit 5 Anschlüssen und 3 Schaltstellungen mit Mittelstellung",
         "Ein Ventil mit 5 Anschlüssen und 2 Schaltstellungen",
-        "Ein Ventil mit 3 Anschlüssen und 2 Schaltstellungen für einfache Zylinder",
-        "Ein Ventil mit 4 Anschlüssen und 2 Schaltstellungen ohne Entlüftung"
+        "Ein Ventil mit 4 Anschlüssen und 2 Schaltstellungen ohne Entlüftung",
+        "Ein Ventil mit 5 Anschlüssen und 3 Schaltstellungen mit Mittelstellung",
+        "Ein Ventil mit 3 Anschlüssen und 2 Schaltstellungen für einfache Zylinder"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein 5/2-Wegeventil besitzt 5 Anschlüsse (P für Druckversorgung, A und B für Arbeitsanschlüsse, R und S für Entlüftung) und 2 Schaltstellungen. Es ist das Standardventil zur Ansteuerung doppeltwirkender Zylinder, da es den Vor- und Rückhub des Kolbens steuern kann.",
       "difficulty": "mittel",
       "tags": [
@@ -195,10 +195,10 @@
       "id": "pn-013",
       "q": "Was bedeuten die Anschlussbezeichnungen P, A, B, R, S?",
       "options": [
-        "P=Pilot(steuerung), A/B=Abluftanschlüsse, R/S=Regelungsanschlüsse",
+        "P=Prüfanschluss, A/B=Antriebsleitungen, R/S=Sperrventile",
         "P=Druck(versorgung), A/B=Arbeitsanschlüsse, R/S=Entlüftung",
-        "P=Primärleitung, A/B=Ausgangsventile, R/S=Rücklaufanschlüsse",
-        "P=Prüfanschluss, A/B=Antriebsleitungen, R/S=Sperrventile"
+        "P=Pilot(steuerung), A/B=Abluftanschlüsse, R/S=Regelungsanschlüsse",
+        "P=Primärleitung, A/B=Ausgangsventile, R/S=Rücklaufanschlüsse"
       ],
       "correct": 1,
       "explanation": "Die Buchstaben bezeichnen die genormten Anschlüsse an Pneumatikventilen: P (Ziffer 1) steht für die Druckversorgung, A (2) und B (4) sind die Arbeitsanschlüsse zum Zylinder, R (3) und S (5) sind die Entlüftungsanschlüsse. Diese einheitliche Bezeichnung erleichtert das Lesen von Schaltplänen.",
@@ -213,11 +213,11 @@
       "q": "Was ist ein Rückschlagventil?",
       "options": [
         "Ein Ventil, das den Durchfluss in beide Richtungen regelt",
-        "Ein Ventil, das Durchfluss nur in eine Richtung erlaubt",
+        "Ein Ventil, das den Volumenstrom stufenlos einstellt",
         "Ein Ventil, das den Druck auf einen Maximalwert begrenzt",
-        "Ein Ventil, das den Volumenstrom stufenlos einstellt"
+        "Ein Ventil, das Durchfluss nur in eine Richtung erlaubt"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein Rückschlagventil lässt die Druckluft nur in eine Richtung durchströmen und sperrt in der Gegenrichtung vollständig ab. Es wird eingesetzt, um Druckhaltefunktionen zu realisieren und Rückströmungen in der Druckluftanlage zu verhindern.",
       "difficulty": "leicht",
       "tags": [
@@ -230,11 +230,11 @@
       "q": "Was ist ein Drosselrückschlagventil?",
       "options": [
         "Kombination aus Druckregler und Absperrventil für Druckbegrenzung",
-        "Kombination aus Drossel und Rückschlagventil für Geschwindigkeitsregelung",
         "Kombination aus Wegeventil und Druckschalter für Positionssteuerung",
+        "Kombination aus Drossel und Rückschlagventil für Geschwindigkeitsregelung",
         "Kombination aus Schnellentlüfter und Drucksensor für Überwachung"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Drosselrückschlagventil vereint eine einstellbare Drossel mit einem Rückschlagventil in einem Bauteil. In eine Richtung wird der Luftstrom gedrosselt (einstellbar), in die andere Richtung strömt die Luft über das Rückschlagventil frei durch. Es dient zur präzisen Geschwindigkeitsregelung von Pneumatikzylindern.",
       "difficulty": "mittel",
       "tags": [
@@ -246,9 +246,9 @@
       "id": "pn-016",
       "q": "Wie wird die Geschwindigkeit eines Pneumatikzylinders geregelt?",
       "options": [
-        "Durch Veränderung der Schlauchlänge am Zylinder (Leitungswiderstand)",
-        "Durch Drosselung der Abluft (Abluftdrosselung)",
         "Durch Anpassung der Ventilgrösse am Wegeventil (Nennweite)",
+        "Durch Drosselung der Abluft (Abluftdrosselung)",
+        "Durch Veränderung der Schlauchlänge am Zylinder (Leitungswiderstand)",
         "Durch Austausch der Kolbendichtungen im Zylinder (Reibungsänderung)"
       ],
       "correct": 1,
@@ -263,12 +263,12 @@
       "id": "pn-017",
       "q": "Was ist ein Schnellentlüftungsventil?",
       "options": [
-        "Ein Ventil zur kontrollierten Druckbegrenzung des Zylinders bei maximalem Systemdruck",
         "Ein Ventil zur schnellen Entlüftung des Zylinders für hohe Kolbengeschwindigkeit",
         "Ein Ventil zur gleichmässigen Druckverteilung des Zylinders bei wechselnder Belastung",
-        "Ein Ventil zur verzögerten Druckbeaufschlagung des Zylinders bei sensiblen Werkstücken"
+        "Ein Ventil zur verzögerten Druckbeaufschlagung des Zylinders bei sensiblen Werkstücken",
+        "Ein Ventil zur kontrollierten Druckbegrenzung des Zylinders bei maximalem Systemdruck"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Schnellentlüftungsventil wird direkt am Zylinder montiert und ermöglicht eine schnelle Entlüftung über einen grossen Querschnitt. Dadurch muss die Abluft nicht den langen Weg zurück durch die Schlauchleitung zum Ventil nehmen, was deutlich höhere Kolbengeschwindigkeiten beim Rückhub ermöglicht.",
       "difficulty": "mittel",
       "tags": [
@@ -280,10 +280,10 @@
       "id": "pn-020",
       "q": "Was zeigt das Schaltzeichen eines Wegeventils?",
       "options": [
-        "Baugrösse, Gewicht und Werkstoff des Ventilgehäuses",
+        "Hersteller, Artikelnummer und Bestellbezeichnung des Ventils",
         "Anschlüsse, Schaltstellungen und Durchflusswege",
         "Betriebsdruck, Temperatur und Durchflussleistung des Ventils",
-        "Hersteller, Artikelnummer und Bestellbezeichnung des Ventils"
+        "Baugrösse, Gewicht und Werkstoff des Ventilgehäuses"
       ],
       "correct": 1,
       "explanation": "Das Schaltzeichen eines Wegeventils zeigt die Anzahl der Anschlüsse, die Schaltstellungen (als Rechtecke dargestellt) und die Durchflusswege (als Pfeile innerhalb der Rechtecke). Die Anschlüsse werden immer an der Grundstellung (Ruhestellung) des Ventils eingezeichnet, sodass die Funktion sofort erkennbar ist.",
@@ -297,12 +297,12 @@
       "id": "pn-022",
       "q": "Was ist eine ODER-Funktion (Wechselventil) in der Pneumatik?",
       "options": [
+        "Ein Ventil, das nur schaltet, wenn das Eingangssignal zeitverzögert ankommt",
         "Ein Ventil, das nur schaltet, wenn beide Eingangssignale gleichzeitig vorhanden sind",
-        "Ein Ventil, das schaltet, wenn mindestens ein Eingangssignal vorhanden ist",
         "Ein Ventil, das nur schaltet, wenn kein Eingangssignal am Eingang vorhanden ist",
-        "Ein Ventil, das nur schaltet, wenn das Eingangssignal zeitverzögert ankommt"
+        "Ein Ventil, das schaltet, wenn mindestens ein Eingangssignal vorhanden ist"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Das Wechselventil realisiert die logische ODER-Funktion: Es gibt ein Ausgangssignal, sobald mindestens einer der beiden Eingänge mit Druck beaufschlagt wird. Es wird eingesetzt, wenn ein Zylinder oder Ventil von verschiedenen Stellen aus angesteuert werden soll, zum Beispiel von zwei Bedienpulten.",
       "difficulty": "mittel",
       "tags": [
@@ -314,12 +314,12 @@
       "id": "pn-024",
       "q": "Was sind die Vorteile der Pneumatik?",
       "options": [
-        "Hohe Positioniergenauigkeit, geringe Energiekosten, leiser Betrieb und kompakte Bauweise",
         "Schnelle Bewegungen, sauber, überlastsicher, einfache Speicherung",
-        "Grosse Stellkräfte, stufenlose Regelung, präzise Geschwindigkeit und geringe Leckage",
-        "Niedrige Anschaffungskosten, geringe Wartung, hoher Wirkungsgrad und leise Entlüftung"
+        "Niedrige Anschaffungskosten, geringe Wartung, hoher Wirkungsgrad und leise Entlüftung",
+        "Hohe Positioniergenauigkeit, geringe Energiekosten, leiser Betrieb und kompakte Bauweise",
+        "Grosse Stellkräfte, stufenlose Regelung, präzise Geschwindigkeit und geringe Leckage"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Die Pneumatik bietet zahlreiche Vorteile: hohe Geschwindigkeiten, Sauberkeit (Leckagen sind nur Luft und daher ungefährlich), Überlastsicherheit (der Zylinder bleibt einfach stehen) und einfache Energiespeicherung im Druckluftbehälter. Zusätzlich ist Pneumatik robust gegenüber Temperaturschwankungen und unempfindlich gegen Überlastung.",
       "difficulty": "mittel",
       "tags": [
@@ -331,12 +331,12 @@
       "id": "pn-025",
       "q": "Was sind die Nachteile der Pneumatik?",
       "options": [
-        "Geringe Betriebssicherheit, häufige Ausfälle, komplizierte Installation und teure Bauteile",
-        "Hohe Energiekosten, Geräusch, keine exakte Positionierung, Luftaufbereitung nötig",
         "Langsame Bewegungsabläufe, schwere Komponenten, aufwendige Verkabelung und hoher Platzbedarf",
-        "Schwierige Inbetriebnahme, begrenzte Lebensdauer, mangelnde Verfügbarkeit und hoher Ölverbrauch"
+        "Schwierige Inbetriebnahme, begrenzte Lebensdauer, mangelnde Verfügbarkeit und hoher Ölverbrauch",
+        "Hohe Energiekosten, Geräusch, keine exakte Positionierung, Luftaufbereitung nötig",
+        "Geringe Betriebssicherheit, häufige Ausfälle, komplizierte Installation und teure Bauteile"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Zu den Nachteilen der Pneumatik gehören die hohen Energiekosten durch die aufwendige Kompression, die Geräuschentwicklung beim Entlüften und die schwierige exakte Positionierung, da Luft kompressibel ist. Ausserdem ist eine Druckluftaufbereitung mit Filter, Trockner und Regler erforderlich, um Kondensatprobleme zu vermeiden.",
       "difficulty": "mittel",
       "tags": [
@@ -348,12 +348,12 @@
       "id": "pn-026",
       "q": "Was ist der Unterschied zwischen Pneumatik und Hydraulik?",
       "options": [
-        "Pneumatik: inkompressibles Wasser, mittlerer Druck. Hydraulik: kompressible Luft, niedriger Druck und Kraft",
         "Pneumatik: kompressible Luft, niedrigerer Druck. Hydraulik: inkompressibles Öl, höherer Druck und Kraft",
+        "Pneumatik: gereinigtes Stickstoffgas, hoher Druck. Hydraulik: synthetisches Fluid, niedrigerer Druck und Kraft",
         "Pneumatik: erwärmtes Dampfmedium, variabler Druck. Hydraulik: gekühltes Gasgemisch, konstanter Druck und Kraft",
-        "Pneumatik: gereinigtes Stickstoffgas, hoher Druck. Hydraulik: synthetisches Fluid, niedrigerer Druck und Kraft"
+        "Pneumatik: inkompressibles Wasser, mittlerer Druck. Hydraulik: kompressible Luft, niedriger Druck und Kraft"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der wesentliche Unterschied liegt im Medium: Pneumatik verwendet kompressible Druckluft bei etwa 6 bar, Hydraulik hingegen inkompressibles Öl bei bis zu 400 bar. Dadurch eignet sich die Hydraulik für hohe Kräfte und genaue Positionierung, während die Pneumatik schnellere Bewegungen und einen saubereren Betrieb ermöglicht.",
       "difficulty": "mittel",
       "tags": [
@@ -365,12 +365,12 @@
       "id": "pn-027",
       "q": "Was ist ein Druckluftbehälter (Kessel)?",
       "options": [
-        "Ein Bauteil zur Trocknung der Druckluft durch Kühlung und Kondensation",
         "Ein Speicher für Druckluft zum Ausgleich von Druckschwankungen",
+        "Ein Bauteil zur Trocknung der Druckluft durch Kühlung und Kondensation",
         "Ein Bauteil zur Filterung der Druckluft durch mehrere Reinigungsstufen",
         "Ein Bauteil zur Verdichtung der Umgebungsluft auf den Betriebsdruck"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der Druckluftbehälter speichert ein grösseres Volumen an Druckluft und gleicht dadurch Druckschwankungen aus, die durch den Verbrauch und das Ein-/Ausschalten des Kompressors entstehen. Er muss mit einem Sicherheitsventil und einer Entwässerungseinrichtung ausgestattet sein und unterliegt regelmässigen Prüfpflichten.",
       "difficulty": "leicht",
       "tags": [
@@ -382,12 +382,12 @@
       "id": "pn-028",
       "q": "Warum entsteht Kondenswasser in Druckluftanlagen?",
       "options": [
-        "Weil der eingesetzte Kompressor zusätzliches Kühlwasser einbringt",
-        "Weil warme komprimierte Luft beim Abkühlen Feuchtigkeit abgibt",
         "Weil die Druckluftschläuche im Inneren wasserdurchlässig sind",
-        "Weil der eingebaute Nebelöler überschüssiges Wasser beimischt"
+        "Weil der eingebaute Nebelöler überschüssiges Wasser beimischt",
+        "Weil warme komprimierte Luft beim Abkühlen Feuchtigkeit abgibt",
+        "Weil der eingesetzte Kompressor zusätzliches Kühlwasser einbringt"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Bei der Verdichtung im Kompressor wird die Luft stark erwärmt und kann viel Feuchtigkeit aufnehmen. Wenn die komprimierte Luft anschliessend in den Leitungen und im Behälter abkühlt, kann sie die Feuchtigkeit nicht mehr halten und es bildet sich Kondenswasser. Dieses muss regelmässig über Kondensatabscheider abgelassen werden, um Korrosion und Funktionsstörungen zu vermeiden.",
       "difficulty": "mittel",
       "tags": [
@@ -400,11 +400,11 @@
       "q": "Was ist ein Endlagenschalter?",
       "options": [
         "Ein Sensor, der den aktuellen Betriebsdruck im Zylinder überwacht",
+        "Ein Ventil, das den Druckluftstrom zum Zylinder freigibt",
         "Ein Schalter, der die Endposition eines Zylinders erkennt",
-        "Ein Regler, der die Verfahrgeschwindigkeit des Kolbens einstellt",
-        "Ein Ventil, das den Druckluftstrom zum Zylinder freigibt"
+        "Ein Regler, der die Verfahrgeschwindigkeit des Kolbens einstellt"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Endlagenschalter (auch Grenztaster genannt) erkennt, wann ein Zylinder seine Endposition erreicht hat, und gibt ein Signal zur Weiterführung der Steuerung. Er kann als mechanischer Rollenhebel, als magnetischer Reed-Kontakt oder als induktiver Näherungsschalter ausgeführt sein und ist ein wesentliches Element der Ablaufsteuerung.",
       "difficulty": "mittel",
       "tags": [
@@ -416,12 +416,12 @@
       "id": "pn-030",
       "q": "Was ist ein magnetischer Näherungsschalter am Zylinder?",
       "options": [
-        "Ein Sensor, der die Druckveränderung im Zylinderraum erfasst",
         "Ein Schalter, der den Magnetring am Kolben erkennt",
         "Ein Sensor, der die Temperaturänderung am Zylindergehäuse misst",
-        "Ein Schalter, der die Schwingungsfrequenz der Kolbenstange erfasst"
+        "Ein Schalter, der die Schwingungsfrequenz der Kolbenstange erfasst",
+        "Ein Sensor, der die Druckveränderung im Zylinderraum erfasst"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein magnetischer Näherungsschalter (z.B. Reed-Kontakt) erkennt den am Kolben befestigten Permanentmagnetring berührungslos durch die Wand des Zylinderrohrs hindurch. Er ermöglicht eine verschleissfreie Positionserfassung und kann sowohl für die Endlagen als auch für Zwischenpositionen eingesetzt werden.",
       "difficulty": "mittel",
       "tags": [
@@ -433,12 +433,12 @@
       "id": "pn-031",
       "q": "Was ist ein Druckschalter?",
       "options": [
-        "Ein Regler, der den Betriebsdruck auf einen konstanten Sollwert einregelt",
         "Ein Schalter, der bei Erreichen eines eingestellten Drucks schaltet",
         "Ein Sensor, der die Durchflussmenge der Druckluft misst und anzeigt",
-        "Ein Ventil, der bei Überschreitung des Drucks die Leitung entlüftet"
+        "Ein Ventil, der bei Überschreitung des Drucks die Leitung entlüftet",
+        "Ein Regler, der den Betriebsdruck auf einen konstanten Sollwert einregelt"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Druckschalter gibt ein elektrisches Signal ab, sobald der Druck in der Leitung einen eingestellten Schwellenwert erreicht oder überschreitet. Er wird zur Drucküberwachung, zur Steuerung von Abläufen und als Sicherheitseinrichtung in pneumatischen Anlagen eingesetzt.",
       "difficulty": "leicht",
       "tags": [
@@ -450,12 +450,12 @@
       "id": "pn-032",
       "q": "Was ist eine Ablaufsteuerung?",
       "options": [
-        "Eine Steuerung, bei der alle Schritte gleichzeitig und parallel zueinander ausgeführt werden",
         "Eine Steuerung, bei der Schritte in festgelegter Reihenfolge nacheinander ablaufen",
         "Eine Steuerung, bei der die Schritte abhängig vom Betriebsdruck zufällig ausgelöst werden",
-        "Eine Steuerung, bei der einzelne Schritte manuell vom Bediener gestartet werden müssen"
+        "Eine Steuerung, bei der einzelne Schritte manuell vom Bediener gestartet werden müssen",
+        "Eine Steuerung, bei der alle Schritte gleichzeitig und parallel zueinander ausgeführt werden"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei einer Ablaufsteuerung (Sequenzsteuerung) werden die einzelnen Schritte in einer festgelegten Reihenfolge nacheinander ausgeführt. Der nächste Schritt wird erst gestartet, wenn die Freigabebedingung des vorherigen Schritts erfüllt ist, zum Beispiel das Erreichen einer Endlage.",
       "difficulty": "mittel",
       "tags": [
@@ -467,12 +467,12 @@
       "id": "pn-034",
       "q": "Was ist ein Sicherheitsventil?",
       "options": [
-        "Ein Ventil, das den Luftstrom in der Leitung absperrt und freigibt",
-        "Ein Ventil, das bei Überdruck öffnet und Druckluft ablässt",
         "Ein Ventil, das den Volumenstrom stufenlos drosselt und einstellt",
-        "Ein Ventil, das die Durchflussrichtung der Druckluft umschaltet"
+        "Ein Ventil, das den Luftstrom in der Leitung absperrt und freigibt",
+        "Ein Ventil, das die Durchflussrichtung der Druckluft umschaltet",
+        "Ein Ventil, das bei Überdruck öffnet und Druckluft ablässt"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein Sicherheitsventil öffnet automatisch, wenn der Druck in der Anlage einen eingestellten Maximalwert überschreitet, und lässt die überschüssige Druckluft ab. Es schützt die Anlage und den Druckluftbehälter vor gefährlichem Überdruck und ist am Druckluftbehälter gesetzlich vorgeschrieben.",
       "difficulty": "leicht",
       "tags": [
@@ -484,12 +484,12 @@
       "id": "pn-035",
       "q": "Was ist ein Manometer?",
       "options": [
-        "Ein Regelventil zur Einstellung des Betriebsdrucks",
-        "Ein Druckmessgerät zur Anzeige des Drucks",
+        "Ein Durchflusssensor zur Messung des Volumenstroms",
         "Ein Absperrventil zur Trennung der Druckleitung",
-        "Ein Durchflusssensor zur Messung des Volumenstroms"
+        "Ein Regelventil zur Einstellung des Betriebsdrucks",
+        "Ein Druckmessgerät zur Anzeige des Drucks"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein Manometer ist ein Druckmessgerät, das den aktuellen Druck in der Leitung anzeigt. In der Pneumatik wird meist das Rohrfedermanometer (Bourdon-Rohr) verwendet, wobei der Druck in bar abgelesen wird. Manometer befinden sich an der Wartungseinheit und am Druckluftbehälter.",
       "difficulty": "leicht",
       "tags": [
@@ -501,12 +501,12 @@
       "id": "pn-036",
       "q": "Was ist ein elektropneumatisches Ventil?",
       "options": [
-        "Ein Ventil, das rein pneumatisch über Steuerdruck angesteuert wird",
         "Ein Ventil, das elektrisch (Magnetspule) angesteuert wird",
         "Ein Ventil, das rein mechanisch über Rollenhebel angesteuert wird",
-        "Ein Ventil, das hydraulisch über Drucköl angesteuert wird"
+        "Ein Ventil, das hydraulisch über Drucköl angesteuert wird",
+        "Ein Ventil, das rein pneumatisch über Steuerdruck angesteuert wird"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein elektropneumatisches Ventil wird über eine Magnetspule elektrisch angesteuert und schaltet daraufhin den pneumatischen Luftstrom. Es bildet die Schnittstelle zwischen der elektrischen Steuerung (z.B. SPS) und der pneumatischen Aktorik und ermöglicht so die automatische Ansteuerung von Zylindern.",
       "difficulty": "mittel",
       "tags": [
@@ -518,9 +518,9 @@
       "id": "pn-039",
       "q": "Was bedeutet der Begriff 'Totzeit' in der Pneumatik?",
       "options": [
-        "Maximale Betriebsdauer zwischen zwei vorgeschriebenen Wartungsintervallen des Zylinders",
-        "Verzögerungszeit zwischen Signal und Reaktion des Zylinders",
         "Minimale Abkühlzeit zwischen zwei aufeinanderfolgenden Schaltvorgängen des Ventils",
+        "Verzögerungszeit zwischen Signal und Reaktion des Zylinders",
+        "Maximale Betriebsdauer zwischen zwei vorgeschriebenen Wartungsintervallen des Zylinders",
         "Vorgegebene Einlaufzeit beim erstmaligen Inbetriebnehmen der gesamten Pneumatikanlage"
       ],
       "correct": 1,
@@ -535,12 +535,12 @@
       "id": "pn-040",
       "q": "Was ist bei der Wartung von Pneumatikanlagen zu beachten?",
       "options": [
+        "Regelmässig: Manometer kalibrieren, Schalldämpfer austauschen, Drosseln demontieren, Ventile polieren",
         "Regelmässig: Kolbendichtungen tauschen, Zylinder ersetzen, Ventile zerlegen, Schaltpläne erneuern",
         "Regelmässig: Kondensat ablassen, Filter reinigen, Leckagen prüfen, Öler nachfüllen",
-        "Regelmässig: Kompressor öffnen, Druckbehälter entleeren, Rohre austauschen, Schläuche kürzen",
-        "Regelmässig: Manometer kalibrieren, Schalldämpfer austauschen, Drosseln demontieren, Ventile polieren"
+        "Regelmässig: Kompressor öffnen, Druckbehälter entleeren, Rohre austauschen, Schläuche kürzen"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die regelmässige Wartung von Pneumatikanlagen umfasst das tägliche Ablassen von Kondensat, das Prüfen und Wechseln von Filtern, das Auffinden und Beheben von Leckagen sowie das Nachfüllen des Ölers. Zusätzlich sollten Schläuche und Dichtungen auf Verschleiss kontrolliert werden, um einen zuverlässigen Betrieb sicherzustellen.",
       "difficulty": "mittel",
       "tags": [

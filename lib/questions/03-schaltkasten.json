@@ -8,12 +8,12 @@
       "id": "st-001",
       "q": "Wie funktioniert ein Relais?",
       "options": [
-        "Strom durch Bimetall erzeugt Wärme, die einen Schaltkontakt thermisch verbiegt und betätigt",
-        "Strom durch Spule erzeugt Magnetfeld, das einen Anker anzieht und Kontakte schaltet",
+        "Strom durch Widerstand erzeugt Druckimpuls, der einen Kolben verschiebt und Kontakte schaltet",
         "Strom durch Halbleiter erzeugt Lichtsignal, das einen Fototransistor steuert und Kontakte schaltet",
-        "Strom durch Widerstand erzeugt Druckimpuls, der einen Kolben verschiebt und Kontakte schaltet"
+        "Strom durch Spule erzeugt Magnetfeld, das einen Anker anzieht und Kontakte schaltet",
+        "Strom durch Bimetall erzeugt Wärme, die einen Schaltkontakt thermisch verbiegt und betätigt"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Relais ist ein elektromagnetischer Schalter. Fließt Strom durch die Spule, entsteht ein Magnetfeld, das den Anker anzieht und dadurch die Kontakte mechanisch betätigt. So können mit kleinen Steuerströmen große Lasten geschaltet werden.",
       "difficulty": "leicht",
       "tags": [
@@ -25,12 +25,12 @@
       "id": "st-002",
       "q": "Wodurch bleibt ein Schütz nach einem Steuerimpuls eingeschaltet?",
       "options": [
+        "Durch eine Zeitverzögerung mit nachgeschaltetem Kondensatorrelais",
         "Durch eine Verriegelungsschaltung mit in Reihe geschaltetem Öffnerkontakt",
         "Durch eine Selbsthalteschaltung mit parallel geschaltetem Schließerkontakt",
-        "Durch eine Zeitverzögerung mit nachgeschaltetem Kondensatorrelais",
         "Durch eine Speicherschaltung mit bistabilem Halbleiterrelais"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Bei der Selbsthaltung überbrückt ein Schließer-Hilfskontakt des Schützes den Einschalttaster parallel. Wenn der Taster losgelassen wird, fließt der Strom weiterhin über diesen Hilfskontakt und das Schütz bleibt angezogen. Erst durch Betätigung des AUS-Tasters wird der Stromkreis unterbrochen.",
       "difficulty": "mittel",
       "tags": [
@@ -42,12 +42,12 @@
       "id": "st-003",
       "q": "Wofür wird eine Wendeschützschaltung verwendet?",
       "options": [
-        "Zur Strombegrenzung beim Anlauf eines Drehstrommotors",
         "Zur Drehrichtungsumkehr eines Drehstrommotors",
+        "Zur Strombegrenzung beim Anlauf eines Drehstrommotors",
         "Zur Drehzahlregelung bei einem Asynchronmotor",
         "Zur Spannungsanpassung beim Betrieb eines Drehstrommotors"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Die Wendeschützschaltung besteht aus zwei Schützen, die jeweils zwei Außenleiter vertauschen. Dadurch wird das Drehfeld umgekehrt und der Motor dreht in die entgegengesetzte Richtung. Eine elektrische Verriegelung verhindert, dass beide Schütze gleichzeitig anziehen.",
       "difficulty": "mittel",
       "tags": [
@@ -59,12 +59,12 @@
       "id": "st-004",
       "q": "In welchem Betriebszustand werden Schalter und Geräte in einem Stromlaufplan gezeichnet?",
       "options": [
-        "Im eingeschalteten und voll bestromten Zustand",
-        "Im stromlosen und nicht betätigten Zustand",
         "Im betätigten und unter Spannung stehenden Zustand",
-        "Im abgeschalteten und mechanisch verriegelten Zustand"
+        "Im abgeschalteten und mechanisch verriegelten Zustand",
+        "Im eingeschalteten und voll bestromten Zustand",
+        "Im stromlosen und nicht betätigten Zustand"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Laut Norm werden alle Schalter und Geräte im Stromlaufplan im stromlosen, unbetätigten Ruhezustand gezeichnet. Das bedeutet, dass Schließer offen und Öffner geschlossen dargestellt werden. Eine Ausnahme bilden mechanisch betätigte Kontakte wie Endschalter, die in ihrer tatsächlichen Ruhelage gezeichnet werden.",
       "difficulty": "mittel",
       "tags": [
@@ -78,8 +78,8 @@
       "options": [
         "Schütze arbeiten mit Halbleitertechnik im Steuerstromkreis, Relais mit elektromagnetischer Schaltung",
         "Schütze sind für höhere Schaltleistungen im Hauptstromkreis, Relais für Steuerstromkreise",
-        "Schütze verwenden kapazitive Kopplung im Signalkreis, Relais nutzen induktive Schaltprinzipien",
-        "Schütze besitzen thermische Auslöser im Überlastbereich, Relais verwenden magnetische Schnellauslösung"
+        "Schütze besitzen thermische Auslöser im Überlastbereich, Relais verwenden magnetische Schnellauslösung",
+        "Schütze verwenden kapazitive Kopplung im Signalkreis, Relais nutzen induktive Schaltprinzipien"
       ],
       "correct": 1,
       "explanation": "Der wesentliche Unterschied liegt in der Schaltleistung und dem Einsatzgebiet. Schütze sind für das Schalten hoher Ströme im Hauptstromkreis ausgelegt und besitzen robuste Hauptkontakte. Relais hingegen schalten kleinere Ströme im Steuerstromkreis und dienen der Signalverarbeitung.",
@@ -93,12 +93,12 @@
       "id": "st-006",
       "q": "Was versteht man unter einem Öffner (NC-Kontakt)?",
       "options": [
-        "Ein Kontakt, der im Ruhezustand offen ist und bei Betätigung schließt",
         "Ein Kontakt, der im Ruhezustand geschlossen ist und bei Betätigung öffnet",
         "Ein Kontakt, der im Ruhezustand offen ist und zeitverzögert schließt",
+        "Ein Kontakt, der im Ruhezustand offen ist und bei Betätigung schließt",
         "Ein Kontakt, der im Ruhezustand geschlossen ist und impulsgesteuert umschaltet"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Öffner (NC = Normally Closed) ist im unbetätigten Ruhezustand geschlossen, also stromführend. Wird er betätigt, öffnet er und unterbricht den Stromfluss. Öffner werden häufig für Sicherheitsfunktionen wie NOT-Halt eingesetzt, da ein Drahtbruch sofort erkannt wird.",
       "difficulty": "leicht",
       "tags": [
@@ -110,12 +110,12 @@
       "id": "st-007",
       "q": "Was versteht man unter einem Schließer (NO-Kontakt)?",
       "options": [
-        "Ein Kontakt, der im Ruhezustand geschlossen ist und bei Betätigung öffnet",
         "Ein Kontakt, der im Ruhezustand offen ist und bei Betätigung schließt",
         "Ein Kontakt, der im Ruhezustand geschlossen ist und zeitverzögert öffnet",
-        "Ein Kontakt, der im Ruhezustand offen ist und spannungsgesteuert umschaltet"
+        "Ein Kontakt, der im Ruhezustand offen ist und spannungsgesteuert umschaltet",
+        "Ein Kontakt, der im Ruhezustand geschlossen ist und bei Betätigung öffnet"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Schließer (NO = Normally Open) ist im unbetätigten Ruhezustand offen, also nicht stromführend. Wird er betätigt, schließt er den Stromkreis und lässt Strom fließen. Schließer sind der Standard für EIN-Funktionen in Steuerungen.",
       "difficulty": "leicht",
       "tags": [
@@ -128,11 +128,11 @@
       "q": "Was ist eine Stern-Dreieck-Schaltung?",
       "options": [
         "Eine Schutzschaltung, die den Motorstrom durch Zuschalten von Widerständen im Stator begrenzt",
-        "Eine Anlaufschaltung, die den Anlaufstrom durch Umschalten von Stern auf Dreieck reduziert",
+        "Eine Bremsschaltung, die die Auslaufzeit durch Gleichstrominjektion in den Stator verkürzt",
         "Eine Regelschaltung, die die Motordrehzahl durch Verändern der Polpaarzahl anpasst",
-        "Eine Bremsschaltung, die die Auslaufzeit durch Gleichstrominjektion in den Stator verkürzt"
+        "Eine Anlaufschaltung, die den Anlaufstrom durch Umschalten von Stern auf Dreieck reduziert"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Bei der Stern-Dreieck-Schaltung startet der Motor zunächst in Sternschaltung mit reduzierter Spannung, wodurch der Anlaufstrom auf ein Drittel des Dreieckstroms sinkt. Nach dem Hochlauf wird automatisch auf Dreieckschaltung umgeschaltet und der Motor läuft mit voller Leistung.",
       "difficulty": "mittel",
       "tags": [
@@ -144,12 +144,12 @@
       "id": "st-010",
       "q": "In welchem Verhältnis steht der Anlaufstrom bei Stern- zur Dreieckschaltung?",
       "options": [
-        "1 : 2 (Sternstrom ist 1/2 des Dreieckstroms)",
-        "1 : 3 (Sternstrom ist 1/3 des Dreieckstroms)",
+        "1 : 4 (Sternstrom ist 1/4 des Dreieckstroms)",
         "2 : 3 (Sternstrom ist 2/3 des Dreieckstroms)",
-        "1 : 4 (Sternstrom ist 1/4 des Dreieckstroms)"
+        "1 : 3 (Sternstrom ist 1/3 des Dreieckstroms)",
+        "1 : 2 (Sternstrom ist 1/2 des Dreieckstroms)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "In der Sternschaltung liegt an jedem Motorstrang nur die Spannung geteilt durch Wurzel 3. Dadurch sind Strom und Leistungsaufnahme nur ein Drittel der Dreieckwerte. Deshalb wird die Stern-Dreieck-Schaltung zur Reduzierung des Anlaufstroms eingesetzt.",
       "difficulty": "schwer",
       "tags": [
@@ -162,11 +162,11 @@
       "q": "Was ist ein Zeitrelais?",
       "options": [
         "Ein Relais mit einstellbarer Hysterese zwischen Schaltpunkt und Rückschaltvorgang",
+        "Ein Relais mit einstellbarer Frequenz zwischen Einschaltzyklus und Abschaltzyklus",
         "Ein Relais mit einstellbarer Verzögerung zwischen Ansteuerung und Schaltvorgang",
-        "Ein Relais mit einstellbarer Stromstärke zwischen Einschaltpegel und Abschaltpegel",
-        "Ein Relais mit einstellbarer Frequenz zwischen Einschaltzyklus und Abschaltzyklus"
+        "Ein Relais mit einstellbarer Stromstärke zwischen Einschaltpegel und Abschaltpegel"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Zeitrelais ist ein spezielles Relais, bei dem zwischen Ansteuerung und Schaltvorgang eine einstellbare Verzögerungszeit liegt. Es gibt verschiedene Typen wie anzugsverzögert, abfallverzögert und impulsformend. Zeitrelais werden häufig in Stern-Dreieck-Schaltungen und Ablaufsteuerungen eingesetzt.",
       "difficulty": "leicht",
       "tags": [
@@ -178,12 +178,12 @@
       "id": "st-012",
       "q": "Was bedeutet 'anzugsverzögert' bei einem Zeitrelais?",
       "options": [
-        "Das Relais schaltet sofort ein und öffnet verzögert nach Abschalten der Steuerspannung",
         "Das Relais schaltet verzögert ein nach Anlegen der Steuerspannung",
         "Das Relais schaltet periodisch ein und aus nach einem festgelegten Taktmuster",
+        "Das Relais schaltet sofort ein und öffnet verzögert nach Abschalten der Steuerspannung",
         "Das Relais schaltet impulsförmig ein und kehrt sofort nach Schaltvorgang in Ruhelage zurück"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei einem anzugsverzögerten Zeitrelais beginnt nach dem Anlegen der Steuerspannung eine einstellbare Verzögerungszeit zu laufen. Erst nach Ablauf dieser Zeit werden die Kontakte geschaltet. Dieses Verhalten wird z.B. bei der Stern-Dreieck-Umschaltung verwendet.",
       "difficulty": "mittel",
       "tags": [
@@ -195,12 +195,12 @@
       "id": "st-013",
       "q": "Was bedeutet 'abfallverzögert' bei einem Zeitrelais?",
       "options": [
-        "Das Relais schaltet verzögert ein nach Anlegen der Steuerspannung am Eingang",
         "Das Relais hält nach Wegnahme der Steuerspannung noch die eingestellte Zeit",
-        "Das Relais schaltet impulsförmig um nach einem definierten Taktintervall",
-        "Das Relais reagiert mit Hysterese beim Unterschreiten der Mindest-Haltespannung"
+        "Das Relais reagiert mit Hysterese beim Unterschreiten der Mindest-Haltespannung",
+        "Das Relais schaltet verzögert ein nach Anlegen der Steuerspannung am Eingang",
+        "Das Relais schaltet impulsförmig um nach einem definierten Taktintervall"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei einem abfallverzögerten Zeitrelais bleiben die Kontakte nach dem Abschalten der Steuerspannung noch für die eingestellte Verzögerungszeit in ihrer Schaltstellung. Erst nach Ablauf dieser Zeit fallen die Kontakte in ihren Ruhezustand zurück. Dies wird z.B. für Nachlaufsteuerungen von Lüftern eingesetzt.",
       "difficulty": "mittel",
       "tags": [
@@ -212,12 +212,12 @@
       "id": "st-014",
       "q": "Welche Klemmenbezeichnungen haben die Hauptkontakte eines Schützes?",
       "options": [
-        "A1, A2, B1, B2, C1, C2 für die drei Phasenpaare",
-        "1/L1, 2/T1, 3/L2, 4/T2, 5/L3, 6/T3",
         "13, 14, 21, 22, 31, 32 für die Kontaktpaare",
-        "U1, V1, W1, U2, V2, W2 für die Klemmenpaare"
+        "U1, V1, W1, U2, V2, W2 für die Klemmenpaare",
+        "1/L1, 2/T1, 3/L2, 4/T2, 5/L3, 6/T3",
+        "A1, A2, B1, B2, C1, C2 für die drei Phasenpaare"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die Hauptkontakte eines Schützes werden mit 1/L1-2/T1, 3/L2-4/T2 und 5/L3-6/T3 bezeichnet. Dabei stehen die ungeraden Nummern für die Netzeingänge (L = Line) und die geraden Nummern für die Motorausgänge (T = Terminal). So lassen sich Eingang und Ausgang eindeutig zuordnen.",
       "difficulty": "mittel",
       "tags": [
@@ -229,12 +229,12 @@
       "id": "st-015",
       "q": "Welche Klemmenbezeichnungen hat die Spule eines Schützes?",
       "options": [
+        "K1 und K2 für den Spulenkontakt",
         "E1 und E2 für den Spuleneingang",
         "A1 und A2",
-        "S1 und S2 für den Steueranschluss",
-        "K1 und K2 für den Spulenkontakt"
+        "S1 und S2 für den Steueranschluss"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die Spulenanschlüsse eines Schützes werden mit A1 und A2 bezeichnet. Bei Gleichspannung wird A1 an Plus und A2 an Minus angeschlossen. Bei Wechselspannung ist die Polarität nicht relevant, da die Spule mit AC betrieben wird.",
       "difficulty": "leicht",
       "tags": [
@@ -246,12 +246,12 @@
       "id": "st-016",
       "q": "Welche Klemmenbezeichnungen hat ein Schließer-Hilfskontakt?",
       "options": [
+        "21, 22 (erste Ziffer = Kontaktnummer, zweite = Öffnerfunktion)",
         "11, 12 (erste Ziffer = Kontaktnummer, zweite = Öffnerfunktion)",
         "13, 14 (erste Ziffer = Kontaktnummer, zweite = Funktion)",
-        "A1, A2 (erste Ziffer = Spulennummer, zweite = Anschlussseite)",
-        "21, 22 (erste Ziffer = Kontaktnummer, zweite = Öffnerfunktion)"
+        "A1, A2 (erste Ziffer = Spulennummer, zweite = Anschlussseite)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Bei Schließer-Hilfskontakten enden die Klemmenbezeichnungen auf 3 und 4, z.B. 13-14 oder 23-24. Die erste Ziffer gibt die laufende Kontaktnummer an, die Endziffern 3-4 kennzeichnen einen Schließer. Im Vergleich dazu enden Öffnerkontakte auf 1-2, z.B. 11-12 oder 21-22.",
       "difficulty": "mittel",
       "tags": [
@@ -263,12 +263,12 @@
       "id": "st-017",
       "q": "Was ist ein Motorschutzschalter?",
       "options": [
-        "Ein Schalter mit elektronischer Drehzahlüberwachung und Frequenzauswertung zum Schutz des Motors",
         "Ein Schalter mit thermischem und magnetischem Auslöser zum Schutz des Motors",
         "Ein Schalter mit kapazitiver Strommessung und Spannungsregelung zum Schutz des Motors",
+        "Ein Schalter mit elektronischer Drehzahlüberwachung und Frequenzauswertung zum Schutz des Motors",
         "Ein Schalter mit induktiver Leistungserfassung und Phasenüberwachung zum Schutz des Motors"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Motorschutzschalter vereint zwei Schutzfunktionen in einem Gerät: Der thermische Auslöser (Bimetall) schützt vor Überlast durch langsam ansteigende Ströme. Der magnetische Auslöser reagiert bei Kurzschluss sofort und trennt den Motor schnell vom Netz.",
       "difficulty": "leicht",
       "tags": [
@@ -281,11 +281,11 @@
       "q": "Was versteht man unter Tippbetrieb?",
       "options": [
         "Motor läuft mit reduzierter Drehzahl über einen Frequenzumrichter gesteuert",
-        "Motor läuft nur solange der Taster gedrückt wird, keine Selbsthaltung",
+        "Motor läuft nach Impuls bis zum automatischen Abschalten durch Endschalter",
         "Motor läuft im Intervallbetrieb über ein Zeitrelais mit Taktsteuerung",
-        "Motor läuft nach Impuls bis zum automatischen Abschalten durch Endschalter"
+        "Motor läuft nur solange der Taster gedrückt wird, keine Selbsthaltung"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Beim Tippbetrieb läuft der Motor nur so lange, wie der Taster gedrückt gehalten wird. Es gibt keinen Selbsthaltekontakt, der den Motor weiterlaufen lässt. Diese Betriebsart wird häufig für Einrichtarbeiten und genaues Positionieren verwendet.",
       "difficulty": "leicht",
       "tags": [
@@ -297,10 +297,10 @@
       "id": "st-021",
       "q": "Was ist ein Not-Halt (Not-Aus)?",
       "options": [
-        "Eine Überwachungseinrichtung zur automatischen Abschaltung bei Übertemperatur",
+        "Eine Steuereinrichtung zur kontrollierten Bremsung bei Drehzahlüberschreitung",
         "Eine Sicherheitseinrichtung zum sofortigen Stillsetzen bei Gefahr",
-        "Eine Schutzeinrichtung zur verzögerten Abschaltung bei Überlastbetrieb",
-        "Eine Steuereinrichtung zur kontrollierten Bremsung bei Drehzahlüberschreitung"
+        "Eine Überwachungseinrichtung zur automatischen Abschaltung bei Übertemperatur",
+        "Eine Schutzeinrichtung zur verzögerten Abschaltung bei Überlastbetrieb"
       ],
       "correct": 1,
       "explanation": "Ein Not-Halt ist eine Sicherheitseinrichtung, die im Gefahrenfall das sofortige Stillsetzen einer Maschine oder Anlage ermöglicht. Er muss als roter Pilztaster auf gelbem Hintergrund ausgeführt, rastend und jederzeit leicht erreichbar sein. Die Entriegelung erfolgt nur durch bewusstes Drehen oder Ziehen.",
@@ -314,12 +314,12 @@
       "id": "st-022",
       "q": "Welche Farbe hat ein Not-Halt-Taster?",
       "options": [
-        "Schwarz auf weißem Hintergrund",
-        "Rot auf gelbem Hintergrund",
+        "Blau auf schwarzem Hintergrund",
         "Grün auf grauem Hintergrund",
-        "Blau auf schwarzem Hintergrund"
+        "Schwarz auf weißem Hintergrund",
+        "Rot auf gelbem Hintergrund"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein Not-Halt-Taster muss laut Norm als roter Pilztaster auf gelbem Hintergrund ausgeführt sein. Die auffällige Farbkombination Rot-Gelb signalisiert Gefahr und ermöglicht schnelles Auffinden im Notfall. Der Taster muss rastend sein und darf nur durch bewusstes Drehen oder Ziehen entriegelt werden.",
       "difficulty": "leicht",
       "tags": [
@@ -331,12 +331,12 @@
       "id": "st-023",
       "q": "Was bedeutet die Abkürzung SPS?",
       "options": [
-        "Sicherheitsprogrammierbare Schutzsteuerung",
-        "Speicherprogrammierbare Steuerung",
+        "Sensorprogrammierbare Steuereinheit",
         "Signalprozessorgestützte Schaltanlage",
-        "Sensorprogrammierbare Steuereinheit"
+        "Sicherheitsprogrammierbare Schutzsteuerung",
+        "Speicherprogrammierbare Steuerung"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "SPS steht für Speicherprogrammierbare Steuerung und ist ein Industriecomputer, der zur Steuerung und Regelung von Maschinen und Anlagen eingesetzt wird. Das Programm wird im Speicher abgelegt und kann ohne Änderung der Verdrahtung angepasst werden. International ist die Bezeichnung PLC (Programmable Logic Controller) gebräuchlich.",
       "difficulty": "leicht",
       "tags": [
@@ -348,12 +348,12 @@
       "id": "st-024",
       "q": "Was ist der Vorteil einer SPS gegenüber einer Relaissteuerung?",
       "options": [
-        "Robuster durch mechanische Kontakte, wartungsfreier Betrieb, bewährte Schaltungstechnik",
         "Flexibel durch Programmänderung, weniger Verdrahtung, Diagnose möglich",
-        "Günstiger durch einfache Bauteile, schnellere Schaltzeiten, höhere Kontaktleistung",
-        "Sicherer durch galvanische Trennung, redundante Schaltkreise, mechanische Verriegelung"
+        "Sicherer durch galvanische Trennung, redundante Schaltkreise, mechanische Verriegelung",
+        "Robuster durch mechanische Kontakte, wartungsfreier Betrieb, bewährte Schaltungstechnik",
+        "Günstiger durch einfache Bauteile, schnellere Schaltzeiten, höhere Kontaktleistung"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der größte Vorteil einer SPS liegt in ihrer Flexibilität: Steuerungsabläufe können durch Programmänderungen angepasst werden, ohne die Verdrahtung zu ändern. Zusätzlich bietet eine SPS Diagnosemöglichkeiten, Visualisierung und Fernwartung. Bei komplexeren Steuerungen spart sie außerdem erheblichen Verdrahtungsaufwand.",
       "difficulty": "mittel",
       "tags": [
@@ -365,12 +365,12 @@
       "id": "st-025",
       "q": "Aus welchen Hauptteilen besteht eine SPS?",
       "options": [
-        "Schütze, Relais (Öffner/Schließer), Motorschutzschalter, Zeitrelais, Hilfskontaktblock",
         "CPU, Eingänge (DI/AI), Ausgänge (DO/AO), Stromversorgung, Programmspeicher",
-        "Transformator, Gleichrichter (AC/DC), Wechselrichter, Frequenzfilter, Leistungsstufe",
-        "Sensoren, Aktoren (pneumatisch/hydraulisch), Bussystem, Bedienfeld, Sicherheitsrelais"
+        "Schütze, Relais (Öffner/Schließer), Motorschutzschalter, Zeitrelais, Hilfskontaktblock",
+        "Sensoren, Aktoren (pneumatisch/hydraulisch), Bussystem, Bedienfeld, Sicherheitsrelais",
+        "Transformator, Gleichrichter (AC/DC), Wechselrichter, Frequenzfilter, Leistungsstufe"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Eine SPS besteht aus fünf Hauptkomponenten: Die CPU als Zentraleinheit verarbeitet das Programm. Eingabebaugruppen (digital und analog) erfassen Signale von Sensoren und Tastern. Ausgabebaugruppen steuern Aktoren wie Motoren und Ventile an. Das Netzteil versorgt alle Komponenten mit Spannung und der Programmspeicher enthält das Steuerungsprogramm.",
       "difficulty": "mittel",
       "tags": [
@@ -383,11 +383,11 @@
       "q": "Was sind digitale Eingänge einer SPS?",
       "options": [
         "Eingänge für stufenlose Messwerte (0-10V, 4-20mA) von Sensoren",
-        "Eingänge für Schaltsignale (EIN/AUS, 0/1)",
         "Eingänge für pulsweitenmodulierte Steuersignale von Frequenzumrichtern",
+        "Eingänge für Schaltsignale (EIN/AUS, 0/1)",
         "Eingänge für serielle Datenkommunikation (RS485, Profibus) von Feldgeräten"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Digitale Eingänge (DI = Digital Input) erfassen binäre Signale, also nur die Zustände EIN (1) oder AUS (0). Typische Signalgeber sind Taster, Schalter, Endschalter und binäre Sensoren. Die Signalspannung beträgt üblicherweise 24V DC.",
       "difficulty": "leicht",
       "tags": [
@@ -399,12 +399,12 @@
       "id": "st-027",
       "q": "Was sind analoge Eingänge einer SPS?",
       "options": [
-        "Eingänge für binäre Schaltsignale (EIN/AUS) von Endschaltern und Tastern",
         "Eingänge für stufenlose Messwerte (z.B. 0-10V, 4-20mA)",
+        "Eingänge für binäre Schaltsignale (EIN/AUS) von Endschaltern und Tastern",
         "Eingänge für pulsweitenmodulierte Steuersignale von Drehzahlreglern und Stellantrieben",
         "Eingänge für digitale Buskommunikation (z.B. Profinet, Modbus) von Feldgeräten"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Analoge Eingänge (AI = Analog Input) erfassen stufenlose, kontinuierliche Messwerte wie Temperatur, Druck oder Durchfluss. Die Signale liegen typischerweise als Spannungssignal (0-10V) oder Stromsignal (4-20mA) vor. Ein Analog-Digital-Wandler in der SPS setzt diese Signale in digitale Zahlenwerte um.",
       "difficulty": "mittel",
       "tags": [
@@ -416,10 +416,10 @@
       "id": "st-028",
       "q": "Was passiert bei einem Sanftanlauf (Softstarter)?",
       "options": [
-        "Die Frequenz wird schrittweise erhöht, um die Motordrehzahl stufenweise zu steigern",
+        "Der Wicklungswiderstand wird stufenweise reduziert, um den Anlaufstrom zu verringern",
         "Die Spannung wird langsam hochgefahren, um den Anlaufstrom zu begrenzen",
-        "Die Polpaarzahl wird elektronisch umgeschaltet, um das Drehmoment anzupassen",
-        "Der Wicklungswiderstand wird stufenweise reduziert, um den Anlaufstrom zu verringern"
+        "Die Frequenz wird schrittweise erhöht, um die Motordrehzahl stufenweise zu steigern",
+        "Die Polpaarzahl wird elektronisch umgeschaltet, um das Drehmoment anzupassen"
       ],
       "correct": 1,
       "explanation": "Beim Sanftanlauf (Softstarter) wird die Motorspannung mittels Phasenanschnittsteuerung über Thyristoren langsam von einem niedrigen Wert auf die volle Netzspannung hochgefahren. Dadurch werden der Anlaufstrom und die mechanische Belastung auf Antrieb und Getriebe deutlich reduziert.",
@@ -433,12 +433,12 @@
       "id": "st-029",
       "q": "Was ist ein Frequenzumrichter?",
       "options": [
-        "Ein Gerät zur galvanischen Netztrennung durch Veränderung von Windungszahl und Übersetzung",
         "Ein Gerät zur stufenlosen Drehzahlregelung durch Änderung von Frequenz und Spannung",
-        "Ein Gerät zur Leistungsfaktorkorrektur durch Kompensation von Blindleistung und Oberwellen",
-        "Ein Gerät zur Gleichspannungswandlung durch Anpassung von Eingangsstrom und Ausgangsspannung"
+        "Ein Gerät zur Gleichspannungswandlung durch Anpassung von Eingangsstrom und Ausgangsspannung",
+        "Ein Gerät zur galvanischen Netztrennung durch Veränderung von Windungszahl und Übersetzung",
+        "Ein Gerät zur Leistungsfaktorkorrektur durch Kompensation von Blindleistung und Oberwellen"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Frequenzumrichter (FU) wandelt die feste Netzfrequenz von 50 Hz in eine variable Ausgangsfrequenz um und passt gleichzeitig die Spannung proportional an. Dadurch kann die Drehzahl von Drehstrommotoren stufenlos geregelt werden. Die Drehzahl des Motors ist direkt proportional zur eingestellten Frequenz.",
       "difficulty": "mittel",
       "tags": [
@@ -450,12 +450,12 @@
       "id": "st-030",
       "q": "Welche Vorteile bietet ein Frequenzumrichter?",
       "options": [
+        "Maximale Drehzahl, sofortiger Anlauf, Kurzschlussschutz, Temperaturüberwachung des Netzes",
         "Feste Drehzahl, direkter Anlauf, Spannungsstabilisierung, Netzrückspeisung bei Überlast",
         "Stufenlose Drehzahl, sanfter Anlauf, Energieeinsparung, Prozessoptimierung",
-        "Konstante Leistung, schneller Anlauf, Blindleistungskompensation, Oberwellenfilterung",
-        "Maximale Drehzahl, sofortiger Anlauf, Kurzschlussschutz, Temperaturüberwachung des Netzes"
+        "Konstante Leistung, schneller Anlauf, Blindleistungskompensation, Oberwellenfilterung"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Frequenzumrichter bietet zahlreiche Vorteile: Die Drehzahl lässt sich stufenlos einstellen, der Motor wird sanft und schonend hochgefahren, und bei Teillast wird erheblich Energie eingespart. Zusätzlich ermöglicht der FU eine präzise Prozessoptimierung und den Betrieb in allen vier Quadranten (Motorbetrieb und Bremsbetrieb in beide Drehrichtungen).",
       "difficulty": "mittel",
       "tags": [
@@ -467,12 +467,12 @@
       "id": "st-033",
       "q": "Was bedeutet das Leistungsschild '230/400V' bei einem Drehstrommotor?",
       "options": [
+        "Bei 230V Netz: Einphasenbetrieb mit Kondensator, bei 400V Netz: Drehstrombetrieb ohne Anlasser",
         "Bei 230V Netz: Sternschaltung der Wicklungen, bei 400V Netz: Dreieckschaltung der Wicklungen",
         "Bei 230V Netz: Dreieckschaltung, bei 400V Netz: Sternschaltung",
-        "Bei 230V Netz: Parallelschaltung der Wicklungen, bei 400V Netz: Reihenschaltung der Wicklungen",
-        "Bei 230V Netz: Einphasenbetrieb mit Kondensator, bei 400V Netz: Drehstrombetrieb ohne Anlasser"
+        "Bei 230V Netz: Parallelschaltung der Wicklungen, bei 400V Netz: Reihenschaltung der Wicklungen"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die Angabe 230/400V auf dem Leistungsschild bedeutet, dass die Strangspannung des Motors 230V beträgt. Bei einem 230V-Netz wird der Motor in Dreieckschaltung betrieben, da hier die Strangspannung gleich der Netzspannung ist. Bei einem 400V-Netz wird Sternschaltung gewählt, da die Strangspannung dann 400V/Wurzel3 = 230V beträgt.",
       "difficulty": "schwer",
       "tags": [
@@ -485,11 +485,11 @@
       "q": "Wann ist eine Stern-Dreieck-Schaltung möglich?",
       "options": [
         "Immer wenn der Motor eine Leistung von mehr als drei Kilowatt am Leistungsschild aufweist",
+        "Immer wenn der Motor mit einem thermischen Überlastrelais als Motorschutzeinrichtung ausgestattet ist",
         "Nur wenn die Strangspannung des Motors der Netzspannung entspricht (z.B. 400/690V Motor bei 400V Netz)",
-        "Immer wenn der Motor über sechs Klemmen im Anschlusskasten für beide Drehrichtungen verfügt",
-        "Immer wenn der Motor mit einem thermischen Überlastrelais als Motorschutzeinrichtung ausgestattet ist"
+        "Immer wenn der Motor über sechs Klemmen im Anschlusskasten für beide Drehrichtungen verfügt"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Eine Stern-Dreieck-Schaltung ist nur möglich, wenn die Strangspannung des Motors der Netzspannung entspricht. Bei einem 400V-Netz muss der Motor also die Angabe 400/690V tragen. Ein 230/400V-Motor darf bei 400V-Netz nicht in Dreieck geschaltet werden, da sonst die doppelte Strangspannung anliegen und die Wicklung zerstört würde.",
       "difficulty": "schwer",
       "tags": [
@@ -501,12 +501,12 @@
       "id": "st-037",
       "q": "Welche Aufgabe hat ein Hilfskontakt am Schütz?",
       "options": [
-        "Übertragung hoher Lastströme im Hauptstromkreis (Motorversorgung, Heizungssteuerung, Beleuchtung)",
         "Signalverarbeitung im Steuerstromkreis (Selbsthaltung, Verriegelung, Meldung)",
+        "Übertragung hoher Lastströme im Hauptstromkreis (Motorversorgung, Heizungssteuerung, Beleuchtung)",
         "Absicherung gegen Kurzschluss im Leistungsteil (Sicherungsfunktion, Leitungsschutz, Abschaltung)",
         "Überwachung der Motortemperatur im Wicklungsbereich (Thermoschutz, Auslösung, Fehlermeldung)"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Hilfskontakte sind kleine Kontakte am Schütz, die für den Steuerstromkreis bestimmt sind. Sie übernehmen wichtige Aufgaben wie die Selbsthaltung des Schützes, die Verriegelung gegen gleichzeitiges Schalten (z.B. bei Wendeschützschaltungen) und die Ansteuerung von Meldeleuchten oder SPS-Eingängen.",
       "difficulty": "leicht",
       "tags": [
@@ -518,12 +518,12 @@
       "id": "st-039",
       "q": "Was versteht man unter einer UND-Verknüpfung in der Steuerungstechnik?",
       "options": [
-        "Mindestens ein Eingang muss aktiv sein, damit der Ausgang sofort aktiv wird",
-        "Alle Eingänge müssen gleichzeitig aktiv sein, damit der Ausgang aktiv wird",
+        "Die Eingänge werden nacheinander abgefragt, damit der Ausgang zeitversetzt schaltet",
         "Der Ausgang wird aktiv, sobald sich der Zustand eines beliebigen Eingangs ändert",
-        "Die Eingänge werden nacheinander abgefragt, damit der Ausgang zeitversetzt schaltet"
+        "Mindestens ein Eingang muss aktiv sein, damit der Ausgang sofort aktiv wird",
+        "Alle Eingänge müssen gleichzeitig aktiv sein, damit der Ausgang aktiv wird"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Bei einer UND-Verknüpfung (AND) wird der Ausgang nur dann aktiv (logisch 1), wenn ALLE Eingänge gleichzeitig aktiv sind. Ist auch nur ein Eingang inaktiv, bleibt der Ausgang aus. In der Kontakttechnik wird die UND-Funktion durch eine Reihenschaltung von Kontakten realisiert.",
       "difficulty": "leicht",
       "tags": [
@@ -536,11 +536,11 @@
       "q": "Was versteht man unter einer ODER-Verknüpfung in der Steuerungstechnik?",
       "options": [
         "Alle Eingänge müssen gleichzeitig aktiv sein, damit der Ausgang geschaltet wird",
-        "Mindestens ein Eingang muss aktiv sein, damit der Ausgang aktiv wird",
+        "Der Ausgang wird invertiert, sobald sich der Zustand eines beliebigen Eingangs ändert",
         "Die Eingänge werden nacheinander ausgewertet, damit der Ausgang priorisiert schaltet",
-        "Der Ausgang wird invertiert, sobald sich der Zustand eines beliebigen Eingangs ändert"
+        "Mindestens ein Eingang muss aktiv sein, damit der Ausgang aktiv wird"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Bei einer ODER-Verknüpfung (OR) wird der Ausgang aktiv (logisch 1), sobald mindestens ein Eingang aktiv ist. Der Ausgang ist nur dann inaktiv, wenn alle Eingänge gleichzeitig inaktiv sind. In der Kontakttechnik wird die ODER-Funktion durch eine Parallelschaltung von Kontakten realisiert.",
       "difficulty": "leicht",
       "tags": [
@@ -553,11 +553,11 @@
       "q": "Wie wird eine UND-Funktion mit Kontakten realisiert?",
       "options": [
         "Durch Parallelschaltung der Kontakte",
-        "Durch Reihenschaltung der Kontakte",
         "Durch Wechselschaltung der Kontakte",
+        "Durch Reihenschaltung der Kontakte",
         "Durch Kreuzschaltung der Kontakte"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die UND-Funktion wird durch eine Reihenschaltung der Kontakte realisiert. Der Strom kann nur dann fließen, wenn alle in Reihe geschalteten Kontakte gleichzeitig geschlossen sind. Ist auch nur ein Kontakt offen, ist der Stromkreis unterbrochen.",
       "difficulty": "leicht",
       "tags": [
@@ -570,10 +570,10 @@
       "id": "st-042",
       "q": "Wie wird eine ODER-Funktion mit Kontakten realisiert?",
       "options": [
-        "Durch Reihenschaltung der Kontakte",
+        "Durch Brückenschaltung der Kontakte",
         "Durch Parallelschaltung der Kontakte",
         "Durch Wechselschaltung der Kontakte",
-        "Durch Brückenschaltung der Kontakte"
+        "Durch Reihenschaltung der Kontakte"
       ],
       "correct": 1,
       "explanation": "Die ODER-Funktion wird durch eine Parallelschaltung der Kontakte realisiert. Der Strom kann fließen, sobald mindestens einer der parallel geschalteten Kontakte geschlossen ist. Nur wenn alle Kontakte gleichzeitig offen sind, wird der Stromkreis unterbrochen.",
@@ -588,12 +588,12 @@
       "id": "st-043",
       "q": "Was ist bei der Installation eines Frequenzumrichters zu beachten?",
       "options": [
-        "Standardverdrahtung mit ungeschirmten Leitungen, normale Abstände, natürliche Konvektion",
         "EMV-gerechte Installation, geschirmte Motorkabel, Mindestabstände, Kühlung",
+        "Direkte Leitungsverlegung mit Standardkabeln, minimale Abstände, passive Wärmeableitung",
         "Einfache Schraubklemmen mit flexiblen Leitungen, beliebige Einbaulage, Raumtemperatur",
-        "Direkte Leitungsverlegung mit Standardkabeln, minimale Abstände, passive Wärmeableitung"
+        "Standardverdrahtung mit ungeschirmten Leitungen, normale Abstände, natürliche Konvektion"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei der Installation eines Frequenzumrichters sind EMV-Maßnahmen besonders wichtig, da der FU hochfrequente Störungen erzeugt. Geschirmte Motorkabel und EMV-Filter verhindern Störungen anderer Geräte. Zusätzlich müssen Mindestabstände zu anderen Geräten und eine ausreichende Kühlung sichergestellt werden.",
       "difficulty": "mittel",
       "tags": [
@@ -605,12 +605,12 @@
       "id": "st-044",
       "q": "Was ist dominierend EIN bei einer Selbsthalteschaltung?",
       "options": [
-        "Der AUS-Taster hat Vorrang, Motor schaltet bei gleichzeitigem Drücken von EIN und AUS ab",
-        "Der EIN-Taster hat Vorrang, Motor bleibt bei gleichzeitigem Drücken von EIN und AUS eingeschaltet",
+        "Der zuletzt betätigte Taster hat Vorrang, Motor wechselt bei gleichzeitigem Drücken den Zustand",
         "Beide Taster haben Vorrang abwechselnd, Motor toggelt bei gleichzeitigem Drücken periodisch um",
-        "Der zuletzt betätigte Taster hat Vorrang, Motor wechselt bei gleichzeitigem Drücken den Zustand"
+        "Der AUS-Taster hat Vorrang, Motor schaltet bei gleichzeitigem Drücken von EIN und AUS ab",
+        "Der EIN-Taster hat Vorrang, Motor bleibt bei gleichzeitigem Drücken von EIN und AUS eingeschaltet"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Bei einer dominierend-EIN-Schaltung hat der EIN-Taster Vorrang. Werden EIN und AUS gleichzeitig gedrückt, bleibt der Motor eingeschaltet, weil der EIN-Taster den AUS-Taster überbrückt. Diese Schaltungsart ist in der Praxis seltener, da aus Sicherheitsgründen meist dominierend AUS bevorzugt wird.",
       "difficulty": "schwer",
       "tags": [
@@ -623,11 +623,11 @@
       "q": "Was ist dominierend AUS bei einer Selbsthalteschaltung?",
       "options": [
         "Der EIN-Taster hat Vorrang, Motor bleibt bei gleichzeitigem Drücken von EIN und AUS eingeschaltet",
-        "Der AUS-Taster hat Vorrang, Motor schaltet bei gleichzeitigem Drücken von EIN und AUS aus",
+        "Der zuletzt betätigte Taster hat Vorrang, Motor behält bei gleichzeitigem Drücken den letzten Zustand",
         "Beide Taster haben Vorrang abwechselnd, Motor toggelt bei gleichzeitigem Drücken periodisch um",
-        "Der zuletzt betätigte Taster hat Vorrang, Motor behält bei gleichzeitigem Drücken den letzten Zustand"
+        "Der AUS-Taster hat Vorrang, Motor schaltet bei gleichzeitigem Drücken von EIN und AUS aus"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Bei einer dominierend-AUS-Schaltung hat der AUS-Taster Vorrang. Werden EIN und AUS gleichzeitig gedrückt, schaltet der Motor aus, weil der AUS-Taster (Öffner) in Reihe mit dem Selbsthaltekontakt liegt und den Stromkreis unterbricht. Diese Variante ist der Normalfall in der Praxis, da sie sicherer ist.",
       "difficulty": "schwer",
       "tags": [

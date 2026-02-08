@@ -8,12 +8,12 @@
       "id": "ns-001",
       "q": "Welche drei Netzsysteme werden nach der Art der Erdverbindung unterschieden?",
       "options": [
-        "TN-System, IT-System, PE-System",
-        "TN-System, TT-System, IT-System",
         "TT-System, PE-System, PEN-System",
-        "IT-System, TN-System, FI-System"
+        "TN-System, IT-System, PE-System",
+        "IT-System, TN-System, FI-System",
+        "TN-System, TT-System, IT-System"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Die drei Netzsysteme nach der Art der Erdverbindung sind TN (Terre Neutre), TT (Terre Terre) und IT (Isole Terre). Sie unterscheiden sich in der Art, wie der Sternpunkt der Stromquelle und die Koerper der Betriebsmittel mit der Erde verbunden sind.",
       "difficulty": "leicht",
       "tags": [
@@ -25,12 +25,12 @@
       "id": "ns-002",
       "q": "Was bedeutet der erste Buchstabe bei der Netzsystembezeichnung (T oder I)?",
       "options": [
-        "Die Verbindungsart der Betriebsmittelkoerper zur Schutzerde",
         "Die Verhältnisse der Stromquelle (Sternpunkt) zur Erde",
+        "Die Beschaltung der Neutralleiteranbindung am Transformator",
         "Die Aufteilung der Leiterfunktionen im Verteilungsnetz",
-        "Die Beschaltung der Neutralleiteranbindung am Transformator"
+        "Die Verbindungsart der Betriebsmittelkoerper zur Schutzerde"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der erste Buchstabe beschreibt die Verhaeltnisse der Stromquelle zur Erde. T (Terre) bedeutet, dass der Sternpunkt direkt geerdet ist. I (Isole) bedeutet, dass der Sternpunkt isoliert oder ueber eine hohe Impedanz geerdet ist.",
       "difficulty": "mittel",
       "tags": [
@@ -42,12 +42,12 @@
       "id": "ns-003",
       "q": "Was bedeutet der zweite Buchstabe bei der Netzsystembezeichnung (T oder N)?",
       "options": [
-        "Die Verbindungsart der Stromquelle zum Versorgungsnetz",
-        "Die Verhältnisse der Körper (Gehäuse) zur Erde",
+        "Die Absicherungsart der Schutzleiterverbindung zum Erder",
         "Die Schaltungsform der Neutralleiteranbindung im Netz",
-        "Die Absicherungsart der Schutzleiterverbindung zum Erder"
+        "Die Verbindungsart der Stromquelle zum Versorgungsnetz",
+        "Die Verhältnisse der Körper (Gehäuse) zur Erde"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Der zweite Buchstabe beschreibt die Verhaeltnisse der Koerper (Gehaeuse) der Betriebsmittel zur Erde. T bedeutet direkte Erdung ueber einen eigenen Erder, N bedeutet Verbindung mit dem Neutralleiter des Netzes (Nullung).",
       "difficulty": "mittel",
       "tags": [
@@ -59,12 +59,12 @@
       "id": "ns-004",
       "q": "Was ist das TN-System?",
       "options": [
-        "Sternpunkt isoliert, Koerper ueber eigenen Erder mit der Erde verbunden",
-        "Sternpunkt geerdet, Körper mit Neutralleiter verbunden (Nullung)",
+        "Sternpunkt und Koerper jeweils ueber getrennte Erder mit Erde verbunden",
         "Sternpunkt hochohmig geerdet, Koerper ueber separaten Erder angeschlossen",
-        "Sternpunkt und Koerper jeweils ueber getrennte Erder mit Erde verbunden"
+        "Sternpunkt geerdet, Körper mit Neutralleiter verbunden (Nullung)",
+        "Sternpunkt isoliert, Koerper ueber eigenen Erder mit der Erde verbunden"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Beim TN-System ist der Sternpunkt des Transformators direkt geerdet (T) und die Koerper der Betriebsmittel sind mit dem Neutralleiter des Netzes verbunden (N). Bei einem Koerperschluss fliesst ein hoher Kurzschlussstrom, der den Leitungsschutzschalter zur schnellen Abschaltung bringt.",
       "difficulty": "mittel",
       "tags": [
@@ -76,12 +76,12 @@
       "id": "ns-005",
       "q": "Welche Varianten des TN-Systems gibt es?",
       "options": [
-        "TN-A, TN-B, TN-A-B",
         "TN-S, TN-C, TN-C-S",
+        "TN-I, TN-T, TN-I-T",
         "TN-P, TN-E, TN-P-E",
-        "TN-I, TN-T, TN-I-T"
+        "TN-A, TN-B, TN-A-B"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Die drei Varianten des TN-Systems unterscheiden sich in der Fuehrung von Schutz- und Neutralleiter. TN-S hat PE und N durchgehend getrennt, TN-C fuehrt beide als kombinierten PEN-Leiter, und TN-C-S beginnt kombiniert und trennt ab einem definierten Punkt auf.",
       "difficulty": "mittel",
       "tags": [
@@ -93,12 +93,12 @@
       "id": "ns-006",
       "q": "Was bedeutet TN-S?",
       "options": [
-        "PE und N sind zu einem gemeinsamen PEN-Leiter kombiniert (Combined)",
-        "PE und N sind durchgehend getrennt (Separated)",
         "PE und N werden abwechselnd zusammengefuehrt und wieder getrennt",
-        "PE und N sind erst getrennt und werden dann zusammengefuehrt"
+        "PE und N sind zu einem gemeinsamen PEN-Leiter kombiniert (Combined)",
+        "PE und N sind erst getrennt und werden dann zusammengefuehrt",
+        "PE und N sind durchgehend getrennt (Separated)"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "TN-S steht fuer Separated, also getrennt. PE und N werden als separate Leiter vom Transformator bis zum Verbraucher gefuehrt. Das ergibt ein 5-Leiter-System (L1, L2, L3, N, PE), bietet die beste elektromagnetische Vertraeglichkeit und erlaubt den Einsatz von FI-Schutzschaltern.",
       "difficulty": "mittel",
       "tags": [
@@ -110,12 +110,12 @@
       "id": "ns-007",
       "q": "Was bedeutet TN-C?",
       "options": [
-        "PE und N sind durchgehend als getrennte Leiter verlegt (Separated)",
-        "PE und N sind zu einem PEN-Leiter kombiniert (Combined)",
+        "PE und N sind beide direkt mit dem Fundamenterder verbunden",
         "PE und N werden ab dem Hausanschluss in getrennte Leiter aufgeteilt",
-        "PE und N sind beide direkt mit dem Fundamenterder verbunden"
+        "PE und N sind zu einem PEN-Leiter kombiniert (Combined)",
+        "PE und N sind durchgehend als getrennte Leiter verlegt (Separated)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "TN-C steht fuer Combined, also kombiniert. PE und N werden in einem einzigen PEN-Leiter gefuehrt, was ein 4-Leiter-System ergibt. Ein FI-Schutzschalter kann in diesem System nicht funktionieren, weshalb TN-C nur noch in Altanlagen vorkommt.",
       "difficulty": "mittel",
       "tags": [
@@ -128,11 +128,11 @@
       "q": "Was bedeutet TN-C-S?",
       "options": [
         "PE und N sind durchgehend als getrennte Leiter bis zum Verbraucher gefuehrt",
-        "Erst PEN kombiniert, ab einem Punkt in PE und N getrennt",
         "PE und N sind durchgehend als kombinierter PEN-Leiter im Gesamtnetz gefuehrt",
+        "Erst PEN kombiniert, ab einem Punkt in PE und N getrennt",
         "PE und N werden am Verbraucher kombiniert und am Transformator wieder getrennt"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Beim TN-C-S-System wird im Versorgungsnetz ein kombinierter PEN-Leiter gefuehrt (TN-C-Teil), der ab dem Hausanschlusskasten in getrennte PE- und N-Leiter aufgeteilt wird (TN-S-Teil). Dieses System ist der Standard bei Neuanlagen in Oesterreich und Deutschland.",
       "difficulty": "mittel",
       "tags": [
@@ -144,12 +144,12 @@
       "id": "ns-009",
       "q": "Warum funktioniert ein FI-Schutzschalter im TN-C-System nicht?",
       "options": [
-        "Weil der Erdungswiderstand zu hoch ist und der Fehlerstrom nicht ausreicht",
-        "Weil der Fehlerstrom über den PEN zurückfließt und kein Differenzstrom entsteht",
         "Weil der Neutralleiter nicht vorhanden ist und kein Rueckstrompfad existiert",
-        "Weil der Schutzleiter zu hochohmig ist und den Fehlerstrom nicht ableiten kann"
+        "Weil der Schutzleiter zu hochohmig ist und den Fehlerstrom nicht ableiten kann",
+        "Weil der Fehlerstrom über den PEN zurückfließt und kein Differenzstrom entsteht",
+        "Weil der Erdungswiderstand zu hoch ist und der Fehlerstrom nicht ausreicht"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Im TN-C-System fliesst der Fehlerstrom ueber den kombinierten PEN-Leiter zurueck durch den Summenstromwandler des FI-Schutzschalters. Dadurch entsteht kein Differenzstrom zwischen hinfliessendem und zurueckfliessendem Strom, und der FI kann nicht ausloesen.",
       "difficulty": "schwer",
       "tags": [
@@ -161,12 +161,12 @@
       "id": "ns-010",
       "q": "Was ist das TT-System?",
       "options": [
+        "Sternpunkt ist hochohmig geerdet und Koerper sind ueber Neutralleiter verbunden",
         "Sternpunkt und Koerper sind ueber den gemeinsamen Neutralleiter verbunden",
         "Sternpunkt und Körper mit getrennten Erdern geerdet",
-        "Sternpunkt ist isoliert und Koerper sind ueber den PEN-Leiter geschuetzt",
-        "Sternpunkt ist hochohmig geerdet und Koerper sind ueber Neutralleiter verbunden"
+        "Sternpunkt ist isoliert und Koerper sind ueber den PEN-Leiter geschuetzt"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Beim TT-System ist der Sternpunkt des Transformators ueber einen Betriebserder geerdet (erstes T), und die Koerper der Betriebsmittel sind ueber einen eigenen, separaten Erder geerdet (zweites T). Wegen der getrennten Erdungssysteme ist ein FI-Schutzschalter zwingend erforderlich.",
       "difficulty": "mittel",
       "tags": [
@@ -195,12 +195,12 @@
       "id": "ns-012",
       "q": "Was ist das IT-System?",
       "options": [
+        "Sternpunkt und Koerper sind jeweils ueber einen gemeinsamen Erder verbunden",
         "Sternpunkt ist direkt geerdet und Koerper sind ueber Neutralleiter angeschlossen",
         "Sternpunkt isoliert oder hochohmig geerdet, Körper geerdet",
-        "Sternpunkt und Koerper sind jeweils ueber einen gemeinsamen Erder verbunden",
         "Sternpunkt ist ueber PEN-Leiter geerdet und Koerper sind direkt angeschlossen"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Beim IT-System ist der Sternpunkt des Transformators isoliert oder ueber eine hohe Impedanz geerdet (I), waehrend die Koerper der Betriebsmittel direkt geerdet sind (T). Der grosse Vorteil ist, dass beim ersten Erdschluss keine Abschaltung erfolgt und die Anlage weiterlaeuft.",
       "difficulty": "mittel",
       "tags": [
@@ -213,11 +213,11 @@
       "q": "Was passiert im IT-System beim ersten Erdschluss?",
       "options": [
         "Sofortige Abschaltung durch den Leitungsschutzschalter im Verteilerschrank",
-        "Keine Abschaltung, nur Meldung durch Isolationsüberwachung",
+        "Reduzierung der Betriebsspannung auf sichere Kleinspannung im gesamten Netz",
         "Automatische Umschaltung auf das Ersatz-Versorgungsnetz durch die Steuerung",
-        "Reduzierung der Betriebsspannung auf sichere Kleinspannung im gesamten Netz"
+        "Keine Abschaltung, nur Meldung durch Isolationsüberwachung"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Beim ersten Erdschluss im IT-System entsteht kein geschlossener Stromkreis, da der Sternpunkt isoliert ist. Die Isolationsueberwachung erkennt den Fehler und gibt eine optische und akustische Meldung ab. Die Anlage kann jedoch sicher weiterbetrieben werden, bis der Fehler behoben wird.",
       "difficulty": "mittel",
       "tags": [
@@ -229,10 +229,10 @@
       "id": "ns-014",
       "q": "Wo wird das IT-System typischerweise eingesetzt?",
       "options": [
-        "In Wohnhaeusern, Schulen und oeffentlichen Verwaltungsgebaeuden (Standardversorgung)",
+        "In Einfamilienhaeusern, Garagen und landwirtschaftlichen Betrieben (Grundversorgung)",
         "In Krankenhäusern (OP), Bergbau, Chemieanlagen (hohe Verfügbarkeit)",
         "In Buerogebaeuden, Einkaufszentren und Gewerbebetrieben (normale Nutzung)",
-        "In Einfamilienhaeusern, Garagen und landwirtschaftlichen Betrieben (Grundversorgung)"
+        "In Wohnhaeusern, Schulen und oeffentlichen Verwaltungsgebaeuden (Standardversorgung)"
       ],
       "correct": 1,
       "explanation": "Das IT-System wird ueberall dort eingesetzt, wo eine hohe Verfuegbarkeit zwingend erforderlich ist. In Operationssaelen und Intensivstationen darf waehrend einer Operation kein Stromausfall auftreten, ebenso im Bergbau unter Tage und in der chemischen Industrie, wo ein ploetzlicher Ausfall gefaehrlich waere.",
@@ -246,12 +246,12 @@
       "id": "ns-015",
       "q": "Was ist eine Isolationsüberwachung?",
       "options": [
-        "Ein Messgeraet zur periodischen Pruefung der Netzspannung im TN-System",
-        "Ein Gerät zur kontinuierlichen Überwachung des Isolationswiderstands im IT-System",
+        "Ein Steuergeraet zur permanenten Regulierung der Betriebsspannung im Verteilernetz",
         "Ein Schutzorgan zur automatischen Abschaltung bei Ueberlast im TT-System",
-        "Ein Steuergeraet zur permanenten Regulierung der Betriebsspannung im Verteilernetz"
+        "Ein Gerät zur kontinuierlichen Überwachung des Isolationswiderstands im IT-System",
+        "Ein Messgeraet zur periodischen Pruefung der Netzspannung im TN-System"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die Isolationsueberwachung (IMD) misst kontinuierlich den Isolationswiderstand zwischen den aktiven Leitern und Erde. Wenn der Isolationswiderstand unter einen eingestellten Grenzwert sinkt, gibt das Geraet ein optisches und akustisches Warnsignal. Im IT-System ist eine Isolationsueberwachung vorgeschrieben.",
       "difficulty": "mittel",
       "tags": [
@@ -263,12 +263,12 @@
       "id": "ns-016",
       "q": "Was ist der Sternpunkt?",
       "options": [
-        "Die zentrale Anschlussklemme der Hauptsicherungen im Zaehlerkasten",
-        "Der gemeinsame Verbindungspunkt der Transformatorwicklungen",
+        "Der Verbindungsknoten der Potentialausgleichsleiter an der Hauptschiene",
         "Die galvanische Trennstelle zwischen Ober- und Unterspannungsseite",
-        "Der Verbindungsknoten der Potentialausgleichsleiter an der Hauptschiene"
+        "Die zentrale Anschlussklemme der Hauptsicherungen im Zaehlerkasten",
+        "Der gemeinsame Verbindungspunkt der Transformatorwicklungen"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Der Sternpunkt ist der gemeinsame Verbindungspunkt der drei Strangwicklungen in einem Transformator oder Generator. Von diesem Punkt wird der Neutralleiter (N) abgefuehrt, und je nach Netzsystem wird der Sternpunkt direkt geerdet, hochohmig geerdet oder isoliert betrieben.",
       "difficulty": "leicht",
       "tags": [
@@ -280,12 +280,12 @@
       "id": "ns-017",
       "q": "Was ist ein Erder?",
       "options": [
-        "Ein isolierter Kupferleiter zur Verbindung der Potentialausgleichsschiene",
-        "Ein leitfähiger Teil im Erdreich zur Herstellung der Erdverbindung",
         "Ein Schutzgeraet zur Ueberwachung des Isolationswiderstands im Verteilernetz",
-        "Ein metallener Verbindungsleiter zwischen Schutzleiter und Neutralleiterschiene"
+        "Ein isolierter Kupferleiter zur Verbindung der Potentialausgleichsschiene",
+        "Ein metallener Verbindungsleiter zwischen Schutzleiter und Neutralleiterschiene",
+        "Ein leitfähiger Teil im Erdreich zur Herstellung der Erdverbindung"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein Erder ist ein leitfaehiges Teil, das in direktem Kontakt mit dem Erdreich steht und so eine elektrische Verbindung zur Erde herstellt. Es gibt verschiedene Erderarten wie Fundamenterder, Tiefenerder und Banderder, die je nach Einbausituation verwendet werden.",
       "difficulty": "leicht",
       "tags": [
@@ -297,10 +297,10 @@
       "id": "ns-018",
       "q": "Was ist ein Fundamenterder?",
       "options": [
-        "Ein senkrecht in das Erdreich eingetriebener Staberder",
-        "Ein in das Betonfundament eingelegter Erder",
         "Ein horizontal im Erdreich verlegter Banderder",
-        "Ein an der Gebaeudewand befestigter Ringerder"
+        "Ein in das Betonfundament eingelegter Erder",
+        "Ein an der Gebaeudewand befestigter Ringerder",
+        "Ein senkrecht in das Erdreich eingetriebener Staberder"
       ],
       "correct": 1,
       "explanation": "Ein Fundamenterder ist ein verzinkter Bandstahl (mindestens 30 x 3,5 mm) oder Rundstahl, der in das Betonfundament eines Gebaeudes eingelegt wird. Durch den grossflaechigen Kontakt des Fundaments mit dem Erdreich ergibt sich ein besonders niedriger Erdungswiderstand. Bei Neubauten in Oesterreich ist der Fundamenterder vorgeschrieben.",
@@ -314,10 +314,10 @@
       "id": "ns-019",
       "q": "Was ist der Potentialausgleich?",
       "options": [
-        "Die Messung der Spannungsdifferenz zwischen verschiedenen Erdungspunkten im Gebaeude",
-        "Die Verbindung aller leitfähigen Teile zur Vermeidung von Potentialunterschieden",
         "Die Berechnung der Schleifenimpedanz zwischen Aussenleiter und Schutzleiter im Netz",
-        "Die Ueberpruefung der Isolationswiderstaende zwischen aktiven Leitern und Gehaeuse"
+        "Die Verbindung aller leitfähigen Teile zur Vermeidung von Potentialunterschieden",
+        "Die Ueberpruefung der Isolationswiderstaende zwischen aktiven Leitern und Gehaeuse",
+        "Die Messung der Spannungsdifferenz zwischen verschiedenen Erdungspunkten im Gebaeude"
       ],
       "correct": 1,
       "explanation": "Beim Potentialausgleich werden alle leitfaehigen Teile eines Gebaeudes (Rohrleitungen, Gehaeuse, Erder) miteinander verbunden, sodass sie das gleiche elektrische Potential fuehren. Dadurch koennen keine gefaehrlichen Beruehrungsspannungen zwischen verschiedenen leitfaehigen Teilen auftreten.",
@@ -331,12 +331,12 @@
       "id": "ns-020",
       "q": "Welche Teile müssen in den Potentialausgleich einbezogen werden?",
       "options": [
-        "Ausschliesslich die Schutzleiter und der Fundamenterder des jeweiligen Gebaeudes",
         "Metallene Rohrleitungen (Wasser, Gas, Heizung), Erder, Antennen, metallene Konstruktionen",
+        "Einzig die Gasrohre und die Blitzschutzanlage am Gebaeudedach des Objekts",
         "Lediglich die Wasserrohre und die zentrale Erdungsschiene im Hauptverteiler",
-        "Einzig die Gasrohre und die Blitzschutzanlage am Gebaeudedach des Objekts"
+        "Ausschliesslich die Schutzleiter und der Fundamenterder des jeweiligen Gebaeudes"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "In den Hauptpotentialausgleich muessen alle metallenen Rohrleitungen (Wasser, Gas, Heizung), der Fundamenterder, Blitzschutzanlagen, Antennenanlagen und metallene Gebaeudekonstruktionen einbezogen werden. Ziel ist es, alle leitfaehigen Teile auf gleiches Potential zu bringen und so gefaehrliche Beruehrungsspannungen zu verhindern.",
       "difficulty": "mittel",
       "tags": [
@@ -348,10 +348,10 @@
       "id": "ns-021",
       "q": "Was ist die Potentialausgleichsschiene (PAS)?",
       "options": [
-        "Eine Verteilerschiene zur Aufteilung der Aussenleiter im Zaehlerschrank",
+        "Eine Erdungsschiene zur Verbindung der Tiefenerder im Erdreich miteinander",
         "Eine Sammelschiene zum Anschluss aller Potentialausgleichsleiter",
-        "Eine Sicherungsleiste zur Absicherung der einzelnen Stromkreise im Verteiler",
-        "Eine Erdungsschiene zur Verbindung der Tiefenerder im Erdreich miteinander"
+        "Eine Verteilerschiene zur Aufteilung der Aussenleiter im Zaehlerschrank",
+        "Eine Sicherungsleiste zur Absicherung der einzelnen Stromkreise im Verteiler"
       ],
       "correct": 1,
       "explanation": "Die Potentialausgleichsschiene (PAS) ist die zentrale Verbindungsstelle, an der alle Potentialausgleichsleiter zusammengefuehrt werden. Sie befindet sich in der Naehe des Hausanschlusskastens oder Zaehlerkastens und ist mit dem Fundamenterder verbunden.",
@@ -365,10 +365,10 @@
       "id": "ns-024",
       "q": "Welcher Mindestquerschnitt gilt für den zusätzlichen Potentialausgleich?",
       "options": [
-        "1,5 mm² Cu geschuetzt verlegt, 2,5 mm² Cu bei ungeschuetzter Verlegung",
-        "2,5 mm² Cu ungeschützt, 4 mm² Cu mechanisch geschützt",
         "6 mm² Cu geschuetzt verlegt, 10 mm² Cu bei ungeschuetzter Verlegung",
-        "4 mm² Cu geschuetzt verlegt, 6 mm² Cu bei ungeschuetzter Verlegung"
+        "2,5 mm² Cu mechanisch geschützt, 4 mm² Cu ungeschützt verlegt",
+        "4 mm² Cu geschuetzt verlegt, 6 mm² Cu bei ungeschuetzter Verlegung",
+        "1,5 mm² Cu geschuetzt verlegt, 2,5 mm² Cu bei ungeschuetzter Verlegung"
       ],
       "correct": 1,
       "explanation": "Fuer den zusaetzlichen Potentialausgleich gilt ein Mindestquerschnitt von 2,5 mm² Kupfer bei mechanisch geschuetzter Verlegung und 4 mm² Kupfer bei ungeschuetzter Verlegung. Diese Querschnitte stellen sicher, dass im Fehlerfall ausreichend Strom fliessen kann, um gefaehrliche Potentialunterschiede zuverlaessig abzubauen.",
@@ -382,9 +382,9 @@
       "id": "ns-025",
       "q": "Was ist der Erdungswiderstand?",
       "options": [
-        "Der Gesamtwiderstand des Schutzleiters vom Verbraucher bis zur Verteilung",
-        "Der Widerstand zwischen Erder und dem Bezugspotential (Erde)",
         "Der Isolationswiderstand zwischen den aktiven Leitern und dem Gehaeusekoerper",
+        "Der Widerstand zwischen Erder und dem Bezugspotential (Erde)",
+        "Der Gesamtwiderstand des Schutzleiters vom Verbraucher bis zur Verteilung",
         "Der Innenwiderstand der Stromquelle gemessen an der Transformatorwicklung"
       ],
       "correct": 1,
@@ -399,12 +399,12 @@
       "id": "ns-026",
       "q": "Welche Faktoren beeinflussen den Erdungswiderstand?",
       "options": [
-        "Leitungslaenge, Leiterquerschnitt, Isolationsmaterial und Verlegeart der Kabel",
-        "Bodenbeschaffenheit, Feuchtigkeit, Erderart, Erderfläche",
+        "Sicherungsgroesse, Leitungsschutzschaltertyp, Abschaltzeit und Schleifenimpedanz",
         "Netzspannung, Betriebsfrequenz, Transformatorleistung und Kurzschlussstrom",
-        "Sicherungsgroesse, Leitungsschutzschaltertyp, Abschaltzeit und Schleifenimpedanz"
+        "Bodenbeschaffenheit, Feuchtigkeit, Erderart, Erderfläche",
+        "Leitungslaenge, Leiterquerschnitt, Isolationsmaterial und Verlegeart der Kabel"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Der Erdungswiderstand wird durch die Bodenbeschaffenheit (Sand, Lehm, Fels), die Bodenfeuchtigkeit, den Erdertyp und die Groesse der Erderflaeche beeinflusst. Auch die Einbautiefe und die Jahreszeit spielen eine Rolle, da trockener Boden einen deutlich hoeheren Widerstand aufweist als feuchter Boden.",
       "difficulty": "mittel",
       "tags": [
@@ -416,10 +416,10 @@
       "id": "ns-027",
       "q": "Was ist die Nullung?",
       "options": [
-        "Die Erdung des Sternpunkts ueber einen separaten Betriebserder im TT-System",
-        "Die Verbindung des Körpers mit dem Neutralleiter im TN-System",
         "Die Isolationsueberwachung der aktiven Leiter gegen Erde im IT-System",
-        "Die Messung der Schleifenimpedanz zwischen Aussenleiter und Schutzleiter"
+        "Die Verbindung des Körpers mit dem Neutralleiter im TN-System",
+        "Die Messung der Schleifenimpedanz zwischen Aussenleiter und Schutzleiter",
+        "Die Erdung des Sternpunkts ueber einen separaten Betriebserder im TT-System"
       ],
       "correct": 1,
       "explanation": "Die Nullung ist die Schutzmassnahme im TN-System, bei der die Koerper (Gehaeuse) der Betriebsmittel mit dem Neutralleiter bzw. PEN-Leiter verbunden werden. Bei einem Koerperschluss entsteht dadurch ein Kurzschluss, der einen hohen Fehlerstrom verursacht und den Leitungsschutzschalter zur schnellen Abschaltung bringt.",
@@ -433,12 +433,12 @@
       "id": "ns-028",
       "q": "Warum muss im TN-System die Schleifenimpedanz niedrig sein?",
       "options": [
-        "Damit die Isolationsueberwachung den Fehlerstrom zuverlaessig erkennen kann",
-        "Damit bei Körperschluss genug Strom für schnelle Abschaltung fließt",
+        "Damit die Betriebsspannung an den Verbrauchern stabil und konstant bleibt",
         "Damit der Erdungswiderstand am Fundamenterder moeglichst klein gehalten wird",
-        "Damit die Betriebsspannung an den Verbrauchern stabil und konstant bleibt"
+        "Damit bei Körperschluss genug Strom für schnelle Abschaltung fließt",
+        "Damit die Isolationsueberwachung den Fehlerstrom zuverlaessig erkennen kann"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Eine niedrige Schleifenimpedanz sorgt dafuer, dass bei einem Koerperschluss ein ausreichend hoher Fehlerstrom fliesst, der den Leitungsschutzschalter schnell zum Ausloesen bringt. Die Abschaltbedingung lautet: Schleifenimpedanz Zs mal Ausloesestrom Ia muss kleiner oder gleich der Nennspannung U0 (230V) sein.",
       "difficulty": "schwer",
       "tags": [
@@ -451,11 +451,11 @@
       "q": "Was ist die Netzspannung in Österreich?",
       "options": [
         "220V (Phase-Neutral), 380V (Phase-Phase)",
-        "230V (Phase-Neutral), 400V (Phase-Phase)",
         "240V (Phase-Neutral), 415V (Phase-Phase)",
+        "230V (Phase-Neutral), 400V (Phase-Phase)",
         "110V (Phase-Neutral), 190V (Phase-Phase)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "In Oesterreich und ganz Europa betraegt die Netzspannung 230 Volt Wechselspannung zwischen einem Aussenleiter und dem Neutralleiter und 400 Volt Wechselspannung zwischen zwei Aussenleitern. Die Netzfrequenz betraegt 50 Hz.",
       "difficulty": "leicht",
       "tags": [
@@ -467,12 +467,12 @@
       "id": "ns-030",
       "q": "Welches Netzsystem ist in Österreich Standard?",
       "options": [
-        "TT-System mit separater Erdung",
         "TN-C-S-System",
+        "TN-S-System mit durchgehender Trennung",
         "IT-System mit Isolationsueberwachung",
-        "TN-S-System mit durchgehender Trennung"
+        "TT-System mit separater Erdung"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "In Oesterreich ist das TN-C-S-System der Standard. Im oeffentlichen Versorgungsnetz wird ein kombinierter PEN-Leiter gefuehrt (TN-C-Teil), der ab dem Hausanschlusskasten in getrennte PE- und N-Leiter aufgeteilt wird (TN-S-Teil). So wird eine wirtschaftliche Versorgung mit einem sicheren Installationsnetz kombiniert.",
       "difficulty": "leicht",
       "tags": [
@@ -485,11 +485,11 @@
       "q": "Was ist ein PEN-Leiter?",
       "options": [
         "Ein separat verlegter reiner Schutzleiter ohne Betriebsstromfunktion",
-        "Ein kombinierter Schutz- und Neutralleiter",
         "Ein isolierter reiner Neutralleiter ohne Schutzleiterfunktion",
+        "Ein kombinierter Schutz- und Neutralleiter",
         "Ein zusaetzlicher Aussenleiter fuer die Drehstromversorgung"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Der PEN-Leiter ist ein kombinierter Leiter, der gleichzeitig die Funktion des Schutzleiters (PE = Protective Earth) und des Neutralleiters (N) uebernimmt. Er wird im TN-C-System verwendet, fuehrt den Betriebsstrom und dient zugleich als Schutzleiter. Der Mindestquerschnitt betraegt 10 mm² Kupfer.",
       "difficulty": "mittel",
       "tags": [
@@ -501,12 +501,12 @@
       "id": "ns-032",
       "q": "Welche Farbe hat ein PEN-Leiter?",
       "options": [
-        "Durchgehend blau mit schwarzen Markierungen an den Anschlusspunkten",
         "Grün-Gelb mit blauen Markierungen an den Enden (oder umgekehrt)",
-        "Durchgehend gruen-gelb ohne zusaetzliche farbliche Kennzeichnungen",
-        "Durchgehend schwarz mit gruen-gelben Markierungen an den Enden"
+        "Durchgehend schwarz mit gruen-gelben Markierungen an den Enden",
+        "Durchgehend blau mit schwarzen Markierungen an den Anschlusspunkten",
+        "Durchgehend gruen-gelb ohne zusaetzliche farbliche Kennzeichnungen"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der PEN-Leiter wird entweder gruen-gelb mit blauen Markierungen an den Enden oder blau mit gruen-gelben Markierungen an den Enden gekennzeichnet. Diese doppelte Farbkennzeichnung zeigt an, dass der Leiter sowohl die Schutzleiter- als auch die Neutralleiterfunktion uebernimmt.",
       "difficulty": "mittel",
       "tags": [
@@ -518,12 +518,12 @@
       "id": "ns-033",
       "q": "Was ist bei der Auftrennung von PEN in PE und N zu beachten?",
       "options": [
-        "Zuerst den Neutralleiter abzweigen, dann den Schutzleiter anschliessen und verbinden",
-        "Erst PE abzweigen, dann N. Nach Auftrennung nie wieder zusammenführen!",
+        "Den PEN-Leiter direkt auf die N-Schiene legen und von dort eine Bruecke zum PE fuehren",
         "Die Auftrennung kann an beliebiger Stelle mehrfach durchgefuehrt und rueckgaengig gemacht werden",
-        "Den PEN-Leiter direkt auf die N-Schiene legen und von dort eine Bruecke zum PE fuehren"
+        "Zuerst den Neutralleiter abzweigen, dann den Schutzleiter anschliessen und verbinden",
+        "Erst PE abzweigen, dann N. Nach Auftrennung nie wieder zusammenführen!"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Bei der Auftrennung des PEN-Leiters muss zuerst der PE abgezweigt werden, indem der PEN auf die PE-Schiene gefuehrt wird, und von dort eine Bruecke zur N-Schiene gelegt wird. Nach der Aufteilung duerfen PE und N niemals wieder zusammengefuehrt werden, da sonst Betriebsstroeme ueber den Schutzleiter fliessen koennten.",
       "difficulty": "schwer",
       "tags": [
@@ -535,12 +535,12 @@
       "id": "ns-034",
       "q": "Was ist ein Tiefenerder?",
       "options": [
-        "Ein horizontal im Erdreich verlegter flacher Banderder aus Bandstahl",
         "Ein senkrecht in die Erde getriebener Stab oder Rohr",
         "Ein in das Betonfundament eines Gebaeudes eingelegter Fundamenterder",
-        "Ein ringfoermig um das Gebaeude verlegter Oberflaechen-Ringerder"
+        "Ein ringfoermig um das Gebaeude verlegter Oberflaechen-Ringerder",
+        "Ein horizontal im Erdreich verlegter flacher Banderder aus Bandstahl"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Tiefenerder ist ein senkrecht in das Erdreich eingetriebener Stab oder Rohr aus verzinktem Stahl oder Kupfer. Durch die vertikale Einbringung erreicht er tiefere und feuchtere Bodenschichten mit niedrigerem spezifischem Widerstand. Tiefenerder koennen modular aufgebaut und beliebig verlaengert werden.",
       "difficulty": "mittel",
       "tags": [
@@ -552,12 +552,12 @@
       "id": "ns-035",
       "q": "Warum darf der PEN-Leiter nicht geschaltet oder gesichert werden?",
       "options": [
-        "Weil der Querschnitt zu gering ist und der Leiter bei Schalthandlungen beschaedigt wird",
-        "Weil bei Unterbrechung der Schutz entfällt und gefährliche Spannungen auftreten können",
         "Weil die Netzrueckwirkungen zu gross werden und andere Verbraucher gestoert werden koennten",
-        "Weil der Summenstromwandler im FI-Schutzschalter dadurch falsch ausloesen wuerde"
+        "Weil der Querschnitt zu gering ist und der Leiter bei Schalthandlungen beschaedigt wird",
+        "Weil der Summenstromwandler im FI-Schutzschalter dadurch falsch ausloesen wuerde",
+        "Weil bei Unterbrechung der Schutz entfällt und gefährliche Spannungen auftreten können"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Wenn der PEN-Leiter unterbrochen wird, entfaellt der Schutzleiteranschluss und die Gehaeuse der Betriebsmittel koennen ueber angeschlossene Verbraucher unter gefaehrliche Spannung geraten. Ausserdem kann es zu einer Spannungsverschleppung kommen, bei der an allen angeschlossenen Geraeten unkontrollierte Spannungen auftreten.",
       "difficulty": "schwer",
       "tags": [

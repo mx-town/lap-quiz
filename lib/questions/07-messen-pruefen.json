@@ -8,12 +8,12 @@
       "id": "mp-001",
       "q": "Was ist ein Multimeter?",
       "options": [
-        "Ein Spezialinstrument ausschließlich für die Messung von Wechselspannungen und Frequenzen",
-        "Ein Vielfachmessgerät für Spannung, Strom, Widerstand und weitere Größen",
         "Ein tragbares Anzeigegerät für die Darstellung von Signalverläufen und Kurvenformen",
-        "Ein kalibriertes Präzisionsinstrument für industrielle Frequenz- und Drehzahlmessung"
+        "Ein kalibriertes Präzisionsinstrument für industrielle Frequenz- und Drehzahlmessung",
+        "Ein Vielfachmessgerät für Spannung, Strom, Widerstand und weitere Größen",
+        "Ein Spezialinstrument ausschließlich für die Messung von Wechselspannungen und Frequenzen"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Multimeter ist ein universelles Vielfachmessgerät, das mehrere elektrische Größen messen kann: Spannung (AC/DC), Strom (AC/DC) und Widerstand. Viele Modelle bieten zusätzlich Funktionen wie Kapazitätsmessung, Frequenzmessung, Durchgangsprüfung und Diodentest.",
       "difficulty": "leicht",
       "tags": [
@@ -25,9 +25,9 @@
       "id": "mp-002",
       "q": "Wie wird ein Voltmeter in den Stromkreis geschaltet?",
       "options": [
-        "In Reihe zum Verbraucher (niederohmig)",
-        "Parallel zum Messobjekt (hochohmig)",
         "In Reihe zur Spannungsquelle (mittelohmig)",
+        "Parallel zum Messobjekt (hochohmig)",
+        "In Reihe zum Verbraucher (niederohmig)",
         "Zwischen Phase und Schutzleiter (induktiv)"
       ],
       "correct": 1,
@@ -42,12 +42,12 @@
       "id": "mp-003",
       "q": "Wie wird ein Amperemeter in den Stromkreis geschaltet?",
       "options": [
+        "Zwischen Schutzleiter und Neutralleiter (kapazitiv)",
         "Parallel zum Verbraucher (hochohmig)",
         "In Reihe zum Verbraucher (niederohmig)",
-        "Parallel zur Spannungsquelle (mittelohmig)",
-        "Zwischen Schutzleiter und Neutralleiter (kapazitiv)"
+        "Parallel zur Spannungsquelle (mittelohmig)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Amperemeter wird immer in Reihe zum Verbraucher geschaltet, damit der gesamte zu messende Strom durch das Messgerät fließt. Der niedrige Innenwiderstand sorgt dafür, dass der Spannungsabfall am Messgerät minimal bleibt und den Stromkreis nicht wesentlich beeinflusst.",
       "difficulty": "leicht",
       "tags": [
@@ -59,12 +59,12 @@
       "id": "mp-004",
       "q": "Was passiert, wenn ein Amperemeter parallel geschaltet wird?",
       "options": [
-        "Es misst dabei korrekt die anliegende Wechselspannung am Verbraucher",
         "Es kann durch den hohen Strom zerstört werden (Kurzschluss)",
-        "Es begrenzt automatisch den Stromfluss durch interne Schutzschaltung",
-        "Es schaltet eigenständig in den Spannungsmessbereich des Messgeräts um"
+        "Es schaltet eigenständig in den Spannungsmessbereich des Messgeräts um",
+        "Es misst dabei korrekt die anliegende Wechselspannung am Verbraucher",
+        "Es begrenzt automatisch den Stromfluss durch interne Schutzschaltung"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Amperemeter hat einen sehr geringen Innenwiderstand. Wird es parallel geschaltet, wirkt es wie ein Kurzschluss, da fast der gesamte Strom durch das niederohmige Messgerät fließt. Dies führt zu extrem hohen Strömen, die das Messgerät zerstören können oder die vorgeschaltete Sicherung zum Auslösen bringen.",
       "difficulty": "mittel",
       "tags": [
@@ -76,12 +76,12 @@
       "id": "mp-005",
       "q": "Was ist ein Duspol (zweipoliger Spannungsprüfer)?",
       "options": [
+        "Ein digitales Multimeter mit integrierter Datenaufzeichnung und Bluetooth-Schnittstelle",
         "Ein einpoliger Phasenprüfer zur berührungslosen Feldstärkemessung in Schaltanlagen",
         "Ein zweipoliger Spannungsprüfer für sichere Spannungsmessung",
-        "Ein digitales Multimeter mit integrierter Datenaufzeichnung und Bluetooth-Schnittstelle",
         "Ein tragbares Oszilloskop zur Analyse von Signalverläufen und Oberwellen"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Duspol ist ein zweipoliger Spannungsprüfer nach DIN VDE 0682-401, der die Spannung zwischen zwei Punkten zuverlässig anzeigt. Im Gegensatz zu einpoligen Phasenprüfern benötigt er keinen Erdbezug und liefert dadurch deutlich sicherere und verlässlichere Messergebnisse.",
       "difficulty": "leicht",
       "tags": [
@@ -93,12 +93,12 @@
       "id": "mp-006",
       "q": "Warum sind einpolige Phasenprüfer (Schraubendreher mit Glimmlampe) problematisch?",
       "options": [
-        "Sie erfordern eine regelmäßige Kalibrierung in akkreditierten Prüflaboratorien",
-        "Sie zeigen keine Spannung gegen N an und können versagen",
         "Sie verfälschen die Messergebnisse durch zu niedrigen Innenwiderstand im Prüfkreis",
-        "Sie erzeugen bei der Verwendung gefährliche Berührungsströme über den Erdungspfad"
+        "Sie erfordern eine regelmäßige Kalibrierung in akkreditierten Prüflaboratorien",
+        "Sie erzeugen bei der Verwendung gefährliche Berührungsströme über den Erdungspfad",
+        "Sie zeigen keine Spannung gegen N an und können versagen"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Einpolige Phasenprüfer zeigen nur die Spannung gegen Erde an und benötigen dafür einen funktionierenden Erdungsbezug. Fehlt dieser, bleibt die Anzeige aus, obwohl gefährliche Spannung anliegt. Zusätzlich kann die Glimmlampe defekt sein, was zu gefährlichen Fehlmessungen führt.",
       "difficulty": "mittel",
       "tags": [
@@ -110,10 +110,10 @@
       "id": "mp-007",
       "q": "Was muss vor jeder Spannungsmessung geprüft werden?",
       "options": [
-        "Der korrekte Messbereich durch Ablesen der Typenschilddaten am Verteiler",
-        "Die Funktion des Messgeräts an bekannter Spannung",
         "Die Kalibrierfrist des Messgeräts anhand der Prüfplakette auf dem Gehäuse",
-        "Der Isolationswiderstand der Messleitungen mit separatem Prüfgerät"
+        "Die Funktion des Messgeräts an bekannter Spannung",
+        "Der Isolationswiderstand der Messleitungen mit separatem Prüfgerät",
+        "Der korrekte Messbereich durch Ablesen der Typenschilddaten am Verteiler"
       ],
       "correct": 1,
       "explanation": "Vor jeder Spannungsmessung muss die Funktion des Messgeräts an einer bekannten, sicheren Spannungsquelle überprüft werden. Nach der eigentlichen Messung wird die Funktionskontrolle wiederholt. Dieses Vor-Während-Nach-Prinzip stellt sicher, dass das Messgerät während der gesamten Messung korrekt funktioniert hat.",
@@ -128,11 +128,11 @@
       "q": "Was ist eine Strommesszange?",
       "options": [
         "Ein Handwerkzeug zur mechanischen Abisolierung von Kupferleitungen und Kabelmänteln",
-        "Ein Messgerät zur berührungslosen Strommessung über das Magnetfeld",
         "Ein Prüfgerät zur direkten Kontaktmessung von Spannungspotentialen an Klemmen",
-        "Ein Spezialwerkzeug zur Herstellung normgerechter Crimpverbindungen an Kabelschuhen"
+        "Ein Spezialwerkzeug zur Herstellung normgerechter Crimpverbindungen an Kabelschuhen",
+        "Ein Messgerät zur berührungslosen Strommessung über das Magnetfeld"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Eine Strommesszange misst den Strom berührungslos über das Magnetfeld, das den stromdurchflossenen Leiter umgibt. Der Leiter wird durch den aufklappbaren Zangenring geführt, ohne dass der Stromkreis aufgetrennt werden muss. Es gibt Modelle für Wechselstrom und solche, die auch Gleichstrom messen können.",
       "difficulty": "leicht",
       "tags": [
@@ -144,12 +144,12 @@
       "id": "mp-009",
       "q": "Was muss bei der Messung mit einer Strommesszange beachtet werden?",
       "options": [
-        "Beide Leiter gemeinsam durch die Zange führen für korrekte Summenmessung",
-        "Nur einen Leiter (L oder N) durch die Zange führen",
+        "Der Stromkreis muss vorher aufgetrennt und spannungsfrei geschaltet werden",
         "Die Zange muss direkt an den blanken Leiter angeklemmt werden",
-        "Der Stromkreis muss vorher aufgetrennt und spannungsfrei geschaltet werden"
+        "Beide Leiter gemeinsam durch die Zange führen für korrekte Summenmessung",
+        "Nur einen Leiter (L oder N) durch die Zange führen"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Bei der Strommessung mit einer Zange darf nur ein einzelner Leiter (L oder N) durch den Zangenring geführt werden. Werden Hin- und Rückleiter gemeinsam umschlossen, heben sich die entgegengesetzten Magnetfelder auf, und die Anzeige ergibt null. Eine Ausnahme ist die gezielte Differenzstrommessung.",
       "difficulty": "mittel",
       "tags": [
@@ -161,12 +161,12 @@
       "id": "mp-010",
       "q": "Was ist ein Oszilloskop?",
       "options": [
-        "Ein zweipoliger Spannungsprüfer zur normgerechten Feststellung der Spannungsfreiheit vor Arbeiten",
-        "Ein Gerät zur grafischen Darstellung von Spannungsverläufen über der Zeit",
         "Ein hochohmiges Widerstandsmessgerät zur Bestimmung von Isolationswerten im Megaohmbereich",
-        "Ein kalibrierbarer Frequenzgenerator zur Erzeugung definierter Prüf- und Referenzsignale"
+        "Ein kalibrierbarer Frequenzgenerator zur Erzeugung definierter Prüf- und Referenzsignale",
+        "Ein Gerät zur grafischen Darstellung von Spannungsverläufen über der Zeit",
+        "Ein zweipoliger Spannungsprüfer zur normgerechten Feststellung der Spannungsfreiheit vor Arbeiten"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Oszilloskop stellt Spannungsverläufe grafisch als Kurve über der Zeit dar. Damit lassen sich Signalform, Amplitude, Frequenz, Phasenverschiebungen und Störungen sichtbar machen. Es ist unverzichtbar für die Analyse komplexer elektrischer Signale in der Elektronik und Elektrotechnik.",
       "difficulty": "mittel",
       "tags": [
@@ -179,11 +179,11 @@
       "q": "Was kann mit einem Oszilloskop gemessen/dargestellt werden?",
       "options": [
         "Ausschließlich Gleichspannungspegel und deren zeitliche Abweichungen vom Nennwert",
-        "Spannungsverlauf, Frequenz, Amplitude, Phasenlage, Kurvenform",
         "Ausschließlich ohmsche Widerstandswerte und Isolationswiderstände im Hochohmbereich",
+        "Spannungsverlauf, Frequenz, Amplitude, Phasenlage, Kurvenform",
         "Ausschließlich Stromstärken durch direkte Einschleifung in den Lastkreis"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Mit einem Oszilloskop lassen sich vielfältige Signaleigenschaften darstellen: Spannungsamplitude, Frequenz, Periodendauer, Kurvenform (Sinus, Rechteck, Dreieck), Phasenverschiebung zwischen Kanälen sowie Störungen und transiente Vorgänge. Es ist damit eines der vielseitigsten Messgeräte der Elektrotechnik.",
       "difficulty": "mittel",
       "tags": [
@@ -196,11 +196,11 @@
       "q": "Was ist die Isolationsmessung?",
       "options": [
         "Messung der Gesamtlänge und des Querschnitts verlegter Leitungen in der Anlage",
-        "Messung des Isolationswiderstandes zwischen aktiven Leitern und PE/Erde",
+        "Messung des Laststroms in den einzelnen Stromkreisen der elektrischen Anlage",
         "Messung der Betriebsspannung an den Klemmen der Hauptverteilung im Gebäude",
-        "Messung des Laststroms in den einzelnen Stromkreisen der elektrischen Anlage"
+        "Messung des Isolationswiderstandes zwischen aktiven Leitern und PE/Erde"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Die Isolationsmessung prüft den Widerstand der Isolierung zwischen aktiven Leitern und dem Schutzleiter bzw. der Erde. Dabei wird eine hohe Gleichspannung (250V, 500V oder 1000V je nach Nennspannung) angelegt. Der gemessene Isolationswiderstand muss Mindestwerte einhalten, um den sicheren Betrieb der Anlage zu gewährleisten.",
       "difficulty": "mittel",
       "tags": [
@@ -213,11 +213,11 @@
       "q": "Was ist die Schleifenimpedanzmessung?",
       "options": [
         "Messung des ohmschen Gleichstromwiderstands eines einzelnen Leitungsabschnitts im Kabelkanal",
-        "Messung der Impedanz der Fehlerschleife zur Überprüfung der Abschaltbedingungen",
         "Messung der Netzspannung am Einspeisepunkt der elektrischen Hauptverteilung im Gebäude",
-        "Messung der Netzfrequenz und deren Abweichung vom Sollwert am Verbrauchsort"
+        "Messung der Netzfrequenz und deren Abweichung vom Sollwert am Verbrauchsort",
+        "Messung der Impedanz der Fehlerschleife zur Überprüfung der Abschaltbedingungen"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Die Schleifenimpedanzmessung bestimmt die Gesamtimpedanz der Fehlerschleife zwischen Außenleiter (L) und Schutzleiter (PE). Diese muss niedrig genug sein, damit bei einem Körperschluss ein ausreichend hoher Fehlerstrom fließt, der die Überstromschutzeinrichtung innerhalb der vorgeschriebenen Zeit zum Abschalten bringt.",
       "difficulty": "schwer",
       "tags": [
@@ -229,12 +229,12 @@
       "id": "mp-015",
       "q": "Warum ist die Schleifenimpedanzmessung wichtig?",
       "options": [
-        "Um den korrekten Energieverbrauch für die Abrechnung beim Netzbetreiber sicherzustellen",
-        "Um sicherzustellen, dass Überstromschutzeinrichtungen bei Körperschluss schnell genug abschalten",
         "Um die exakte Höhe der Betriebsspannung an jeder Steckdose zu kontrollieren",
-        "Um die aufgenommene Wirkleistung aller angeschlossenen Verbraucher zu bestimmen"
+        "Um die aufgenommene Wirkleistung aller angeschlossenen Verbraucher zu bestimmen",
+        "Um den korrekten Energieverbrauch für die Abrechnung beim Netzbetreiber sicherzustellen",
+        "Um sicherzustellen, dass Überstromschutzeinrichtungen bei Körperschluss schnell genug abschalten"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Eine niedrige Schleifenimpedanz gewährleistet, dass bei einem Körperschluss ein hoher Fehlerstrom fließt und die Sicherung oder der Leitungsschutzschalter schnell genug abschaltet. Die Bedingung lautet: Zs x Ia kleiner gleich U0, wobei Ia der erforderliche Abschaltstrom der Schutzeinrichtung ist.",
       "difficulty": "schwer",
       "tags": [
@@ -246,12 +246,12 @@
       "id": "mp-017",
       "q": "Was ist eine FI-Auslöseprüfung?",
       "options": [
+        "Prüfung des Erdungswiderstands am Fundamenterder der elektrischen Anlage",
         "Prüfung der Schmelzsicherung auf korrekten Nennstrom und Abschaltvermögen",
         "Prüfung ob der FI bei Bemessungsfehlerstrom und darunter korrekt auslöst",
-        "Prüfung der Netzspannung auf Einhaltung der zulässigen Toleranzgrenzen",
-        "Prüfung des Erdungswiderstands am Fundamenterder der elektrischen Anlage"
+        "Prüfung der Netzspannung auf Einhaltung der zulässigen Toleranzgrenzen"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Bei der FI-Auslöseprüfung wird kontrolliert, ob der Fehlerstromschutzschalter bei seinem Nennfehlerstrom korrekt auslöst. Die maximale Auslösezeit beträgt 300 ms bei Nennfehlerstrom und 40 ms bei fünffachem Nennfehlerstrom. Zusätzlich wird der tatsächliche Auslösestrom gemessen.",
       "difficulty": "mittel",
       "tags": [
@@ -263,12 +263,12 @@
       "id": "mp-018",
       "q": "In welcher Zeit muss ein FI 30mA bei Nennfehlerstrom auslösen?",
       "options": [
-        "Innerhalb 1000 ms (1,0 s)",
         "Innerhalb 300 ms (0,3 s)",
+        "Innerhalb 40 ms (0,04 s)",
         "Innerhalb 3000 ms (3,0 s)",
-        "Innerhalb 40 ms (0,04 s)"
+        "Innerhalb 1000 ms (1,0 s)"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein FI-Schutzschalter vom allgemeinen Typ muss bei Nennfehlerstrom innerhalb von maximal 300 ms auslösen. Bei fünffachem Nennfehlerstrom beträgt die maximale Auslösezeit 40 ms. Selektive FI-Schutzschalter (Typ S) haben bewusst längere Auslösezeiten, um die Selektivität zur nachgeschalteten Stufe zu gewährleisten.",
       "difficulty": "mittel",
       "tags": [
@@ -280,12 +280,12 @@
       "id": "mp-019",
       "q": "Was ist eine Erstprüfung nach ÖVE/ÖNORM?",
       "options": [
+        "Eine jährliche Wiederholungsprüfung der bestehenden Anlage nach Prüfintervall",
         "Eine rein optische Kontrolle der sichtbaren Anlagenteile durch den Errichter",
         "Die vollständige Prüfung einer neuen oder geänderten Anlage vor Inbetriebnahme",
-        "Eine jährliche Wiederholungsprüfung der bestehenden Anlage nach Prüfintervall",
         "Eine Sonderprüfung nach einem Schadensfall oder elektrischen Unfall in der Anlage"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die Erstprüfung ist eine umfassende Prüfung, die vor der ersten Inbetriebnahme einer neuen oder wesentlich geänderten elektrischen Anlage durchgeführt werden muss. Sie umfasst Besichtigung, Erprobung und Messung, und alle Ergebnisse werden im Prüfprotokoll (Anlagenbuch) dokumentiert.",
       "difficulty": "mittel",
       "tags": [
@@ -297,10 +297,10 @@
       "id": "mp-020",
       "q": "Welche Prüfschritte umfasst die Erstprüfung?",
       "options": [
-        "Ausschließlich eine visuelle Sichtprüfung ohne messtechnische Überprüfung der Anlage",
-        "Besichtigung (Sichtprüfung), Erprobung, Messung",
         "Ausschließlich messtechnische Erfassung ohne vorherige Sichtprüfung der Anlagenteile",
-        "Ausschließlich eine Funktionsprüfung der Schutzeinrichtungen ohne Isolationsmessung"
+        "Besichtigung (Sichtprüfung), Erprobung, Messung",
+        "Ausschließlich eine Funktionsprüfung der Schutzeinrichtungen ohne Isolationsmessung",
+        "Ausschließlich eine visuelle Sichtprüfung ohne messtechnische Überprüfung der Anlage"
       ],
       "correct": 1,
       "explanation": "Die Erstprüfung besteht aus drei aufeinanderfolgenden Schritten: Erstens die Besichtigung (Sichtprüfung auf Mängel und Normkonformität), zweitens die Erprobung (Funktionskontrolle der Schutzeinrichtungen) und drittens die Messung (Isolation, Schleifenimpedanz, FI-Auslösung und weitere Prüfungen).",
@@ -314,12 +314,12 @@
       "id": "mp-021",
       "q": "Was wird bei der Besichtigung (Sichtprüfung) kontrolliert?",
       "options": [
-        "Ausschließlich die normgerechte Farbkennzeichnung der verlegten Leitungen und Kabel",
         "Schutzmaßnahmen, Kennzeichnung, Anschlüsse, Abstände, Zugentlastung, etc.",
+        "Ausschließlich der fließende Betriebsstrom in allen Stromkreisen der Unterverteilung",
         "Ausschließlich die gemessenen Spannungswerte an den Verteilerklemmen und Steckdosen",
-        "Ausschließlich der fließende Betriebsstrom in allen Stromkreisen der Unterverteilung"
+        "Ausschließlich die normgerechte Farbkennzeichnung der verlegten Leitungen und Kabel"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei der Besichtigung werden zahlreiche Aspekte visuell kontrolliert: korrekte Schutzmaßnahmen, richtige Kennzeichnung der Betriebsmittel, fachgerechte Anschlüsse, eingehaltene Abstände, vorhandene Zugentlastungen, Brandabschottungen und eventuelle Beschädigungen. Dies erfolgt ohne Messinstrumente, rein durch Augenschein und Erfahrung.",
       "difficulty": "mittel",
       "tags": [
@@ -331,12 +331,12 @@
       "id": "mp-022",
       "q": "Was ist der Unterschied zwischen Messen und Prüfen?",
       "options": [
-        "Messen ergibt einen Absolutwert, Prüfen liefert eine statistische Fehleranalyse",
-        "Messen = Wert ermitteln, Prüfen = Vergleich mit Sollwert/Grenzwert",
+        "Messen bezieht sich auf Gleichgrößen, Prüfen umfasst nur Wechselstromanalysen",
         "Prüfen erfordert kalibrierte Geräte, Messen funktioniert mit beliebiger Ausrüstung",
-        "Messen bezieht sich auf Gleichgrößen, Prüfen umfasst nur Wechselstromanalysen"
+        "Messen ergibt einen Absolutwert, Prüfen liefert eine statistische Fehleranalyse",
+        "Messen = Wert ermitteln, Prüfen = Vergleich mit Sollwert/Grenzwert"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Beim Messen wird ein quantitativer Wert einer physikalischen Größe ermittelt, zum Beispiel eine Spannung von 230 V. Beim Prüfen wird dieser gemessene Wert anschließend mit einem vorgegebenen Sollwert oder Grenzwert verglichen, um eine Aussage zu treffen, ob das Ergebnis in Ordnung oder nicht in Ordnung ist.",
       "difficulty": "leicht",
       "tags": [
@@ -349,10 +349,10 @@
       "id": "mp-023",
       "q": "Was ist ein Durchgangsprüfer?",
       "options": [
-        "Ein hochohmiges Spannungsmessgerät zur Erfassung von Potentialdifferenzen im Stromkreis",
+        "Ein digitaler Frequenzmesser zur Analyse der Netzfrequenz und deren Oberwellen",
         "Ein Gerät zum Prüfen der niederohmigen Verbindung (Durchgang) eines Leiters",
-        "Ein kalibrierbares Strommessgerät zur Bestimmung von Lastströmen in Hauptstromkreisen",
-        "Ein digitaler Frequenzmesser zur Analyse der Netzfrequenz und deren Oberwellen"
+        "Ein hochohmiges Spannungsmessgerät zur Erfassung von Potentialdifferenzen im Stromkreis",
+        "Ein kalibrierbares Strommessgerät zur Bestimmung von Lastströmen in Hauptstromkreisen"
       ],
       "correct": 1,
       "explanation": "Ein Durchgangsprüfer dient zur Überprüfung, ob eine niederohmige elektrische Verbindung besteht. Bei einem Widerstand unter circa 30 Ohm wird ein akustisches oder optisches Signal ausgegeben. Typische Anwendungen sind die Leitungsprüfung und die Kontrolle der Schutzleiterdurchgängigkeit.",
@@ -366,10 +366,10 @@
       "id": "mp-024",
       "q": "Wie wird der Widerstand gemessen?",
       "options": [
-        "Bei eingeschalteter Betriebsspannung durch Auswertung des Spannungsabfalls am Leiter",
-        "Im spannungsfreien Zustand, Messgerät legt kleine Prüfspannung an",
         "Berührungslos mit einer induktiven Strommesszange um den stromdurchflossenen Leiter",
-        "Mit einem zweipoligen Spannungsprüfer durch Vergleich der Potentialdifferenzen"
+        "Im spannungsfreien Zustand, Messgerät legt kleine Prüfspannung an",
+        "Mit einem zweipoligen Spannungsprüfer durch Vergleich der Potentialdifferenzen",
+        "Bei eingeschalteter Betriebsspannung durch Auswertung des Spannungsabfalls am Leiter"
       ],
       "correct": 1,
       "explanation": "Die Widerstandsmessung muss immer im spannungsfreien Zustand erfolgen. Das Messgerät legt eine kleine Gleichspannung an den Prüfling an und misst den fließenden Strom. Nach dem Ohmschen Gesetz (R = U/I) berechnet es daraus den Widerstandswert. Vor der Messung muss der Stromkreis aufgetrennt werden.",
@@ -384,11 +384,11 @@
       "q": "Was ist ein True-RMS-Multimeter?",
       "options": [
         "Ein besonders robustes Multimeter mit erhöhter Schutzart für den Außeneinsatz",
-        "Ein Multimeter, das den echten Effektivwert auch bei nicht-sinusförmigen Signalen misst",
         "Ein Multimeter ausschließlich für Gleichspannungsmessungen ohne Wechselstromfunktion",
-        "Ein analoges Multimeter mit Zeiger und mechanischem Messwerk zur Trendanzeige"
+        "Ein analoges Multimeter mit Zeiger und mechanischem Messwerk zur Trendanzeige",
+        "Ein Multimeter, das den echten Effektivwert auch bei nicht-sinusförmigen Signalen misst"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein True-RMS-Multimeter (Root Mean Square) misst den echten Effektivwert einer Wechselgröße, auch wenn die Kurvenform nicht sinusförmig ist. Einfache Multimeter gehen von einer reinen Sinusform aus und zeigen bei verzerrten Signalen falsche Werte an. True-RMS ist besonders wichtig bei Messungen an Frequenzumrichtern und elektronischen Lasten mit Oberwellenanteilen.",
       "difficulty": "schwer",
       "tags": [
@@ -400,12 +400,12 @@
       "id": "mp-031",
       "q": "Was ist ein Prüfprotokoll?",
       "options": [
-        "Ein detaillierter Wartungsplan für die regelmäßige Instandhaltung aller Betriebsmittel",
         "Ein Dokument zur Dokumentation aller Prüfergebnisse einer Anlage",
+        "Ein technischer Schaltplan mit Darstellung aller Stromkreise und Schutzeinrichtungen",
         "Eine Kostenaufstellung für durchgeführte Installations- und Montagearbeiten der Anlage",
-        "Ein technischer Schaltplan mit Darstellung aller Stromkreise und Schutzeinrichtungen"
+        "Ein detaillierter Wartungsplan für die regelmäßige Instandhaltung aller Betriebsmittel"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Das Prüfprotokoll, auch Anlagenbuch genannt, dokumentiert alle durchgeführten Prüfungen mit sämtlichen Messwerten, festgestellten Mängeln, dem Namen des Prüfers und dem Prüfdatum. Es muss aufbewahrt werden und dient als Nachweis, dass die elektrische Anlage ordnungsgemäß geprüft wurde.",
       "difficulty": "mittel",
       "tags": [
@@ -417,12 +417,12 @@
       "id": "mp-032",
       "q": "Wer darf elektrische Anlagen prüfen?",
       "options": [
-        "Jede eingewiesene Person mit grundlegender technischer Berufsausbildung und Werkzeug",
-        "Elektrofachkräfte mit entsprechender Qualifikation und Messgeräten",
+        "Ausschließlich der zuständige Netzbetreiber im jeweiligen Versorgungsgebiet",
         "Ausschließlich der technische Überwachungsverein als externe Prüforganisation",
-        "Ausschließlich der zuständige Netzbetreiber im jeweiligen Versorgungsgebiet"
+        "Elektrofachkräfte mit entsprechender Qualifikation und Messgeräten",
+        "Jede eingewiesene Person mit grundlegender technischer Berufsausbildung und Werkzeug"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die Prüfung elektrischer Anlagen darf nur von Elektrofachkräften durchgeführt werden, die über die entsprechende Qualifikation, ausreichende Berufserfahrung und geeignete, kalibrierte Prüfmittel verfügen. Für bestimmte Anlagenarten ist zusätzlich eine befugte Prüfstelle erforderlich.",
       "difficulty": "mittel",
       "tags": [
@@ -434,12 +434,12 @@
       "id": "mp-033",
       "q": "Was ist eine wiederkehrende Prüfung?",
       "options": [
-        "Die einmalige Erstprüfung einer neuen Anlage unmittelbar vor der Inbetriebnahme",
         "Regelmäßige Prüfung einer bestehenden Anlage in festgelegten Intervallen",
+        "Die einmalige Erstprüfung einer neuen Anlage unmittelbar vor der Inbetriebnahme",
         "Eine einmalige Sonderprüfung nach einem aufgetretenen Isolationsfehler in der Anlage",
         "Eine technische Prüfung nach einer wesentlichen Änderung oder Erweiterung der Anlage"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Die wiederkehrende Prüfung ist eine regelmäßige Überprüfung bestehender elektrischer Anlagen in vorgeschriebenen Intervallen. Die Prüffristen hängen von der Anlagenart ab: zum Beispiel alle vier Jahre für Wohngebäude, jährlich für Baustellen und halbjährlich für bestimmte gewerbliche Anlagen.",
       "difficulty": "mittel",
       "tags": [
@@ -452,11 +452,11 @@
       "q": "Was bedeutet CAT III bei Multimetern?",
       "options": [
         "Die Gehäusegrößenkategorie des Messgeräts nach internationaler Klassifizierung",
+        "Die Klassifizierung der Batteriekapazität und maximale Betriebsdauer des Geräts",
         "Die Messkategorie für Messungen an der festen Installation (Verteiler)",
-        "Die Genauigkeitsklasse für präzise Labormessungen unter Referenzbedingungen",
-        "Die Klassifizierung der Batteriekapazität und maximale Betriebsdauer des Geräts"
+        "Die Genauigkeitsklasse für präzise Labormessungen unter Referenzbedingungen"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "CAT III bezeichnet die Messkategorie für Messungen an der festen elektrischen Installation, also an Verteilungen und fest angeschlossenen Steckdosen. Höhere Kategorien bieten mehr Schutz gegen transiente Überspannungen: CAT IV gilt für die Einspeisung und den Zählerbereich, CAT II für Geräte an Steckdosen.",
       "difficulty": "schwer",
       "tags": [
@@ -468,12 +468,12 @@
       "id": "mp-035",
       "q": "Was ist der Unterschied zwischen analoger und digitaler Anzeige?",
       "options": [
-        "Analoge Messgeräte liefern den Zahlenwert, digitale zeigen Verlaufskurven auf dem Bildschirm",
         "Analog: Zeiger auf Skala, Digital: Ziffernanzeige. Analog zeigt Trends besser",
+        "Analoge Messgeräte liefern den Zahlenwert, digitale zeigen Verlaufskurven auf dem Bildschirm",
         "Digitale Anzeigen sind grundsätzlich ungenauer als analoge Zeigerinstrumente bei Messungen",
         "Analoge Messgeräte reagieren schneller auf Signale als vergleichbare digitale Instrumente"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei der analogen Anzeige bewegt sich ein Zeiger über eine Skala, was besonders gut für die Beobachtung von Trends und schwankenden Messwerten geeignet ist. Die digitale Anzeige zeigt den Messwert als Ziffern an, was genaueres Ablesen ermöglicht, aber bei schwankenden Werten springende Ziffern verursacht.",
       "difficulty": "leicht",
       "tags": [
@@ -487,11 +487,11 @@
       "q": "Was ist bei der Temperaturmessung mit NTC/PTC zu beachten?",
       "options": [
         "Es kann ausschließlich die Spannung am Sensorausgang gemessen und angezeigt werden",
-        "Widerstand ändern sich mit Temperatur, Kennlinie beachten",
         "Die Messung funktioniert ausschließlich bei anliegender Gleichstromversorgung am Sensor",
-        "Eine besondere Kalibrierung des Sensors vor jeder Messung ist erforderlich"
+        "Eine besondere Kalibrierung des Sensors vor jeder Messung ist erforderlich",
+        "Widerstand ändern sich mit Temperatur, Kennlinie beachten"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "NTC- und PTC-Sensoren ändern ihren Widerstandswert in Abhängigkeit von der Temperatur. Beim NTC sinkt der Widerstand bei steigender Temperatur, beim PTC steigt er. Für die korrekte Temperaturberechnung muss die spezifische Kennlinie oder R-T-Tabelle des jeweiligen Sensors verwendet werden.",
       "difficulty": "mittel",
       "tags": [
@@ -503,12 +503,12 @@
       "id": "mp-037",
       "q": "Was ist eine Differenzstrommessung?",
       "options": [
-        "Messung des Stromunterschieds zwischen L und N (Fehlerstrom)",
         "Messung der Spannungsdifferenz zwischen zwei Außenleitern im Dreiphasennetz",
+        "Messung der Frequenzdifferenz zwischen Erzeuger und Verbraucher im Versorgungsnetz",
         "Messung des Gesamtstroms aller Phasen am Einspeisepunkt der Hauptverteilung",
-        "Messung der Frequenzdifferenz zwischen Erzeuger und Verbraucher im Versorgungsnetz"
+        "Messung des Stromunterschieds zwischen L und N (Fehlerstrom)"
       ],
-      "correct": 0,
+      "correct": 3,
       "explanation": "Bei der Differenzstrommessung wird der Unterschied zwischen dem hinfließenden Strom im Außenleiter (L) und dem rückfließenden Strom im Neutralleiter (N) gemessen. Sind beide gleich, ist der Differenzstrom null. Ist er ungleich null, fließt ein Fehlerstrom über den Schutzleiter oder die Erde ab, was auf einen Isolationsfehler hindeutet.",
       "difficulty": "mittel",
       "tags": [
@@ -521,11 +521,11 @@
       "q": "Was ist ein Isolationsprüfer?",
       "options": [
         "Ein zweipoliger Spannungsprüfer zur Feststellung der Spannungsfreiheit an der Anlage",
-        "Ein Gerät zur Messung des Isolationswiderstands mit hoher Prüfspannung (500V, 1000V DC)",
+        "Ein akustischer Durchgangsprüfer zur Kontrolle der Schutzleiterverbindungen in Stromkreisen",
         "Ein niederohmiger Stromprüfer zur Messung von Kurzschlussströmen in der Fehlerschleife",
-        "Ein akustischer Durchgangsprüfer zur Kontrolle der Schutzleiterverbindungen in Stromkreisen"
+        "Ein Gerät zur Messung des Isolationswiderstands mit hoher Prüfspannung (500V, 1000V DC)"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein Isolationsprüfer ist ein spezielles Messgerät, das hohe Gleichspannungen (250V, 500V oder 1000V) erzeugt, um den Isolationswiderstand zu messen. Er kann sehr hohe Widerstandswerte im Megaohm-Bereich erfassen und wird eingesetzt, um die Qualität der Isolierung zwischen aktiven Leitern und dem Schutzleiter zu überprüfen.",
       "difficulty": "mittel",
       "tags": [
@@ -537,10 +537,10 @@
       "id": "mp-040",
       "q": "Warum muss vor der Isolationsmessung die Anlage spannungsfrei sein?",
       "options": [
-        "Weil die Messung bei anliegender Betriebsspannung erheblich höhere Energiekosten verursacht",
+        "Weil die Isolationsmessung ausschließlich bei anliegender Gleichspannung durchgeführt wird",
         "Weil das Messgerät sonst beschädigt wird und Messwerte falsch sind",
         "Weil die Farbkennzeichnung der Leiter bei eingeschalteter Spannung nicht erkennbar ist",
-        "Weil die Isolationsmessung ausschließlich bei anliegender Gleichspannung durchgeführt wird"
+        "Weil die Messung bei anliegender Betriebsspannung erheblich höhere Energiekosten verursacht"
       ],
       "correct": 1,
       "explanation": "Die Isolationsmessung muss immer im spannungsfreien Zustand erfolgen, da eine anliegende Fremdspannung die Messwerte verfälscht und das empfindliche Messgerät beschädigen kann. Zusätzlich müssen Verbraucher mit empfindlicher Elektronik vor der Messung abgetrennt werden, da die hohe Prüfspannung diese Bauteile zerstören könnte.",

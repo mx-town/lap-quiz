@@ -8,12 +8,12 @@
       "id": "eg-001",
       "q": "Welches sind die drei wichtigsten Größen in der Elektrotechnik?",
       "options": [
-        "Spannung (U), Stromstärke (I), Widerstand (R)",
-        "Spannung (U), Kapazität (C), Induktivität (L)",
         "Stromstärke (I), Frequenz (f), Impedanz (Z)",
-        "Widerstand (R), Leitwert (G), Reaktanz (X)"
+        "Spannung (U), Stromstärke (I), Widerstand (R)",
+        "Widerstand (R), Leitwert (G), Reaktanz (X)",
+        "Spannung (U), Kapazität (C), Induktivität (L)"
       ],
-      "correct": 0,
+      "correct": 1,
       "explanation": "Die drei wichtigsten Grundgrößen der Elektrotechnik sind Spannung (U) in Volt, Stromstärke (I) in Ampere und Widerstand (R) in Ohm. Sie bilden das Fundament und sind durch das Ohmsche Gesetz (U = R x I) miteinander verknüpft.",
       "difficulty": "leicht",
       "tags": [
@@ -24,12 +24,12 @@
       "id": "eg-002",
       "q": "Was besagt das Ohmsche Gesetz?",
       "options": [
-        "I = U + R",
-        "U = R × I",
         "R = U × I",
-        "U = I / R"
+        "I = U + R",
+        "U = I / R",
+        "U = R × I"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Das Ohmsche Gesetz U = R x I beschreibt den grundlegenden Zusammenhang zwischen Spannung, Widerstand und Stromstärke. Es besagt, dass die Spannung gleich dem Produkt aus Widerstand und Stromstärke ist. Daraus lassen sich auch I = U / R und R = U / I ableiten.",
       "difficulty": "leicht",
       "tags": [
@@ -40,12 +40,12 @@
       "id": "eg-003",
       "q": "Wodurch entsteht elektrische Spannung?",
       "options": [
-        "Durch Elektronenreibung (Elektronenverschmelzung/-abstoßung)",
-        "Durch Ladungstrennung (Elektronenüberschuss/-mangel)",
         "Durch Teilchenbewegung (Elektronenbeschleunigung/-abbremsung)",
-        "Durch Feldkopplung (Elektronenverschiebung/-verdichtung)"
+        "Durch Elektronenreibung (Elektronenverschmelzung/-abstoßung)",
+        "Durch Feldkopplung (Elektronenverschiebung/-verdichtung)",
+        "Durch Ladungstrennung (Elektronenüberschuss/-mangel)"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Elektrische Spannung entsteht durch Ladungstrennung: Am Minuspol sammeln sich überschüssige Elektronen (Elektronenüberschuss), am Pluspol herrscht Elektronenmangel. Diese Potentialdifferenz zwischen den beiden Polen treibt den Strom im geschlossenen Stromkreis an.",
       "difficulty": "leicht",
       "tags": [
@@ -56,12 +56,12 @@
       "id": "eg-004",
       "q": "Welche fünf Wirkungen hat der elektrische Strom?",
       "options": [
+        "Wärme, Licht, magnetisch, thermisch, elektrolytisch",
         "Wärme, Licht, magnetisch, chemisch, physiologisch",
         "Wärme, Druck, magnetisch, akustisch, physiologisch",
-        "Wärme, Licht, elektrostatisch, chemisch, mechanisch",
-        "Wärme, Licht, magnetisch, thermisch, elektrolytisch"
+        "Wärme, Licht, elektrostatisch, chemisch, mechanisch"
       ],
-      "correct": 0,
+      "correct": 1,
       "explanation": "Die fünf Stromwirkungen sind: Wärmewirkung (z.B. Bügeleisen), Lichtwirkung (z.B. LED), magnetische Wirkung (z.B. Elektromotor), chemische Wirkung (z.B. Galvanisieren) und physiologische Wirkung (z.B. Weidezaun). Jede dieser Wirkungen wird in der Elektrotechnik gezielt genutzt.",
       "difficulty": "leicht",
       "tags": [
@@ -72,12 +72,12 @@
       "id": "eg-005",
       "q": "Welche Faktoren bestimmen den Widerstand einer elektrischen Leitung?",
       "options": [
-        "Länge, Querschnitt, Spannung (U), Stromstärke",
-        "Länge, Querschnitt, Material (ρ), Temperatur",
         "Länge, Induktivität, Material (ρ), Frequenz",
-        "Länge, Querschnitt, Kapazität (C), Impedanz"
+        "Länge, Querschnitt, Spannung (U), Stromstärke",
+        "Länge, Querschnitt, Kapazität (C), Impedanz",
+        "Länge, Querschnitt, Material (ρ), Temperatur"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Der Widerstand einer Leitung wird durch die Formel R = ρ x l / A berechnet und hängt von vier Faktoren ab: Länge (l), Querschnitt (A), spezifischer Widerstand des Materials (ρ) und Temperatur. Längere und dünnere Leitungen haben einen höheren Widerstand.",
       "difficulty": "mittel",
       "tags": [
@@ -104,9 +104,9 @@
       "id": "eg-007",
       "q": "Wie wird ein Voltmeter in den Stromkreis geschaltet?",
       "options": [
-        "In Serie zum Verbraucher oder zur Spannungsquelle",
-        "Parallel zum Verbraucher oder Erzeuger",
         "In Serie zwischen Sicherung und dem Schalter",
+        "Parallel zum Verbraucher oder Erzeuger",
+        "In Serie zum Verbraucher oder zur Spannungsquelle",
         "Parallel zwischen Amperemeter und der Sicherung"
       ],
       "correct": 1,
@@ -120,10 +120,10 @@
       "id": "eg-008",
       "q": "Wie wird ein Amperemeter in den Stromkreis geschaltet?",
       "options": [
-        "Parallel zum Verbraucher geschaltet",
+        "In Serie zur Spannungsquelle geschaltet",
         "In Serie zum Verbraucher",
         "Parallel zur Spannungsquelle geschaltet",
-        "In Serie zur Spannungsquelle geschaltet"
+        "Parallel zum Verbraucher geschaltet"
       ],
       "correct": 1,
       "explanation": "Ein Amperemeter wird immer in Serie (Reihenschaltung) zum Verbraucher geschaltet, da der gesamte zu messende Strom durch das Messgerät fließen muss. Es hat einen sehr niedrigen Innenwiderstand, damit es den Stromkreis möglichst wenig beeinflusst.",
@@ -137,11 +137,11 @@
       "q": "Warum werden elektrische Verbraucher parallel geschaltet?",
       "options": [
         "Nur bei Parallelschaltung bleibt der Gesamtwiderstand im Stromkreis konstant (50 Ohm)",
-        "Nur bei Parallelschaltung erhält jeder Verbraucher die volle Netzspannung (230V)",
         "Nur bei Parallelschaltung fließt durch jeden Verbraucher der gleiche Strom (16A)",
+        "Nur bei Parallelschaltung erhält jeder Verbraucher die volle Netzspannung (230V)",
         "Nur bei Parallelschaltung addieren sich die Einzelwiderstände zum Gesamtwiderstand (Rges)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Bei der Parallelschaltung liegt an jedem Verbraucher die volle Netzspannung (z.B. 230V) an, sodass jedes Gerät mit seiner Nennspannung betrieben werden kann. Bei einer Reihenschaltung würde sich die Spannung auf die einzelnen Verbraucher aufteilen, und kein Gerät würde korrekt funktionieren.",
       "difficulty": "mittel",
       "tags": [
@@ -152,12 +152,12 @@
       "id": "eg-010",
       "q": "Ab welcher Stromstärke besteht für den Menschen Lebensgefahr?",
       "options": [
-        "Ab 10 mA",
         "Ab 30 mA",
-        "Ab 50 mA",
-        "Ab 80 mA"
+        "Ab 10 mA",
+        "Ab 80 mA",
+        "Ab 50 mA"
       ],
-      "correct": 2,
+      "correct": 3,
       "explanation": "Ab einer Stromstärke von 50 mA (Milliampere) besteht akute Lebensgefahr, da der Strom Herzkammerflimmern auslösen kann. Bei einer Berührungsspannung von 230V und einem Körperwiderstand von ca. 1000 Ohm fließen sogar 230 mA, was weit über dem lebensgefährlichen Wert liegt.",
       "difficulty": "mittel",
       "tags": [
@@ -170,8 +170,8 @@
       "options": [
         "Verhältnis von Pmax (maximal) zu Pmin (minimal)",
         "Verhältnis von Pab (abgegeben) zu Pzu (zugeführt)",
-        "Verhältnis von Pzu (zugeführt) zu Pver (verloren)",
-        "Verhältnis von Pel (elektrisch) zu Pmech (mechanisch)"
+        "Verhältnis von Pel (elektrisch) zu Pmech (mechanisch)",
+        "Verhältnis von Pzu (zugeführt) zu Pver (verloren)"
       ],
       "correct": 1,
       "explanation": "Der Wirkungsgrad η = Pab / Pzu gibt an, welcher Anteil der zugeführten Leistung als Nutzleistung abgegeben wird. Er wird in Prozent oder als Dezimalzahl kleiner 1 angegeben. Ein Motor mit η = 0,85 wandelt 85% der zugeführten elektrischen Leistung in mechanische Leistung um.",
@@ -184,12 +184,12 @@
       "id": "eg-013",
       "q": "Was gibt der Temperaturkoeffizient α an?",
       "options": [
-        "Die Widerstandszunahme pro 1 Kelvin bei 1 Ampere Stromfluss",
-        "Die Widerstandsänderung pro 1 Ohm bei 1 K Temperaturänderung",
         "Die Kapazitätsänderung pro 1 Farad bei 1 K Temperaturänderung",
-        "Die Induktivitätsänderung pro 1 Henry bei 1 K Temperaturänderung"
+        "Die Induktivitätsänderung pro 1 Henry bei 1 K Temperaturänderung",
+        "Die Widerstandsänderung pro 1 Ohm bei 1 K Temperaturänderung",
+        "Die Widerstandszunahme pro 1 Kelvin bei 1 Ampere Stromfluss"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Der Temperaturkoeffizient α gibt an, um wie viel Ohm sich der Widerstand von 1 Ohm bei einer Temperaturänderung von 1 Kelvin ändert. Kupfer hat z.B. α = 0,004 1/K (positiver Temperaturkoeffizient), das bedeutet der Widerstand steigt bei Erwärmung. Materialien mit negativem Temperaturkoeffizienten (z.B. NTC) verringern ihren Widerstand bei steigender Temperatur.",
       "difficulty": "schwer",
       "tags": [
@@ -200,10 +200,10 @@
       "id": "eg-014",
       "q": "Was versteht man unter dem spezifischen Widerstand ρ?",
       "options": [
-        "Den Widerstand einer Schaltung mit l = 1 m, A = 1 mm² bei 0°C",
+        "Den Widerstand einer Wicklung mit l = 1 m, A = 1 mm² bei 40°C",
         "Den Widerstand eines Leiters mit l = 1 m, A = 1 mm² bei 20°C",
-        "Den Widerstand eines Isolators mit l = 1 m, A = 1 mm² bei 20°C",
-        "Den Widerstand einer Wicklung mit l = 1 m, A = 1 mm² bei 40°C"
+        "Den Widerstand einer Schaltung mit l = 1 m, A = 1 mm² bei 0°C",
+        "Den Widerstand eines Isolators mit l = 1 m, A = 1 mm² bei 20°C"
       ],
       "correct": 1,
       "explanation": "Der spezifische Widerstand ρ ist eine Materialkonstante und gibt den Widerstand eines normierten Leiterstücks mit 1 m Länge und 1 mm² Querschnitt bei 20°C an. Die Einheit ist Ω·mm²/m. Je kleiner ρ, desto besser leitet das Material, z.B. hat Kupfer ρ = 0,0178 Ω·mm²/m.",
@@ -216,12 +216,12 @@
       "id": "eg-015",
       "q": "Wovon hängt der Spannungsabfall in einer Leitung ab?",
       "options": [
-        "Vom Leitungsquerschnitt A und von der Frequenz f (UL = A × f)",
         "Vom Leiterwiderstand RL und vom Strom I (UL = RL × I)",
+        "Von der Leitungslänge l und von der Kapazität C (UL = l × C)",
         "Von der Netzspannung UN und vom Leitwert G (UL = UN × G)",
-        "Von der Leitungslänge l und von der Kapazität C (UL = l × C)"
+        "Vom Leitungsquerschnitt A und von der Frequenz f (UL = A × f)"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der Spannungsabfall in einer Leitung berechnet sich nach UL = RL x I und hängt somit vom Leiterwiderstand RL und dem fließenden Strom I ab. Der Leiterwiderstand selbst wird durch Länge, Querschnitt, Material und Temperatur der Leitung bestimmt.",
       "difficulty": "mittel",
       "tags": [
@@ -232,12 +232,12 @@
       "id": "eg-016",
       "q": "Warum soll der Spannungsabfall an Leitungen klein gehalten werden?",
       "options": [
-        "Weil Spannungsfall den Blindleistungsfaktor verschlechtert und Oberschwingungen erzeugt",
-        "Weil Spannungsfall Verluste verursacht, die in Wärme umgewandelt werden",
+        "Weil Spannungsfall den Isolationswiderstand verringert und Kriechströme verursacht",
         "Weil Spannungsfall die Netzfrequenz verändert und den Phasenwinkel beeinflusst",
-        "Weil Spannungsfall den Isolationswiderstand verringert und Kriechströme verursacht"
+        "Weil Spannungsfall Verluste verursacht, die in Wärme umgewandelt werden",
+        "Weil Spannungsfall den Blindleistungsfaktor verschlechtert und Oberschwingungen erzeugt"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein hoher Spannungsabfall an der Leitung bedeutet Verlustleistung (P = U x I), die als unerwünschte Wärme an die Umgebung abgegeben wird. Zudem fehlt diese Spannung dann am Verbraucher, sodass Geräte nicht mehr mit ihrer Nennspannung betrieben werden und nicht mehr korrekt funktionieren.",
       "difficulty": "mittel",
       "tags": [
@@ -249,11 +249,11 @@
       "q": "Was ist Wechselstrom?",
       "options": [
         "Strom, der gleichmäßig seine Stärke verändert",
-        "Strom, der periodisch Größe und Richtung ändert",
+        "Strom, der stufenweise zwischen zwei Werten wechselt",
         "Strom, der pulsierend in eine Richtung fließt",
-        "Strom, der stufenweise zwischen zwei Werten wechselt"
+        "Strom, der periodisch Größe und Richtung ändert"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Wechselstrom (AC = Alternating Current) ändert periodisch seine Richtung und Stärke, wobei er einem sinusförmigen Verlauf folgt. In Europa hat Wechselstrom eine Frequenz von 50 Hz, das bedeutet er wechselt seine Richtung 100-mal pro Sekunde (zwei Richtungswechsel pro Periode).",
       "difficulty": "leicht",
       "tags": [
@@ -265,11 +265,11 @@
       "q": "Wie verhält sich Scheitelwert zu Effektivwert bei Sinusspannung?",
       "options": [
         "Scheitelwert = Effektivwert × π",
-        "Scheitelwert = Effektivwert × √2",
         "Scheitelwert = Effektivwert × √3",
-        "Scheitelwert = Effektivwert / √2"
+        "Scheitelwert = Effektivwert / √2",
+        "Scheitelwert = Effektivwert × √2"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Der Scheitelwert ist der Maximalwert der Sinusspannung und berechnet sich als Umax = Ueff x Wurzel(2), also etwa Ueff x 1,414. Bei einer Netzspannung von 230 V Effektivwert ergibt sich ein Scheitelwert von ca. 325 V. Der Effektivwert ist jener Wert, den Messgeräte anzeigen.",
       "difficulty": "mittel",
       "tags": [
@@ -280,12 +280,12 @@
       "id": "eg-020",
       "q": "Welche Stromarten werden unterschieden?",
       "options": [
-        "Gleichstrom (DC), Wechselstrom (AC), Blindstrom, Scheinleistungsstrom",
-        "Gleichstrom (DC), Wechselstrom (AC), Drehstrom, Mischstrom",
         "Gleichstrom (DC), Wechselstrom (AC), Impulsstrom, Hochfrequenzstrom",
-        "Gleichstrom (DC), Wechselstrom (AC), Kriechstrom, Kurzschlussstrom"
+        "Gleichstrom (DC), Wechselstrom (AC), Blindstrom, Scheinleistungsstrom",
+        "Gleichstrom (DC), Wechselstrom (AC), Kriechstrom, Kurzschlussstrom",
+        "Gleichstrom (DC), Wechselstrom (AC), Drehstrom, Mischstrom"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Die vier Stromarten sind: Gleichstrom (DC) mit konstanter Richtung, Wechselstrom (AC) mit periodischer Richtungsänderung, Drehstrom (drei um 120° versetzte Wechselströme) und Mischstrom (Überlagerung von AC und DC). In der Energietechnik wird hauptsächlich Drehstrom zur Übertragung verwendet.",
       "difficulty": "leicht",
       "tags": [
@@ -296,9 +296,9 @@
       "id": "eg-021",
       "q": "Was bedeutet 'Strom und Spannung sind in Phase'?",
       "options": [
-        "Sie erreichen abwechselnd ihre Scheitelwerte und Nulldurchgänge",
-        "Sie erreichen gleichzeitig Scheitelwerte und Nulldurchgänge",
         "Sie erreichen zeitversetzt ihre Scheitelwerte und Nulldurchgänge",
+        "Sie erreichen gleichzeitig Scheitelwerte und Nulldurchgänge",
+        "Sie erreichen abwechselnd ihre Scheitelwerte und Nulldurchgänge",
         "Sie erreichen gegenläufig ihre Scheitelwerte und Nulldurchgänge"
       ],
       "correct": 1,
@@ -312,12 +312,12 @@
       "id": "eg-022",
       "q": "Erkläre das Generatorprinzip!",
       "options": [
+        "Elektrisches Feld und Verformung eines Leiters erzeugen Kapazität",
         "Elektrisches Feld und Rotation eines Leiters erzeugen Stromfluss",
         "Magnetfeld + Bewegung eines Leiters erzeugen Spannung",
-        "Magnetfeld und Erwärmung eines Leiters erzeugen Widerstand",
-        "Elektrisches Feld und Verformung eines Leiters erzeugen Kapazität"
+        "Magnetfeld und Erwärmung eines Leiters erzeugen Widerstand"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Das Generatorprinzip (elektromagnetische Induktion) besagt: Wird ein Leiter in einem Magnetfeld bewegt, so wird in ihm eine Spannung induziert. Je schneller die Bewegung und je stärker das Magnetfeld, desto größer ist die induzierte Spannung. Dieses Prinzip wird in allen Generatoren zur Stromerzeugung genutzt.",
       "difficulty": "mittel",
       "tags": [
@@ -329,12 +329,12 @@
       "id": "eg-023",
       "q": "Erkläre das Motorprinzip!",
       "options": [
-        "Spannungsbeaufschlagter Leiter wird im elektrischen Feld beschleunigt",
         "Stromdurchflossener Leiter wird im Magnetfeld abgelenkt",
+        "Kapazitiv geladener Leiter wird im Drehfeld ausgerichtet",
         "Widerstandsbehafteter Leiter wird im Wechselfeld aufgeheizt",
-        "Kapazitiv geladener Leiter wird im Drehfeld ausgerichtet"
+        "Spannungsbeaufschlagter Leiter wird im elektrischen Feld beschleunigt"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Das Motorprinzip besagt: Ein stromdurchflossener Leiter erfährt in einem Magnetfeld eine Kraft (Lorentz-Kraft), die ihn aus dem Feld heraus ablenkt. Die Richtung der Kraft hängt von der Stromrichtung und der Feldrichtung ab. Dieses Prinzip ist die Grundlage aller Elektromotoren.",
       "difficulty": "mittel",
       "tags": [
@@ -345,12 +345,12 @@
       "id": "eg-024",
       "q": "Was ist Selbstinduktion?",
       "options": [
+        "Bei Flussänderung entsteht eine Kapazität, die die Spannung ausgleicht",
         "Bei Spannungsänderung entsteht ein Magnetfeld, das den Stromfluss verstärkt",
         "Bei Stromänderung entsteht eine Spannung, die der Ursache entgegenwirkt",
-        "Bei Feldänderung entsteht ein Widerstand, der die Frequenz stabilisiert",
-        "Bei Flussänderung entsteht eine Kapazität, die die Spannung ausgleicht"
+        "Bei Feldänderung entsteht ein Widerstand, der die Frequenz stabilisiert"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Selbstinduktion bedeutet, dass bei jeder Stromänderung in einer Spule eine Spannung (Selbstinduktionsspannung) entsteht, die der Ursache der Stromänderung entgegenwirkt. Dieses Verhalten wird durch die Lenzsche Regel beschrieben. Selbstinduktion ist der Grund, warum Spulen im Wechselstromkreis einen Blindwiderstand erzeugen.",
       "difficulty": "schwer",
       "tags": [
@@ -361,12 +361,12 @@
       "id": "eg-025",
       "q": "Was passiert, wenn eine AC-Spule an Gleichspannung angeschlossen wird?",
       "options": [
-        "Sie erzeugt eine höhere Induktionsspannung (mehr XL, doppelter R wirksam)",
         "Sie überhitzt und brennt durch (kein XL, nur R wirksam)",
-        "Sie arbeitet als Transformator weiter (XL bleibt, nur R verändert sich)",
-        "Sie wird zum kapazitiven Blindwiderstand (kein R, nur XC wirksam)"
+        "Sie erzeugt eine höhere Induktionsspannung (mehr XL, doppelter R wirksam)",
+        "Sie wird zum kapazitiven Blindwiderstand (kein R, nur XC wirksam)",
+        "Sie arbeitet als Transformator weiter (XL bleibt, nur R verändert sich)"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei Gleichspannung fehlt die Stromänderung, weshalb kein induktiver Blindwiderstand XL entsteht und keine Gegen-EMK aufgebaut wird. Nur der ohmsche Widerstand R der Wicklung begrenzt den Strom, der dadurch viel zu hoch wird. Die Spule überhitzt und brennt durch.",
       "difficulty": "schwer",
       "tags": [
@@ -378,12 +378,12 @@
       "id": "eg-026",
       "q": "Wann spricht man von induktivem Blindwiderstand?",
       "options": [
-        "Bei Kondensator an AC – kapazitive Ladung wirkt wie Widerstand",
         "Bei Spule an AC – Selbstinduktion wirkt wie Widerstand",
         "Bei Widerstand an AC – thermische Verluste wirken wie Blindanteil",
+        "Bei Kondensator an AC – kapazitive Ladung wirkt wie Widerstand",
         "Bei Transformator an DC – Sättigungseffekt wirkt wie Widerstand"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Induktiver Blindwiderstand XL entsteht, wenn eine Spule an Wechselstrom angeschlossen wird. Durch die ständige Stromänderung bei AC wirkt die Selbstinduktion der Spule wie ein zusätzlicher Widerstand. XL berechnet sich mit der Formel XL = 2 x Pi x f x L und steigt mit zunehmender Frequenz und Induktivität.",
       "difficulty": "schwer",
       "tags": [
@@ -396,11 +396,11 @@
       "q": "Welche Phasenverschiebung erzeugt ein Kondensator im AC-Kreis?",
       "options": [
         "Induktiv – Spannung eilt dem Strom um bis zu 90° voraus",
-        "Kapazitiv – Strom eilt der Spannung voraus",
+        "Kapazitiv – Spannung eilt dem Strom um bis zu 45° voraus",
         "Ohmisch – Strom und Spannung bleiben stets in Phase",
-        "Kapazitiv – Spannung eilt dem Strom um bis zu 45° voraus"
+        "Kapazitiv – Strom eilt der Spannung voraus"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Am Kondensator eilt der Strom der Spannung um bis zu 90° voraus (kapazitive Phasenverschiebung). Das liegt daran, dass der Kondensator zuerst geladen werden muss (Stromfluss), bevor sich die Spannung aufbaut. Die Merkhilfe lautet: Am Kondensator eilt der Strom vor.",
       "difficulty": "schwer",
       "tags": [
@@ -411,10 +411,10 @@
       "id": "eg-028",
       "q": "Welche Phasenverschiebung erzeugt eine Spule im AC-Kreis?",
       "options": [
-        "Kapazitiv – Strom eilt der Spannung um bis zu 90° voraus",
+        "Induktiv – Spannung eilt dem Strom um bis zu 45° nach",
         "Induktiv – Strom eilt der Spannung nach",
-        "Ohmisch – Strom und Spannung bleiben stets in Phase",
-        "Induktiv – Spannung eilt dem Strom um bis zu 45° nach"
+        "Kapazitiv – Strom eilt der Spannung um bis zu 90° voraus",
+        "Ohmisch – Strom und Spannung bleiben stets in Phase"
       ],
       "correct": 1,
       "explanation": "An einer Spule eilt der Strom der Spannung um bis zu 90° nach (induktive Phasenverschiebung). Das liegt an der Selbstinduktion: Die Spule erzeugt eine Gegenspannung, die den Aufbau des Stroms verzögert. Die Merkhilfe lautet: An der Spule eilt der Strom nach.",
@@ -427,12 +427,12 @@
       "id": "eg-029",
       "q": "Wie entsteht Dreiphasenwechselspannung (Drehstrom)?",
       "options": [
-        "Drei um 90° versetzte Wicklungen im Gleichstromgenerator",
-        "Drei um 120° versetzte Spulen im Generator",
         "Drei um 180° versetzte Kondensatoren im Wechselrichter",
-        "Drei um 60° versetzte Widerstände im Transformator"
+        "Drei um 90° versetzte Wicklungen im Gleichstromgenerator",
+        "Drei um 60° versetzte Widerstände im Transformator",
+        "Drei um 120° versetzte Spulen im Generator"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Im Drehstromgenerator sind drei Spulen (Stränge) räumlich um jeweils 120° versetzt angeordnet. Wenn sich das Polrad (Rotor) dreht, werden in jeder Spule nacheinander Spannungen induziert, die um 120° phasenverschoben sind. So entstehen drei Wechselspannungen, die zusammen das Drehstromsystem bilden.",
       "difficulty": "mittel",
       "tags": [
@@ -444,11 +444,11 @@
       "q": "Aus welchen Teilen besteht ein Kondensator?",
       "options": [
         "Zwei magnetische Kerne (Ferrite) und ein Luftspalt (Separator)",
-        "Zwei leitfähige Platten (Elektroden) + Dielektrikum (Isolator)",
+        "Zwei halbleitende Zonen (Schichten) und eine Sperrschicht (Übergang)",
         "Zwei isolierende Schichten (Barrieren) und ein Leiterband (Kollektor)",
-        "Zwei halbleitende Zonen (Schichten) und eine Sperrschicht (Übergang)"
+        "Zwei leitfähige Platten (Elektroden) + Dielektrikum (Isolator)"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein Kondensator besteht aus zwei leitfähigen Platten (Elektroden), zwischen denen sich ein Isolierstoff (Dielektrikum) befindet. Beim Anlegen einer Spannung werden Ladungen auf den Platten gespeichert. Die Kapazität hängt von der Plattenfläche, dem Plattenabstand und dem Dielektrikum ab.",
       "difficulty": "leicht",
       "tags": [
@@ -459,12 +459,12 @@
       "id": "eg-031",
       "q": "Was bewirkt die Parallelschaltung von Kondensatoren?",
       "options": [
+        "Cges wird halbiert (Cges = C1 × C2 / 2)",
         "Cges wird kleiner (1/Cges = 1/C1 + 1/C2 + …)",
         "Cges wird größer (Cges = C1 + C2 + …)",
-        "Cges wird halbiert (Cges = C1 × C2 / 2)",
         "Cges bleibt unverändert (Cges = C1 = C2 = …)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Bei der Parallelschaltung von Kondensatoren addieren sich die Einzelkapazitäten: Cges = C1 + C2 + ... Die Spannung an allen Kondensatoren ist gleich (Netzspannung), aber die Gesamtkapazität und damit das Ladungsspeichervermögen vergrößert sich.",
       "difficulty": "mittel",
       "tags": [
@@ -475,10 +475,10 @@
       "id": "eg-032",
       "q": "Was bewirkt die Serienschaltung von Kondensatoren?",
       "options": [
-        "Cges wird größer (Cges = C1 + C2 + C3)",
+        "Cges bleibt konstant (Cges = C1 = C2 = C3)",
         "Cges wird kleiner (1/Cges = 1/C1 + 1/C2)",
-        "Cges wird verdoppelt (Cges = 2 × C1 × C2)",
-        "Cges bleibt konstant (Cges = C1 = C2 = C3)"
+        "Cges wird größer (Cges = C1 + C2 + C3)",
+        "Cges wird verdoppelt (Cges = 2 × C1 × C2)"
       ],
       "correct": 1,
       "explanation": "Bei der Serienschaltung (Reihenschaltung) von Kondensatoren berechnet sich die Gesamtkapazität nach 1/Cges = 1/C1 + 1/C2 + ... Die Gesamtkapazität wird also kleiner als die kleinste Einzelkapazität. Vorteil: Die Spannungsfestigkeit erhöht sich, da sich die Gesamtspannung auf die einzelnen Kondensatoren aufteilt.",
@@ -491,12 +491,12 @@
       "id": "eg-033",
       "q": "Was versteht man unter Remanenz?",
       "options": [
-        "Magnetische Sättigung nach Erreichen der maximalen Feldstärke",
-        "Restmagnetismus nach Abschalten des Erregerstroms",
+        "Hystereseverlust nach mehrfachem Ummagnetisieren des Eisenkerns",
         "Koerzitivfeldstärke nach Umpolung des angelegten Magnetfelds",
-        "Hystereseverlust nach mehrfachem Ummagnetisieren des Eisenkerns"
+        "Restmagnetismus nach Abschalten des Erregerstroms",
+        "Magnetische Sättigung nach Erreichen der maximalen Feldstärke"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Remanenz bezeichnet den Restmagnetismus, der in einem ferromagnetischen Material (z.B. Eisen) verbleibt, nachdem das äußere Magnetfeld bzw. der Erregerstrom abgeschaltet wurde. Hartmagnetische Materialien (Dauermagnete) haben eine hohe Remanenz, weichmagnetische Materialien (Trafokerne) eine niedrige.",
       "difficulty": "mittel",
       "tags": [
@@ -508,11 +508,11 @@
       "q": "Wie kann in einem Leiter Spannung induziert werden?",
       "options": [
         "Durch Leitungserwärmung (Thermoelement) oder Druckeinwirkung (Piezokristall)",
-        "Durch Bewegungsinduktion (Generator) oder Ruheinduktion (Trafo)",
         "Durch Ladungstrennung (Batterie) oder chemische Oxidation (Brennstoffzelle)",
+        "Durch Bewegungsinduktion (Generator) oder Ruheinduktion (Trafo)",
         "Durch Lichteinstrahlung (Solarzelle) oder Reibungseffekte (Elektrostatik)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Spannung kann auf zwei Arten in einem Leiter induziert werden: Durch Bewegungsinduktion, bei der sich ein Leiter in einem Magnetfeld bewegt (Generatorprinzip), oder durch Ruheinduktion, bei der sich das Magnetfeld um einen ruhenden Leiter ändert (Transformatorprinzip). Beide Verfahren basieren auf der elektromagnetischen Induktion.",
       "difficulty": "mittel",
       "tags": [
@@ -523,12 +523,12 @@
       "id": "eg-035",
       "q": "Zwei parallele Leiter werden gleichsinnig vom Strom durchflossen. Was passiert?",
       "options": [
+        "Sie erwärmen sich gleichmäßig",
         "Sie stoßen sich gegenseitig ab",
         "Sie ziehen sich an",
-        "Sie erwärmen sich gleichmäßig",
         "Sie erzeugen Wechselspannung"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Wenn zwei parallele Leiter gleichsinnig (in die gleiche Richtung) vom Strom durchflossen werden, ziehen sie sich gegenseitig an. Die Magnetfelder zwischen den Leitern wirken in die gleiche Richtung und vereinigen sich, wodurch eine anziehende Kraft entsteht. Bei gegensinnigem Stromfluss stoßen sie sich dagegen ab.",
       "difficulty": "mittel",
       "tags": [
@@ -539,12 +539,12 @@
       "id": "eg-036",
       "q": "Erkläre Aufbau und Wirkungsweise eines Transformators!",
       "options": [
-        "Zwei getrennte Wicklungen auf Kunststoffkörper; DC-Gleichfluss induziert Primärspannung",
         "Zwei Spulen auf gemeinsamen Eisenkern; AC-Wechselfluss induziert Sekundärspannung",
         "Zwei parallele Kondensatoren auf Keramikträger; HF-Schwingung induziert Ausgangsspannung",
+        "Zwei getrennte Wicklungen auf Kunststoffkörper; DC-Gleichfluss induziert Primärspannung",
         "Zwei gekoppelte Widerstände auf Leiterplatte; Gleichstromfluss induziert Steuerspannung"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Transformator besteht aus einer Primär- und einer Sekundärwicklung auf einem gemeinsamen Eisenkern. Fließt Wechselstrom durch die Primärspule, entsteht ein magnetischer Wechselfluss im Eisenkern, der in der Sekundärspule eine Spannung induziert. Das Übersetzungsverhältnis wird durch das Windungszahlverhältnis bestimmt.",
       "difficulty": "mittel",
       "tags": [
@@ -555,12 +555,12 @@
       "id": "eg-037",
       "q": "Kann man Gleichspannung transformieren?",
       "options": [
-        "Ja, wenn der Eisenkern ausreichend groß dimensioniert ist",
-        "Nein, da sich das Magnetfeld nicht ändert",
         "Ja, wenn die Gleichspannung einen hohen Wert besitzt",
-        "Ja, wenn die Windungszahl der Sekundärspule erhöht wird"
+        "Ja, wenn der Eisenkern ausreichend groß dimensioniert ist",
+        "Ja, wenn die Windungszahl der Sekundärspule erhöht wird",
+        "Nein, da sich das Magnetfeld nicht ändert"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Gleichspannung kann nicht mit einem herkömmlichen Transformator transformiert werden, da bei DC ein konstanter Strom fließt und somit kein sich änderndes Magnetfeld (Wechselfluss) im Eisenkern entsteht. Ohne Flussänderung wird keine Spannung in der Sekundärwicklung induziert. Deshalb wird in der Energieübertragung Wechselspannung verwendet.",
       "difficulty": "mittel",
       "tags": [
@@ -572,11 +572,11 @@
       "q": "In welchem Verhältnis steht Stern- zu Dreieckleistung beim Motor?",
       "options": [
         "1 : 2",
+        "2 : 3",
         "1 : 3",
-        "1 : √3",
-        "2 : 3"
+        "1 : √3"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Das Leistungsverhältnis Stern zu Dreieck beträgt 1 : 3. Im Dreieck liegt die verkettete Spannung (√3-fach) an jeder Wicklung an und es fließt der √3-fache Strom, sodass die Leistung im Dreieck dreimal so groß ist wie im Stern. Dieser Zusammenhang ist bei der Stern-Dreieck-Anlaufschaltung von Motoren wichtig.",
       "difficulty": "schwer",
       "tags": [
@@ -588,10 +588,10 @@
       "id": "eg-039",
       "q": "Welchen Wert zeigt ein Voltmeter bei sinusförmiger Wechselspannung an?",
       "options": [
-        "Scheitelwert",
+        "Gleichrichtwert",
         "Effektivwert",
-        "Momentanwert",
-        "Gleichrichtwert"
+        "Scheitelwert",
+        "Momentanwert"
       ],
       "correct": 1,
       "explanation": "Standard-Voltmeter zeigen bei sinusförmiger Wechselspannung den Effektivwert (RMS = Root Mean Square) an. Dieser Wert entspricht der Gleichspannung, die an einem ohmschen Widerstand die gleiche Wärmeleistung erzeugen würde. Bei 230 V Netzspannung zeigt das Voltmeter 230 V Effektivwert an, der Scheitelwert beträgt jedoch ca. 325 V.",
@@ -605,12 +605,12 @@
       "id": "eg-040",
       "q": "Wie lautet die Formel für die elektrische Leistung?",
       "options": [
-        "P = U / I",
         "P = U × I",
+        "P = U / I",
         "P = R / U",
         "P = I / R"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Die elektrische Leistung berechnet sich mit der Formel P = U x I und wird in Watt (W) angegeben. Durch Einsetzen des Ohmschen Gesetzes lassen sich auch die Formeln P = I² x R und P = U² / R ableiten. Die Leistung gibt an, wie viel elektrische Energie pro Zeiteinheit umgesetzt wird.",
       "difficulty": "leicht",
       "tags": [

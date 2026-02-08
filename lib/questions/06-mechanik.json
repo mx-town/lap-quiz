@@ -8,15 +8,18 @@
       "id": "mb-001",
       "q": "Welche Werkstoffhauptgruppen werden unterschieden?",
       "options": [
-        "Metalle (Eisen/Nichteisenmetalle), Halbmetalle (Silizium, Germanium), Verbundwerkstoffe und Sinterwerkstoffe",
+        "Leichtmetalle (Aluminium, Magnesium), Schwermetalle (Blei, Kupfer), Edelmetalle und Sonderlegierungen",
         "Metalle (Eisen/Nichteisenmetalle), Nichtmetalle (Kunststoffe, Keramik), Verbundwerkstoffe",
-        "Nichtmetalle (Kunststoffe, Keramik), Verbundwerkstoffe (GFK, CFK), Naturwerkstoffe wie Holz und Stein",
-        "Leichtmetalle (Aluminium, Magnesium), Schwermetalle (Blei, Kupfer), Edelmetalle und Sonderlegierungen"
+        "Metalle (Eisen/Nichteisenmetalle), Halbmetalle (Silizium, Germanium), Verbundwerkstoffe und Sinterwerkstoffe",
+        "Nichtmetalle (Kunststoffe, Keramik), Verbundwerkstoffe (GFK, CFK), Naturwerkstoffe wie Holz und Stein"
       ],
       "correct": 1,
       "explanation": "Die Werkstoffhauptgruppen unterteilen sich in Metalle (Eisenmetalle wie Stahl und Guss sowie Nichteisenmetalle wie Kupfer und Aluminium), Nichtmetalle (Kunststoffe, Keramik) und Verbundwerkstoffe. Diese Einteilung deckt alle in der Technik verwendeten Materialgruppen systematisch ab.",
       "difficulty": "leicht",
-      "tags": ["werkstoffe", "einteilung"]
+      "tags": [
+        "werkstoffe",
+        "einteilung"
+      ]
     },
     {
       "id": "mb-002",
@@ -30,63 +33,79 @@
       "correct": 1,
       "explanation": "Der entscheidende Unterschied liegt im Kohlenstoffgehalt: Stahl enthält maximal 2,06% Kohlenstoff und ist dadurch schmiedbar und schweißbar. Gusseisen hat einen Kohlenstoffgehalt von mehr als 2,06%, ist spröder, nicht schmiedbar, besitzt aber hervorragende Gießeigenschaften.",
       "difficulty": "mittel",
-      "tags": ["werkstoffe", "stahl", "gusseisen"]
+      "tags": [
+        "werkstoffe",
+        "stahl",
+        "gusseisen"
+      ]
     },
     {
       "id": "mb-003",
       "q": "Was bedeutet die Stahlbezeichnung S235JR?",
       "options": [
-        "Edelstahl mit 235 N/mm² Zugfestigkeit, JR = Kerbschlagarbeit 40J bei minus 20 Grad Celsius",
         "Baustahl mit 235 N/mm² Mindeststreckgrenze, JR = Kerbschlagarbeit 27J bei 20°C",
+        "Edelstahl mit 235 N/mm² Zugfestigkeit, JR = Kerbschlagarbeit 40J bei minus 20 Grad Celsius",
         "Vergütungsstahl mit 235 HB Brinellhärte, JR = Kerbschlagarbeit 27J bei minus 40 Grad Celsius",
         "Werkzeugstahl mit 235 MPa Druckfestigkeit, JR = Kerbschlagarbeit 60J bei Raumtemperatur"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei der Bezeichnung S235JR steht S für Baustahl (structural steel), 235 gibt die Mindeststreckgrenze in N/mm² an und JR beschreibt die Kerbschlagarbeit von 27 Joule bei Raumtemperatur (20 Grad Celsius). Diese normierte Bezeichnung nach EN 10025 ermöglicht eine eindeutige Werkstoffidentifikation.",
       "difficulty": "schwer",
-      "tags": ["werkstoffe", "stahlbezeichnung"]
+      "tags": [
+        "werkstoffe",
+        "stahlbezeichnung"
+      ]
     },
     {
       "id": "mb-004",
       "q": "Was ist Messing?",
       "options": [
-        "Eine Kupfer-Nickel-Legierung mit guter Wärmeleitfähigkeit",
-        "Eine Kupfer-Zink-Legierung",
+        "Eine Kupfer-Blei-Legierung für Gleitlageranwendungen",
         "Eine Kupfer-Zinn-Legierung mit hoher Verschleißfestigkeit",
-        "Eine Kupfer-Blei-Legierung für Gleitlageranwendungen"
+        "Eine Kupfer-Zink-Legierung",
+        "Eine Kupfer-Nickel-Legierung mit guter Wärmeleitfähigkeit"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Messing ist eine Kupfer-Zink-Legierung (CuZn) mit charakteristischer goldgelber Farbe. Es zeichnet sich durch gute Zerspanbarkeit und Korrosionsbeständigkeit aus und wird häufig für Armaturen, Beschläge und elektrische Kontakte verwendet.",
       "difficulty": "leicht",
-      "tags": ["werkstoffe", "messing"]
+      "tags": [
+        "werkstoffe",
+        "messing"
+      ]
     },
     {
       "id": "mb-005",
       "q": "Was ist Bronze?",
       "options": [
-        "Kupfer-Zink-Legierung mit besonders hoher Zugfestigkeit und Korrosionsbeständigkeit",
-        "Kupfer-Zinn-Legierung (oder andere Cu-Legierungen außer Zink)",
         "Kupfer-Silber-Legierung mit hervorragender elektrischer Leitfähigkeit und Duktilität",
-        "Kupfer-Mangan-Legierung mit hoher Warmfestigkeit und guter Schweißbarkeit"
+        "Kupfer-Zinn-Legierung (oder andere Cu-Legierungen außer Zink)",
+        "Kupfer-Mangan-Legierung mit hoher Warmfestigkeit und guter Schweißbarkeit",
+        "Kupfer-Zink-Legierung mit besonders hoher Zugfestigkeit und Korrosionsbeständigkeit"
       ],
       "correct": 1,
       "explanation": "Bronze ist eine Kupfer-Zinn-Legierung (CuSn). Es gibt auch Sonderbronzen wie Aluminiumbronze (CuAl) oder Bleibronze. Bronze besitzt hervorragende Gleiteigenschaften und Korrosionsbeständigkeit, weshalb sie häufig für Lager, Zahnräder und Armaturen eingesetzt wird.",
       "difficulty": "mittel",
-      "tags": ["werkstoffe", "bronze"]
+      "tags": [
+        "werkstoffe",
+        "bronze"
+      ]
     },
     {
       "id": "mb-006",
       "q": "Welche Eigenschaften hat Aluminium?",
       "options": [
         "Schwer, hohe Zugfestigkeit, korrosionsanfällig ohne Schutzschicht und magnetisch",
+        "Leicht, geringe Wärmeleitfähigkeit, korrosionsanfällig und stark magnetisch",
         "Leicht, gute Leitfähigkeit, korrosionsbeständig durch Oxidschicht",
-        "Mittleres Gewicht, schlechte Leitfähigkeit, korrosionsbeständig durch Chromschicht",
-        "Leicht, geringe Wärmeleitfähigkeit, korrosionsanfällig und stark magnetisch"
+        "Mittleres Gewicht, schlechte Leitfähigkeit, korrosionsbeständig durch Chromschicht"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Aluminium ist ein Leichtmetall mit einer Dichte von nur 2,7 g/cm³. Es besitzt eine gute elektrische Leitfähigkeit (etwa 60% von Kupfer) und bildet an der Oberfläche eine schützende Aluminiumoxidschicht (Al₂O₃), die es korrosionsbeständig macht.",
       "difficulty": "leicht",
-      "tags": ["werkstoffe", "aluminium"]
+      "tags": [
+        "werkstoffe",
+        "aluminium"
+      ]
     },
     {
       "id": "mb-007",
@@ -100,357 +119,435 @@
       "correct": 1,
       "explanation": "Härte beschreibt den Widerstand eines Werkstoffs gegen das Eindringen eines härteren Prüfkörpers. Sie wird mit genormten Prüfverfahren wie Brinell (Kugel), Vickers (Diamantpyramide) oder Rockwell (Kegel/Kugel) gemessen und ist ein wichtiger Kennwert für die Verschleißfestigkeit.",
       "difficulty": "leicht",
-      "tags": ["werkstoffeigenschaften", "haerte"]
+      "tags": [
+        "werkstoffeigenschaften",
+        "haerte"
+      ]
     },
     {
       "id": "mb-008",
       "q": "Was versteht man unter Zugfestigkeit Rm?",
       "options": [
         "Die maximale Dehnung in Prozent, die ein Werkstoff vor dem Bruch erreichen kann",
-        "Die maximale Spannung, die ein Werkstoff aushält, bevor er bricht",
         "Die maximale Druckspannung, die ein Werkstoff aufnehmen kann, ohne sich zu verformen",
+        "Die maximale Spannung, die ein Werkstoff aushält, bevor er bricht",
         "Die maximale Scherspannung, die ein Werkstoff widersteht, bevor er abgleitet"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die Zugfestigkeit Rm ist die maximale Spannung (in N/mm²), die im Zugversuch erreicht wird, bevor der Werkstoff bricht. Sie wird aus der Höchstkraft dividiert durch den ursprünglichen Querschnitt berechnet und ist einer der wichtigsten mechanischen Kennwerte.",
       "difficulty": "mittel",
-      "tags": ["werkstoffeigenschaften", "zugfestigkeit"]
+      "tags": [
+        "werkstoffeigenschaften",
+        "zugfestigkeit"
+      ]
     },
     {
       "id": "mb-009",
       "q": "Was ist die Streckgrenze Re?",
       "options": [
+        "Die Spannung, bei der thermische Ausdehnung einsetzt",
         "Die Spannung, bei der ein Werkstoff durch Sprödbruch versagt",
-        "Die Spannung, bei der plastische Verformung beginnt",
         "Die Spannung, bei der elastische Verformung vollständig endet",
-        "Die Spannung, bei der thermische Ausdehnung einsetzt"
+        "Die Spannung, bei der plastische Verformung beginnt"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Die Streckgrenze Re ist die Spannung, ab der ein Werkstoff beginnt, sich plastisch (bleibend) zu verformen. Unterhalb der Streckgrenze federt das Material zurück (elastisch), oberhalb bleibt eine dauerhafte Verformung. Sie ist entscheidend für die Dimensionierung von Bauteilen.",
       "difficulty": "mittel",
-      "tags": ["werkstoffeigenschaften", "streckgrenze"]
+      "tags": [
+        "werkstoffeigenschaften",
+        "streckgrenze"
+      ]
     },
     {
       "id": "mb-010",
       "q": "Mit welcher Formel berechnet man die Drehzahl beim Bohren?",
       "options": [
-        "n = (d × 1000) / (π × vc)",
         "n = (vc × 1000) / (π × d)",
+        "n = (vc × d) / (π × 1000)",
         "n = (π × vc) / (d × 1000)",
-        "n = (vc × d) / (π × 1000)"
+        "n = (d × 1000) / (π × vc)"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Die Drehzahl berechnet sich mit n = (vc x 1000) / (Pi x d), wobei vc die Schnittgeschwindigkeit in m/min und d der Bohrerdurchmesser in mm ist. Der Faktor 1000 dient zur Umrechnung von Metern auf Millimeter. Je größer der Bohrerdurchmesser, desto niedriger muss die Drehzahl gewählt werden.",
       "difficulty": "schwer",
-      "tags": ["bohren", "berechnung"]
+      "tags": [
+        "bohren",
+        "berechnung"
+      ]
     },
     {
       "id": "mb-011",
       "q": "Welchen Spitzenwinkel hat ein Standardbohrer für Stahl?",
       "options": [
-        "90°",
-        "118°",
         "130°",
+        "118°",
+        "90°",
         "140°"
       ],
       "correct": 1,
       "explanation": "Der Standard-Spitzenwinkel für Stahlbohrer beträgt 118 Grad. Dieser Winkel bietet das beste Verhältnis zwischen Zentrierfähigkeit und Schnittleistung für Stahl. Für weichere Werkstoffe wie Aluminium oder Kunststoff werden größere Winkel von 130 bis 140 Grad verwendet.",
       "difficulty": "mittel",
-      "tags": ["bohren", "spitzenwinkel"]
+      "tags": [
+        "bohren",
+        "spitzenwinkel"
+      ]
     },
     {
       "id": "mb-012",
       "q": "Was ist beim Bohren in Metall wichtig?",
       "options": [
         "Hohe Drehzahl verwenden, auf Kühlung verzichten und maximalen Vorschub einstellen",
-        "Ankörnen, richtige Drehzahl, Kühlung/Schmierung, Vorschub",
         "Geringen Vorschub verwenden, auf Ankörnen verzichten und trocken arbeiten",
+        "Ankörnen, richtige Drehzahl, Kühlung/Schmierung, Vorschub",
         "Maximale Drehzahl wählen, Werkstück lose auflegen und ohne Spänebrechen arbeiten"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Beim Metallbohren sind mehrere Arbeitsschritte entscheidend: Zuerst wird die Bohrstelle angekörnt, um den Bohrer zu zentrieren. Dann muss die richtige Drehzahl gewählt werden (je größer der Durchmesser, desto langsamer). Kühlung und Schmierung verlängern die Standzeit des Bohrers und verbessern die Oberflächenqualität.",
       "difficulty": "mittel",
-      "tags": ["bohren", "grundlagen"]
+      "tags": [
+        "bohren",
+        "grundlagen"
+      ]
     },
     {
       "id": "mb-013",
       "q": "Was ist ein Gewindeschneider?",
       "options": [
+        "Ein Werkzeug zum Herstellen von Trapezgewinden an Gewindespindeln",
         "Ein Werkzeug zum Erzeugen von Außengewinden auf zylindrischen Bolzen",
         "Ein Werkzeug zum Schneiden von Innengewinden",
-        "Ein Werkzeug zum Nachschneiden und Kalibrieren beschädigter Gewindegänge",
-        "Ein Werkzeug zum Herstellen von Trapezgewinden an Gewindespindeln"
+        "Ein Werkzeug zum Nachschneiden und Kalibrieren beschädigter Gewindegänge"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Gewindeschneider ist ein Werkzeug zum Schneiden von Innengewinden in vorgebohrte Kernlöcher. Er wird üblicherweise im Satz verwendet: Der Vorschneider schneidet vor, der Mittelschneider vertieft das Profil und der Fertigschneider erzeugt das endgültige Gewindeprofil.",
       "difficulty": "leicht",
-      "tags": ["gewinde", "gewindeschneider"]
+      "tags": [
+        "gewinde",
+        "gewindeschneider"
+      ]
     },
     {
       "id": "mb-014",
       "q": "Was ist ein Schneideisen?",
       "options": [
         "Ein Werkzeug zum Schneiden von Innengewinden in vorgebohrte Kernlöcher",
-        "Ein Werkzeug zum Schneiden von Außengewinden",
         "Ein Werkzeug zum Entgraten von Bohrungen und zylindrischen Werkstücken",
+        "Ein Werkzeug zum Schneiden von Außengewinden",
         "Ein Werkzeug zum Nacharbeiten und Kalibrieren von metrischen Gewindebohrungen"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Ein Schneideisen dient zum Schneiden von Außengewinden auf Rundmaterial. Es wird in einen Schneideisenhalter eingespannt und unter Zugabe von Schneidöl gleichmäßig auf das angefaste Werkstück gedreht. So entstehen präzise Außengewinde auf Bolzen und Gewindestangen.",
       "difficulty": "leicht",
-      "tags": ["gewinde", "schneideisen"]
+      "tags": [
+        "gewinde",
+        "schneideisen"
+      ]
     },
     {
       "id": "mb-015",
       "q": "Welchen Kernlochdurchmesser benötigt man für ein M8-Gewinde?",
       "options": [
+        "Ca. 7,2mm (Gewindedurchmesser minus Gangtiefe bei Normalgewinde)",
         "Ca. 7,5mm (Gewindedurchmesser minus halbe Steigung bei Regelgewinde)",
         "Ca. 6,8mm (Gewindedurchmesser minus Steigung)",
-        "Ca. 6,0mm (Gewindedurchmesser minus doppelte Steigung bei Feingewinde)",
-        "Ca. 7,2mm (Gewindedurchmesser minus Gangtiefe bei Normalgewinde)"
+        "Ca. 6,0mm (Gewindedurchmesser minus doppelte Steigung bei Feingewinde)"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Der Kernlochdurchmesser berechnet sich aus Nenndurchmesser minus Steigung. Für ein M8-Regelgewinde mit einer Steigung von 1,25 mm ergibt sich: 8 - 1,25 = 6,75 mm. In der Praxis wird mit einem 6,8 mm Bohrer vorgebohrt, da diese Größe genormten Bohrerdurchmessern entspricht.",
       "difficulty": "mittel",
-      "tags": ["gewinde", "kernloch"]
+      "tags": [
+        "gewinde",
+        "kernloch"
+      ]
     },
     {
       "id": "mb-016",
       "q": "Was bedeutet M10×1,25?",
       "options": [
-        "Metrisches Regelgewinde, 10mm Nenndurchmesser, 1,25mm Gewindetiefe pro Flanke",
+        "Metrisches Rundgewinde, 10mm Außendurchmesser, 1,25mm Flankenwinkel in Grad",
         "Metrisches Feingewinde, 10mm Nenndurchmesser, 1,25mm Steigung",
         "Metrisches Trapezgewinde, 10mm Kerndurchmesser, 1,25mm Steigung pro Umdrehung",
-        "Metrisches Rundgewinde, 10mm Außendurchmesser, 1,25mm Flankenwinkel in Grad"
+        "Metrisches Regelgewinde, 10mm Nenndurchmesser, 1,25mm Gewindetiefe pro Flanke"
       ],
       "correct": 1,
       "explanation": "M10x1,25 bezeichnet ein metrisches Feingewinde mit 10 mm Nenndurchmesser und 1,25 mm Steigung. Die Angabe der Steigung kennzeichnet es als Feingewinde, da das metrische Regelgewinde M10 eine Steigung von 1,5 mm hat. Feingewinde werden dort eingesetzt, wo höhere Festigkeit oder feinere Einstellbarkeit benötigt wird.",
       "difficulty": "mittel",
-      "tags": ["gewinde", "bezeichnung"]
+      "tags": [
+        "gewinde",
+        "bezeichnung"
+      ]
     },
     {
       "id": "mb-017",
       "q": "Welche Hiebarten gibt es bei Feilen?",
       "options": [
-        "Kreuzhieb, Wechselhieb, Parallelhieb und Spiralhieb",
         "Einhieb, Kreuzhieb, Raspelhieb",
-        "Einhieb, Diagonalhieb, Bogenhieb und Zirkularhieb",
-        "Raspelhieb, Wellenhieb, Kreuzraspelhieb und Schlichthieb"
+        "Raspelhieb, Wellenhieb, Kreuzraspelhieb und Schlichthieb",
+        "Kreuzhieb, Wechselhieb, Parallelhieb und Spiralhieb",
+        "Einhieb, Diagonalhieb, Bogenhieb und Zirkularhieb"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Bei Feilen unterscheidet man drei Hiebarten: Einhieb (parallele Rillen, ideal für weiche Metalle wie Aluminium), Kreuzhieb (zwei sich kreuzende Rillenrichtungen, für Stahl und härtere Werkstoffe) und Raspelhieb (einzelne, punktförmige Zähne, vorwiegend für Holz und Kunststoffe).",
       "difficulty": "mittel",
-      "tags": ["feilen", "hiebarten"]
+      "tags": [
+        "feilen",
+        "hiebarten"
+      ]
     },
     {
       "id": "mb-018",
       "q": "Was bedeutet die Hiebzahl bei Feilen?",
       "options": [
-        "Die Anzahl der Schneidkanten pro Zahn, je höher die Zahl desto gröber die Feile",
         "Die Anzahl der Hiebe pro cm - je höher, desto feiner",
+        "Die Anzahl der Zahnreihen pro Feilenbreite, je höher die Zahl desto breiter",
         "Die Anzahl der Feilenhübe pro Minute, die für optimale Spanabnahme nötig sind",
-        "Die Anzahl der Zahnreihen pro Feilenbreite, je höher die Zahl desto breiter"
+        "Die Anzahl der Schneidkanten pro Zahn, je höher die Zahl desto gröber die Feile"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Die Hiebzahl gibt an, wie viele Hiebe (Zähne) pro Zentimeter Feilenlänge vorhanden sind. Je höher die Hiebzahl, desto feiner arbeitet die Feile. Die Abstufung reicht von der groben Bastardfeile über die Halbschlichtfeile und Schlichtfeile bis zur feinen Doppelschlichtfeile.",
       "difficulty": "mittel",
-      "tags": ["feilen", "hiebzahl"]
+      "tags": [
+        "feilen",
+        "hiebzahl"
+      ]
     },
     {
       "id": "mb-019",
       "q": "Was ist bei der Arbeit mit der Feile zu beachten?",
       "options": [
-        "Druck gleichmäßig bei Vor- und Rückhub ausüben, Feile kurz führen, Werkstück locker halten",
         "Druck nur beim Vorhub, Feile ganz ausnutzen, Werkstück fest einspannen",
-        "Druck nur beim Rückhub aufbauen, Feile im mittleren Bereich nutzen, Werkstück fest einspannen",
-        "Druck gleichmäßig verteilen, Feile nur im vorderen Drittel nutzen, Werkstück leicht beweglich lagern"
+        "Druck gleichmäßig bei Vor- und Rückhub ausüben, Feile kurz führen, Werkstück locker halten",
+        "Druck gleichmäßig verteilen, Feile nur im vorderen Drittel nutzen, Werkstück leicht beweglich lagern",
+        "Druck nur beim Rückhub aufbauen, Feile im mittleren Bereich nutzen, Werkstück fest einspannen"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Beim Feilen wird der Druck nur beim Vorhub (Arbeitshub) aufgebracht, beim Rückhub wird die Feile entlastet, um die Zähne zu schonen. Die gesamte Feilenlänge sollte ausgenutzt werden, und das Werkstück muss fest eingespannt sein, etwa 10 cm über der Schraubstockoberkante.",
       "difficulty": "mittel",
-      "tags": ["feilen", "technik"]
+      "tags": [
+        "feilen",
+        "technik"
+      ]
     },
     {
       "id": "mb-020",
       "q": "Was ist ein Messschieber (Schieblehre)?",
       "options": [
-        "Ein Messwerkzeug für Winkel, Radien und Oberflächenrauheit an Werkstücken",
         "Ein Messwerkzeug für Außen-, Innen- und Tiefenmaße",
-        "Ein Messwerkzeug für Gewinde, Bohrungen und Kegelverhältnisse bei Drehteilen",
-        "Ein Messwerkzeug für Rundlauf, Ebenheit und Parallelität von Oberflächen"
+        "Ein Messwerkzeug für Winkel, Radien und Oberflächenrauheit an Werkstücken",
+        "Ein Messwerkzeug für Rundlauf, Ebenheit und Parallelität von Oberflächen",
+        "Ein Messwerkzeug für Gewinde, Bohrungen und Kegelverhältnisse bei Drehteilen"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der Messschieber ist ein universelles Längenprüfmittel, mit dem Außenmaße, Innenmaße und Tiefenmaße gemessen werden können. Die übliche Auflösung beträgt 0,1 mm bei einfachen Modellen oder 0,02 mm bei Ausführungen mit Nonius. Er ist das am häufigsten verwendete Messgerät in der Werkstatt.",
       "difficulty": "leicht",
-      "tags": ["messen", "messschieber"]
+      "tags": [
+        "messen",
+        "messschieber"
+      ]
     },
     {
       "id": "mb-021",
       "q": "Wie funktioniert der Nonius am Messschieber?",
       "options": [
-        "Die digitale Codierung des Messschiebers wandelt die Verschiebung in einen exakten Messwert um",
+        "Die mechanische Übersetzung durch Zahnstange und Ritzel ergibt feine Skalenunterteilungen",
         "Die Teilung des Nonius ermöglicht Ablesung von Bruchteilen der Hauptskala",
-        "Die optische Vergrößerung der Skala durch eine eingebaute Linse ermöglicht präzise Ablesung",
-        "Die mechanische Übersetzung durch Zahnstange und Ritzel ergibt feine Skalenunterteilungen"
+        "Die digitale Codierung des Messschiebers wandelt die Verschiebung in einen exakten Messwert um",
+        "Die optische Vergrößerung der Skala durch eine eingebaute Linse ermöglicht präzise Ablesung"
       ],
       "correct": 1,
       "explanation": "Der Nonius ist eine Hilfsskala zur Feinablesung auf dem Messschieber. Dabei entsprechen 10 Teile des Nonius genau 9 Teilen der Hauptskala. Die Stelle, an der ein Noniusstrich mit einem Strich der Hauptskala exakt fluchtet, zeigt die Nachkommastelle des Messwertes an.",
       "difficulty": "schwer",
-      "tags": ["messen", "nonius"]
+      "tags": [
+        "messen",
+        "nonius"
+      ]
     },
     {
       "id": "mb-022",
       "q": "Was ist eine Bügelmessschraube (Mikrometer)?",
       "options": [
         "Ein Präzisionsmesswerkzeug für Innenmaße und Bohrungsdurchmesser mit hoher Genauigkeit",
-        "Ein Präzisionsmesswerkzeug für Außenmaße mit µm-Genauigkeit",
         "Ein Präzisionsmesswerkzeug für Gewindelehren und Gewindesteigungen mit digitaler Anzeige",
+        "Ein Präzisionsmesswerkzeug für Außenmaße mit µm-Genauigkeit",
         "Ein Präzisionsmesswerkzeug für Oberflächenrauheit und Ebenheit mit Tastspitze"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Die Bügelmessschraube (Mikrometer) dient zur hochpräzisen Messung von Außenmaßen mit einer Auflösung von 0,01 mm. Die Messspindel hat eine Steigung von 0,5 mm, sodass eine volle Umdrehung der Trommel 0,5 mm Messweg ergibt. Die Skalenteilung auf der Trommel erlaubt das Ablesen von Hundertstel Millimetern.",
       "difficulty": "mittel",
-      "tags": ["messen", "mikrometer"]
+      "tags": [
+        "messen",
+        "mikrometer"
+      ]
     },
     {
       "id": "mb-023",
       "q": "Was ist ein Gewindelehrring?",
       "options": [
-        "Ein Einstellwerkzeug zur Kalibrierung von Gewindeschneidern und Schneideisen",
+        "Ein Schneidwerkzeug zum Nachschneiden beschädigter Außengewinde an Schrauben",
         "Ein Prüfmittel zur Kontrolle von Außengewinden (Gut-/Ausschuss-Seite)",
-        "Ein Formwerkzeug zur spanlosen Herstellung von Innengewinden durch Kaltumformung",
-        "Ein Schneidwerkzeug zum Nachschneiden beschädigter Außengewinde an Schrauben"
+        "Ein Einstellwerkzeug zur Kalibrierung von Gewindeschneidern und Schneideisen",
+        "Ein Formwerkzeug zur spanlosen Herstellung von Innengewinden durch Kaltumformung"
       ],
       "correct": 1,
       "explanation": "Ein Gewindelehrring ist ein Prüfmittel zur Kontrolle von Außengewinden. Er besitzt eine Gutseite und eine Ausschussseite. Die Gutseite muss vollständig über das Gewinde drehbar sein, während die Ausschussseite maximal zwei Gewindegänge einschraubbar sein darf.",
       "difficulty": "mittel",
-      "tags": ["messen", "gewinde"]
+      "tags": [
+        "messen",
+        "gewinde"
+      ]
     },
     {
       "id": "mb-024",
       "q": "Was ist ein Gewindegrenzdorn?",
       "options": [
+        "Ein Formwerkzeug zum spanlosen Erzeugen von Innengewinden durch Rollierung",
         "Ein Schneidwerkzeug zum Herstellen von Innengewinden in Durchgangsbohrungen",
-        "Ein Prüfmittel zur Kontrolle von Innengewinden (Gut-/Ausschuss-Seite)",
         "Ein Kalibrierwerkzeug zum Einstellen von Gewindeschneidmaschinen auf Sollmaß",
-        "Ein Formwerkzeug zum spanlosen Erzeugen von Innengewinden durch Rollierung"
+        "Ein Prüfmittel zur Kontrolle von Innengewinden (Gut-/Ausschuss-Seite)"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Ein Gewindegrenzdorn ist ein Prüfmittel zur Kontrolle von Innengewinden. Er hat eine Gut- und eine Ausschussseite. Die Gutseite muss vollständig einschraubbar sein, die Ausschussseite darf maximal zwei Gewindegänge eingeschraubt werden können, um das Gewinde als maßhaltig zu bestätigen.",
       "difficulty": "mittel",
-      "tags": ["messen", "gewinde"]
+      "tags": [
+        "messen",
+        "gewinde"
+      ]
     },
     {
       "id": "mb-025",
       "q": "Was versteht man unter Senken?",
       "options": [
-        "Feinbearbeitung einer Bohrung auf genaues Maß und glatte Oberfläche mittels Reibahle",
-        "Herstellen einer kegelförmigen oder zylindrischen Erweiterung am Bohrungseingang",
+        "Entgraten und Nachbearbeiten der Bohrungsinnenwand mittels Honwerkzeugen",
         "Aufweiten einer bestehenden Bohrung auf einen größeren Durchmesser mit Aufbohrer",
-        "Entgraten und Nachbearbeiten der Bohrungsinnenwand mittels Honwerkzeugen"
+        "Herstellen einer kegelförmigen oder zylindrischen Erweiterung am Bohrungseingang",
+        "Feinbearbeitung einer Bohrung auf genaues Maß und glatte Oberfläche mittels Reibahle"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Senken ist das Herstellen einer kegelförmigen oder zylindrischen Erweiterung am Bohrungseingang. Kegelsenker mit 90 Grad erzeugen Aufnahmen für Senkschrauben, Flachsenker schaffen zylindrische Vertiefungen für Zylinderschrauben. So können Schraubenköpfe bündig oder versenkt eingebaut werden.",
       "difficulty": "mittel",
-      "tags": ["bohren", "senken"]
+      "tags": [
+        "bohren",
+        "senken"
+      ]
     },
     {
       "id": "mb-026",
       "q": "Welchen Winkel hat ein Kegelsenker für Senkschrauben?",
       "options": [
-        "60°",
         "90°",
+        "60°",
         "120°",
         "75°"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Der genormte Kegelsenker für Senkschrauben nach DIN hat einen Winkel von 90 Grad. Dieser Winkel entspricht dem Senkwinkel der meisten handelsüblichen Senkschrauben. Bei speziellen Schraubenarten können auch andere Winkel wie 60 oder 120 Grad erforderlich sein, weshalb immer auf die Schraubennorm geachtet werden muss.",
       "difficulty": "mittel",
-      "tags": ["senken", "winkel"]
+      "tags": [
+        "senken",
+        "winkel"
+      ]
     },
     {
       "id": "mb-027",
       "q": "Was ist Reiben?",
       "options": [
+        "Aufweitung einer Bohrung durch spanlose Kaltverformung mit einem Aufweitdorn",
         "Grobbearbeitung einer Bohrung auf Übermaß mit einem Spiralbohrer und hohem Vorschub",
         "Feinbearbeitung einer Bohrung auf genaues Maß und glatte Oberfläche",
-        "Aufweitung einer Bohrung durch spanlose Kaltverformung mit einem Aufweitdorn",
         "Nachbearbeitung einer Bohrung durch Honen mit rotierenden Schleifsteinen und Kühlmittel"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Reiben ist die Feinbearbeitung vorgebohrter Löcher mit einer Reibahle. Es erzeugt sehr genaue Durchmesser (Toleranzklasse IT7) und glatte Oberflächen. Das Aufmaß zum Vorbohren beträgt etwa 0,2 mm, sodass die Reibahle nur wenig Material abträgt und ein präzises Endergebnis liefert.",
       "difficulty": "mittel",
-      "tags": ["reiben", "feinbearbeitung"]
+      "tags": [
+        "reiben",
+        "feinbearbeitung"
+      ]
     },
     {
       "id": "mb-028",
       "q": "Was ist ein Winkelschleifer (Flex)?",
       "options": [
-        "Ein stationäres Schleifgerät mit zwei Schleifscheiben zum Schärfen von Werkzeugen",
         "Ein handgeführtes Elektrowerkzeug zum Trennen, Schleifen und Entgraten",
         "Ein pneumatisches Schleifwerkzeug zum Polieren und Finishen von Metalloberflächen",
-        "Ein handgeführtes Bandschleifgerät zum Planschleifen und Kanten abrunden"
+        "Ein handgeführtes Bandschleifgerät zum Planschleifen und Kanten abrunden",
+        "Ein stationäres Schleifgerät mit zwei Schleifscheiben zum Schärfen von Werkzeugen"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Ein Winkelschleifer (umgangssprachlich Flex) ist ein handgeführtes Elektrowerkzeug mit einer rotierenden Scheibe. Er wird vielseitig eingesetzt zum Trennschleifen, Schleifen, Schruppen und Entgraten von Metall. Je nach eingesetzter Scheibe sind unterschiedliche Bearbeitungsaufgaben möglich.",
       "difficulty": "leicht",
-      "tags": ["werkzeuge", "winkelschleifer"]
+      "tags": [
+        "werkzeuge",
+        "winkelschleifer"
+      ]
     },
     {
       "id": "mb-029",
       "q": "Welche Schutzausrüstung ist beim Arbeiten mit dem Winkelschleifer erforderlich?",
       "options": [
-        "Sicherheitsschuhe, Atemschutzmaske, Schweißerschürze und Gesichtsvisier mit Verdunkelung",
-        "Schutzbrille, Gehörschutz, Handschuhe, Schutzhaube am Gerät",
         "Lederschürze, Schweißerhandschuhe, Knieschoner und Atemschutzgerät mit Partikelfilter",
+        "Schutzbrille, Gehörschutz, Handschuhe, Schutzhaube am Gerät",
+        "Sicherheitsschuhe, Atemschutzmaske, Schweißerschürze und Gesichtsvisier mit Verdunkelung",
         "Sicherheitshelm, Schnittschutzhandschuhe, Warnweste und zusätzliche Absauganlage am Arbeitsplatz"
       ],
       "correct": 1,
       "explanation": "Beim Arbeiten mit dem Winkelschleifer ist folgende persönliche Schutzausrüstung erforderlich: Schutzbrille oder Gesichtsvisier gegen Funkenflug und Splitter, Gehörschutz wegen der hohen Lärmentwicklung, Arbeitshandschuhe und die montierte Schutzhaube am Gerät. Zusätzlich darf keine lose Kleidung getragen werden.",
       "difficulty": "leicht",
-      "tags": ["arbeitssicherheit", "psa"]
+      "tags": [
+        "arbeitssicherheit",
+        "psa"
+      ]
     },
     {
       "id": "mb-030",
       "q": "Was ist beim Sägen von Metall mit der Handsäge zu beachten?",
       "options": [
-        "Kurze schnelle Hübe ausführen, Druck beim Rückhub aufbauen und grobe Zahnung verwenden",
         "Gleichmäßiger Hub, Druck nur beim Vorhub, Sägeblatt passend wählen",
         "Langsame Hübe ausführen, Druck beim Vor- und Rückhub aufbauen und immer trocken sägen",
+        "Kurze schnelle Hübe ausführen, Druck beim Rückhub aufbauen und grobe Zahnung verwenden",
         "Kurze Hübe im mittleren Blattbereich, Druck bei Vor- und Rückhub und feine Zahnung verwenden"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Beim Metallsägen mit der Handsäge sind gleichmäßige, lange Hübe wichtig, wobei der Druck nur beim Vorhub ausgeübt wird. Die Zahnung muss zum Material passen: feine Zahnung für dünnes Material, grobe für dickes. Eventuell wird Kühlmittel verwendet, um die Standzeit des Sägeblattes zu erhöhen.",
       "difficulty": "mittel",
-      "tags": ["saegen", "technik"]
+      "tags": [
+        "saegen",
+        "technik"
+      ]
     },
     {
       "id": "mb-031",
       "q": "Was versteht man unter Toleranz in der Fertigung?",
       "options": [
         "Die vorgeschriebene Oberflächenrauheit eines bearbeiteten Werkstücks nach der Fertigung",
-        "Die zulässige Abweichung vom Nennmaß",
+        "Die geforderte Maßhaltigkeit des Rohteils vor der mechanischen Bearbeitung",
         "Die maximale Werkzeugabnutzung, die während der Bearbeitung auftreten darf",
-        "Die geforderte Maßhaltigkeit des Rohteils vor der mechanischen Bearbeitung"
+        "Die zulässige Abweichung vom Nennmaß"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Toleranz ist die zulässige Abweichung vom Nennmaß (Sollmaß) und berechnet sich als Differenz zwischen Höchstmaß und Mindestmaß. Sie wird als symmetrische Abweichung (z.B. 20 plus/minus 0,1 mm) oder nach ISO-Toleranzklassen (z.B. H7) angegeben und bestimmt, wie genau ein Maß gefertigt werden muss.",
       "difficulty": "mittel",
-      "tags": ["toleranz", "fertigung"]
+      "tags": [
+        "toleranz",
+        "fertigung"
+      ]
     },
     {
       "id": "mb-032",
       "q": "Was bedeutet die Toleranzangabe H7 bei einer Bohrung?",
       "options": [
         "ISO-Toleranzfeld G (Grundabmaß positiv), Toleranzgrad 7 für Spielpassungen bei Wellen",
-        "ISO-Toleranzfeld H (Grundabmaß 0), Toleranzgrad 7 (Genauigkeit)",
         "ISO-Toleranzfeld J (Grundabmaß symmetrisch), Toleranzgrad 7 für Übergangspassungen",
-        "ISO-Toleranzfeld K (Grundabmaß negativ), Toleranzgrad 7 für Presspassungen bei Naben"
+        "ISO-Toleranzfeld K (Grundabmaß negativ), Toleranzgrad 7 für Presspassungen bei Naben",
+        "ISO-Toleranzfeld H (Grundabmaß 0), Toleranzgrad 7 (Genauigkeit)"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "H7 ist eine ISO-Toleranzangabe: Der Großbuchstabe H bezeichnet das Toleranzfeld für Bohrungen mit Grundabmaß null, das heißt die untere Abweichung liegt genau am Nennmaß. Die Zahl 7 gibt den Toleranzgrad (die Qualität) an, wobei ein kleinerer Wert eine engere und damit genauere Toleranz bedeutet.",
       "difficulty": "schwer",
-      "tags": ["toleranz", "iso-passungen"]
+      "tags": [
+        "toleranz",
+        "iso-passungen"
+      ]
     },
     {
       "id": "mb-033",
@@ -458,41 +555,50 @@
       "options": [
         "Die Welle ist stets größer als die Bohrung, sodass eine kraftschlüssige Verbindung entsteht",
         "Bohrung ist größer als Welle, immer Spiel vorhanden",
-        "Welle und Bohrung können sowohl Spiel als auch Übermaß aufweisen je nach Toleranzlage",
-        "Die Welle und die Bohrung besitzen identische Maße, sodass eine formschlüssige Passung entsteht"
+        "Die Welle und die Bohrung besitzen identische Maße, sodass eine formschlüssige Passung entsteht",
+        "Welle und Bohrung können sowohl Spiel als auch Übermaß aufweisen je nach Toleranzlage"
       ],
       "correct": 1,
       "explanation": "Bei einer Spielpassung ist die Bohrung immer größer als die Welle, sodass stets ein Spiel (Luft) zwischen den Teilen besteht. Dies ermöglicht leichte Beweglichkeit und wird beispielsweise bei Gleitlagern und Führungen eingesetzt. Eine typische Spielpassung ist H7/f7.",
       "difficulty": "mittel",
-      "tags": ["passungen", "spielpassung"]
+      "tags": [
+        "passungen",
+        "spielpassung"
+      ]
     },
     {
       "id": "mb-034",
       "q": "Was ist eine Presspassung (Übermaßpassung)?",
       "options": [
-        "Bohrung ist stets größer als die Welle, sodass eine leichtgängige Verbindung mit Bewegungsfreiheit entsteht",
-        "Welle ist größer als Bohrung, kraftschlüssige Verbindung durch Einpressen",
         "Welle und Bohrung können je nach Istmaß sowohl geringes Spiel als auch geringes Übermaß aufweisen",
-        "Bohrung und Welle besitzen identische Nennmaße, sodass eine spielfreie Übergangspassung entsteht"
+        "Bohrung und Welle besitzen identische Nennmaße, sodass eine spielfreie Übergangspassung entsteht",
+        "Welle ist größer als Bohrung, kraftschlüssige Verbindung durch Einpressen",
+        "Bohrung ist stets größer als die Welle, sodass eine leichtgängige Verbindung mit Bewegungsfreiheit entsteht"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Bei einer Presspassung ist die Welle immer größer als die Bohrung, sodass stets Übermaß vorhanden ist. Die Verbindung wird durch Einpressen oder thermisches Aufschrumpfen hergestellt und erzeugt eine kraftschlüssige, unlösbare Verbindung. Ein typisches Beispiel ist H7/p6.",
       "difficulty": "mittel",
-      "tags": ["passungen", "presspassung"]
+      "tags": [
+        "passungen",
+        "presspassung"
+      ]
     },
     {
       "id": "mb-035",
       "q": "Was ist eine Übergangspassung?",
       "options": [
-        "Die Bohrung ist immer größer als die Welle, sodass stets ein definiertes Spiel für Gleitbewegungen vorhanden ist",
-        "Kann sowohl geringes Spiel als auch geringes Übermaß haben",
+        "Welle und Bohrung haben identische Nennmaße, sodass eine exakte spielfreie Zentrierung ohne Übermaß entsteht",
         "Die Welle ist immer größer als die Bohrung, sodass stets ein definiertes Übermaß für Kraftschluss vorhanden ist",
-        "Welle und Bohrung haben identische Nennmaße, sodass eine exakte spielfreie Zentrierung ohne Übermaß entsteht"
+        "Die Bohrung ist immer größer als die Welle, sodass stets ein definiertes Spiel für Gleitbewegungen vorhanden ist",
+        "Kann sowohl geringes Spiel als auch geringes Übermaß haben"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Bei einer Übergangspassung kann je nach tatsächlichen Istmaßen der gefertigten Teile sowohl geringes Spiel als auch geringes Übermaß auftreten. Sie wird für genaue Zentrierung und leichte Montierbarkeit eingesetzt, typische Beispiele sind H7/k6 oder H7/m6.",
       "difficulty": "mittel",
-      "tags": ["passungen", "uebergangspassung"]
+      "tags": [
+        "passungen",
+        "uebergangspassung"
+      ]
     }
   ]
 }
