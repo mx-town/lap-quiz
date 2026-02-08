@@ -1,13 +1,14 @@
 "use client"
 
 import { Navbar } from "@/components/layout/Navbar"
+import { BottomNav } from "@/components/layout/BottomNav"
 import { ModeSelector } from "@/components/layout/ModeSelector"
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-16">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-16 pb-20 md:pb-16">
         <div className="mb-16">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-3">
             <span className="text-accent-primary">LAP</span>{" "}
@@ -20,6 +21,7 @@ export default function HomePage() {
 
         <ModeSelector />
       </main>
+      <BottomNav />
     </>
   )
 }

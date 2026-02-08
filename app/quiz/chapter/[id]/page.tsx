@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from "react"
 import Link from "next/link"
 import { Navbar } from "@/components/layout/Navbar"
+import { BottomNav } from "@/components/layout/BottomNav"
 import { QuestionCard } from "@/components/quiz/QuestionCard"
 import { ProgressBar } from "@/components/quiz/ProgressBar"
 import { ResultScreen } from "@/components/quiz/ResultScreen"
@@ -75,7 +76,7 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 text-center">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12 text-center">
           <p className="text-text-primary text-lg font-semibold mb-2">Kapitel nicht gefunden</p>
           <p className="text-text-muted mb-6 text-sm">Die angegebene Kapitel-ID ist ungültig.</p>
           <Link
@@ -85,6 +86,7 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
             Zur Kapitelauswahl
           </Link>
         </main>
+        <BottomNav />
       </>
     )
   }
@@ -93,9 +95,10 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
           <ResultScreen result={result} />
         </main>
+        <BottomNav />
       </>
     )
   }
@@ -104,9 +107,10 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 text-center">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12 text-center">
           <p className="text-text-muted">Keine Fragen für Kapitel {chapterNum} vorhanden.</p>
         </main>
+        <BottomNav />
       </>
     )
   }
@@ -114,7 +118,7 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
   return (
     <>
       <Navbar />
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8 pb-20 md:pb-8">
         <div className="max-w-2xl mx-auto space-y-6">
           <div>
             <h1 className="text-base font-semibold mb-2 tracking-tight">
@@ -135,6 +139,7 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
           />
         </div>
       </main>
+      <BottomNav />
     </>
   )
 }

@@ -3,6 +3,7 @@
 import { useState, useCallback, useRef, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { Navbar } from "@/components/layout/Navbar"
+import { BottomNav } from "@/components/layout/BottomNav"
 import { QuestionCard } from "@/components/quiz/QuestionCard"
 import { ProgressBar } from "@/components/quiz/ProgressBar"
 import { ResultScreen } from "@/components/quiz/ResultScreen"
@@ -26,7 +27,7 @@ function CustomPlayContent() {
 
   if (!profile) {
     return (
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
         <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle p-8">
           <div className="flex items-center gap-3 mb-6">
             <AlertTriangle className="w-5 h-5 text-accent-danger" />
@@ -103,7 +104,7 @@ function CustomPlayContent() {
 
   if (result) {
     return (
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
         <ResultScreen result={result} />
       </main>
     )
@@ -111,14 +112,14 @@ function CustomPlayContent() {
 
   if (questions.length === 0) {
     return (
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 text-center">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12 text-center">
         <p className="text-text-muted">Keine Fragen für dieses Profil vorhanden.</p>
       </main>
     )
   }
 
   return (
-    <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
+    <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8 pb-20 md:pb-8">
       <div className="max-w-2xl mx-auto space-y-6">
         <div>
           <h1 className="text-base font-semibold mb-2 tracking-tight">{profile?.name || "Mein Fachbereich"}</h1>
@@ -146,6 +147,7 @@ export default function CustomPlayPage() {
       <Suspense fallback={<div className="flex-1 flex items-center justify-center text-text-muted font-mono text-sm">Laden...</div>}>
         <CustomPlayContent />
       </Suspense>
+      <BottomNav />
     </>
   )
 }

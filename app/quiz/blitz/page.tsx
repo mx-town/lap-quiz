@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
+import { BottomNav } from "@/components/layout/BottomNav"
 import { Timer } from "@/components/quiz/Timer"
 import { StreakCounter } from "@/components/quiz/StreakCounter"
 import { ResultScreen } from "@/components/quiz/ResultScreen"
@@ -114,9 +115,10 @@ export default function BlitzPage() {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
           <ResultScreen result={result} />
         </main>
+        <BottomNav />
       </>
     )
   }
@@ -125,7 +127,7 @@ export default function BlitzPage() {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
           <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle p-8">
             <div className="flex items-center gap-3 mb-6">
               <Zap className="w-5 h-5 text-accent-primary" />
@@ -143,6 +145,7 @@ export default function BlitzPage() {
             </button>
           </div>
         </main>
+        <BottomNav />
       </>
     )
   }
@@ -159,7 +162,7 @@ export default function BlitzPage() {
           flashColor === "red" && "bg-accent-danger/20"
         )}
       >
-        <div className="max-w-2xl mx-auto w-full px-6 py-8 space-y-6">
+        <div className="max-w-2xl mx-auto w-full px-6 py-8 pb-20 md:pb-8 space-y-6">
           {/* Top bar */}
           <div className="flex items-center justify-between">
             <StreakCounter streak={streak} bestStreak={bestStreak} />
@@ -247,6 +250,7 @@ export default function BlitzPage() {
           </AnimatePresence>
         </div>
       </main>
+      <BottomNav />
     </>
   )
 }

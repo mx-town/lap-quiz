@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Navbar } from "@/components/layout/Navbar"
+import { BottomNav } from "@/components/layout/BottomNav"
 import { Slider } from "@/components/ui/Slider"
 import { PRESET_PROFILES, CHAPTERS } from "@/types"
 import { SlidersHorizontal, ChevronDown } from "lucide-react"
@@ -18,7 +19,7 @@ export default function CustomPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
         <div className="mb-10">
           <h1 className="text-3xl font-bold tracking-tight mb-2">Mein Fachbereich</h1>
           <p className="text-sm text-text-muted">
@@ -137,6 +138,7 @@ export default function CustomPage() {
           </div>
         </div>
       </main>
+      <BottomNav />
     </>
   )
 }

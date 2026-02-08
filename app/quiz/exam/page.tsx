@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react"
 import { Navbar } from "@/components/layout/Navbar"
+import { BottomNav } from "@/components/layout/BottomNav"
 import { QuestionCard } from "@/components/quiz/QuestionCard"
 import { ProgressBar } from "@/components/quiz/ProgressBar"
 import { Timer } from "@/components/quiz/Timer"
@@ -80,9 +81,10 @@ export default function ExamPage() {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
           <ResultScreen result={result} />
         </main>
+        <BottomNav />
       </>
     )
   }
@@ -91,7 +93,7 @@ export default function ExamPage() {
     return (
       <>
         <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
           <div className="max-w-md mx-auto bg-bg-surface border border-border-subtle p-8">
             <div className="flex items-center gap-3 mb-6">
               <Target className="w-5 h-5 text-accent-primary" />
@@ -143,6 +145,7 @@ export default function ExamPage() {
             </button>
           </div>
         </main>
+        <BottomNav />
       </>
     )
   }
@@ -150,7 +153,7 @@ export default function ExamPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8 pb-20 md:pb-8">
         <div className="max-w-2xl mx-auto space-y-6">
           <div className="flex items-center gap-6 bg-bg-surface p-4 border border-border-subtle">
             <div className="flex-1">
@@ -176,6 +179,7 @@ export default function ExamPage() {
           )}
         </div>
       </main>
+      <BottomNav />
     </>
   )
 }

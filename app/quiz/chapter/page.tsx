@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Navbar } from "@/components/layout/Navbar"
+import { BottomNav } from "@/components/layout/BottomNav"
 import { CHAPTERS } from "@/types"
 import { CHAPTER_QUESTIONS } from "@/lib/questions"
 import {
@@ -37,7 +38,7 @@ export default function ChapterPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
         <div className="mb-10">
           <h1 className="text-3xl font-bold tracking-tight mb-2">Kapitelweises Lernen</h1>
           <p className="text-sm text-text-muted">Wähle ein Kapitel zur gezielten Vertiefung</p>
@@ -68,6 +69,7 @@ export default function ChapterPage() {
           })}
         </div>
       </main>
+      <BottomNav />
     </>
   )
 }

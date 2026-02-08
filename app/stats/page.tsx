@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
+import { BottomNav } from "@/components/layout/BottomNav"
 import { CHAPTERS } from "@/types"
 import { BarChart3, Trophy, Target } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -46,7 +47,7 @@ export default function StatsPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 pb-20 md:pb-12">
         <div className="mb-10">
           <h1 className="text-3xl font-bold tracking-tight mb-2">Statistik</h1>
           <p className="text-sm text-text-muted">Dein Lernfortschritt im Überblick</p>
@@ -125,6 +126,7 @@ export default function StatsPage() {
           })}
         </div>
       </main>
+      <BottomNav />
     </>
   )
 }
