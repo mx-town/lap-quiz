@@ -16,8 +16,8 @@ export default function HomePage() {
               <span className="text-accent-primary">LAP</span>{" "}
               <span className="text-text-primary">Quiz</span>
             </h1>
-            <p className="text-base text-text-muted max-w-lg">
-              Mechatronik-Prüfungsvorbereitung — 4 Quiz-Modi, 12 Kapitel
+            <p className="text-[11px] font-mono text-text-muted mt-3">
+              Martinek Niklas · Claude · Hosted on Vercel
             </p>
           </div>
 
