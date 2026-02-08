@@ -17,7 +17,7 @@ export default function HomePage() {
               <span className="text-text-primary">Quiz</span>
             </h1>
             <p className="text-[11px] font-mono text-text-muted mt-3">
-              Martinek Niklas · Claude · Hosted on Vercel
+              Martinek Niklas
             </p>
           </div>
 
