@@ -11,8 +11,11 @@ import { Question, QuizResult } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
 import { shuffleArray } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
+import { saveQuizProgress, getQuizProgress, clearQuizProgress } from "@/lib/local-storage"
+import { useBeforeUnload } from "@/lib/useBeforeUnload"
 import { Slider } from "@/components/ui/Slider"
 import { Target } from "lucide-react"
+import * as Dialog from "@radix-ui/react-dialog"
 
 export default function ExamPage() {
   const [started, setStarted] = useState(false)
@@ -23,6 +26,44 @@ export default function ExamPage() {
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime, setStartTime] = useState<Date | null>(null)
   const [config, setConfig] = useState({ count: 20, timeMinutes: 30 })
+  const [resumeDialog, setResumeDialog] = useState(false)
+  const [savedProgress, setSavedProgress] = useState<ReturnType<typeof getQuizProgress>>(null)
+
+  useBeforeUnload(started && result === null)
+
+  // Check for saved progress on mount
+  useEffect(() => {
+    const progress = getQuizProgress()
+    if (progress && progress.mode === "exam") {
+      setSavedProgress(progress)
+      setResumeDialog(true)
+    }
+  }, [])
+
+  const resumeQuiz = () => {
+    if (!savedProgress) return
+    const allQuestions = SEED_QUESTIONS.map((sq, i) => ({ ...sq, id: `seed-${i}` }))
+    const resumedQuestions = savedProgress.questionIds
+      .map((id) => allQuestions.find((q) => q.id === id))
+      .filter(Boolean) as Question[]
+
+    setQuestions(resumedQuestions)
+    setCurrentIndex(savedProgress.currentIndex)
+    setCorrectCount(savedProgress.correctCount)
+    setAnswers(new Map(Object.entries(savedProgress.answers)))
+    setStartTime(new Date(savedProgress.startTime))
+    if (savedProgress.config) {
+      setConfig(savedProgress.config as typeof config)
+    }
+    setStarted(true)
+    setResumeDialog(false)
+  }
+
+  const discardProgress = () => {
+    clearQuizProgress()
+    setResumeDialog(false)
+    setSavedProgress(null)
+  }
 
   const startExam = () => {
     const q = shuffleArray(SEED_QUESTIONS.map((sq, i) => ({ ...sq, id: `seed-${i}` }))).slice(0, config.count)
@@ -48,6 +89,7 @@ export default function ExamPage() {
       if (answers.get(q.id)) byChapter[q.chapter_number].correct++
     })
 
+    clearQuizProgress()
     setResult({
       totalQuestions: questions.length,
       correctAnswers: correctCount,
@@ -62,14 +104,37 @@ export default function ExamPage() {
     const question = questions[currentIndex]
     const correct = checkAnswer(question, answer)
     if (correct) setCorrectCount((c) => c + 1)
-    setAnswers((prev) => new Map(prev).set(question.id, correct))
+    const newAnswers = new Map(answers).set(question.id, correct)
+    setAnswers(newAnswers)
+
+    // Save progress
+    saveQuizProgress({
+      mode: "exam",
+      questionIds: questions.map((q) => q.id),
+      currentIndex,
+      correctCount: correct ? correctCount + 1 : correctCount,
+      answers: Object.fromEntries(newAnswers),
+      startTime: startTime?.getTime() || Date.now(),
+      config,
+    })
   }
 
   const handleNext = () => {
-    if (currentIndex + 1 >= questions.length) {
+    const nextIndex = currentIndex + 1
+    if (nextIndex >= questions.length) {
       finishExam()
     } else {
-      setCurrentIndex((i) => i + 1)
+      setCurrentIndex(nextIndex)
+      // Update progress with new index
+      saveQuizProgress({
+        mode: "exam",
+        questionIds: questions.map((q) => q.id),
+        currentIndex: nextIndex,
+        correctCount,
+        answers: Object.fromEntries(answers),
+        startTime: startTime?.getTime() || Date.now(),
+        config,
+      })
     }
   }
 
@@ -146,6 +211,35 @@ export default function ExamPage() {
           </div>
         </main>
         <BottomNav />
+
+        {/* Resume dialog */}
+        <Dialog.Root open={resumeDialog} onOpenChange={setResumeDialog}>
+          <Dialog.Portal>
+            <Dialog.Overlay className="fixed inset-0 bg-black/50 z-50" />
+            <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bg-surface border border-border-subtle p-6 max-w-sm w-[calc(100%-2rem)] z-50">
+              <Dialog.Title className="text-lg font-semibold text-text-primary mb-2">
+                Quiz fortsetzen?
+              </Dialog.Title>
+              <Dialog.Description className="text-sm text-text-muted mb-6">
+                Du hast ein laufendes Quiz mit {savedProgress?.currentIndex ?? 0} beantworteten Fragen. Möchtest du fortfahren?
+              </Dialog.Description>
+              <div className="flex gap-3">
+                <button
+                  onClick={discardProgress}
+                  className="flex-1 py-2.5 border border-border-subtle text-text-secondary text-[13px] font-medium hover:border-text-muted hover:text-text-primary transition-colors uppercase tracking-wider"
+                >
+                  Verwerfen
+                </button>
+                <button
+                  onClick={resumeQuiz}
+                  className="flex-1 py-2.5 bg-text-primary text-bg-primary text-[13px] font-medium hover:bg-accent-primary transition-colors uppercase tracking-wider"
+                >
+                  Fortsetzen
+                </button>
+              </div>
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
       </>
     )
   }

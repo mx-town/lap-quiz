@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
+import { useBeforeUnload } from "@/lib/useBeforeUnload"
 import { AnimatePresence, motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { BottomNav } from "@/components/layout/BottomNav"
@@ -26,6 +27,8 @@ export default function BlitzPage() {
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime, setStartTime] = useState<Date | null>(null)
   const [answersMap, setAnswersMap] = useState<Map<string, boolean>>(new Map())
+
+  useBeforeUnload(started && result === null)
 
   const startBlitz = () => {
     const blitzQuestions = SEED_QUESTIONS

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useCallback } from "react"
+import { useState, useRef, useCallback, useEffect } from "react"
 import Link from "next/link"
 import { Navbar } from "@/components/layout/Navbar"
 import { BottomNav } from "@/components/layout/BottomNav"
@@ -11,6 +11,9 @@ import { Question, QuizResult, CHAPTERS } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
 import { shuffleArray } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
+import { saveQuizProgress, getQuizProgress, clearQuizProgress } from "@/lib/local-storage"
+import { useBeforeUnload } from "@/lib/useBeforeUnload"
+import * as Dialog from "@radix-ui/react-dialog"
 
 export default function ChapterQuizPage({ params }: { params: { id: string } }) {
   const { id } = params
@@ -22,8 +25,12 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
   const [correctCount, setCorrectCount] = useState(0)
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime] = useState(new Date())
+  const [answersMap, setAnswersMap] = useState<Record<string, boolean>>({})
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const nextCountRef = useRef<number>(0)
+  const [resumeDialog, setResumeDialog] = useState(false)
+  const [savedProgress, setSavedProgress] = useState<ReturnType<typeof getQuizProgress>>(null)
+  const [hasResumed, setHasResumed] = useState(false)
 
   const [questions] = useState<Question[]>(() =>
     isValidChapter
@@ -35,8 +42,36 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
       : []
   )
 
+  useBeforeUnload(questions.length > 0 && result === null && !resumeDialog)
+
+  // Check for saved progress on mount
+  useEffect(() => {
+    const progress = getQuizProgress()
+    if (progress && progress.mode === "chapter" && progress.chapterNumber === chapterNum) {
+      setSavedProgress(progress)
+      setResumeDialog(true)
+    }
+  }, [chapterNum])
+
+  const resumeQuiz = () => {
+    if (!savedProgress) return
+    setCurrentIndex(savedProgress.currentIndex)
+    setCorrectCount(savedProgress.correctCount)
+    setAnswersMap(savedProgress.answers)
+    nextCountRef.current = savedProgress.correctCount
+    setHasResumed(true)
+    setResumeDialog(false)
+  }
+
+  const discardProgress = () => {
+    clearQuizProgress()
+    setResumeDialog(false)
+    setSavedProgress(null)
+  }
+
   const finishQuiz = (correct: number) => {
     const duration = Math.round((Date.now() - startTime.getTime()) / 1000)
+    clearQuizProgress()
     setResult({
       totalQuestions: questions.length,
       correctAnswers: correct,
@@ -52,9 +87,20 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
     if (currentIndex + 1 >= questions.length) {
       finishQuiz(newCount)
     } else {
-      setCurrentIndex((i) => i + 1)
+      const nextIndex = currentIndex + 1
+      setCurrentIndex(nextIndex)
+      // Save progress
+      saveQuizProgress({
+        mode: "chapter",
+        questionIds: questions.map((q) => q.id),
+        currentIndex: nextIndex,
+        correctCount: newCount,
+        answers: answersMap,
+        startTime: startTime.getTime(),
+        chapterNumber: chapterNum,
+      })
     }
-  }, [currentIndex, questions.length])
+  }, [currentIndex, questions.length, answersMap, startTime, chapterNum])
 
   const handleNext = useCallback(() => {
     if (timeoutRef.current) {
@@ -70,6 +116,20 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
     const newCount = correct ? correctCount + 1 : correctCount
     if (correct) setCorrectCount(newCount)
     nextCountRef.current = newCount
+
+    const newAnswers = { ...answersMap, [question.id]: correct }
+    setAnswersMap(newAnswers)
+
+    // Save progress
+    saveQuizProgress({
+      mode: "chapter",
+      questionIds: questions.map((q) => q.id),
+      currentIndex,
+      correctCount: newCount,
+      answers: newAnswers,
+      startTime: startTime.getTime(),
+      chapterNumber: chapterNum,
+    })
   }
 
   if (!isValidChapter) {
@@ -140,6 +200,35 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
         </div>
       </main>
       <BottomNav />
+
+      {/* Resume dialog */}
+      <Dialog.Root open={resumeDialog} onOpenChange={setResumeDialog}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 bg-black/50 z-50" />
+          <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bg-surface border border-border-subtle p-6 max-w-sm w-[calc(100%-2rem)] z-50">
+            <Dialog.Title className="text-lg font-semibold text-text-primary mb-2">
+              Quiz fortsetzen?
+            </Dialog.Title>
+            <Dialog.Description className="text-sm text-text-muted mb-6">
+              Du hast ein laufendes Kapitel-Quiz mit {savedProgress?.currentIndex ?? 0} beantworteten Fragen. Möchtest du fortfahren?
+            </Dialog.Description>
+            <div className="flex gap-3">
+              <button
+                onClick={discardProgress}
+                className="flex-1 py-2.5 border border-border-subtle text-text-secondary text-[13px] font-medium hover:border-text-muted hover:text-text-primary transition-colors uppercase tracking-wider"
+              >
+                Verwerfen
+              </button>
+              <button
+                onClick={resumeQuiz}
+                className="flex-1 py-2.5 bg-text-primary text-bg-primary text-[13px] font-medium hover:bg-accent-primary transition-colors uppercase tracking-wider"
+              >
+                Fortsetzen
+              </button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   )
 }

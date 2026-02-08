@@ -1,11 +1,23 @@
-import { QuizResult } from "@/types"
+import { QuizResult, QuizMode } from "@/types"
 
 const SESSIONS_KEY = "lap-quiz-sessions"
 const BEST_STREAK_KEY = "lap-quiz-best-streak"
+const PROGRESS_KEY = "lap-quiz-progress"
 
 export interface StoredSession {
   result: QuizResult
   timestamp: number
+}
+
+export interface QuizProgress {
+  mode: QuizMode
+  questionIds: string[]
+  currentIndex: number
+  correctCount: number
+  answers: Record<string, boolean>
+  startTime: number
+  config?: Record<string, unknown>
+  chapterNumber?: number
 }
 
 function getSessions(): StoredSession[] {
@@ -64,4 +76,25 @@ export function getStats(): StatsOverview {
     bestStreak: getBestStreak(),
     chapterCorrect,
   }
+}
+
+// Quiz progress persistence
+export function saveQuizProgress(progress: QuizProgress): void {
+  if (typeof window === "undefined") return
+  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress))
+}
+
+export function getQuizProgress(): QuizProgress | null {
+  if (typeof window === "undefined") return null
+  try {
+    const raw = localStorage.getItem(PROGRESS_KEY)
+    return raw ? JSON.parse(raw) : null
+  } catch {
+    return null
+  }
+}
+
+export function clearQuizProgress(): void {
+  if (typeof window === "undefined") return
+  localStorage.removeItem(PROGRESS_KEY)
 }

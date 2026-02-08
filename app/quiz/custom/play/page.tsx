@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, useRef, Suspense } from "react"
+import { useState, useCallback, useRef, Suspense, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { Navbar } from "@/components/layout/Navbar"
 import { BottomNav } from "@/components/layout/BottomNav"
@@ -11,8 +11,11 @@ import { Question, QuizResult, PRESET_PROFILES } from "@/types"
 import { SEED_QUESTIONS } from "@/lib/seed-questions"
 import { shuffleArray } from "@/lib/utils"
 import { checkAnswer } from "@/lib/quiz-engine"
+import { saveQuizProgress, getQuizProgress, clearQuizProgress } from "@/lib/local-storage"
+import { useBeforeUnload } from "@/lib/useBeforeUnload"
 import Link from "next/link"
 import { AlertTriangle } from "lucide-react"
+import * as Dialog from "@radix-ui/react-dialog"
 
 function CustomPlayContent() {
   const searchParams = useSearchParams()
@@ -24,6 +27,9 @@ function CustomPlayContent() {
   const count = isNaN(rawCount) || rawCount < 1 ? 20 : rawCount
 
   const profile = PRESET_PROFILES.find((p) => p.id === profileId)
+
+  const [resumeDialog, setResumeDialog] = useState(false)
+  const [savedProgress, setSavedProgress] = useState<ReturnType<typeof getQuizProgress>>(null)
 
   if (!profile) {
     return (
@@ -67,6 +73,43 @@ function CustomPlayContent() {
   const [result, setResult] = useState<QuizResult | null>(null)
   const [startTime] = useState(new Date())
   const correctByChapterRef = useRef<Record<number, number>>({})
+  const [answersMap, setAnswersMap] = useState<Record<string, boolean>>({})
+
+  useBeforeUnload(questions.length > 0 && result === null && !resumeDialog)
+
+  // Check for saved progress on mount
+  useEffect(() => {
+    const progress = getQuizProgress()
+    if (progress && progress.mode === "custom") {
+      setSavedProgress(progress)
+      setResumeDialog(true)
+    }
+  }, [])
+
+  const resumeQuiz = () => {
+    if (!savedProgress) return
+    setCurrentIndex(savedProgress.currentIndex)
+    setCorrectCount(savedProgress.correctCount)
+    setAnswersMap(savedProgress.answers)
+
+    // Reconstruct correctByChapter from answers
+    const allQ = SEED_QUESTIONS.map((q, i) => ({ ...q, id: `custom-${i}` }))
+    for (const [qId, correct] of Object.entries(savedProgress.answers)) {
+      if (correct) {
+        const q = allQ.find((aq) => aq.id === qId)
+        if (q) {
+          correctByChapterRef.current[q.chapter_number] = (correctByChapterRef.current[q.chapter_number] || 0) + 1
+        }
+      }
+    }
+    setResumeDialog(false)
+  }
+
+  const discardProgress = () => {
+    clearQuizProgress()
+    setResumeDialog(false)
+    setSavedProgress(null)
+  }
 
   const handleAnswer = (answer: string) => {
     const question = questions[currentIndex]
@@ -75,6 +118,19 @@ function CustomPlayContent() {
       setCorrectCount((c) => c + 1)
       correctByChapterRef.current[question.chapter_number] = (correctByChapterRef.current[question.chapter_number] || 0) + 1
     }
+
+    const newAnswers = { ...answersMap, [question.id]: correct }
+    setAnswersMap(newAnswers)
+
+    // Save progress
+    saveQuizProgress({
+      mode: "custom",
+      questionIds: questions.map((q) => q.id),
+      currentIndex,
+      correctCount: correct ? correctCount + 1 : correctCount,
+      answers: newAnswers,
+      startTime: startTime.getTime(),
+    })
   }
 
   const handleNext = () => {
@@ -89,6 +145,7 @@ function CustomPlayContent() {
         byChapter[Number(ch)].correct = correctByChapterRef.current[Number(ch)] || 0
       })
       const totalCorrect = Object.values(correctByChapterRef.current).reduce((a, b) => a + b, 0)
+      clearQuizProgress()
       setResult({
         totalQuestions: questions.length,
         correctAnswers: totalCorrect,
@@ -98,7 +155,17 @@ function CustomPlayContent() {
         mode: "custom",
       })
     } else {
-      setCurrentIndex((i) => i + 1)
+      const nextIndex = currentIndex + 1
+      setCurrentIndex(nextIndex)
+      // Save progress with updated index
+      saveQuizProgress({
+        mode: "custom",
+        questionIds: questions.map((q) => q.id),
+        currentIndex: nextIndex,
+        correctCount,
+        answers: answersMap,
+        startTime: startTime.getTime(),
+      })
     }
   }
 
@@ -119,24 +186,55 @@ function CustomPlayContent() {
   }
 
   return (
-    <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8 pb-20 md:pb-8">
-      <div className="max-w-2xl mx-auto space-y-6">
-        <div>
-          <h1 className="text-base font-semibold mb-2 tracking-tight">{profile?.name || "Mein Fachbereich"}</h1>
-          <ProgressBar current={currentIndex + 1} total={questions.length} correctCount={correctCount} />
+    <>
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8 pb-20 md:pb-8">
+        <div className="max-w-2xl mx-auto space-y-6">
+          <div>
+            <h1 className="text-base font-semibold mb-2 tracking-tight">{profile?.name || "Mein Fachbereich"}</h1>
+            <ProgressBar current={currentIndex + 1} total={questions.length} correctCount={correctCount} />
+          </div>
+          <QuestionCard
+            key={questions[currentIndex].id}
+            question={questions[currentIndex]}
+            index={currentIndex}
+            total={questions.length}
+            onAnswer={handleAnswer}
+            onNext={handleNext}
+            showFeedback={true}
+            isFocus={(questions[currentIndex] as any)._isFocus}
+          />
         </div>
-        <QuestionCard
-          key={questions[currentIndex].id}
-          question={questions[currentIndex]}
-          index={currentIndex}
-          total={questions.length}
-          onAnswer={handleAnswer}
-          onNext={handleNext}
-          showFeedback={true}
-          isFocus={(questions[currentIndex] as any)._isFocus}
-        />
-      </div>
-    </main>
+      </main>
+
+      {/* Resume dialog */}
+      <Dialog.Root open={resumeDialog} onOpenChange={setResumeDialog}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 bg-black/50 z-50" />
+          <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bg-surface border border-border-subtle p-6 max-w-sm w-[calc(100%-2rem)] z-50">
+            <Dialog.Title className="text-lg font-semibold text-text-primary mb-2">
+              Quiz fortsetzen?
+            </Dialog.Title>
+            <Dialog.Description className="text-sm text-text-muted mb-6">
+              Du hast ein laufendes Custom-Quiz mit {savedProgress?.currentIndex ?? 0} beantworteten Fragen. Möchtest du fortfahren?
+            </Dialog.Description>
+            <div className="flex gap-3">
+              <button
+                onClick={discardProgress}
+                className="flex-1 py-2.5 border border-border-subtle text-text-secondary text-[13px] font-medium hover:border-text-muted hover:text-text-primary transition-colors uppercase tracking-wider"
+              >
+                Verwerfen
+              </button>
+              <button
+                onClick={resumeQuiz}
+                className="flex-1 py-2.5 bg-text-primary text-bg-primary text-[13px] font-medium hover:bg-accent-primary transition-colors uppercase tracking-wider"
+              >
+                Fortsetzen
+              </button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+    </>
   )
 }
 
