@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Target, Zap, BookOpen, BarChart3 } from "lucide-react"
+import { Home, Target, Zap, BookOpen, SlidersHorizontal, BarChart3 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const items = [
@@ -10,6 +10,7 @@ const items = [
   { href: "/quiz/exam", label: "Prüfung", icon: Target },
   { href: "/quiz/blitz", label: "Blitz", icon: Zap },
   { href: "/quiz/chapter", label: "Kapitel", icon: BookOpen },
+  { href: "/quiz/custom", label: "Fachbereich", icon: SlidersHorizontal },
   { href: "/stats", label: "Statistik", icon: BarChart3 },
 ]
 
