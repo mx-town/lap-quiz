@@ -67,7 +67,7 @@ function CustomPlayContent() {
   const selectedCross = shuffleArray(crossPool).slice(0, crossCount).map((q) => ({ ...q, _isFocus: false }))
   const initialQuestions = shuffleArray([...selectedFocus, ...selectedCross]) as (Question & { _isFocus: boolean })[]
 
-  const [questions] = useState(initialQuestions)
+  const [questions, setQuestions] = useState(initialQuestions)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [correctCount, setCorrectCount] = useState(0)
   const [result, setResult] = useState<QuizResult | null>(null)
@@ -88,12 +88,21 @@ function CustomPlayContent() {
 
   const resumeQuiz = () => {
     if (!savedProgress) return
+    // Reconstruct questions in the saved order
+    const allQ = SEED_QUESTIONS.map((q, i) => ({ ...q, id: `custom-${i}` }))
+    const resumedQuestions = savedProgress.questionIds
+      .map((id) => {
+        const q = allQ.find((aq) => aq.id === id)
+        if (!q) return null
+        return { ...q, _isFocus: focusChapters.includes(q.chapter_number) }
+      })
+      .filter(Boolean) as (Question & { _isFocus: boolean })[]
+    setQuestions(resumedQuestions)
     setCurrentIndex(savedProgress.currentIndex)
     setCorrectCount(savedProgress.correctCount)
     setAnswersMap(savedProgress.answers)
 
     // Reconstruct correctByChapter from answers
-    const allQ = SEED_QUESTIONS.map((q, i) => ({ ...q, id: `custom-${i}` }))
     for (const [qId, correct] of Object.entries(savedProgress.answers)) {
       if (correct) {
         const q = allQ.find((aq) => aq.id === qId)

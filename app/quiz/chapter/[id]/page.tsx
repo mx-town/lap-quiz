@@ -32,7 +32,7 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
   const [savedProgress, setSavedProgress] = useState<ReturnType<typeof getQuizProgress>>(null)
   const [hasResumed, setHasResumed] = useState(false)
 
-  const [questions] = useState<Question[]>(() =>
+  const [questions, setQuestions] = useState<Question[]>(() =>
     isValidChapter
       ? shuffleArray(
           SEED_QUESTIONS
@@ -55,6 +55,14 @@ export default function ChapterQuizPage({ params }: { params: { id: string } }) 
 
   const resumeQuiz = () => {
     if (!savedProgress) return
+    // Reconstruct questions in the saved order
+    const allChapterQuestions = SEED_QUESTIONS
+      .filter((q) => q.chapter_number === chapterNum)
+      .map((q, i) => ({ ...q, id: `chapter-${chapterNum}-${i}` }))
+    const resumedQuestions = savedProgress.questionIds
+      .map((id) => allChapterQuestions.find((q) => q.id === id))
+      .filter(Boolean) as Question[]
+    setQuestions(resumedQuestions)
     setCurrentIndex(savedProgress.currentIndex)
     setCorrectCount(savedProgress.correctCount)
     setAnswersMap(savedProgress.answers)
